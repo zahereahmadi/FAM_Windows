@@ -30,7 +30,7 @@ namespace Baran.Ferroalloy.Management
         {
             InitializeComponent();
 
-            this.strXmlPath = String.Format(@"{0}\Settings.xml", Directory.GetCurrentDirectory());
+            this.strXmlPath = String.Format(@"c:\Settings.xml");
 
             this.cnConnection = new Connection();
             this.usLogined = new User();
@@ -44,7 +44,7 @@ namespace Baran.Ferroalloy.Management
             {
                 this.setSettings = new FamSetting(this.cnConnection, this.strXmlPath);
 
-                this.setSettings.strAppVersion = "1.6.11";
+                this.setSettings.strAppVersion = "1.6.12";
                 this.staVersion.Text = this.setSettings.strAppVersion;
                 this.Text += String.Format(" - {0}", FamSetting.GetCoInformation(this.cnConnection).strName);
             }
