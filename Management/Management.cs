@@ -44,7 +44,7 @@ namespace Baran.Ferroalloy.Management
             {
                 this.setSettings = new FamSetting(this.cnConnection, this.strXmlPath);
 
-                this.setSettings.strAppVersion = "1.6.12";
+                this.setSettings.strAppVersion = "1.6.13";
                 this.staVersion.Text = this.setSettings.strAppVersion;
                 this.Text += String.Format(" - {0}", FamSetting.GetCoInformation(this.cnConnection).strName);
             }
