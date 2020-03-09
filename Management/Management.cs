@@ -13,6 +13,7 @@ using Baran.Ferroalloy.Automation.Security;
 using Baran.Ferroalloy.Management.Automation;
 using System.IO;
 using System.Globalization;
+using Baran.Ferroalloy.Management.Maintenance;
 using Baran.Ferroalloy.Office;
 
 namespace Baran.Ferroalloy.Management
@@ -232,14 +233,21 @@ namespace Baran.Ferroalloy.Management
                 menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.menWindowsMaintenanceElectricalFurnace_Click);
                 this.menWindows.DropDownItems.Add(menWindowsMaintenanceElectricalFurnace);
 
-                MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
-                frmFurnaceElectricalMaintenance.MdiParent = this;
-                frmFurnaceElectricalMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                frmFurnaceElectricalMaintenance.Dock = DockStyle.Fill;
-                frmFurnaceElectricalMaintenance.cnConnection = this.cnConnection;
-                frmFurnaceElectricalMaintenance.usUser = this.usLogined;
-                frmFurnaceElectricalMaintenance.setSetings = this.setSettings;
-                frmFurnaceElectricalMaintenance.Show();
+                //MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
+                //frmFurnaceElectricalMaintenance.MdiParent = this;
+                //frmFurnaceElectricalMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                //frmFurnaceElectricalMaintenance.Dock = DockStyle.Fill;
+                //frmFurnaceElectricalMaintenance.cnConnection = this.cnConnection;
+                //frmFurnaceElectricalMaintenance.usUser = this.usLogined;
+                //frmFurnaceElectricalMaintenance.setSetings = this.setSettings;
+                //frmFurnaceElectricalMaintenance.Show();
+
+                FrmMaintenance frmMaintenance = new FrmMaintenance();
+                frmMaintenance.MdiParent = this;
+                frmMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                frmMaintenance.Dock = DockStyle.Fill;
+                frmMaintenance.usUser = this.usLogined;
+                frmMaintenance.Show();
             }
         }
 
@@ -756,6 +764,46 @@ namespace Baran.Ferroalloy.Management
                 case Keys.F10:
                     Application.Exit();
                     break;
+            }
+        }
+
+        private void MenuParts_Click(object sender, EventArgs e)
+        {
+            if (!Parts.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsStuffs";
+                menWindowsStuffs.Text = "کالا";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsStuffs_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                Parts frmStuffs = new Parts();
+                frmStuffs.MdiParent = this;
+                frmStuffs.setSettings = this.setSettings;
+                frmStuffs.cnConnection = this.cnConnection;
+                frmStuffs.usUser = this.usLogined;
+                frmStuffs.Show();
+                frmStuffs.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MenuEquips_Click(object sender, EventArgs e)
+        {
+            if (!FrmEquips.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsEquips = new ToolStripMenuItem();
+                menWindowsEquips.Name = "menWindowsEquips";
+                menWindowsEquips.Text = "تجهیز";
+                menWindowsEquips.Click += new System.EventHandler(this.MenuEquips_Click);
+                this.menWindows.DropDownItems.Add(menWindowsEquips);
+
+                FrmEquips frmEquips = new FrmEquips();
+                frmEquips.MdiParent = this;
+                frmEquips.setSettings = this.setSettings;
+                frmEquips.cnConnection = this.cnConnection;
+                frmEquips.usUser = this.usLogined;
+                frmEquips.Show();
+                frmEquips.WindowState = FormWindowState.Maximized;
             }
         }
     }

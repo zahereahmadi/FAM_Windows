@@ -55,8 +55,8 @@
             this.stvEmployees.ShowPageNew = false;
             this.stvEmployees.ShowPageSize = false;
             this.stvEmployees.ShowPageViewMode = false;
-            this.stvEmployees.ShowParametersButton = false;
-            this.stvEmployees.ShowResourcesButton = false;
+            //this.stvEmployees.ShowParametersButton = false;
+            //this.stvEmployees.ShowResourcesButton = false;
             this.stvEmployees.ShowSave = false;
             this.stvEmployees.ShowSaveDocumentFile = false;
             this.stvEmployees.ShowThumbsPanel = false;
