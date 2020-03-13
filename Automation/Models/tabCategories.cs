@@ -18,11 +18,11 @@ namespace Baran.Ferroalloy.Automation.Models
         public tabCategories()
         {
             this.tabEquipName = new HashSet<tabEquipName>();
-            this.tabEquips = new HashSet<tabEquips>();
             this.tabMeasurementUnits = new HashSet<tabMeasurementUnits>();
-            this.tabName = new HashSet<tabName>();
-            this.tabParts = new HashSet<tabParts>();
             this.tabProperties = new HashSet<tabProperties>();
+            this.tabPartTypes = new HashSet<tabPartTypes>();
+            this.tabEquipSamples = new HashSet<tabEquipSamples>();
+            this.tabPartName = new HashSet<tabPartName>();
         }
     
         public int intID { get; set; }
@@ -34,14 +34,14 @@ namespace Baran.Ferroalloy.Automation.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabEquipName> tabEquipName { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabEquips> tabEquips { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabMeasurementUnits> tabMeasurementUnits { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabName> tabName { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabParts> tabParts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabProperties> tabProperties { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabPartTypes> tabPartTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabPartName> tabPartName { get; set; }
     }
 }

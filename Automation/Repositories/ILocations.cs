@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Baran.Ferroalloy.Automation.Models;
 
-
 namespace Baran.Ferroalloy.Automation
 {
-    public interface IBranch:IGeneric<tabBranch>
+    public interface ILocations:IGeneric<tabLocationes>
     {
-        List<tabBranch> ListBranches(int nameId, string filter = "");
     }
 }

@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btmDeleteEmployee = new System.Windows.Forms.Button();
+            this.lbWorkers = new System.Windows.Forms.ListBox();
+            this.btnSelectEmployee = new System.Windows.Forms.Button();
             this.btnSelectEquip = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtTips = new System.Windows.Forms.TextBox();
             this.chbIsSuccessful = new System.Windows.Forms.CheckBox();
@@ -50,25 +53,24 @@
             this.txtEquip = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btmMaintenanceParts = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvMaintenanceItems = new System.Windows.Forms.DataGridView();
             this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nvcEquip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtWorker = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenanceItems)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnSelectEquip);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtWorker);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btnRegister);
             this.groupBox1.Controls.Add(this.txtTips);
             this.groupBox1.Controls.Add(this.chbIsSuccessful);
@@ -93,6 +95,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ورود آیتم تعمیراتی";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btmDeleteEmployee);
+            this.groupBox3.Controls.Add(this.lbWorkers);
+            this.groupBox3.Controls.Add(this.btnSelectEmployee);
+            this.groupBox3.Location = new System.Drawing.Point(296, 87);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(258, 129);
+            this.groupBox3.TabIndex = 45;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "انتخاب تعمیرکاران";
+            // 
+            // btmDeleteEmployee
+            // 
+            this.btmDeleteEmployee.Location = new System.Drawing.Point(6, 95);
+            this.btmDeleteEmployee.Name = "btmDeleteEmployee";
+            this.btmDeleteEmployee.Size = new System.Drawing.Size(99, 26);
+            this.btmDeleteEmployee.TabIndex = 45;
+            this.btmDeleteEmployee.Text = "حذف تعمیرکار";
+            this.btmDeleteEmployee.UseVisualStyleBackColor = true;
+            this.btmDeleteEmployee.Click += new System.EventHandler(this.BtmDeleteEmployee_Click);
+            // 
+            // lbWorkers
+            // 
+            this.lbWorkers.FormattingEnabled = true;
+            this.lbWorkers.ItemHeight = 16;
+            this.lbWorkers.Location = new System.Drawing.Point(111, 21);
+            this.lbWorkers.Name = "lbWorkers";
+            this.lbWorkers.Size = new System.Drawing.Size(141, 100);
+            this.lbWorkers.TabIndex = 43;
+            // 
+            // btnSelectEmployee
+            // 
+            this.btnSelectEmployee.Location = new System.Drawing.Point(6, 22);
+            this.btnSelectEmployee.Name = "btnSelectEmployee";
+            this.btnSelectEmployee.Size = new System.Drawing.Size(99, 26);
+            this.btnSelectEmployee.TabIndex = 44;
+            this.btnSelectEmployee.Text = "انتخاب تعمیرکار";
+            this.btnSelectEmployee.UseVisualStyleBackColor = true;
+            this.btnSelectEmployee.Click += new System.EventHandler(this.BtnSelectEmployee_Click);
+            // 
             // btnSelectEquip
             // 
             this.btnSelectEquip.Location = new System.Drawing.Point(420, 26);
@@ -106,20 +149,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(519, 211);
+            this.label11.Location = new System.Drawing.Point(516, 228);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 16);
             this.label11.TabIndex = 40;
             this.label11.Text = "شرح:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(488, 95);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 16);
-            this.label10.TabIndex = 38;
-            this.label10.Text = "تعمیرکاران:";
             // 
             // btnRegister
             // 
@@ -133,16 +167,16 @@
             // 
             // txtTips
             // 
-            this.txtTips.Location = new System.Drawing.Point(7, 234);
+            this.txtTips.Location = new System.Drawing.Point(7, 247);
             this.txtTips.Multiline = true;
             this.txtTips.Name = "txtTips";
-            this.txtTips.Size = new System.Drawing.Size(547, 129);
+            this.txtTips.Size = new System.Drawing.Size(547, 116);
             this.txtTips.TabIndex = 37;
             // 
             // chbIsSuccessful
             // 
             this.chbIsSuccessful.AutoSize = true;
-            this.chbIsSuccessful.Location = new System.Drawing.Point(529, 181);
+            this.chbIsSuccessful.Location = new System.Drawing.Point(267, 166);
             this.chbIsSuccessful.Name = "chbIsSuccessful";
             this.chbIsSuccessful.Size = new System.Drawing.Size(15, 14);
             this.chbIsSuccessful.TabIndex = 36;
@@ -151,7 +185,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(342, 177);
+            this.label9.Location = new System.Drawing.Point(88, 164);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(169, 16);
             this.label9.TabIndex = 35;
@@ -160,7 +194,7 @@
             // chbIsNeedToShutDown
             // 
             this.chbIsNeedToShutDown.AutoSize = true;
-            this.chbIsNeedToShutDown.Location = new System.Drawing.Point(529, 161);
+            this.chbIsNeedToShutDown.Location = new System.Drawing.Point(267, 146);
             this.chbIsNeedToShutDown.Name = "chbIsNeedToShutDown";
             this.chbIsNeedToShutDown.Size = new System.Drawing.Size(15, 14);
             this.chbIsNeedToShutDown.TabIndex = 34;
@@ -169,7 +203,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(267, 157);
+            this.label8.Location = new System.Drawing.Point(5, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(254, 16);
             this.label8.TabIndex = 33;
@@ -178,7 +212,7 @@
             // chbIsDueToShutDown
             // 
             this.chbIsDueToShutDown.AutoSize = true;
-            this.chbIsDueToShutDown.Location = new System.Drawing.Point(529, 139);
+            this.chbIsDueToShutDown.Location = new System.Drawing.Point(267, 124);
             this.chbIsDueToShutDown.Name = "chbIsDueToShutDown";
             this.chbIsDueToShutDown.Size = new System.Drawing.Size(15, 14);
             this.chbIsDueToShutDown.TabIndex = 32;
@@ -187,7 +221,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(303, 135);
+            this.label6.Location = new System.Drawing.Point(41, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(216, 16);
             this.label6.TabIndex = 31;
@@ -275,7 +309,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btmMaintenanceParts);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.dgvMaintenanceItems);
             this.groupBox2.Controls.Add(this.txtSearch);
@@ -287,15 +321,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "لیست آیتم های تعمیراتی";
             // 
-            // button1
+            // btmMaintenanceParts
             // 
-            this.button1.Location = new System.Drawing.Point(6, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 32);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "ورود قطعات تعمیراتی";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btmMaintenanceParts.Location = new System.Drawing.Point(6, 369);
+            this.btmMaintenanceParts.Name = "btmMaintenanceParts";
+            this.btmMaintenanceParts.Size = new System.Drawing.Size(141, 32);
+            this.btmMaintenanceParts.TabIndex = 41;
+            this.btmMaintenanceParts.Text = "ورود قطعات تعمیراتی";
+            this.btmMaintenanceParts.UseVisualStyleBackColor = true;
+            this.btmMaintenanceParts.Click += new System.EventHandler(this.BtmMaintenanceParts_Click);
             // 
             // btnDelete
             // 
@@ -354,14 +388,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "جستجو:";
             // 
-            // txtWorker
-            // 
-            this.txtWorker.Location = new System.Drawing.Point(7, 92);
-            this.txtWorker.Multiline = true;
-            this.txtWorker.Name = "txtWorker";
-            this.txtWorker.Size = new System.Drawing.Size(476, 27);
-            this.txtWorker.TabIndex = 39;
-            // 
             // FrmMaintenanceItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -381,6 +407,7 @@
             this.Load += new System.EventHandler(this.FrmMaintenanceItems_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenanceItems)).EndInit();
@@ -403,7 +430,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtTips;
         private System.Windows.Forms.CheckBox chbIsSuccessful;
@@ -414,11 +440,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbWorkGroup;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btmMaintenanceParts;
         private System.Windows.Forms.DataGridViewTextBoxColumn intID;
         private System.Windows.Forms.DataGridViewTextBoxColumn nvcEquip;
         private System.Windows.Forms.Button btnSelectEquip;
         private System.Windows.Forms.TextBox txtEquip;
-        private System.Windows.Forms.TextBox txtWorker;
+        private System.Windows.Forms.Button btnSelectEmployee;
+        private System.Windows.Forms.ListBox lbWorkers;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btmDeleteEmployee;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,8 +8,10 @@ using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Automation
 {
-    public interface IName:IGeneric<tabName>
+    public class LocationsService:Generic<tabLocationes>,ILocations
     {
-        List<tabName> ListNames(int categoryId,string filter = "");
+        public LocationsService(DbContext db) : base(db)
+        {
+        }
     }
 }

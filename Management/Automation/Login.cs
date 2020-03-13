@@ -65,7 +65,7 @@ namespace Baran.Ferroalloy.Management
                     this.labMessage.Text = "این کاربر پیش از این به سامانه وارد شده است. ";
                     DialogResult drResult = MessageBox.Show("آیا کاربری که پیش از این وارد شده است خارج و شما وارد شوید؟", "پرسش", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                         MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
-                    if(drResult == DialogResult.Yes)
+                    if (drResult == DialogResult.Yes)
                     {
                         User.Login(this.cnConnection, ref this.usLogined, this.tbUsername.Text, this.tbPassword.Text);
                         Employee.GetByCoID(this.cnConnection, this.usLogined.strCoID, this.emLogined);
@@ -226,7 +226,7 @@ namespace Baran.Ferroalloy.Management
             {
                 this.frmManagement.menLab.Enabled = false;
             }
-          
+
             //this.menExit.Enabled = true;
             //this.menLogIn.Enabled = false;
         }
@@ -243,7 +243,7 @@ namespace Baran.Ferroalloy.Management
 
         private void CbSaveUserName_CheckedChanged(object sender, EventArgs e)
         {
-            FamSetting.SetSaveUserName(this.setSettings.strXmlPath,this.CbSaveUserName.Checked);
+            FamSetting.SetSaveUserName(this.setSettings.strXmlPath, this.CbSaveUserName.Checked);
         }
 
         private void TbUsername_Enter(object sender, EventArgs e)

@@ -32,8 +32,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var nameEntity = db.Name.GetEntity(t => t.nvcName == name);
-                this.dgvListBranch.DataSource = db.Branch.ListBranches(nameEntity.intNumber);
+                var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
+                this.dgvListBranch.DataSource = db.PartBranch.ListBranches(nameEntity.intNumber);
             }
         }
 
@@ -41,8 +41,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var nameEntity = db.Name.GetEntity(t => t.nvcName == name);
-                this.dgvListBranch.DataSource = db.Branch.ListBranches(nameEntity.intNumber, txtSearchBranch.Text);
+                var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
+                this.dgvListBranch.DataSource = db.PartBranch.ListBranches(nameEntity.intNumber, txtSearchBranch.Text);
             }
         }
 
@@ -57,8 +57,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 string nameBranch = txtRegisterBranch.Text;
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    var nameEntity = db.Name.GetEntity(t => t.nvcName == name);
-                    var branch = db.Branch.GetEntity(t => t.nvcName == nameBranch);
+                    var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
+                    var branch = db.PartBranch.GetEntity(t => t.nvcName == nameBranch);
                     if (branch != null)
                     {
                         RtlMessageBox.Show("این نام کالا قبلا ثبت شده است", "خطا", MessageBoxButtons.OK,
@@ -66,15 +66,15 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     }
                     else
                     {
-                        var maxNumber = db.Branch.GetAll().Max(t => t.intNumber);
-                        tabBranch tabBranch = new tabBranch()
+                        var maxNumber = db.PartBranch.GetAll().Max(t => t.intNumber);
+                        tabPartBranch tabBranch = new tabPartBranch()
                         {
                             bitSelect = false,
                             intNumber = maxNumber + 1,
                             nvcName = nameBranch,
                             intName = nameEntity.intNumber
                         };
-                        db.Branch.Insert(tabBranch);
+                        db.PartBranch.Insert(tabBranch);
                         db.Save();
                         RtlMessageBox.Show("ثبت با موفقیت انجام شد", "ثبت", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -97,12 +97,12 @@ namespace Baran.Ferroalloy.Management.Maintenance
             {
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    var nameEntity = db.Name.GetEntity(t => t.nvcName == name);
+                    var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
                     string nameBranch = txtEditBranch.Text;
                     if (dgvListBranch.CurrentRow != null)
                     {
                         int nameId = int.Parse(dgvListBranch.CurrentRow.Cells[0].Value.ToString());
-                        var branch = db.Branch.GetEntity(t => t.intID == nameId);
+                        var branch = db.PartBranch.GetEntity(t => t.intID == nameId);
                         if (branch != null)
                         {
                             branch.intID = nameId;
@@ -111,7 +111,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                             branch.nvcName = nameBranch;
                             branch.intName = nameEntity.intNumber;
 
-                            db.Branch.Update(branch);
+                            db.PartBranch.Update(branch);
                             db.Save();
                             RtlMessageBox.Show("ویرایش با موفقیت انجام شد", "ثبت", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -151,8 +151,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 {
                     using (UnitOfWork db = new UnitOfWork())
                     {
-                        var branch = db.Branch.GetEntity(t => t.intID == branchId);
-                        db.Branch.Delete(branch);
+                        var branch = db.PartBranch.GetEntity(t => t.intID == branchId);
+                        db.PartBranch.Delete(branch);
                         db.Save();
                         ListRefresh();
                         txtRegisterBranch.Text = "";

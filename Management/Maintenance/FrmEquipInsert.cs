@@ -24,6 +24,17 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
+
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocations.Items.Add(item.nvcName);
+                }
                 var zones = db.Zone.GetAll();
                 foreach (var item in zones)
                 {
@@ -87,6 +98,26 @@ namespace Baran.Ferroalloy.Management
                 {
                     cbEqiupName.Enabled = true;
                     this.labName.Text = cbEqiupName.SelectedItem.ToString();
+                    var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber.ToString();
+                    if (companyId.Length == 1)
+                    {
+                        companyId = 0 + companyId;
+                    }
+                    else
+                    {
+                        companyId = companyId;
+                    }
+
+                    var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber.ToString();
+                    if (locationId.Length == 1)
+                    {
+                        locationId = 0 + locationId;
+                    }
+                    else
+                    {
+                        locationId = locationId;
+                    }
+
                     var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber.ToString();
                     if (zoneId.Length == 1)
                     {
@@ -127,7 +158,9 @@ namespace Baran.Ferroalloy.Management
                         eqiupNameId = eqiupNameId;
                     }
 
-                    var order = db.Equip.GetAll().FirstOrDefault(t =>
+                    var order = db.EquipSamples.GetAll().FirstOrDefault(t =>
+                        t.tabCompanies.nvcName.Equals(cbCompanies.SelectedItem) &&
+                        t.tabLocationes.nvcName.Equals(cbLocations.SelectedItem) &&
                         t.tabZones.nvcName.Equals(cbZones.SelectedItem) &&
                         t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) &&
                         t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) &&
@@ -140,7 +173,7 @@ namespace Baran.Ferroalloy.Management
                     {
                         order = order;
                     }
-                    labCode.Text = zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId + "" + order;
+                    labCode.Text = companyId + "" + locationId + "" + zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId + "" + order;
                 }
                 else
                 {
@@ -173,23 +206,28 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
+                var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber;
+                var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber;
                 var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber;
                 var subZonesId = db.SubZone.GetEntityByName(t => t.nvcName == cbSubZones.SelectedItem).intNumber;
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber;
                 var eqiupNameId = db.EquipName.GetEntityByName(t => t.nvcName == cbEqiupName.SelectedItem).intNumber;
-                var equips = db.Equip.GetEntity(t =>
+                var equips = db.EquipSamples.GetEntity(t =>
+                    t.intCompany == companyId && t.intLocation == locationId &&
                     t.intZone == zoneId && t.intSubZone == subZonesId && t.intCategory == categoryId &&
                     t.intEquipName == eqiupNameId);
-                tabEquips tabEquips = new tabEquips()
+                tabEquipSamples tabEquips = new tabEquipSamples()
                 {
                     bitSelect = false,
+                    intCompany = companyId,
+                    intLocation = locationId,
                     intZone = zoneId,
                     intSubZone = subZonesId,
                     intCategory = categoryId,
                     intEquipName = eqiupNameId,
                     intOrder = equips.intOrder + 1
                 };
-                db.Equip.Insert(tabEquips);
+                db.EquipSamples.Insert(tabEquips);
                 db.Save();
                 this.Close();
                 DialogResult = DialogResult.OK;

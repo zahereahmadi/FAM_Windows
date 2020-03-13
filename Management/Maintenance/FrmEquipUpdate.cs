@@ -25,7 +25,21 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var equips = db.Equip.GetEntity(t => t.intID == equipId);
+                var equips = db.EquipSamples.GetEntity(t => t.intID == equipId);
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
+                cbCompanies.SelectedItem = equips.tabCompanies.nvcName;
+
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocations.Items.Add(item.nvcName);
+                }
+                cbLocations.SelectedItem = equips.tabLocationes.nvcName;
+
                 var zones = db.Zone.GetAll();
                 foreach (var item in zones)
                 {
@@ -110,6 +124,26 @@ namespace Baran.Ferroalloy.Management
                 {
                     cbEqiupName.Enabled = true;
                     this.labName.Text = cbEqiupName.SelectedItem.ToString();
+                    var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber.ToString();
+                    if (companyId.Length == 1)
+                    {
+                        companyId = 0 + companyId;
+                    }
+                    else
+                    {
+                        companyId = companyId;
+                    }
+
+                    var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber.ToString();
+                    if (locationId.Length == 1)
+                    {
+                        locationId = 0 + locationId;
+                    }
+                    else
+                    {
+                        locationId = locationId;
+                    }
+
                     var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber.ToString();
                     if (zoneId.Length == 1)
                     {
@@ -150,7 +184,7 @@ namespace Baran.Ferroalloy.Management
                         eqiupNameId = eqiupNameId;
                     }
 
-                    var order = db.Equip.GetEntity(t => t.intID == equipId).intOrder.ToString();
+                    var order = db.EquipSamples.GetEntity(t => t.intID == equipId).intOrder.ToString();
                     if (order.Length == 1)
                     {
                         order = 0 + order;
@@ -159,7 +193,7 @@ namespace Baran.Ferroalloy.Management
                     {
                         order = order;
                     }
-                    labCode.Text = zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId + "" + order;
+                    labCode.Text = companyId + "" + locationId + "" + zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId + "" + order;
                 }
 
             }
@@ -171,18 +205,22 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
+                var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber;
+                var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber;
                 var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber;
                 var subZonesId = db.SubZone.GetEntityByName(t => t.nvcName == cbSubZones.SelectedItem).intNumber;
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber;
                 var eqiupNameId = db.EquipName.GetEntityByName(t => t.nvcName == cbEqiupName.SelectedItem).intNumber;
-                var equips = db.Equip.GetEntity(t => t.intID == equipId);
+                var equips = db.EquipSamples.GetEntity(t => t.intID == equipId);
                 equips.intID = equipId;
+                equips.intCompany = companyId;
+                equips.intLocation = locationId;
                 equips.intZone = zoneId;
                 equips.intSubZone = subZonesId;
                 equips.intCategory = categoryId;
                 equips.intEquipName = eqiupNameId;
                 equips.intOrder = equips.intOrder;
-                db.Equip.Update(equips);
+                db.EquipSamples.Update(equips);
                 db.Save();
                 this.Close();
                 DialogResult = DialogResult.OK;

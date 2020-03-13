@@ -35,7 +35,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     var categories = db.Categories.GetEntityByName(t => t.nvcName == category);
                     DataGridViewRow dgvRow = dgvNames.CurrentRow;
                     string nvcName = dgvRow.Cells["nvcName"].Value.ToString();
-                    var name = db.Name.GetEntityByName(t => t.nvcName == nvcName);
+                    var name = db.PartName.GetEntityByName(t => t.nvcName == nvcName);
                     if (name != null)
                     {
                         MessageBox.Show("نام کالا تکراری می باشد");
@@ -46,14 +46,14 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     }
                     else
                     {
-                        tabName tabName = new tabName()
+                        tabPartName tabName = new tabPartName()
                         {
                             nvcName = dgvRow.Cells["nvcName"].Value.ToString(),
-                            intNumber = db.Name.GetAll().Select(t => t.intNumber).Max() + 1,
+                            intNumber = db.PartName.GetAll().Select(t => t.intNumber).Max() + 1,
                             bitSelect = false,
                             intCategory = categories.intNumber
                         };
-                        db.Name.Insert(tabName);
+                        db.PartName.Insert(tabName);
                         db.Save();
 
                     }

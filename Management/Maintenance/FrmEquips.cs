@@ -29,6 +29,17 @@ namespace Baran.Ferroalloy.Management
             dgvEquips.AutoGenerateColumns = false;
             using (UnitOfWork db = new UnitOfWork())
             {
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
+
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocations.Items.Add(item.nvcName);
+                }
                 var zones = db.Zone.GetAll();
                 foreach (var item in zones)
                 {
@@ -120,7 +131,7 @@ namespace Baran.Ferroalloy.Management
                     eqiupNameId = eqiupNameId;
                 }
 
-                var order = db.Equip.GetAll().FirstOrDefault(t =>
+                var order = db.EquipSamples.GetAll().FirstOrDefault(t =>
                     t.tabZones.nvcName.Equals(cbZones.SelectedItem) &&
                     t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) &&
                     t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) &&
@@ -147,7 +158,9 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var equips = db.Equip.GetAll().Where(t =>
+                var equips = db.EquipSamples.GetAll().Where(t =>
+                    t.tabCompanies.nvcName.Equals(cbCompanies.SelectedItem)||
+                    t.tabLocationes.nvcName.Equals(cbLocations.SelectedItem) ||
                     t.tabZones.nvcName.Equals(cbZones.SelectedItem) ||
                     t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) ||
                     t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
@@ -162,7 +175,7 @@ namespace Baran.Ferroalloy.Management
                         equipNameTitle = item.tabEquipName.nvcName,
                         subZoneTitle = item.tabSubZones.nvcName,
                         zoneTitle = item.tabZones.nvcName,
-                        intOrder=item.intOrder
+                        intOrder = item.intOrder
                     });
                 }
 
@@ -182,8 +195,8 @@ namespace Baran.Ferroalloy.Management
                     foreach (var item in selectItems)
                     {
                         var id = int.Parse(item.Cells["intID"].Value.ToString());
-                        var equips = db.Equip.GetEntity(t => t.intID == id);
-                        db.Equip.Delete(equips);
+                        var equips = db.EquipSamples.GetEntity(t => t.intID == id);
+                        db.EquipSamples.Delete(equips);
                         db.Save();
                         //RtlMessageBox.Show("حذف با موفقیت انجام شد", "حذف کالا", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Filter();

@@ -8,11 +8,11 @@ using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Automation
 {
-    public class Parts : Generic<tabParts>, IParts
+    public class PartTypesService : Generic<tabPartTypes>, IPartTypes
 
     {
         private dbAfrzEntities _db;
-        public Parts(DbContext db) : base(db)
+        public PartTypesService(DbContext db) : base(db)
         {
             _db = (dbAfrzEntities) db;
         }
@@ -22,16 +22,16 @@ namespace Baran.Ferroalloy.Automation
             if (filter == "")
             {
 
-                return _db.tabParts.Select(t=>new dgvListStoresViewModel()
+                return _db.tabPartTypes.Select(t=>new dgvListStoresViewModel()
                 {
                     intID = t.intID,
                     intNumber =t.intStore + "" + t.intCategory + "" + t.intName + "" + t.intBranch + "" + t.intSubBranch,
-                    namePart = t.tabName.nvcName + " " + t.tabBranch.nvcName + " " + t.tabSubBranch.nvcName
+                    namePart = t.tabPartName.nvcName + " " + t.tabPartBranch.nvcName + " " + t.tabPartSubBranch.nvcName
                 }).ToList();
             }
 
             
-            var parts = _db.tabParts.ToList();
+            var parts = _db.tabPartTypes.ToList();
             List<dgvListStoresViewModel> list = new List<dgvListStoresViewModel>();
             foreach (var item in parts)
             {
@@ -40,7 +40,7 @@ namespace Baran.Ferroalloy.Automation
                 {
                     intID = item.intID,
                     intNumber = item.intStore + "" + item.intCategory + "" + item.intName + "" + item.intBranch + "" + item.intSubBranch,
-                    namePart = item.tabName.nvcName + " " + item.tabBranch.nvcName + " " + item.tabSubBranch.nvcName
+                    namePart = item.tabPartName.nvcName + " " + item.tabPartBranch.nvcName + " " + item.tabPartSubBranch.nvcName
                 });
             }
 

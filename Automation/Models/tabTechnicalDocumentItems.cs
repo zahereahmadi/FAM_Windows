@@ -12,19 +12,13 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabEquips
+    public partial class tabTechnicalDocumentItems
     {
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public int intZone { get; set; }
-        public int intSubZone { get; set; }
-        public int intCategory { get; set; }
-        public int intEquipName { get; set; }
-        public Nullable<int> intOrder { get; set; }
-    
-        public virtual tabCategories tabCategories { get; set; }
-        public virtual tabEquipName tabEquipName { get; set; }
-        public virtual tabSubZones tabSubZones { get; set; }
-        public virtual tabZones tabZones { get; set; }
+        public string nvcDocumentCode { get; set; }
+        public string nvcEquipCode { get; set; }
+        public string nvcPartCode { get; set; }
+        public Nullable<bool> bitIsMain { get; set; }
     }
 }
