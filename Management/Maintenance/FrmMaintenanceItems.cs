@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Baran.Ferroalloy.Automation;
 using Baran.Ferroalloy.Automation.Models;
 using Baran.Ferroalloy.Maintenance;
+using Baran.Ferroalloy.Management.Office;
 
 namespace Baran.Ferroalloy.Management.Maintenance
 {
@@ -50,7 +51,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 }
                 fullName = fullName.Remove(fullName.Length - 1);
 
-                txtWorker.Text = fullName;
+                //txtWorker.Text = fullName;
             }
         }
 
@@ -73,7 +74,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
         private void SetEnableBtmOk()
         {
             if (txtEquip.Text.Length != 0 && txtTimeItem.Text.Length != 0 && txtDuration.Text.Length != 0 &&
-                cbWorkGroup.SelectedIndex > 0 && txtWorker.Text.Length != 0 && txtTips.Text.Length != 0)
+                cbWorkGroup.SelectedIndex > 0 && txtTips.Text.Length != 0)
             {
                 btnRegister.Enabled = true;
             }
@@ -87,66 +88,75 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var coIds = "";
-                var nameWorker = txtWorker.Text.Trim().Split('-');
-                foreach (var item in nameWorker)
+                if (IsValid())
                 {
-                    coIds += db.Employees.GetEntity(t => t.nvcFirstname + " " + t.nvcLastname == item).nvcCoID + "-";
-                }
+                    var coIds = "";
+                    var nameWorker = lbWorkers.Items;
+                    foreach (var item in nameWorker)
+                    {
+                        coIds += db.Employees.GetEntity(t => t.nvcFirstname + " " + t.nvcLastname == item).nvcCoID + "-";
+                    }
 
-                coIds = coIds.Remove(coIds.Length - 1);
+                    coIds = coIds.Remove(coIds.Length - 1);
 
-                List<string> maintenanceTypesList = new List<string>()
+                    List<string> maintenanceTypesList = new List<string>()
                 {
                     MaintenanceTypes.MaintenaceTypes.تعمیر.ToString(), MaintenanceTypes.MaintenaceTypes.تعویض.ToString(),
                     MaintenanceTypes.MaintenaceTypes.گسترش.ToString()
                 };
-                var maintenanceType = 0;
-                foreach (var item in maintenanceTypesList)
-                {
-                    if (item == (string)cbWorkGroup.SelectedItem)
+                    var maintenanceType = 0;
+                    foreach (var item in maintenanceTypesList)
                     {
-                        switch (item.ToString())
+                        if (item == (string)cbWorkGroup.SelectedItem)
                         {
-                            case "تعمیر":
-                                maintenanceType = 1;
-                                break;
-                            case "تعویض":
-                                maintenanceType = 2;
-                                break;
-                            case "گسترش":
-                                maintenanceType = 3;
-                                break;
+                            switch (item.ToString())
+                            {
+                                case "تعمیر":
+                                    maintenanceType = 1;
+                                    break;
+                                case "تعویض":
+                                    maintenanceType = 2;
+                                    break;
+                                case "گسترش":
+                                    maintenanceType = 3;
+                                    break;
+                            }
                         }
-                    }
 
+                    }
+                    tabMaintenanceItems tabMaintenanceItems = new tabMaintenanceItems()
+                    {
+                        intMaintenance = maintenanceId,
+                        bitIsDueToShutDown = chbIsDueToShutDown.Checked,
+                        bitIsNeedToShutDown = chbIsNeedToShutDown.Checked,
+                        bitIsSuccessful = chbIsSuccessful.Checked,
+                        bitSelect = false,
+                        intDuration = int.Parse(txtDuration.Text),
+                        timItem = DateTime.Now.TimeOfDay,
+                        intMaintenanceType = maintenanceType,
+                        nvcEquip = txtEquip.Text,
+                        nvcTips = txtTips.Text.Trim(),
+                        nvcCoIdsWorker = coIds
+                    };
+                    db.MaintenanceItem.Insert(tabMaintenanceItems);
+                    db.Save();
+                    txtEquip.Text = "";
+                    txtTimeItem.Text = "";
+                    txtDuration.Text = "";
+                    cbWorkGroup.Items.Clear();
+                    lbWorkers.Items.Clear();
+                    txtTips.Text = "";
+                    chbIsDueToShutDown.Checked = false;
+                    chbIsNeedToShutDown.Checked = false;
+                    chbIsSuccessful.Checked = false;
+                    ListRefresh();
                 }
-                tabMaintenanceItems tabMaintenanceItems = new tabMaintenanceItems()
+                else
                 {
-                    intMaintenance = maintenanceId,
-                    bitIsDueToShutDown = chbIsDueToShutDown.Checked,
-                    bitIsNeedToShutDown = chbIsNeedToShutDown.Checked,
-                    bitIsSuccessful = chbIsSuccessful.Checked,
-                    bitSelect = false,
-                    intDuration = int.Parse(txtDuration.Text),
-                    timItem = DateTime.Now.TimeOfDay,
-                    intMaintenanceType = maintenanceType,
-                    nvcEquip = txtEquip.Text,
-                    nvcTips = txtTips.Text.Trim(),
-                    nvcCoIdsWorker = coIds
-                };
-                db.MaintenanceItem.Insert(tabMaintenanceItems);
-                db.Save();
-                txtEquip.Text = "";
-                txtTimeItem.Text = "";
-                txtDuration.Text = "";
-                cbWorkGroup.Items.Clear();
-                txtWorker.Text = "";
-                txtTips.Text = "";
-                chbIsDueToShutDown.Checked = false;
-                chbIsNeedToShutDown.Checked = false;
-                chbIsSuccessful.Checked = false;
-                ListRefresh();
+                    RtlMessageBox.Show("لطفا فیلدهای مورد نظر را پرکنید", "اخطار", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                
             }
         }
 
@@ -179,7 +189,48 @@ namespace Baran.Ferroalloy.Management.Maintenance
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnSelectEquip_Click(object sender, EventArgs e)
+        {
+            FrmSelectEquip frmSelectEquip = new FrmSelectEquip();
+            frmSelectEquip.ShowDialog();
+            txtEquip.Text = frmSelectEquip.equipName;
+        }
+
+        private void BtnSelectEmployee_Click(object sender, EventArgs e)
+        {
+            FrmSelectEmployee frmSelectEmployee=new FrmSelectEmployee();
+            frmSelectEmployee.ShowDialog();
+            lbWorkers.Items.Add(frmSelectEmployee.fullName);
+
+        }
+
+        private void BtmDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            if (lbWorkers.SelectedItem != null)
+            {
+                this.lbWorkers.Items.RemoveAt(this.lbWorkers.SelectedIndex);
+            }
+            else
+            {
+                RtlMessageBox.Show("لطفا تعمیرکار مورد نظر را انتخاب کنید", "اخطار", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsValid()
+        {
+            if (txtEquip.Text != "" && cbWorkGroup.SelectedIndex > 1 && txtTimeItem.Text != "" &&
+                txtDuration.Text != "" && lbWorkers.Items != null && txtTips.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void BtmMaintenanceParts_Click(object sender, EventArgs e)
         {
             FrmMaintenanceParts frmMaintenanceParts = new FrmMaintenanceParts();
             if (dgvMaintenanceItems.CurrentRow != null)
@@ -189,13 +240,5 @@ namespace Baran.Ferroalloy.Management.Maintenance
 
             frmMaintenanceParts.Show();
         }
-
-        private void BtnSelectEquip_Click(object sender, EventArgs e)
-        {
-            FrmSelectEquip frmSelectEquip = new FrmSelectEquip();
-            frmSelectEquip.ShowDialog();
-            txtEquip.Text = frmSelectEquip.equipName;
-        }
-
     }
 }

@@ -9,22 +9,22 @@ using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Automation
 {
-    public class Name : Generic<tabName>, IName
+    public class PartNameService : Generic<tabPartName>, IPartName
     {
-        public Name(DbContext db) : base(db)
+        public PartNameService(DbContext db) : base(db)
         {
         }
 
-        public List<tabName> ListNames(int categoryId, string filter = "")
+        public List<tabPartName> ListNames(int categoryId, string filter = "")
         {
             using (UnitOfWork db = new UnitOfWork())
             {
                 if (filter == "")
                 {
-                    return db.Name.GetAll().Where(t => t.intCategory == categoryId).ToList();
+                    return db.PartName.GetAll().Where(t => t.intCategory == categoryId).ToList();
                 }
 
-                return db.Name.GetAll().Where(t => t.nvcName.Contains(filter) && t.intCategory == categoryId).ToList();
+                return db.PartName.GetAll().Where(t => t.nvcName.Contains(filter) && t.intCategory == categoryId).ToList();
             }
         }
     }

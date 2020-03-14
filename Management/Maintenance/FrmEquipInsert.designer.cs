@@ -30,143 +30,86 @@ namespace Baran.Ferroalloy.Management
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbZones = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbSubZones = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbEqiupName = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbCategories = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btmCancel = new System.Windows.Forms.Button();
-            this.btmOK = new System.Windows.Forms.Button();
-            this.labCode = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.labName = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.labCode = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btmCancel = new System.Windows.Forms.Button();
+            this.btmOK = new System.Windows.Forms.Button();
             this.btn_EquipNameEdit = new System.Windows.Forms.Button();
+            this.cbEqiupName = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btn_CategoryEdit = new System.Windows.Forms.Button();
+            this.cbCategories = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_SubZonesEdit = new System.Windows.Forms.Button();
+            this.cbSubZones = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_ZonesEdit = new System.Windows.Forms.Button();
+            this.cbZones = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_CompanyEdit = new System.Windows.Forms.Button();
+            this.cbCompanies = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_LocationEdit = new System.Windows.Forms.Button();
+            this.cbLocations = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cbZones
+            // labName
             // 
-            this.cbZones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbZones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbZones.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.cbZones.FormattingEnabled = true;
-            this.cbZones.Location = new System.Drawing.Point(94, 44);
-            this.cbZones.Margin = new System.Windows.Forms.Padding(4);
-            this.cbZones.Name = "cbZones";
-            this.cbZones.Size = new System.Drawing.Size(120, 28);
-            this.cbZones.TabIndex = 42;
-            this.cbZones.SelectedIndexChanged += new System.EventHandler(this.CbZones_SelectedIndexChanged);
+            this.labName.Location = new System.Drawing.Point(404, 220);
+            this.labName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labName.Name = "labName";
+            this.labName.Size = new System.Drawing.Size(239, 23);
+            this.labName.TabIndex = 76;
             // 
-            // label2
+            // label7
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.label2.Location = new System.Drawing.Point(45, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 21);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "بخش:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(371, 220);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 20);
+            this.label7.TabIndex = 75;
+            this.label7.Text = "نام:";
             // 
-            // cbSubZones
+            // labCode
             // 
-            this.cbSubZones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSubZones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSubZones.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.cbSubZones.FormattingEnabled = true;
-            this.cbSubZones.Location = new System.Drawing.Point(365, 46);
-            this.cbSubZones.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSubZones.Name = "cbSubZones";
-            this.cbSubZones.Size = new System.Drawing.Size(120, 28);
-            this.cbSubZones.TabIndex = 45;
+            this.labCode.Location = new System.Drawing.Point(404, 178);
+            this.labCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labCode.Name = "labCode";
+            this.labCode.Size = new System.Drawing.Size(239, 23);
+            this.labCode.TabIndex = 74;
             // 
-            // label1
+            // label8
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.label1.Location = new System.Drawing.Point(299, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "زیربخش:";
-            // 
-            // cbEqiupName
-            // 
-            this.cbEqiupName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbEqiupName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEqiupName.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.cbEqiupName.FormattingEnabled = true;
-            this.cbEqiupName.Location = new System.Drawing.Point(365, 118);
-            this.cbEqiupName.Margin = new System.Windows.Forms.Padding(4);
-            this.cbEqiupName.Name = "cbEqiupName";
-            this.cbEqiupName.Size = new System.Drawing.Size(120, 28);
-            this.cbEqiupName.TabIndex = 51;
-            this.cbEqiupName.SelectedIndexChanged += new System.EventHandler(this.CbEqiupName_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.label3.Location = new System.Drawing.Point(328, 121);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 21);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "نام:";
-            // 
-            // cbCategories
-            // 
-            this.cbCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategories.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.cbCategories.FormattingEnabled = true;
-            this.cbCategories.Location = new System.Drawing.Point(94, 116);
-            this.cbCategories.Margin = new System.Windows.Forms.Padding(4);
-            this.cbCategories.Name = "cbCategories";
-            this.cbCategories.Size = new System.Drawing.Size(120, 28);
-            this.cbCategories.TabIndex = 48;
-            this.cbCategories.SelectedIndexChanged += new System.EventHandler(this.CbCategories_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.label4.Location = new System.Drawing.Point(44, 118);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 21);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "رسته:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(372, 178);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 20);
+            this.label8.TabIndex = 73;
+            this.label8.Text = "کد:";
             // 
             // btmCancel
             // 
             this.btmCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmCancel.Font = new System.Drawing.Font("B Yekan", 11F);
-            this.btmCancel.Location = new System.Drawing.Point(314, 267);
+            this.btmCancel.Location = new System.Drawing.Point(484, 271);
             this.btmCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btmCancel.Name = "btmCancel";
             this.btmCancel.Size = new System.Drawing.Size(125, 35);
-            this.btmCancel.TabIndex = 54;
+            this.btmCancel.TabIndex = 72;
             this.btmCancel.Text = "رد";
             this.btmCancel.UseVisualStyleBackColor = true;
             this.btmCancel.Click += new System.EventHandler(this.BtmCancel_Click);
@@ -177,58 +120,14 @@ namespace Baran.Ferroalloy.Management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmOK.Enabled = false;
             this.btmOK.Font = new System.Drawing.Font("B Yekan", 11F);
-            this.btmOK.Location = new System.Drawing.Point(154, 267);
+            this.btmOK.Location = new System.Drawing.Point(324, 271);
             this.btmOK.Margin = new System.Windows.Forms.Padding(4);
             this.btmOK.Name = "btmOK";
             this.btmOK.Size = new System.Drawing.Size(125, 35);
-            this.btmOK.TabIndex = 53;
+            this.btmOK.TabIndex = 71;
             this.btmOK.Text = "تایید";
             this.btmOK.UseVisualStyleBackColor = true;
             this.btmOK.Click += new System.EventHandler(this.BtmOK_Click);
-            // 
-            // labCode
-            // 
-            this.labCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labCode.Location = new System.Drawing.Point(234, 174);
-            this.labCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labCode.Name = "labCode";
-            this.labCode.Size = new System.Drawing.Size(239, 23);
-            this.labCode.TabIndex = 56;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(202, 174);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 20);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "کد:";
-            // 
-            // labName
-            // 
-            this.labName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labName.Location = new System.Drawing.Point(234, 216);
-            this.labName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labName.Name = "labName";
-            this.labName.Size = new System.Drawing.Size(239, 23);
-            this.labName.TabIndex = 58;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(201, 216);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 20);
-            this.label7.TabIndex = 57;
-            this.label7.Text = "نام:";
             // 
             // btn_EquipNameEdit
             // 
@@ -242,14 +141,41 @@ namespace Baran.Ferroalloy.Management
             this.btn_EquipNameEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_EquipNameEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EquipNameEdit.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.btn_EquipNameEdit.Location = new System.Drawing.Point(486, 115);
+            this.btn_EquipNameEdit.Location = new System.Drawing.Point(926, 116);
             this.btn_EquipNameEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EquipNameEdit.Name = "btn_EquipNameEdit";
             this.btn_EquipNameEdit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
             this.btn_EquipNameEdit.Size = new System.Drawing.Size(30, 30);
-            this.btn_EquipNameEdit.TabIndex = 52;
+            this.btn_EquipNameEdit.TabIndex = 70;
             this.btn_EquipNameEdit.UseVisualStyleBackColor = false;
             this.btn_EquipNameEdit.Click += new System.EventHandler(this.Btn_EquipNameEdit_Click);
+            // 
+            // cbEqiupName
+            // 
+            this.cbEqiupName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEqiupName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEqiupName.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.cbEqiupName.FormattingEnabled = true;
+            this.cbEqiupName.Location = new System.Drawing.Point(805, 119);
+            this.cbEqiupName.Margin = new System.Windows.Forms.Padding(4);
+            this.cbEqiupName.Name = "cbEqiupName";
+            this.cbEqiupName.Size = new System.Drawing.Size(120, 28);
+            this.cbEqiupName.TabIndex = 69;
+            this.cbEqiupName.SelectedIndexChanged += new System.EventHandler(this.CbEqiupName_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label3.Location = new System.Drawing.Point(768, 122);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 21);
+            this.label3.TabIndex = 68;
+            this.label3.Text = "نام:";
             // 
             // btn_CategoryEdit
             // 
@@ -263,14 +189,41 @@ namespace Baran.Ferroalloy.Management
             this.btn_CategoryEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_CategoryEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CategoryEdit.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.btn_CategoryEdit.Location = new System.Drawing.Point(215, 113);
+            this.btn_CategoryEdit.Location = new System.Drawing.Point(698, 116);
             this.btn_CategoryEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CategoryEdit.Name = "btn_CategoryEdit";
             this.btn_CategoryEdit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
             this.btn_CategoryEdit.Size = new System.Drawing.Size(30, 30);
-            this.btn_CategoryEdit.TabIndex = 49;
+            this.btn_CategoryEdit.TabIndex = 67;
             this.btn_CategoryEdit.UseVisualStyleBackColor = false;
             this.btn_CategoryEdit.Click += new System.EventHandler(this.Btn_CategoryEdit_Click);
+            // 
+            // cbCategories
+            // 
+            this.cbCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategories.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.cbCategories.FormattingEnabled = true;
+            this.cbCategories.Location = new System.Drawing.Point(577, 119);
+            this.cbCategories.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCategories.Name = "cbCategories";
+            this.cbCategories.Size = new System.Drawing.Size(120, 28);
+            this.cbCategories.TabIndex = 66;
+            this.cbCategories.SelectedIndexChanged += new System.EventHandler(this.CbCategories_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label4.Location = new System.Drawing.Point(527, 121);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 21);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "رسته:";
             // 
             // btn_SubZonesEdit
             // 
@@ -284,14 +237,40 @@ namespace Baran.Ferroalloy.Management
             this.btn_SubZonesEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_SubZonesEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SubZonesEdit.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.btn_SubZonesEdit.Location = new System.Drawing.Point(486, 43);
+            this.btn_SubZonesEdit.Location = new System.Drawing.Point(454, 116);
             this.btn_SubZonesEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SubZonesEdit.Name = "btn_SubZonesEdit";
             this.btn_SubZonesEdit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
             this.btn_SubZonesEdit.Size = new System.Drawing.Size(30, 30);
-            this.btn_SubZonesEdit.TabIndex = 46;
+            this.btn_SubZonesEdit.TabIndex = 64;
             this.btn_SubZonesEdit.UseVisualStyleBackColor = false;
             this.btn_SubZonesEdit.Click += new System.EventHandler(this.Btn_SubZonesEdit_Click);
+            // 
+            // cbSubZones
+            // 
+            this.cbSubZones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSubZones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubZones.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.cbSubZones.FormattingEnabled = true;
+            this.cbSubZones.Location = new System.Drawing.Point(333, 119);
+            this.cbSubZones.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSubZones.Name = "cbSubZones";
+            this.cbSubZones.Size = new System.Drawing.Size(120, 28);
+            this.cbSubZones.TabIndex = 63;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label1.Location = new System.Drawing.Point(267, 121);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "زیربخش:";
             // 
             // btn_ZonesEdit
             // 
@@ -305,21 +284,146 @@ namespace Baran.Ferroalloy.Management
             this.btn_ZonesEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_ZonesEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ZonesEdit.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.btn_ZonesEdit.Location = new System.Drawing.Point(215, 41);
+            this.btn_ZonesEdit.Location = new System.Drawing.Point(205, 115);
             this.btn_ZonesEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ZonesEdit.Name = "btn_ZonesEdit";
             this.btn_ZonesEdit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
             this.btn_ZonesEdit.Size = new System.Drawing.Size(30, 30);
-            this.btn_ZonesEdit.TabIndex = 43;
+            this.btn_ZonesEdit.TabIndex = 61;
             this.btn_ZonesEdit.UseVisualStyleBackColor = false;
             this.btn_ZonesEdit.Click += new System.EventHandler(this.Btn_ZonesEdit_Click);
+            // 
+            // cbZones
+            // 
+            this.cbZones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbZones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbZones.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.cbZones.FormattingEnabled = true;
+            this.cbZones.Location = new System.Drawing.Point(84, 118);
+            this.cbZones.Margin = new System.Windows.Forms.Padding(4);
+            this.cbZones.Name = "cbZones";
+            this.cbZones.Size = new System.Drawing.Size(120, 28);
+            this.cbZones.TabIndex = 60;
+            this.cbZones.SelectedIndexChanged += new System.EventHandler(this.CbZones_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label2.Location = new System.Drawing.Point(35, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 21);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "بخش:";
+            // 
+            // btn_CompanyEdit
+            // 
+            this.btn_CompanyEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CompanyEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CompanyEdit.BackgroundImage = global::Baran.Ferroalloy.Management.Properties.Resources._3_1;
+            this.btn_CompanyEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_CompanyEdit.FlatAppearance.BorderSize = 0;
+            this.btn_CompanyEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_CompanyEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_CompanyEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CompanyEdit.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.btn_CompanyEdit.Location = new System.Drawing.Point(392, 41);
+            this.btn_CompanyEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_CompanyEdit.Name = "btn_CompanyEdit";
+            this.btn_CompanyEdit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
+            this.btn_CompanyEdit.Size = new System.Drawing.Size(30, 30);
+            this.btn_CompanyEdit.TabIndex = 79;
+            this.btn_CompanyEdit.UseVisualStyleBackColor = false;
+            // 
+            // cbCompanies
+            // 
+            this.cbCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCompanies.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.cbCompanies.FormattingEnabled = true;
+            this.cbCompanies.Location = new System.Drawing.Point(271, 44);
+            this.cbCompanies.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCompanies.Name = "cbCompanies";
+            this.cbCompanies.Size = new System.Drawing.Size(120, 28);
+            this.cbCompanies.TabIndex = 78;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label5.Location = new System.Drawing.Point(222, 47);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 21);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "شرکت:";
+            // 
+            // btn_LocationEdit
+            // 
+            this.btn_LocationEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_LocationEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_LocationEdit.BackgroundImage = global::Baran.Ferroalloy.Management.Properties.Resources._3_1;
+            this.btn_LocationEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_LocationEdit.FlatAppearance.BorderSize = 0;
+            this.btn_LocationEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_LocationEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_LocationEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LocationEdit.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.btn_LocationEdit.Location = new System.Drawing.Point(761, 41);
+            this.btn_LocationEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_LocationEdit.Name = "btn_LocationEdit";
+            this.btn_LocationEdit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 14);
+            this.btn_LocationEdit.Size = new System.Drawing.Size(30, 30);
+            this.btn_LocationEdit.TabIndex = 82;
+            this.btn_LocationEdit.UseVisualStyleBackColor = false;
+            // 
+            // cbLocations
+            // 
+            this.cbLocations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLocations.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLocations.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.cbLocations.FormattingEnabled = true;
+            this.cbLocations.Location = new System.Drawing.Point(640, 44);
+            this.cbLocations.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLocations.Name = "cbLocations";
+            this.cbLocations.Size = new System.Drawing.Size(120, 28);
+            this.cbLocations.TabIndex = 81;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label6.Location = new System.Drawing.Point(595, 47);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 21);
+            this.label6.TabIndex = 80;
+            this.label6.Text = "محل:";
             // 
             // FrmEquipInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(590, 350);
+            this.ClientSize = new System.Drawing.Size(1008, 350);
+            this.Controls.Add(this.btn_LocationEdit);
+            this.Controls.Add(this.cbLocations);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btn_CompanyEdit);
+            this.Controls.Add(this.cbCompanies);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.labName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labCode);
@@ -355,24 +459,30 @@ namespace Baran.Ferroalloy.Management
 
         #endregion
 
-        private Button btn_ZonesEdit;
-        private ComboBox cbZones;
-        private Label label2;
-        private Button btn_SubZonesEdit;
-        private ComboBox cbSubZones;
-        private Label label1;
+        private Label labName;
+        private Label label7;
+        private Label labCode;
+        private Label label8;
+        private Button btmCancel;
+        private Button btmOK;
         private Button btn_EquipNameEdit;
         private ComboBox cbEqiupName;
         private Label label3;
         private Button btn_CategoryEdit;
         private ComboBox cbCategories;
         private Label label4;
-        private Button btmCancel;
-        private Button btmOK;
-        private Label labCode;
-        private Label label8;
-        private Label labName;
-        private Label label7;
+        private Button btn_SubZonesEdit;
+        private ComboBox cbSubZones;
+        private Label label1;
+        private Button btn_ZonesEdit;
+        private ComboBox cbZones;
+        private Label label2;
+        private Button btn_CompanyEdit;
+        private ComboBox cbCompanies;
+        private Label label5;
+        private Button btn_LocationEdit;
+        private ComboBox cbLocations;
+        private Label label6;
     }
 }
 

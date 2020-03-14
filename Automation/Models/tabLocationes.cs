@@ -12,25 +12,20 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabMeasurementUnits
+    public partial class tabLocationes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tabMeasurementUnits()
+        public tabLocationes()
         {
-            this.tabProperties = new HashSet<tabProperties>();
-            this.tabPartTypes = new HashSet<tabPartTypes>();
+            this.tabEquipSamples = new HashSet<tabEquipSamples>();
         }
     
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public int intCategory { get; set; }
         public string nvcName { get; set; }
         public int intNumber { get; set; }
     
-        public virtual tabCategories tabCategories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabProperties> tabProperties { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabPartTypes> tabPartTypes { get; set; }
+        public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
             using (UnitOfWork db = new UnitOfWork())
             {
                 var categories = db.Categories.GetEntity(t => t.nvcName == categoryName);
-                this.dgvListName.DataSource = db.Name.ListNames(categories.intNumber);
+                this.dgvListName.DataSource = db.PartName.ListNames(categories.intNumber);
             }
         }
 
@@ -42,7 +42,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
             using (UnitOfWork db = new UnitOfWork())
             {
                 var categories = db.Categories.GetEntity(t => t.nvcName == categoryName);
-                this.dgvListName.DataSource = db.Name.ListNames(categories.intNumber,txtSearchName.Text);
+                this.dgvListName.DataSource = db.PartName.ListNames(categories.intNumber,txtSearchName.Text);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     var categories = db.Categories.GetEntity(t => t.nvcName == categoryName);
-                    var nameEntity = db.Name.GetEntity(t => t.nvcName == name);
+                    var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
                     if (nameEntity != null)
                     {
                         RtlMessageBox.Show("این نام کالا قبلا ثبت شده است", "خطا", MessageBoxButtons.OK,
@@ -66,15 +66,15 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     }
                     else
                     {
-                        var maxNumber = db.Name.GetAll().Max(t => t.intNumber);
-                        tabName tabName = new tabName()
+                        var maxNumber = db.PartName.GetAll().Max(t => t.intNumber);
+                        tabPartName tabName = new tabPartName()
                         {
                             bitSelect = false,
                             intNumber = maxNumber + 1,
                             nvcName = name,
                             intCategory = categories.intNumber
                         };
-                        db.Name.Insert(tabName);
+                        db.PartName.Insert(tabName);
                         db.Save();
                         RtlMessageBox.Show("ثبت با موفقیت انجام شد", "ثبت", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -102,7 +102,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     if (dgvListName.CurrentRow != null)
                     {
                         int nameId = int.Parse(dgvListName.CurrentRow.Cells[0].Value.ToString());
-                        var nameEntity = db.Name.GetEntity(t => t.intID == nameId);
+                        var nameEntity = db.PartName.GetEntity(t => t.intID == nameId);
                         if (nameEntity != null)
                         {
                             nameEntity.intID = nameId;
@@ -111,7 +111,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                             nameEntity.nvcName = name;
                             nameEntity.intCategory = categories.intNumber;
 
-                            db.Name.Update(nameEntity);
+                            db.PartName.Update(nameEntity);
                             db.Save();
                             RtlMessageBox.Show("ویرایش با موفقیت انجام شد", "ثبت", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -151,8 +151,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 {
                     using (UnitOfWork db = new UnitOfWork())
                     {
-                        var nameEntity = db.Name.GetEntity(t => t.intID == nameId);
-                        db.Name.Delete(nameEntity);
+                        var nameEntity = db.PartName.GetEntity(t => t.intID == nameId);
+                        db.PartName.Delete(nameEntity);
                         db.Save();
                         ListRefresh();
                         txtEditName.Text = "";

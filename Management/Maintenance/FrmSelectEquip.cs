@@ -128,7 +128,7 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var equips = db.Equip.GetAll().Where(t =>
+                var equips = db.EquipSamples.GetAll().Where(t =>
                     t.tabZones.nvcName.Equals(cbZones.SelectedItem) ||
                     t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) ||
                     t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
@@ -167,7 +167,7 @@ namespace Baran.Ferroalloy.Management
                 equipId = Convert.ToInt32(dgvEquips.CurrentRow.Cells["intID"].Value.ToString());
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    var equips = db.Equip.GetEntity(t => t.intID == equipId);
+                    var equips = db.EquipSamples.GetEntity(t => t.intID == equipId);
                     equipName = equips.tabEquipName.nvcName;
                     this.Close();
                 }

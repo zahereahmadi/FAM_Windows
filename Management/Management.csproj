@@ -297,6 +297,12 @@
     <Compile Include="Office\EmployeesSelectColumns.Designer.cs">
       <DependentUpon>EmployeesSelectColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Office\FrmSelectEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Office\FrmSelectEmployee.Designer.cs">
+      <DependentUpon>FrmSelectEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Office\OfficePrefrences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -686,6 +692,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Office\EmployeesSelectColumns.resx">
       <DependentUpon>EmployeesSelectColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Office\FrmSelectEmployee.resx">
+      <DependentUpon>FrmSelectEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Office\OfficePrefrences.resx">
       <DependentUpon>OfficePrefrences.cs</DependentUpon>

@@ -32,8 +32,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var branch = db.Branch.GetEntity(t => t.nvcName == branchName);
-                this.dgvListSubBranch.DataSource = db.SubBranch.ListSubBranches(branch.intNumber);
+                var branch = db.PartBranch.GetEntity(t => t.nvcName == branchName);
+                this.dgvListSubBranch.DataSource = db.PartSubBranch.ListSubBranches(branch.intNumber);
             }
         }
 
@@ -41,8 +41,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var branch = db.Branch.GetEntity(t => t.nvcName == branchName);
-                this.dgvListSubBranch.DataSource = db.SubBranch.ListSubBranches(branch.intNumber, txtSearchSubBranch.Text);
+                var branch = db.PartBranch.GetEntity(t => t.nvcName == branchName);
+                this.dgvListSubBranch.DataSource = db.PartSubBranch.ListSubBranches(branch.intNumber, txtSearchSubBranch.Text);
             }
         }
 
@@ -57,8 +57,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 string subBranchName = txtRegisterSubBranch.Text;
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    var branch = db.Branch.GetEntity(t => t.nvcName == branchName);
-                    var subBranch = db.SubBranch.GetEntity(t => t.nvcName == subBranchName);
+                    var branch = db.PartBranch.GetEntity(t => t.nvcName == branchName);
+                    var subBranch = db.PartSubBranch.GetEntity(t => t.nvcName == subBranchName);
                     if (subBranch != null)
                     {
                         RtlMessageBox.Show("این نام کالا قبلا ثبت شده است", "خطا", MessageBoxButtons.OK,
@@ -66,15 +66,15 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     }
                     else
                     {
-                        var maxNumber = db.SubBranch.GetAll().Max(t => t.intNumber);
-                        tabSubBranch tabSubBranch = new tabSubBranch()
+                        var maxNumber = db.PartSubBranch.GetAll().Max(t => t.intNumber);
+                        tabPartSubBranch tabSubBranch = new tabPartSubBranch()
                         {
                             bitSelect = false,
                             intNumber = maxNumber + 1,
                             nvcName = subBranchName,
                             intBranch = branch.intNumber
                         };
-                        db.SubBranch.Insert(tabSubBranch);
+                        db.PartSubBranch.Insert(tabSubBranch);
                         db.Save();
                         RtlMessageBox.Show("ثبت با موفقیت انجام شد", "ثبت", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -97,12 +97,12 @@ namespace Baran.Ferroalloy.Management.Maintenance
             {
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    var branch = db.Branch.GetEntity(t => t.nvcName == branchName);
+                    var branch = db.PartBranch.GetEntity(t => t.nvcName == branchName);
                     string subBranchName = txtEditSubBranch.Text;
                     if (dgvListSubBranch.CurrentRow != null)
                     {
                         int subBranchId = int.Parse(dgvListSubBranch.CurrentRow.Cells[0].Value.ToString());
-                        var subBranch = db.SubBranch.GetEntity(t => t.intID == subBranchId);
+                        var subBranch = db.PartSubBranch.GetEntity(t => t.intID == subBranchId);
                         if (subBranch != null)
                         {
                             subBranch.intID = subBranchId;
@@ -111,7 +111,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                             subBranch.nvcName = subBranchName;
                             subBranch.intBranch = branch.intNumber;
 
-                            db.SubBranch.Update(subBranch);
+                            db.PartSubBranch.Update(subBranch);
                             db.Save();
                             RtlMessageBox.Show("ویرایش با موفقیت انجام شد", "ثبت", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -151,8 +151,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 {
                     using (UnitOfWork db = new UnitOfWork())
                     {
-                        var subBranch = db.SubBranch.GetEntity(t => t.intID == subBranchId);
-                        db.SubBranch.Delete(subBranch);
+                        var subBranch = db.PartSubBranch.GetEntity(t => t.intID == subBranchId);
+                        db.PartSubBranch.Delete(subBranch);
                         db.Save();
                         ListRefresh();
                         txtRegisterSubBranch.Text = "";

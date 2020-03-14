@@ -44,9 +44,9 @@ namespace Baran.Ferroalloy.Automation
                     var nameId = Convert.ToInt32(part[2]);
                     var branchId = Convert.ToInt32(part[3]);
                     var subBranchId = Convert.ToInt32(part[4]);
-                    name = db.Name.GetEntity(t => t.intNumber == nameId).nvcName;
-                    branch = db.Branch.GetEntity(t => t.intNumber == branchId).nvcName;
-                    subBranch = db.SubBranch.GetEntity(t => t.intNumber == subBranchId).nvcName;
+                    name = db.PartName.GetEntity(t => t.intNumber == nameId).nvcName;
+                    branch = db.PartBranch.GetEntity(t => t.intNumber == branchId).nvcName;
+                    subBranch = db.PartSubBranch.GetEntity(t => t.intNumber == subBranchId).nvcName;
                 }
                 if (filter == "")
                 {

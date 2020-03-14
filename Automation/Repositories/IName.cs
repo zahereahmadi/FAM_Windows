@@ -7,7 +7,8 @@ using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Automation
 {
-    public interface IEmployees:IGeneric<tabEmployees>
+    public interface IPartName : IGeneric<tabPartName>
     {
+        List<tabPartName> ListNames(int categoryId,string filter = "");
     }
 }

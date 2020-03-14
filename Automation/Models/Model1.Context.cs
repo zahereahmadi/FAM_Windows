@@ -29,7 +29,6 @@ namespace Baran.Ferroalloy.Automation.Models
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tabBanks> tabBanks { get; set; }
-        public virtual DbSet<tabBranch> tabBranch { get; set; }
         public virtual DbSet<tabCategories> tabCategories { get; set; }
         public virtual DbSet<tabCoInformation> tabCoInformation { get; set; }
         public virtual DbSet<tabCurrentAffairs> tabCurrentAffairs { get; set; }
@@ -37,7 +36,6 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabEmployees> tabEmployees { get; set; }
         public virtual DbSet<tabEmployeesBankInfo> tabEmployeesBankInfo { get; set; }
         public virtual DbSet<tabEquipName> tabEquipName { get; set; }
-        public virtual DbSet<tabEquips> tabEquips { get; set; }
         public virtual DbSet<tabFamSettings> tabFamSettings { get; set; }
         public virtual DbSet<tabInvoiceItems> tabInvoiceItems { get; set; }
         public virtual DbSet<tabInvoices> tabInvoices { get; set; }
@@ -47,9 +45,6 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabMaintenanceParts> tabMaintenanceParts { get; set; }
         public virtual DbSet<tabMaintenances> tabMaintenances { get; set; }
         public virtual DbSet<tabMeasurementUnits> tabMeasurementUnits { get; set; }
-        public virtual DbSet<tabName> tabName { get; set; }
-        public virtual DbSet<tabParts> tabParts { get; set; }
-        public virtual DbSet<tabPosts> tabPosts { get; set; }
         public virtual DbSet<tabProductionMeltLoadings> tabProductionMeltLoadings { get; set; }
         public virtual DbSet<tabProjects> tabProjects { get; set; }
         public virtual DbSet<tabProperties> tabProperties { get; set; }
@@ -60,23 +55,29 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabShiftType> tabShiftType { get; set; }
         public virtual DbSet<tabStoreGetOutItems> tabStoreGetOutItems { get; set; }
         public virtual DbSet<tabStoreGetOuts> tabStoreGetOuts { get; set; }
-        public virtual DbSet<tabStores> tabStores { get; set; }
         public virtual DbSet<tabStuffMaterials> tabStuffMaterials { get; set; }
         public virtual DbSet<tabStuffProperties> tabStuffProperties { get; set; }
         public virtual DbSet<tabStuffSections> tabStuffSections { get; set; }
         public virtual DbSet<tabStuffTypes> tabStuffTypes { get; set; }
-        public virtual DbSet<tabSubBranch> tabSubBranch { get; set; }
         public virtual DbSet<tabSubDepartments> tabSubDepartments { get; set; }
         public virtual DbSet<tabSubdepartmentSubsets> tabSubdepartmentSubsets { get; set; }
         public virtual DbSet<tabSubprojects> tabSubprojects { get; set; }
         public virtual DbSet<tabSubZones> tabSubZones { get; set; }
         public virtual DbSet<tabTagParts> tabTagParts { get; set; }
-        public virtual DbSet<tabTechnicalDocuments> tabTechnicalDocuments { get; set; }
-        public virtual DbSet<tabTechnicalDocumentTags> tabTechnicalDocumentTags { get; set; }
-        public virtual DbSet<tabUsers> tabUsers { get; set; }
         public virtual DbSet<tabVendors> tabVendors { get; set; }
         public virtual DbSet<tabZones> tabZones { get; set; }
         public virtual DbSet<VieEmployeesInfo> VieEmployeesInfo { get; set; }
+        public virtual DbSet<tabPartTypes> tabPartTypes { get; set; }
+        public virtual DbSet<tabTechnicalDocumentItems> tabTechnicalDocumentItems { get; set; }
+        public virtual DbSet<tabUsers> tabUsers { get; set; }
+        public virtual DbSet<tabStores> tabStores { get; set; }
+        public virtual DbSet<tabPosts> tabPosts { get; set; }
+        public virtual DbSet<tabEquipSamples> tabEquipSamples { get; set; }
+        public virtual DbSet<tabPartName> tabPartName { get; set; }
+        public virtual DbSet<tabPartBranch> tabPartBranch { get; set; }
+        public virtual DbSet<tabPartSubBranch> tabPartSubBranch { get; set; }
+        public virtual DbSet<tabCompanies> tabCompanies { get; set; }
+        public virtual DbSet<tabLocationes> tabLocationes { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

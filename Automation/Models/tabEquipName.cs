@@ -17,7 +17,7 @@ namespace Baran.Ferroalloy.Automation.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tabEquipName()
         {
-            this.tabEquips = new HashSet<tabEquips>();
+            this.tabEquipSamples = new HashSet<tabEquipSamples>();
         }
     
         public int intID { get; set; }
@@ -28,6 +28,6 @@ namespace Baran.Ferroalloy.Automation.Models
     
         public virtual tabCategories tabCategories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabEquips> tabEquips { get; set; }
+        public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
     }
 }

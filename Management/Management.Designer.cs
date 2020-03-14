@@ -64,6 +64,8 @@
             this.MensTechnicalDepartmentStorePurchaseRequests = new System.Windows.Forms.ToolStripMenuItem();
             this.mensTechnicalDepartmentStoreGetOuts = new System.Windows.Forms.ToolStripMenuItem();
             this.menTechnicalDepartmentPrefrences = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuParts = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEquips = new System.Windows.Forms.ToolStripMenuItem();
             this.menStore = new System.Windows.Forms.ToolStripMenuItem();
             this.menStoreDepartmentVendors = new System.Windows.Forms.ToolStripMenuItem();
             this.menStoreDepartmentInvoices = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +91,6 @@
             this.timCurrentDateTime = new System.Windows.Forms.Timer(this.components);
             this.labTime = new System.Windows.Forms.Label();
             this.labDate = new System.Windows.Forms.Label();
-            this.menuParts = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuEquips = new System.Windows.Forms.ToolStripMenuItem();
             this.menMain.SuspendLayout();
             this.staMain.SuspendLayout();
             this.SuspendLayout();
@@ -256,9 +256,9 @@
             this.نگهداریPMToolStripMenuItem,
             this.menTechnicalDepartmentProjects,
             this.انبارToolStripMenuItem2,
-            this.menTechnicalDepartmentPrefrences,
             this.menuParts,
-            this.menuEquips});
+            this.menuEquips,
+            this.menTechnicalDepartmentPrefrences});
             this.menTechnical.Enabled = false;
             this.menTechnical.Name = "menTechnical";
             this.menTechnical.Size = new System.Drawing.Size(42, 24);
@@ -402,6 +402,20 @@
             this.menTechnicalDepartmentPrefrences.Size = new System.Drawing.Size(224, 26);
             this.menTechnicalDepartmentPrefrences.Text = "تنظیمات";
             this.menTechnicalDepartmentPrefrences.Click += new System.EventHandler(this.MenTechnicalDepartmentPrefrences_Click);
+            // 
+            // menuParts
+            // 
+            this.menuParts.Name = "menuParts";
+            this.menuParts.Size = new System.Drawing.Size(224, 26);
+            this.menuParts.Text = "کالا";
+            this.menuParts.Click += new System.EventHandler(this.MenuParts_Click);
+            // 
+            // menuEquips
+            // 
+            this.menuEquips.Name = "menuEquips";
+            this.menuEquips.Size = new System.Drawing.Size(224, 26);
+            this.menuEquips.Text = "تجهیز";
+            this.menuEquips.Click += new System.EventHandler(this.MenuEquips_Click);
             // 
             // menStore
             // 
@@ -636,20 +650,6 @@
             this.labDate.Size = new System.Drawing.Size(0, 20);
             this.labDate.TabIndex = 6;
             this.labDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // menuParts
-            // 
-            this.menuParts.Name = "menuParts";
-            this.menuParts.Size = new System.Drawing.Size(224, 26);
-            this.menuParts.Text = "کالا";
-            this.menuParts.Click += new System.EventHandler(this.MenuParts_Click);
-            // 
-            // menuEquips
-            // 
-            this.menuEquips.Name = "menuEquips";
-            this.menuEquips.Size = new System.Drawing.Size(224, 26);
-            this.menuEquips.Text = "تجهیز";
-            this.menuEquips.Click += new System.EventHandler(this.MenuEquips_Click);
             // 
             // Management
             // 

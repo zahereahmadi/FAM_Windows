@@ -142,7 +142,7 @@ namespace Baran.Ferroalloy.Management
             {
 
                 var categoryId = cbCategories.SelectedIndex;
-                var names = db.Name.Get(t => t.intCategory == categoryId);
+                var names = db.PartName.Get(t => t.intCategory == categoryId);
                 foreach (var item in names)
                 {
                     cbName.Items.Add(item.nvcName);
@@ -191,7 +191,7 @@ namespace Baran.Ferroalloy.Management
             using (UnitOfWork db = new UnitOfWork())
             {
                 var name = cbName.SelectedItem;
-                var branches = db.Branch.GetAll().Where(t => t.tabName.nvcName.Equals(name));
+                var branches = db.PartBranch.GetAll().Where(t => t.tabPartName.nvcName.Equals(name));
                 foreach (var item in branches)
                 {
                     cbBranch.Items.Add(item.nvcName);
@@ -227,7 +227,7 @@ namespace Baran.Ferroalloy.Management
             using (UnitOfWork db = new UnitOfWork())
             {
                 var name = cbBranch.SelectedItem;
-                var branches = db.SubBranch.GetAll().Where(t => t.tabBranch.nvcName.Equals(name));
+                var branches = db.PartSubBranch.GetAll().Where(t => t.tabPartBranch.nvcName.Equals(name));
                 foreach (var item in branches)
                 {
                     cbSubBranch.Items.Add(item.nvcName);
@@ -276,7 +276,7 @@ namespace Baran.Ferroalloy.Management
                 {
                     categoryId = categoryId;
                 }
-                var nameId = db.Name.GetEntityByName(t => t.nvcName == cbName.SelectedItem).intNumber.ToString();
+                var nameId = db.PartName.GetEntityByName(t => t.nvcName == cbName.SelectedItem).intNumber.ToString();
                 if (nameId.Length == 1)
                 {
                     nameId = 0 + nameId;
@@ -285,7 +285,7 @@ namespace Baran.Ferroalloy.Management
                 {
                     nameId = nameId;
                 }
-                var branchId = db.Branch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber.ToString();
+                var branchId = db.PartBranch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber.ToString();
                 if (branchId.Length == 1)
                 {
                     branchId = 0 + branchId;
@@ -294,7 +294,7 @@ namespace Baran.Ferroalloy.Management
                 {
                     branchId = branchId;
                 }
-                var subBranchId = db.SubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber.ToString();
+                var subBranchId = db.PartSubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber.ToString();
                 if (subBranchId.Length == 1)
                 {
                     subBranchId = 0 + subBranchId;
@@ -305,7 +305,7 @@ namespace Baran.Ferroalloy.Management
                 }
                 this.labCode.Text = storeId + "" + categoryId + "" + nameId + "" + branchId + "" + subBranchId;
 
-                var parts = db.Parts.GetAll().FirstOrDefault(t =>
+                var parts = db.PartTypes.GetAll().FirstOrDefault(t =>
                     t.intStore == int.Parse(storeId) && t.intCategory == int.Parse(categoryId) && t.intName == int.Parse(nameId) &&
                     t.intBranch == int.Parse(branchId) && t.intSubBranch == int.Parse(subBranchId));
                 if (parts != null)
@@ -428,12 +428,12 @@ namespace Baran.Ferroalloy.Management
             {
                 var storeId = db.Stores.GetEntityByName(t => t.nvcName == cbStores.SelectedItem).intNumber;
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber;
-                var nameId = db.Name.GetEntityByName(t => t.nvcName == cbName.SelectedItem).intNumber;
-                var branchId = db.Branch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber;
-                var subBranchId = db.SubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber;
+                var nameId = db.PartName.GetEntityByName(t => t.nvcName == cbName.SelectedItem).intNumber;
+                var branchId = db.PartBranch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber;
+                var subBranchId = db.PartSubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber;
                 var measuementUnitsId = db.MeasurementUnits.GetEntityByName(t => t.nvcName == cbMeasuementUnits.SelectedItem).intNumber;
                 var orderPoint = tbOrderPoint.Text;
-                var parts = db.Parts.GetEntity(t =>
+                var parts = db.PartTypes.GetEntity(t =>
                     t.intStore == storeId && t.intCategory == categoryId && t.intName == nameId &&
                     t.intBranch == branchId && t.intSubBranch == subBranchId);
                 if (parts != null)
@@ -442,7 +442,7 @@ namespace Baran.Ferroalloy.Management
                 }
                 else
                 {
-                    tabParts tabParts = new tabParts();
+                    tabPartTypes tabParts = new tabPartTypes();
 
                     tabParts.bitSelect = false;
                     tabParts.floOrderPoint = double.Parse(orderPoint);
@@ -460,7 +460,7 @@ namespace Baran.Ferroalloy.Management
                     }
                     listProperties = listProperties.Remove(listProperties.Length - 1);
                     tabParts.nvcProperties = listProperties;
-                    db.Parts.Insert(tabParts);
+                    db.PartTypes.Insert(tabParts);
                     db.Save();
                     DialogResult = DialogResult.OK;
                 }

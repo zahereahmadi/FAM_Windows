@@ -11,12 +11,12 @@ namespace Baran.Ferroalloy.Automation
     public class UnitOfWork : IDisposable
     {
         dbAfrzEntities db = new dbAfrzEntities();
-        private IParts _parts;
+        private IPartTypes _partTypes;
         private ICategories _categories;
         private IStore _stores;
-        private IName _name;
-        private IBranch _branch;
-        private ISubBranch _subBranch;
+        private IPartName _partName;
+        private IPartBranch _partBranch;
+        private IPartSubBranch _partSubBranch;
         private IMeasurementUnits _measurementUnits;
         private IProperties _properties;
         private IShift _shift;
@@ -29,17 +29,20 @@ namespace Baran.Ferroalloy.Automation
         private IZone _zone;
         private ISubZone _subZone;
         private IEquipName _equipName;
-        private IEquip _equip;
+        private IEquipSamples _equipSamples;
+        private ICompanies _companies;
+        private ILocations _locations;
 
-        public IParts Parts
+
+        public IPartTypes PartTypes
         {
             get
             {
-                if (_parts == null)
+                if (_partTypes == null)
                 {
-                    _parts = new Parts(db);
+                    _partTypes = new PartTypesService(db);
                 }
-                return _parts;
+                return _partTypes;
             }
         }
 
@@ -69,42 +72,42 @@ namespace Baran.Ferroalloy.Automation
             }
         }
 
-        public IName Name
+        public IPartName PartName
         {
             get
             {
-                if (_name == null)
+                if (_partName == null)
                 {
-                    _name=new Name(db);
+                    _partName = new PartNameService(db);
                 }
 
-                return _name;
+                return _partName;
             }
         }
 
-        public IBranch Branch
+        public IPartBranch PartBranch
         {
             get
             {
-                if (_branch == null)
+                if (_partBranch == null)
                 {
-                    _branch=new Branch(db);
+                    _partBranch=new PartBranchService(db);
                 }
 
-                return _branch;
+                return _partBranch;
             }
         }
 
-        public ISubBranch SubBranch
+        public IPartSubBranch PartSubBranch
         {
             get
             {
-                if (_subBranch == null)
+                if (_partSubBranch == null)
                 {
-                    _subBranch=new SubBranch(db);
+                    _partSubBranch=new PartSubBranchService(db);
                 }
 
-                return _subBranch;
+                return _partSubBranch;
             }
         }
 
@@ -265,18 +268,46 @@ namespace Baran.Ferroalloy.Automation
             }
         }
 
-        public IEquip Equip
+        public IEquipSamples EquipSamples
         {
             get
             {
-                if (_equip == null)
+                if (_equipSamples == null)
                 {
-                    _equip=new EquipService(db);
+                    _equipSamples = new EquipSamplesService(db);
                 }
 
-                return _equip;
+                return _equipSamples;
             }
         }
+
+        public ICompanies Companies
+        {
+            get
+            {
+                if (_companies == null)
+                {
+                    _companies=new CompaniesService(db);
+                }
+
+                return _companies;
+            }
+        }
+
+        public ILocations Locations
+        {
+            get
+            {
+                if (_locations == null)
+                {
+                    _locations=new LocationsService(db);
+                }
+
+                return _locations;
+            }
+        }
+
+
 
         public void Dispose()
         {

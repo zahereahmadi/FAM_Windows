@@ -12,25 +12,23 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabParts
+    public partial class tabEquipSamples
     {
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public int intStore { get; set; }
+        public int intZone { get; set; }
+        public int intSubZone { get; set; }
         public int intCategory { get; set; }
-        public int intName { get; set; }
-        public int intBranch { get; set; }
-        public int intSubBranch { get; set; }
-        public int intMeasurementUnit { get; set; }
-        public string nvcProperties { get; set; }
-        public Nullable<double> floOrderPoint { get; set; }
-        public Nullable<double> floSupply { get; set; }
+        public int intEquipName { get; set; }
+        public Nullable<int> intOrder { get; set; }
+        public Nullable<int> intCompany { get; set; }
+        public Nullable<int> intLocation { get; set; }
     
-        public virtual tabBranch tabBranch { get; set; }
         public virtual tabCategories tabCategories { get; set; }
-        public virtual tabMeasurementUnits tabMeasurementUnits { get; set; }
-        public virtual tabName tabName { get; set; }
-        public virtual tabStores tabStores { get; set; }
-        public virtual tabSubBranch tabSubBranch { get; set; }
+        public virtual tabEquipName tabEquipName { get; set; }
+        public virtual tabSubZones tabSubZones { get; set; }
+        public virtual tabZones tabZones { get; set; }
+        public virtual tabCompanies tabCompanies { get; set; }
+        public virtual tabLocationes tabLocationes { get; set; }
     }
 }

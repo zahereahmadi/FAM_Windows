@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Baran.Ferroalloy.Automation.Models;
 
+
 namespace Baran.Ferroalloy.Automation
 {
-    public interface IParts : IGeneric<tabParts>
+    public interface IPartSubBranch : IGeneric<tabPartSubBranch>
     {
-        List<dgvListStoresViewModel> ListParts(string filter="");
-
+        List<tabPartSubBranch> ListSubBranches(int branchId, string filter = "");
     }
 }

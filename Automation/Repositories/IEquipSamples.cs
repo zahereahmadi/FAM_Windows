@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +7,9 @@ using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Automation
 {
-    public class EquipService:Generic<tabEquips>,IEquip
+    public interface IEquipSamples : IGeneric<tabEquipSamples>
     {
-        public EquipService(DbContext db) : base(db)
-        {
-        }
+        List<tabEquipSamples> FilterEquips(string company, string location, string zone, string subZone,
+            string category, string equipName);
     }
 }
