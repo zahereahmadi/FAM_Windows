@@ -109,6 +109,8 @@
           <Property Name="nvcLocationCityVillage" Type="nvarchar" MaxLength="20" />
           <Property Name="nvcLocationAddress" Type="nvarchar" MaxLength="250" />
           <Property Name="nvcPostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="nvcPassword" Type="nvarchar" MaxLength="20" />
+          <Property Name="bitLogined" Type="bit" />
         </EntityType>
         <EntityType Name="tabEmployeesBankInfo">
           <Key>
@@ -284,6 +286,16 @@
           <Property Name="nvcName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="intNumber" Type="int" Nullable="false" />
           <Property Name="intCategory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tabPartSamples">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bitSelect" Type="bit" />
+          <Property Name="nvcPartTypeCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="intOrder" Type="int" Nullable="false" />
+          <Property Name="nvcEquipSampleCode" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="tabPartSubBranch">
           <Key>
@@ -550,7 +562,7 @@
         </EntityType>
         <EntityType Name="tabTechnicalDocumentItems">
           <Key>
-            <PropertyRef Name="nvcDocumentCode" />
+            <PropertyRef Name="intID" />
           </Key>
           <Property Name="intID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="bitSelect" Type="bit" />
@@ -558,6 +570,30 @@
           <Property Name="nvcEquipCode" Type="nvarchar" MaxLength="20" />
           <Property Name="nvcPartCode" Type="nvarchar" MaxLength="20" />
           <Property Name="bitIsMain" Type="bit" />
+        </EntityType>
+        <EntityType Name="tabTechnicalDocuments">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bitSelect" Type="bit" />
+          <Property Name="intCompany" Type="int" />
+          <Property Name="intLocation" Type="int" />
+          <Property Name="intCategory" Type="int" />
+          <Property Name="intOrder" Type="int" />
+          <Property Name="intType" Type="int" />
+          <Property Name="nvcCoDesigner" Type="nvarchar" MaxLength="20" />
+          <Property Name="nvcPersonDesigner" Type="nvarchar" MaxLength="20" />
+          <Property Name="nvcRevisionNumber" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tabTechnicalDocumentTypes">
+          <Key>
+            <PropertyRef Name="intNumber" />
+          </Key>
+          <Property Name="intID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bitSelect" Type="bit" />
+          <Property Name="nvcName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="intNumber" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tabUsers">
           <Key>
@@ -988,6 +1024,54 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabCategories">
+          <End Role="tabCategories" Type="Self.tabCategories" Multiplicity="0..1" />
+          <End Role="tabTechnicalDocuments" Type="Self.tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCategories">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabCompanies">
+          <End Role="tabCompanies" Type="Self.tabCompanies" Multiplicity="0..1" />
+          <End Role="tabTechnicalDocuments" Type="Self.tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCompanies">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabLocationes">
+          <End Role="tabLocationes" Type="Self.tabLocationes" Multiplicity="0..1" />
+          <End Role="tabTechnicalDocuments" Type="Self.tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabLocationes">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intLocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabTechnicalDocumentTypes">
+          <End Role="tabTechnicalDocumentTypes" Type="Self.tabTechnicalDocumentTypes" Multiplicity="0..1" />
+          <End Role="tabTechnicalDocuments" Type="Self.tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabTechnicalDocumentTypes">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1043,6 +1127,7 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <EntitySet Name="tabMeasurementUnits" EntityType="Self.tabMeasurementUnits" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabPartBranch" EntityType="Self.tabPartBranch" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabPartName" EntityType="Self.tabPartName" Schema="Sadegh" store:Type="Tables" />
+          <EntitySet Name="tabPartSamples" EntityType="Self.tabPartSamples" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabPartSubBranch" EntityType="Self.tabPartSubBranch" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabPartTypes" EntityType="Self.tabPartTypes" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabPosts" EntityType="Self.tabPosts" Schema="Sadegh" store:Type="Tables" />
@@ -1067,6 +1152,8 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <EntitySet Name="tabSubZones" EntityType="Self.tabSubZones" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabTagParts" EntityType="Self.tabTagParts" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabTechnicalDocumentItems" EntityType="Self.tabTechnicalDocumentItems" Schema="Sadegh" store:Type="Tables" />
+          <EntitySet Name="tabTechnicalDocuments" EntityType="Self.tabTechnicalDocuments" Schema="Sadegh" store:Type="Tables" />
+          <EntitySet Name="tabTechnicalDocumentTypes" EntityType="Self.tabTechnicalDocumentTypes" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabUsers" EntityType="Self.tabUsers" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabVendors" EntityType="Self.tabVendors" Schema="Sadegh" store:Type="Tables" />
           <EntitySet Name="tabZones" EntityType="Self.tabZones" Schema="Sadegh" store:Type="Tables" />
@@ -1219,6 +1306,22 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
             <End Role="tabZones" EntitySet="tabZones" />
             <End Role="tabSubZones" EntitySet="tabSubZones" />
           </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabCategories" Association="Self.FK_tabTechnicalDocuments_tabCategories">
+            <End Role="tabCategories" EntitySet="tabCategories" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabCompanies" Association="Self.FK_tabTechnicalDocuments_tabCompanies">
+            <End Role="tabCompanies" EntitySet="tabCompanies" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabLocationes" Association="Self.FK_tabTechnicalDocuments_tabLocationes">
+            <End Role="tabLocationes" EntitySet="tabLocationes" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" Association="Self.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes">
+            <End Role="tabTechnicalDocumentTypes" EntitySet="tabTechnicalDocumentTypes" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -1257,6 +1360,7 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <NavigationProperty Name="tabPartTypes" Relationship="dbAfrzModel.FK_tabParts_tabCategories1" FromRole="tabCategories" ToRole="tabPartTypes" />
           <NavigationProperty Name="tabEquipSamples" Relationship="dbAfrzModel.FK_tabEquips_tabCategories1" FromRole="tabCategories" ToRole="tabEquipSamples" />
           <NavigationProperty Name="tabPartName" Relationship="dbAfrzModel.FK_tabName_tabCategories1" FromRole="tabCategories" ToRole="tabPartName" />
+          <NavigationProperty Name="tabTechnicalDocuments" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabCategories" FromRole="tabCategories" ToRole="tabTechnicalDocuments" />
         </EntityType>
         <EntityType Name="tabCoInformation">
           <Key>
@@ -1331,6 +1435,8 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <NavigationProperty Name="tabDepartments" Relationship="Self.FK_tabEmployees_tabDepartments" FromRole="tabEmployees" ToRole="tabDepartments" />
           <NavigationProperty Name="tabSubDepartments" Relationship="Self.FK_tabEmployees_tabSubDepartments" FromRole="tabEmployees" ToRole="tabSubDepartments" />
           <NavigationProperty Name="tabSubdepartmentSubsets" Relationship="Self.FK_tabEmployees_tabSubdepartmentSubsets" FromRole="tabEmployees" ToRole="tabSubdepartmentSubsets" />
+          <Property Name="nvcPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bitLogined" Type="Boolean" />
         </EntityType>
         <EntityType Name="tabEmployeesBankInfo">
           <Key>
@@ -2063,7 +2169,6 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="tabPartTypes" EntityType="dbAfrzModel.tabPartTypes" />
-          <EntitySet Name="tabTechnicalDocumentItems" EntityType="dbAfrzModel.tabTechnicalDocumentItems" />
           <AssociationSet Name="FK_tabParts_tabCategories1" Association="dbAfrzModel.FK_tabParts_tabCategories1">
             <End Role="tabCategories" EntitySet="tabCategories" />
             <End Role="tabPartTypes" EntitySet="tabPartTypes" />
@@ -2073,11 +2178,6 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
             <End Role="tabPartTypes" EntitySet="tabPartTypes" />
           </AssociationSet>
           <EntitySet Name="tabUsers" EntityType="dbAfrzModel.tabUsers" />
-          <EntitySet Name="tabStores" EntityType="dbAfrzModel.tabStores" />
-          <AssociationSet Name="FK_tabParts_tabStores" Association="dbAfrzModel.FK_tabParts_tabStores">
-            <End Role="tabStores" EntitySet="tabStores" />
-            <End Role="tabPartTypes" EntitySet="tabPartTypes" />
-          </AssociationSet>
           <EntitySet Name="tabPosts" EntityType="dbAfrzModel.tabPosts" />
           <EntitySet Name="tabEquipSamples" EntityType="dbAfrzModel.tabEquipSamples" />
           <AssociationSet Name="FK_tabEquips_tabCategories1" Association="dbAfrzModel.FK_tabEquips_tabCategories1">
@@ -2133,6 +2233,31 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
             <End Role="tabLocationes" EntitySet="tabLocationes" />
             <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
           </AssociationSet>
+          <EntitySet Name="tabTechnicalDocuments" EntityType="dbAfrzModel.tabTechnicalDocuments" />
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabCategories" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabCategories">
+            <End Role="tabCategories" EntitySet="tabCategories" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabCompanies" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabCompanies">
+            <End Role="tabCompanies" EntitySet="tabCompanies" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabLocationes" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabLocationes">
+            <End Role="tabLocationes" EntitySet="tabLocationes" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <EntitySet Name="tabStores" EntityType="dbAfrzModel.tabStores" />
+          <AssociationSet Name="FK_tabParts_tabStores" Association="dbAfrzModel.FK_tabParts_tabStores">
+            <End Role="tabStores" EntitySet="tabStores" />
+            <End Role="tabPartTypes" EntitySet="tabPartTypes" />
+          </AssociationSet>
+          <EntitySet Name="tabTechnicalDocumentItems" EntityType="dbAfrzModel.tabTechnicalDocumentItems" />
+          <EntitySet Name="tabPartSamples" EntityType="dbAfrzModel.tabPartSamples" />
+          <EntitySet Name="tabTechnicalDocumentTypes" EntityType="dbAfrzModel.tabTechnicalDocumentTypes" />
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes">
+            <End Role="tabTechnicalDocumentTypes" EntitySet="tabTechnicalDocumentTypes" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -2162,21 +2287,10 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <Property Name="floSupply" Type="Double" />
           <NavigationProperty Name="tabCategories" Relationship="dbAfrzModel.FK_tabParts_tabCategories1" FromRole="tabPartTypes" ToRole="tabCategories" />
           <NavigationProperty Name="tabMeasurementUnits" Relationship="dbAfrzModel.FK_tabParts_tabMeasurementUnits1" FromRole="tabPartTypes" ToRole="tabMeasurementUnits" />
-          <NavigationProperty Name="tabStores" Relationship="dbAfrzModel.FK_tabParts_tabStores" FromRole="tabPartTypes" ToRole="tabStores" />
           <NavigationProperty Name="tabPartName" Relationship="dbAfrzModel.FK_tabParts_tabName" FromRole="tabPartTypes" ToRole="tabPartName" />
           <NavigationProperty Name="tabPartBranch" Relationship="dbAfrzModel.FK_tabParts_tabBranch" FromRole="tabPartTypes" ToRole="tabPartBranch" />
           <NavigationProperty Name="tabPartSubBranch" Relationship="dbAfrzModel.FK_tabParts_tabSubBranch" FromRole="tabPartTypes" ToRole="tabPartSubBranch" />
-        </EntityType>
-        <EntityType Name="tabTechnicalDocumentItems">
-          <Key>
-            <PropertyRef Name="nvcDocumentCode" />
-          </Key>
-          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="bitSelect" Type="Boolean" />
-          <Property Name="nvcDocumentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="nvcEquipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="nvcPartCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="bitIsMain" Type="Boolean" />
+          <NavigationProperty Name="tabStores" Relationship="dbAfrzModel.FK_tabParts_tabStores" FromRole="tabPartTypes" ToRole="tabStores" />
         </EntityType>
         <Association Name="FK_tabParts_tabCategories1">
           <End Type="dbAfrzModel.tabCategories" Role="tabCategories" Multiplicity="1" />
@@ -2219,28 +2333,6 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <Property Name="bitStoreEnabed" Type="Boolean" />
           <Property Name="bitLabEnabed" Type="Boolean" />
         </EntityType>
-        <EntityType Name="tabStores">
-          <Key>
-            <PropertyRef Name="intNumber" />
-          </Key>
-          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="bitSelect" Type="Boolean" />
-          <Property Name="nvcName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="intNumber" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tabPartTypes" Relationship="dbAfrzModel.FK_tabParts_tabStores" FromRole="tabStores" ToRole="tabPartTypes" />
-        </EntityType>
-        <Association Name="FK_tabParts_tabStores">
-          <End Type="dbAfrzModel.tabStores" Role="tabStores" Multiplicity="1" />
-          <End Type="dbAfrzModel.tabPartTypes" Role="tabPartTypes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tabStores">
-              <PropertyRef Name="intNumber" />
-            </Principal>
-            <Dependent Role="tabPartTypes">
-              <PropertyRef Name="intStore" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tabPosts">
           <Key>
             <PropertyRef Name="intNumber" />
@@ -2438,6 +2530,7 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <Property Name="nvcName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="intNumber" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tabEquipSamples" Relationship="dbAfrzModel.FK_tabEquipSamples_tabCompanies" FromRole="tabCompanies" ToRole="tabEquipSamples" />
+          <NavigationProperty Name="tabTechnicalDocuments" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabCompanies" FromRole="tabCompanies" ToRole="tabTechnicalDocuments" />
         </EntityType>
         <EntityType Name="tabLocationes">
           <Key>
@@ -2448,6 +2541,7 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <Property Name="nvcName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="intNumber" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tabEquipSamples" Relationship="dbAfrzModel.FK_tabEquipSamples_tabLocationes" FromRole="tabLocationes" ToRole="tabEquipSamples" />
+          <NavigationProperty Name="tabTechnicalDocuments" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabLocationes" FromRole="tabLocationes" ToRole="tabTechnicalDocuments" />
         </EntityType>
         <Association Name="FK_tabEquipSamples_tabCompanies">
           <End Type="dbAfrzModel.tabCompanies" Role="tabCompanies" Multiplicity="0..1" />
@@ -2470,6 +2564,126 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
             </Principal>
             <Dependent Role="tabEquipSamples">
               <PropertyRef Name="intLocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tabTechnicalDocuments">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="intCompany" Type="Int32" />
+          <Property Name="intLocation" Type="Int32" />
+          <Property Name="intCategory" Type="Int32" />
+          <Property Name="intOrder" Type="Int32" />
+          <Property Name="intType" Type="Int32" />
+          <Property Name="nvcCoDesigner" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nvcPersonDesigner" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nvcRevisionNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tabCategories" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabCategories" FromRole="tabTechnicalDocuments" ToRole="tabCategories" />
+          <NavigationProperty Name="tabCompanies" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabCompanies" FromRole="tabTechnicalDocuments" ToRole="tabCompanies" />
+          <NavigationProperty Name="tabLocationes" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabLocationes" FromRole="tabTechnicalDocuments" ToRole="tabLocationes" />
+          <NavigationProperty Name="tabTechnicalDocumentTypes" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" FromRole="tabTechnicalDocuments" ToRole="tabTechnicalDocumentTypes" />
+        </EntityType>
+        <Association Name="FK_tabTechnicalDocuments_tabCategories">
+          <End Type="dbAfrzModel.tabCategories" Role="tabCategories" Multiplicity="0..1" />
+          <End Type="dbAfrzModel.tabTechnicalDocuments" Role="tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCategories">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabCompanies">
+          <End Type="dbAfrzModel.tabCompanies" Role="tabCompanies" Multiplicity="0..1" />
+          <End Type="dbAfrzModel.tabTechnicalDocuments" Role="tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCompanies">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabLocationes">
+          <End Type="dbAfrzModel.tabLocationes" Role="tabLocationes" Multiplicity="0..1" />
+          <End Type="dbAfrzModel.tabTechnicalDocuments" Role="tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabLocationes">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intLocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tabStores">
+          <Key>
+            <PropertyRef Name="intNumber" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="intNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tabPartTypes" Relationship="dbAfrzModel.FK_tabParts_tabStores" FromRole="tabStores" ToRole="tabPartTypes" />
+        </EntityType>
+        <Association Name="FK_tabParts_tabStores">
+          <End Type="dbAfrzModel.tabStores" Role="tabStores" Multiplicity="1" />
+          <End Type="dbAfrzModel.tabPartTypes" Role="tabPartTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabStores">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartTypes">
+              <PropertyRef Name="intStore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tabTechnicalDocumentItems">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcDocumentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nvcEquipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nvcPartCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bitIsMain" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tabPartSamples">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcPartTypeCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="intOrder" Type="Int32" Nullable="false" />
+          <Property Name="nvcEquipSampleCode" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tabTechnicalDocumentTypes">
+          <Key>
+            <PropertyRef Name="intNumber" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="intNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tabTechnicalDocuments" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" FromRole="tabTechnicalDocumentTypes" ToRole="tabTechnicalDocuments" />
+        </EntityType>
+        <Association Name="FK_tabTechnicalDocuments_tabTechnicalDocumentTypes">
+          <End Type="dbAfrzModel.tabTechnicalDocumentTypes" Role="tabTechnicalDocumentTypes" Multiplicity="0..1" />
+          <End Type="dbAfrzModel.tabTechnicalDocuments" Role="tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabTechnicalDocumentTypes">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2554,6 +2768,8 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <EntitySetMapping Name="tabEmployees">
             <EntityTypeMapping TypeName="dbAfrzModel.tabEmployees">
               <MappingFragment StoreEntitySet="tabEmployees">
+                <ScalarProperty Name="bitLogined" ColumnName="bitLogined" />
+                <ScalarProperty Name="nvcPassword" ColumnName="nvcPassword" />
                 <ScalarProperty Name="intID" ColumnName="intID" />
                 <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
                 <ScalarProperty Name="nvcCoID" ColumnName="nvcCoID" />
@@ -3067,18 +3283,6 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tabTechnicalDocumentItems">
-            <EntityTypeMapping TypeName="dbAfrzModel.tabTechnicalDocumentItems">
-              <MappingFragment StoreEntitySet="tabTechnicalDocumentItems">
-                <ScalarProperty Name="bitIsMain" ColumnName="bitIsMain" />
-                <ScalarProperty Name="nvcPartCode" ColumnName="nvcPartCode" />
-                <ScalarProperty Name="nvcEquipCode" ColumnName="nvcEquipCode" />
-                <ScalarProperty Name="nvcDocumentCode" ColumnName="nvcDocumentCode" />
-                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
-                <ScalarProperty Name="intID" ColumnName="intID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tabUsers">
             <EntityTypeMapping TypeName="dbAfrzModel.tabUsers">
               <MappingFragment StoreEntitySet="tabUsers">
@@ -3093,16 +3297,6 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
                 <ScalarProperty Name="nvcCoID" ColumnName="nvcCoID" />
                 <ScalarProperty Name="nvcPassword" ColumnName="nvcPassword" />
                 <ScalarProperty Name="nvcUsername" ColumnName="nvcUsername" />
-                <ScalarProperty Name="intID" ColumnName="intID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tabStores">
-            <EntityTypeMapping TypeName="dbAfrzModel.tabStores">
-              <MappingFragment StoreEntitySet="tabStores">
-                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
-                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
-                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
                 <ScalarProperty Name="intID" ColumnName="intID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -3179,6 +3373,65 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <EntitySetMapping Name="tabLocationes">
             <EntityTypeMapping TypeName="dbAfrzModel.tabLocationes">
               <MappingFragment StoreEntitySet="tabLocationes">
+                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intID" ColumnName="intID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabTechnicalDocuments">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabTechnicalDocuments">
+              <MappingFragment StoreEntitySet="tabTechnicalDocuments">
+                <ScalarProperty Name="nvcRevisionNumber" ColumnName="nvcRevisionNumber" />
+                <ScalarProperty Name="nvcPersonDesigner" ColumnName="nvcPersonDesigner" />
+                <ScalarProperty Name="nvcCoDesigner" ColumnName="nvcCoDesigner" />
+                <ScalarProperty Name="intType" ColumnName="intType" />
+                <ScalarProperty Name="intOrder" ColumnName="intOrder" />
+                <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+                <ScalarProperty Name="intLocation" ColumnName="intLocation" />
+                <ScalarProperty Name="intCompany" ColumnName="intCompany" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intID" ColumnName="intID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabStores">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabStores">
+              <MappingFragment StoreEntitySet="tabStores">
+                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intID" ColumnName="intID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabTechnicalDocumentItems">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabTechnicalDocumentItems">
+              <MappingFragment StoreEntitySet="tabTechnicalDocumentItems">
+                <ScalarProperty Name="bitIsMain" ColumnName="bitIsMain" />
+                <ScalarProperty Name="nvcPartCode" ColumnName="nvcPartCode" />
+                <ScalarProperty Name="nvcEquipCode" ColumnName="nvcEquipCode" />
+                <ScalarProperty Name="nvcDocumentCode" ColumnName="nvcDocumentCode" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intID" ColumnName="intID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabPartSamples">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabPartSamples">
+              <MappingFragment StoreEntitySet="tabPartSamples">
+                <ScalarProperty Name="nvcEquipSampleCode" ColumnName="nvcEquipSampleCode" />
+                <ScalarProperty Name="intOrder" ColumnName="intOrder" />
+                <ScalarProperty Name="nvcPartTypeCode" ColumnName="nvcPartTypeCode" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intID" ColumnName="intID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabTechnicalDocumentTypes">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabTechnicalDocumentTypes">
+              <MappingFragment StoreEntitySet="tabTechnicalDocumentTypes">
                 <ScalarProperty Name="intNumber" ColumnName="intNumber" />
                 <ScalarProperty Name="nvcName" ColumnName="nvcName" />
                 <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />

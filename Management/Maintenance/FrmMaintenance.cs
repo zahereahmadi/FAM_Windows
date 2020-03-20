@@ -105,10 +105,10 @@ namespace Baran.Ferroalloy.Management.Maintenance
                         var id = int.Parse(item.Cells["intID"].Value.ToString());
                         var maintenances = db.Maintenance.GetEntity(t => t.intID == id);
                         db.Maintenance.Delete(maintenances);
-                        db.Save();
-                        RtlMessageBox.Show("حذف با موفقیت انجام شد", "حذف کالا", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Filter();
+                        
                     }
+                    db.Save();
+                    Filter();
                 }
 
             }

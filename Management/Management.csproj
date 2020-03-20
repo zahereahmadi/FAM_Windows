@@ -225,11 +225,11 @@
     <Compile Include="Maintenance\FrmNameInsert.designer.cs">
       <DependentUpon>FrmNameInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance\FrmNames.cs">
+    <Compile Include="Maintenance\FrmPartSamples.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintenance\FrmNames.designer.cs">
-      <DependentUpon>FrmNames.cs</DependentUpon>
+    <Compile Include="Maintenance\FrmPartSamples.Designer.cs">
+      <DependentUpon>FrmPartSamples.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance\FrmSelectEquip.cs">
       <SubType>Form</SubType>
@@ -260,6 +260,12 @@
     </Compile>
     <Compile Include="Maintenance\FrmSubZones.designer.cs">
       <DependentUpon>FrmSubZones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FrmTechnicalDocumentItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FrmTechnicalDocumentItems.Designer.cs">
+      <DependentUpon>FrmTechnicalDocumentItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance\FrmZones.cs">
       <SubType>Form</SubType>
@@ -368,35 +374,17 @@
     <Compile Include="Maintenance\TechnicalPrefrences.Designer.cs">
       <DependentUpon>TechnicalPrefrences.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance\SelectStuff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\SelectStuff.Designer.cs">
-      <DependentUpon>SelectStuff.cs</DependentUpon>
-    </Compile>
     <Compile Include="Maintenance\Types.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maintenance\Types.Designer.cs">
       <DependentUpon>Types.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance\Sections.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\Sections.Designer.cs">
-      <DependentUpon>Sections.cs</DependentUpon>
-    </Compile>
     <Compile Include="Maintenance\Materials.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maintenance\Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maintenance\Stores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\Stores.Designer.cs">
-      <DependentUpon>Stores.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance\SubprojectUpdate.cs">
       <SubType>Form</SubType>
@@ -482,29 +470,11 @@
     <Compile Include="Maintenance\TechnicalDocumentInsert.Designer.cs">
       <DependentUpon>TechnicalDocumentInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance\StuffInsert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\StuffInsert.Designer.cs">
-      <DependentUpon>StuffInsert.cs</DependentUpon>
-    </Compile>
     <Compile Include="Maintenance\TechnicalDocuments.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maintenance\TechnicalDocuments.Designer.cs">
       <DependentUpon>TechnicalDocuments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maintenance\StuffUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\StuffUpdate.Designer.cs">
-      <DependentUpon>StuffUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Maintenance\Stuffs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Maintenance\Stuffs.Designer.cs">
-      <DependentUpon>Stuffs.cs</DependentUpon>
     </Compile>
     <Compile Include="Office\Employees.cs">
       <SubType>Form</SubType>
@@ -657,8 +627,8 @@
     <EmbeddedResource Include="Maintenance\FrmNameInsert.resx">
       <DependentUpon>FrmNameInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\FrmNames.resx">
-      <DependentUpon>FrmNames.cs</DependentUpon>
+    <EmbeddedResource Include="Maintenance\FrmPartSamples.resx">
+      <DependentUpon>FrmPartSamples.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmSelectEquip.resx">
       <DependentUpon>FrmSelectEquip.cs</DependentUpon>
@@ -674,6 +644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmSubZones.resx">
       <DependentUpon>FrmSubZones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\FrmTechnicalDocumentItems.resx">
+      <DependentUpon>FrmTechnicalDocumentItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmZones.resx">
       <DependentUpon>FrmZones.cs</DependentUpon>
@@ -727,21 +700,11 @@
     <EmbeddedResource Include="Maintenance\TechnicalPrefrences.resx">
       <DependentUpon>TechnicalPrefrences.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\SelectStuff.resx">
-      <DependentUpon>SelectStuff.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\Types.resx">
       <DependentUpon>Types.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\Sections.resx">
-      <DependentUpon>Sections.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\Stores.resx">
-      <DependentUpon>Stores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\SubprojectUpdate.resx">
       <DependentUpon>SubprojectUpdate.cs</DependentUpon>
@@ -789,18 +752,8 @@
     <EmbeddedResource Include="Maintenance\TechnicalDocumentInsert.resx">
       <DependentUpon>TechnicalDocumentInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\StuffInsert.resx">
-      <DependentUpon>StuffInsert.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\TechnicalDocuments.resx">
       <DependentUpon>TechnicalDocuments.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\StuffUpdate.resx">
-      <DependentUpon>StuffUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\Stuffs.resx">
-      <DependentUpon>Stuffs.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Office\Employees.resx">

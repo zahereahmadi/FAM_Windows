@@ -23,6 +23,7 @@ namespace Baran.Ferroalloy.Automation.Models
             this.tabPartTypes = new HashSet<tabPartTypes>();
             this.tabEquipSamples = new HashSet<tabEquipSamples>();
             this.tabPartName = new HashSet<tabPartName>();
+            this.tabTechnicalDocuments = new HashSet<tabTechnicalDocuments>();
         }
     
         public int intID { get; set; }
@@ -43,5 +44,7 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabPartName> tabPartName { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabTechnicalDocuments> tabTechnicalDocuments { get; set; }
     }
 }

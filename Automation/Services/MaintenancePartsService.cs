@@ -38,6 +38,7 @@ namespace Baran.Ferroalloy.Automation
                 var branch = "";
                 var subBranch = "";
                 var maintenancePartses = db.MaintenanceParts.Get(t => t.intMaintenanceItem == maiantenanceItemId).ToList();
+                List<dgvListMaintenancePartsViewModel> list = new List<dgvListMaintenancePartsViewModel>();
                 foreach (var item in maintenancePartses)
                 {
                     var part = item.nvcPart.Split('-');
@@ -47,23 +48,24 @@ namespace Baran.Ferroalloy.Automation
                     name = db.PartName.GetEntity(t => t.intNumber == nameId).nvcName;
                     branch = db.PartBranch.GetEntity(t => t.intNumber == branchId).nvcName;
                     subBranch = db.PartSubBranch.GetEntity(t => t.intNumber == subBranchId).nvcName;
+                    list.Add(new dgvListMaintenancePartsViewModel()
+                    {
+                        intID = item.intID,
+                        maintenanceType = item.intMaintenaceType.ToString(),
+                        count = item.intCount,
+                        namePart = name + " " + branch + " " + subBranch
+                    });
                 }
                 if (filter == "")
                 {
-                    return _db.tabMaintenanceParts.Where(t => t.intMaintenanceItem == maiantenanceItemId).Select(t => new dgvListMaintenancePartsViewModel()
-                    {
-                        intID = t.intID,
-                        maintenanceType = t.intMaintenaceType.ToString(),
-                        count = t.intCount,
-                        namePart = name + " " + branch + " " + subBranch
-                    }).ToList();
+                    return list;
                 }
 
-                List<dgvListMaintenancePartsViewModel> list = new List<dgvListMaintenancePartsViewModel>();
+                List<dgvListMaintenancePartsViewModel> list1 = new List<dgvListMaintenancePartsViewModel>();
                 foreach (var item in maintenancePartses)
                 {
 
-                    list.Add(new dgvListMaintenancePartsViewModel()
+                    list1.Add(new dgvListMaintenancePartsViewModel()
                     {
                         intID = item.intID,
                         maintenanceType = item.intMaintenaceType.ToString(),

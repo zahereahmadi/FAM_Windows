@@ -58,7 +58,7 @@
             // 
             // btmInsert
             // 
-            this.btmInsert.Location = new System.Drawing.Point(587, 615);
+            this.btmInsert.Location = new System.Drawing.Point(584, 594);
             this.btmInsert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btmInsert.Name = "btmInsert";
             this.btmInsert.Size = new System.Drawing.Size(125, 35);
@@ -69,7 +69,7 @@
             // 
             // btmDelete
             // 
-            this.btmDelete.Location = new System.Drawing.Point(437, 615);
+            this.btmDelete.Location = new System.Drawing.Point(434, 594);
             this.btmDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btmDelete.Name = "btmDelete";
             this.btmDelete.Size = new System.Drawing.Size(125, 35);
@@ -92,7 +92,7 @@
             // dtpToDate
             // 
             this.dtpToDate.Enabled = false;
-            this.dtpToDate.Location = new System.Drawing.Point(777, 39);
+            this.dtpToDate.Location = new System.Drawing.Point(739, 39);
             this.dtpToDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(200, 27);
@@ -102,7 +102,7 @@
             // 
             this.labToDate.AutoSize = true;
             this.labToDate.Enabled = false;
-            this.labToDate.Location = new System.Drawing.Point(752, 44);
+            this.labToDate.Location = new System.Drawing.Point(714, 44);
             this.labToDate.Name = "labToDate";
             this.labToDate.Size = new System.Drawing.Size(20, 20);
             this.labToDate.TabIndex = 62;
@@ -118,7 +118,7 @@
             "2",
             "3",
             "4"});
-            this.cbSubDepartment.Location = new System.Drawing.Point(468, 109);
+            this.cbSubDepartment.Location = new System.Drawing.Point(430, 109);
             this.cbSubDepartment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbSubDepartment.Name = "cbSubDepartment";
             this.cbSubDepartment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -128,7 +128,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(428, 112);
+            this.label2.Location = new System.Drawing.Point(390, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 60;
@@ -143,7 +143,7 @@
             "صبح",
             "عصر",
             "شب"});
-            this.cbShift.Location = new System.Drawing.Point(768, 109);
+            this.cbShift.Location = new System.Drawing.Point(730, 109);
             this.cbShift.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbShift.Name = "cbShift";
             this.cbShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -153,7 +153,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(720, 112);
+            this.label1.Location = new System.Drawing.Point(682, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 58;
@@ -162,7 +162,7 @@
             // dtpFromDate
             // 
             this.dtpFromDate.Enabled = false;
-            this.dtpFromDate.Location = new System.Drawing.Point(512, 39);
+            this.dtpFromDate.Location = new System.Drawing.Point(474, 39);
             this.dtpFromDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(200, 27);
@@ -172,7 +172,7 @@
             // 
             this.labFromDate.AutoSize = true;
             this.labFromDate.Enabled = false;
-            this.labFromDate.Location = new System.Drawing.Point(484, 44);
+            this.labFromDate.Location = new System.Drawing.Point(446, 44);
             this.labFromDate.Name = "labFromDate";
             this.labFromDate.Size = new System.Drawing.Size(23, 20);
             this.labFromDate.TabIndex = 56;
@@ -181,7 +181,7 @@
             // btmExit
             // 
             this.btmExit.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btmExit.Location = new System.Drawing.Point(587, 676);
+            this.btmExit.Location = new System.Drawing.Point(584, 655);
             this.btmExit.Margin = new System.Windows.Forms.Padding(0);
             this.btmExit.Name = "btmExit";
             this.btmExit.Size = new System.Drawing.Size(125, 35);
@@ -217,7 +217,7 @@
             this.Workers,
             this.LeaderWorker});
             this.dgvMaintenance.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgvMaintenance.Location = new System.Drawing.Point(123, 230);
+            this.dgvMaintenance.Location = new System.Drawing.Point(123, 204);
             this.dgvMaintenance.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMaintenance.MultiSelect = false;
             this.dgvMaintenance.Name = "dgvMaintenance";
@@ -286,7 +286,7 @@
             // 
             // btnMaintenanceItem
             // 
-            this.btnMaintenanceItem.Location = new System.Drawing.Point(741, 615);
+            this.btnMaintenanceItem.Location = new System.Drawing.Point(738, 594);
             this.btnMaintenanceItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMaintenanceItem.Name = "btnMaintenanceItem";
             this.btnMaintenanceItem.Size = new System.Drawing.Size(125, 35);
@@ -298,7 +298,7 @@
             // chbDateCheck
             // 
             this.chbDateCheck.AutoSize = true;
-            this.chbDateCheck.Location = new System.Drawing.Point(379, 40);
+            this.chbDateCheck.Location = new System.Drawing.Point(341, 40);
             this.chbDateCheck.Name = "chbDateCheck";
             this.chbDateCheck.Size = new System.Drawing.Size(52, 24);
             this.chbDateCheck.TabIndex = 71;
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1366, 749);
             this.Controls.Add(this.chbDateCheck);
             this.Controls.Add(this.btnMaintenanceItem);
             this.Controls.Add(this.dgvMaintenance);

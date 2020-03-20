@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation;
+using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -26,43 +28,92 @@ namespace Baran.Ferroalloy.Management
 
         private void TechnicalDocumentInsert_Load(object sender, EventArgs e)
         {
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            this.cbCategory.Items.Add("");
-            foreach (Category ctCategory in this.caCategories)
+            using (UnitOfWork db = new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
-            }
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
 
-            //Fill cbZone ComboBox
-            Zone[] zoZones = Zone.GetZones(this.cnConnection);
-            this.cbZone.Items.Clear();
-            this.cbZone.Items.Add("");
-            foreach (Zone zoZone in zoZones)
-            {
-                this.cbZone.Items.Add(zoZone.strNamePty);
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocations.Items.Add(item.nvcName);
+                }
+
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategories.Items.Add(item.nvcName);
+                }
+
+                var technicalDocumentTypes = db.TechnicalDocumentTypes.GetAll();
+                foreach (var item in technicalDocumentTypes)
+                {
+                    cbType.Items.Add(item.nvcName);
+                }
             }
         }
 
-        private void btmOK_Click(object sender, EventArgs e)
+        private void BtmOK_Click(object sender, EventArgs e)
         {
-            tdTechnicalDocument.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
-            tdTechnicalDocument.strZonePty = Zone.GetZoneCode(this.cnConnection,this.cbZone.Text);
-            tdTechnicalDocument.strCodePty = this.tbCode.Text;
-            tdTechnicalDocument.strCoDesignerPty = this.tbCoDesigner.Text;
-            tdTechnicalDocument.strPersonDesignerPty = this.tbPersonDesigner.Text;
-            tdTechnicalDocument.strRevisionNumberPty = this.tbRevisionNumber.Text;
-            tdTechnicalDocument.strTipPty = this.tbTip.Text;
-            tdTechnicalDocument.Insert(this.cnConnection);
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber;
+                var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber;
+                var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber;
+                var typeId = db.TechnicalDocumentTypes.GetEntityByName(t => t.nvcName == cbType.SelectedItem).intNumber;
+                var coDesigner = tbCoDesigner.Text.Trim();
+                var designerName = tbDesignerName.Text.Trim();
+                var revisionNumber = tbRevisionNumber.Text.Trim();
 
-            TechnicalDocuments frmTechnicalDocuments = (TechnicalDocuments)this.Owner;
-            frmTechnicalDocuments.SearchTechnicalDocuments();
-            this.Close();
+                var technicalDocuments = db.TechnicalDocuments.GetByWhere(t =>
+                    t.intCompany == companyId && t.intLocation == locationId && t.intCategory == categoryId && t.intType == typeId).ToList();
+                tabTechnicalDocuments tabTechnicalDocuments = new tabTechnicalDocuments();
+
+                if (technicalDocuments.Count > 0)
+                {
+                    var last = technicalDocuments.Last();
+                    tabTechnicalDocuments.intOrder = last.intOrder + 1;
+                }
+                else
+                {
+                    tabTechnicalDocuments.intOrder = 1;
+                }
+                tabTechnicalDocuments.bitSelect = false;
+                tabTechnicalDocuments.intCompany = companyId;
+                tabTechnicalDocuments.intLocation = locationId;
+                tabTechnicalDocuments.intCategory = categoryId;
+                tabTechnicalDocuments.intType = typeId;
+                tabTechnicalDocuments.nvcCoDesigner = coDesigner;
+                tabTechnicalDocuments.nvcPersonDesigner = designerName;
+                tabTechnicalDocuments.nvcRevisionNumber = revisionNumber;
+
+                db.TechnicalDocuments.Insert(tabTechnicalDocuments);
+                db.Save();
+                this.Close();
+                TechnicalDocuments frmTechnicalDocuments = new TechnicalDocuments();
+                frmTechnicalDocuments.RefreshList(tabTechnicalDocuments.intCompany,
+                    tabTechnicalDocuments.intLocation, tabTechnicalDocuments.intCategory,
+                    tabTechnicalDocuments.intType);
+                DialogResult = DialogResult.OK;
+                //if (technicalDocuments.Last().intOrder.ToString().Length == 4)
+                //{
+                //    RtlMessageBox.Show("سقف ورود این مستند پر شده است", "اخطار", MessageBoxButtons.OK,
+                //        MessageBoxIcon.Warning);
+                //}
+                //else
+                //{
+
+                //}
+            }
         }
 
-        private void btmCancel_Click(object sender, EventArgs e)
+        private void BtmCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
     }
+
 }

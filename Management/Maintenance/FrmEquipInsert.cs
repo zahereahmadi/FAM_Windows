@@ -212,25 +212,39 @@ namespace Baran.Ferroalloy.Management
                 var subZonesId = db.SubZone.GetEntityByName(t => t.nvcName == cbSubZones.SelectedItem).intNumber;
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber;
                 var eqiupNameId = db.EquipName.GetEntityByName(t => t.nvcName == cbEqiupName.SelectedItem).intNumber;
-                var equips = db.EquipSamples.GetEntity(t =>
+                var equips = db.EquipSamples.GetByWhere(t =>
                     t.intCompany == companyId && t.intLocation == locationId &&
                     t.intZone == zoneId && t.intSubZone == subZonesId && t.intCategory == categoryId &&
-                    t.intEquipName == eqiupNameId);
-                tabEquipSamples tabEquips = new tabEquipSamples()
+                    t.intEquipName == eqiupNameId).Last();
+                tabEquipSamples tabEquips = new tabEquipSamples();
+                if (equips != null)
                 {
-                    bitSelect = false,
-                    intCompany = companyId,
-                    intLocation = locationId,
-                    intZone = zoneId,
-                    intSubZone = subZonesId,
-                    intCategory = categoryId,
-                    intEquipName = eqiupNameId,
-                    intOrder = equips.intOrder + 1
-                };
-                db.EquipSamples.Insert(tabEquips);
-                db.Save();
-                this.Close();
-                DialogResult = DialogResult.OK;
+                    tabEquips.intOrder = equips.intOrder + 1;
+                }
+                else
+                {
+                    tabEquips.intOrder = 1;
+                }
+                tabEquips.bitSelect = false;
+                tabEquips.intCompany = companyId;
+                tabEquips.intLocation = locationId;
+                tabEquips.intZone = zoneId;
+                tabEquips.intSubZone = subZonesId;
+                tabEquips.intCategory = categoryId;
+                tabEquips.intEquipName = eqiupNameId;
+                if (equips.intOrder.ToString().Length == 2)
+                {
+                    RtlMessageBox.Show("سقف ورود این تجهیز پر شده است", "اخطار", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    db.EquipSamples.Insert(tabEquips);
+                    db.Save();
+                    this.Close();
+                    DialogResult = DialogResult.OK;
+                }
+                
                 //if (equips != null)
                 //{
                 //    RtlMessageBox.Show("این تجهیز قبلا ثبت شده است", "اخطار", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -34,16 +34,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbSubDepartment = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtLeaderWorkGroup = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtworkGrop = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dtMaintenance = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbShift = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbWorkGroup = new System.Windows.Forms.ComboBox();
+            this.btnSelectWorkerLeader = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btmDeleteEmployee = new System.Windows.Forms.Button();
+            this.lbWorkers = new System.Windows.Forms.ListBox();
+            this.btnSelectEmployee = new System.Windows.Forms.Button();
+            this.txtLeaderWorkGroup = new System.Windows.Forms.TextBox();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -125,46 +128,6 @@
             this.label8.TabIndex = 56;
             this.label8.Text = "واحد:";
             // 
-            // txtLeaderWorkGroup
-            // 
-            this.txtLeaderWorkGroup.Location = new System.Drawing.Point(741, 200);
-            this.txtLeaderWorkGroup.Name = "txtLeaderWorkGroup";
-            this.txtLeaderWorkGroup.Size = new System.Drawing.Size(200, 27);
-            this.txtLeaderWorkGroup.TabIndex = 55;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.label5.Location = new System.Drawing.Point(658, 203);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 21);
-            this.label5.TabIndex = 54;
-            this.label5.Text = "فرد سرگروه:";
-            // 
-            // txtworkGrop
-            // 
-            this.txtworkGrop.Location = new System.Drawing.Point(152, 200);
-            this.txtworkGrop.Name = "txtworkGrop";
-            this.txtworkGrop.Size = new System.Drawing.Size(437, 27);
-            this.txtworkGrop.TabIndex = 53;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.label4.Location = new System.Drawing.Point(59, 203);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 21);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "افراد کار گروه:";
-            // 
             // dtMaintenance
             // 
             this.dtMaintenance.Location = new System.Drawing.Point(741, 47);
@@ -237,22 +200,77 @@
             this.cbWorkGroup.Size = new System.Drawing.Size(120, 28);
             this.cbWorkGroup.TabIndex = 46;
             // 
+            // btnSelectWorkerLeader
+            // 
+            this.btnSelectWorkerLeader.Location = new System.Drawing.Point(569, 202);
+            this.btnSelectWorkerLeader.Name = "btnSelectWorkerLeader";
+            this.btnSelectWorkerLeader.Size = new System.Drawing.Size(121, 26);
+            this.btnSelectWorkerLeader.TabIndex = 64;
+            this.btnSelectWorkerLeader.Text = "انتخاب فرد سرگروه";
+            this.btnSelectWorkerLeader.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btmDeleteEmployee);
+            this.groupBox3.Controls.Add(this.lbWorkers);
+            this.groupBox3.Controls.Add(this.btnSelectEmployee);
+            this.groupBox3.Location = new System.Drawing.Point(126, 159);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(258, 112);
+            this.groupBox3.TabIndex = 63;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "انتخاب افراد گروه";
+            // 
+            // btmDeleteEmployee
+            // 
+            this.btmDeleteEmployee.Location = new System.Drawing.Point(6, 79);
+            this.btmDeleteEmployee.Name = "btmDeleteEmployee";
+            this.btmDeleteEmployee.Size = new System.Drawing.Size(99, 26);
+            this.btmDeleteEmployee.TabIndex = 45;
+            this.btmDeleteEmployee.Text = "حذف";
+            this.btmDeleteEmployee.UseVisualStyleBackColor = true;
+            // 
+            // lbWorkers
+            // 
+            this.lbWorkers.FormattingEnabled = true;
+            this.lbWorkers.ItemHeight = 20;
+            this.lbWorkers.Location = new System.Drawing.Point(111, 21);
+            this.lbWorkers.Name = "lbWorkers";
+            this.lbWorkers.Size = new System.Drawing.Size(141, 84);
+            this.lbWorkers.TabIndex = 43;
+            // 
+            // btnSelectEmployee
+            // 
+            this.btnSelectEmployee.Location = new System.Drawing.Point(6, 22);
+            this.btnSelectEmployee.Name = "btnSelectEmployee";
+            this.btnSelectEmployee.Size = new System.Drawing.Size(99, 26);
+            this.btnSelectEmployee.TabIndex = 44;
+            this.btnSelectEmployee.Text = "انتخاب";
+            this.btnSelectEmployee.UseVisualStyleBackColor = true;
+            // 
+            // txtLeaderWorkGroup
+            // 
+            this.txtLeaderWorkGroup.Enabled = false;
+            this.txtLeaderWorkGroup.Location = new System.Drawing.Point(696, 202);
+            this.txtLeaderWorkGroup.Name = "txtLeaderWorkGroup";
+            this.txtLeaderWorkGroup.Size = new System.Drawing.Size(200, 27);
+            this.txtLeaderWorkGroup.TabIndex = 62;
+            // 
             // FrmMaintenanceUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1001, 373);
+            this.Controls.Add(this.btnSelectWorkerLeader);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtLeaderWorkGroup);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btmCancel);
             this.Controls.Add(this.btmOK);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbSubDepartment);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtLeaderWorkGroup);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtworkGrop);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.dtMaintenance);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -268,6 +286,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ویرایش تعمیر";
             this.Load += new System.EventHandler(this.FrmMaintenanceUpdate_Load);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,15 +300,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbSubDepartment;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtLeaderWorkGroup;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtworkGrop;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtMaintenance;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbShift;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbWorkGroup;
+        private System.Windows.Forms.Button btnSelectWorkerLeader;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btmDeleteEmployee;
+        private System.Windows.Forms.ListBox lbWorkers;
+        private System.Windows.Forms.Button btnSelectEmployee;
+        private System.Windows.Forms.TextBox txtLeaderWorkGroup;
     }
 }

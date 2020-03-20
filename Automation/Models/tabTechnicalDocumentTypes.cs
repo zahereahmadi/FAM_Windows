@@ -12,12 +12,11 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabCompanies
+    public partial class tabTechnicalDocumentTypes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tabCompanies()
+        public tabTechnicalDocumentTypes()
         {
-            this.tabEquipSamples = new HashSet<tabEquipSamples>();
             this.tabTechnicalDocuments = new HashSet<tabTechnicalDocuments>();
         }
     
@@ -26,8 +25,6 @@ namespace Baran.Ferroalloy.Automation.Models
         public string nvcName { get; set; }
         public int intNumber { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabTechnicalDocuments> tabTechnicalDocuments { get; set; }
     }

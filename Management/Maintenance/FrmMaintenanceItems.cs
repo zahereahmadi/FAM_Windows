@@ -18,6 +18,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
     {
         public string coIdsWorker = "";
         public int maintenanceId;
+        private string equipCode;
 
         public FrmMaintenanceItems()
         {
@@ -134,7 +135,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                         intDuration = int.Parse(txtDuration.Text),
                         timItem = DateTime.Now.TimeOfDay,
                         intMaintenanceType = maintenanceType,
-                        nvcEquip = txtEquip.Text,
+                        nvcEquip = equipCode,
                         nvcTips = txtTips.Text.Trim(),
                         nvcCoIdsWorker = coIds
                     };
@@ -156,7 +157,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     RtlMessageBox.Show("لطفا فیلدهای مورد نظر را پرکنید", "اخطار", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-                
+
             }
         }
 
@@ -183,7 +184,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                             db.Save();
                             ListRefresh();
                         }
-                        
+
                     }
                 }
             }
@@ -194,11 +195,12 @@ namespace Baran.Ferroalloy.Management.Maintenance
             FrmSelectEquip frmSelectEquip = new FrmSelectEquip();
             frmSelectEquip.ShowDialog();
             txtEquip.Text = frmSelectEquip.equipName;
+            equipCode = frmSelectEquip.equipCode;
         }
 
         private void BtnSelectEmployee_Click(object sender, EventArgs e)
         {
-            FrmSelectEmployee frmSelectEmployee=new FrmSelectEmployee();
+            FrmSelectEmployee frmSelectEmployee = new FrmSelectEmployee();
             frmSelectEmployee.ShowDialog();
             lbWorkers.Items.Add(frmSelectEmployee.fullName);
 

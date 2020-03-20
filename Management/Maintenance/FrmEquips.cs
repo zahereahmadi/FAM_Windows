@@ -197,10 +197,10 @@ namespace Baran.Ferroalloy.Management
                         var id = int.Parse(item.Cells["intID"].Value.ToString());
                         var equips = db.EquipSamples.GetEntity(t => t.intID == id);
                         db.EquipSamples.Delete(equips);
-                        db.Save();
-                        //RtlMessageBox.Show("حذف با موفقیت انجام شد", "حذف کالا", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Filter();
+                        
                     }
+                    db.Save();
+                    Filter();
                 }
 
             }
@@ -222,6 +222,17 @@ namespace Baran.Ferroalloy.Management
             FrmEquipUpdate frmEquipUpdate=new FrmEquipUpdate();
             frmEquipUpdate.equipId = Convert.ToInt32(dgvEquips.CurrentRow.Cells["intID"].Value.ToString());
             frmEquipUpdate.ShowDialog();
+        }
+
+        private void BtnPartTypeInsert_Click(object sender, EventArgs e)
+        {
+            if (dgvEquips.CurrentRow != null)
+            {
+                FrmPartSamples frmPartSamples = new FrmPartSamples();
+                frmPartSamples.equipId = Convert.ToInt32(dgvEquips.CurrentRow.Cells["intID"].Value.ToString());
+                frmPartSamples.ShowDialog();
+            }
+            
         }
     }
 }

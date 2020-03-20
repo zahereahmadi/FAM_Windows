@@ -16,12 +16,14 @@ namespace Baran.Ferroalloy.Management
     {
         public int equipId;
         public string equipName;
+        public string equipCode;
 
         public FrmSelectEquip()
         {
             InitializeComponent();
             equipId = 0;
             equipName = "";
+            equipCode = "";
         }
 
         private void FrmSelectEquip_Load(object sender, EventArgs e)
@@ -169,6 +171,78 @@ namespace Baran.Ferroalloy.Management
                 {
                     var equips = db.EquipSamples.GetEntity(t => t.intID == equipId);
                     equipName = equips.tabEquipName.nvcName;
+                    var company = equips.intCompany.ToString();
+                    if (company.Length == 1)
+                    {
+                        company = 0 + company;
+                    }
+                    else
+                    {
+                        company = company;
+                    }
+
+                    var location = equips.intLocation.ToString();
+                    if (location.Length == 1)
+                    {
+                        location = 0 + location;
+                    }
+                    else
+                    {
+                        location = location;
+                    }
+
+                    var zone = equips.intZone.ToString();
+                    if (zone.Length == 1)
+                    {
+                        zone = 0 + zone;
+                    }
+                    else
+                    {
+                        zone = zone;
+                    }
+
+                    var subZone = equips.intSubZone.ToString();
+                    if (subZone.Length == 1)
+                    {
+                        subZone = 0 + subZone;
+                    }
+                    else
+                    {
+                        subZone = subZone;
+                    }
+
+                    var cateqory = equips.intCategory.ToString();
+                    if (cateqory.Length == 1)
+                    {
+                        cateqory = 0 + cateqory;
+                    }
+                    else
+                    {
+                        cateqory = cateqory;
+                    }
+
+                    var name = equips.intEquipName.ToString();
+                    if (name.Length == 1)
+                    {
+                        name = 0 + name;
+                    }
+                    else
+                    {
+                        name = name;
+                    }
+
+                    var order = equips.intOrder.ToString();
+                    if (order.Length == 1)
+                    {
+                        order = 0 + order;
+                    }
+                    else
+                    {
+                        order = order;
+                    }
+
+                    equipCode = company + "" + location + "" + zone + "" + subZone + "" + cateqory + "" + name +
+                                "" + order;
                     this.Close();
                 }
             }
