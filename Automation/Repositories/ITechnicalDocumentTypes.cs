@@ -7,8 +7,7 @@ using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Automation
 {
-    public interface IMaintenanceItem:IGeneric<tabMaintenanceItems>
+    public interface ITechnicalDocumentTypes:IGeneric<tabTechnicalDocumentTypes>
     {
-        List<dgvMaintenanceItemsViewModel> ListMaintenanceItems(int maintenanceId, string filter = "");
     }
 }

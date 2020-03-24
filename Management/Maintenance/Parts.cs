@@ -369,10 +369,10 @@ namespace Baran.Ferroalloy.Management
                         var id = int.Parse(item.Cells[0].Value.ToString());
                         var part = db.PartTypes.GetEntity(t => t.intID == id);
                         db.PartTypes.Delete(part);
-                        db.Save();
-                        RtlMessageBox.Show("حذف با موفقیت انجام شد", "حذف کالا", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Filter();
+                        
                     }
+                    db.Save();
+                    Filter();
                 }
                  
             }
@@ -522,26 +522,26 @@ namespace Baran.Ferroalloy.Management
 
         private void dgvStuffs_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex != -1)
-            {
-                StuffUpdate frmPStuffUpdate = new StuffUpdate();
-                frmPStuffUpdate.Owner = this;
-                this.stUpdate = new Stuff();
-                frmPStuffUpdate.stUpdate = this.stUpdate;
-                frmPStuffUpdate.cnConnection = this.cnConnection;
+            //if (e.RowIndex != -1)
+            //{
+            //    StuffUpdate frmPStuffUpdate = new StuffUpdate();
+            //    frmPStuffUpdate.Owner = this;
+            //    this.stUpdate = new Stuff();
+            //    frmPStuffUpdate.stUpdate = this.stUpdate;
+            //    frmPStuffUpdate.cnConnection = this.cnConnection;
 
-                this.stUpdate.intID = (int)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["intID"];
-                this.stUpdate.strStore = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcStore"].ToString();
-                this.stUpdate.strSection = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcSection"].ToString();
-                this.stUpdate.strMaterial = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcMaterial"].ToString();
-                this.stUpdate.strType = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcType"].ToString();
-                this.stUpdate.intCategory = (int)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["intCategory"];
-                this.stUpdate.strMeasurementUnit = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcMeasurementUnit"].ToString();
-                this.stUpdate.dobOrderPoint = (double)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["floOrderPoint"];
-                this.stUpdate.dobSupply = (double)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["floSupply"];
+            //    this.stUpdate.intID = (int)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["intID"];
+            //    this.stUpdate.strStore = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcStore"].ToString();
+            //    this.stUpdate.strSection = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcSection"].ToString();
+            //    this.stUpdate.strMaterial = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcMaterial"].ToString();
+            //    this.stUpdate.strType = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcType"].ToString();
+            //    this.stUpdate.intCategory = (int)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["intCategory"];
+            //    this.stUpdate.strMeasurementUnit = this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["nvcMeasurementUnit"].ToString();
+            //    this.stUpdate.dobOrderPoint = (double)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["floOrderPoint"];
+            //    this.stUpdate.dobSupply = (double)this.dsStuffs.Tables["tabStuffs"].Rows[e.RowIndex]["floSupply"];
 
-                frmPStuffUpdate.ShowDialog();
-            }
+            //    frmPStuffUpdate.ShowDialog();
+            //}
         }
 
         private void btmInsert_Click(object sender, EventArgs e)

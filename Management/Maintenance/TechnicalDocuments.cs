@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation;
+using Baran.Ferroalloy.Management.Maintenance;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -20,6 +22,7 @@ namespace Baran.Ferroalloy.Management
         public static Boolean bolIsRunning;
         public Connection cnConnection;
         public User usUser;
+        public FamSetting setSettings;
         public DataSet dsTechnicalDocuments;
         private Category[] caCategories;
         private Zone[] zoZones;
@@ -35,39 +38,105 @@ namespace Baran.Ferroalloy.Management
 
         private void TechnicalDocuments_Load(object sender, EventArgs e)
         {
-            SetComponentsByPermisions();
-
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            this.cbCategory.Items.Add("");
-            foreach (Category ctCategory in this.caCategories)
+            //SetComponentsByPermisions();
+            dgvTechnicalDocuments.AutoGenerateColumns = false;
+            using (UnitOfWork db = new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
-            }
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
 
-            //Fill cbZone ComboBox
-            this.zoZones = Zone.GetZones(this.cnConnection);
-            this.cbZone.Items.Add("");
-            foreach (Zone zoZone in this.zoZones)
-            {
-                this.cbZone.Items.Add(zoZone.strNamePty);
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocations.Items.Add(item.nvcName);
+                }
+
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategories.Items.Add(item.nvcName);
+                }
+
+                var technicalDocumentTypes = db.TechnicalDocumentTypes.GetAll();
+                foreach (var item in technicalDocumentTypes)
+                {
+                    cbType.Items.Add(item.nvcName);
+                }
             }
+        }
+
+        private void btmSearch_Click(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void Filter()
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var technicalDocuments = db.TechnicalDocuments.FilterTechnicalDocumentItems(cbCompanies.SelectedItem, cbLocations.SelectedItem,
+                    cbCategories.SelectedItem, cbType.SelectedItem, tbCoDesigner.Text.Trim(),
+                    tbDesignerName.Text.Trim(), tbRevisionNumber.Text.Trim());
+                dgvTechnicalDocuments.DataSource = db.TechnicalDocuments.FilldgvTechnicalDocuments(technicalDocuments);
+            }
+        }
+
+        public void RefreshList(int? company, int? location, int? category, int? type)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var technicalDocuments = db.TechnicalDocuments.GetByWhere(t =>
+                    t.intCompany == company && t.intLocation == location && t.intCategory == category &&
+                    t.intType == type).ToList();
+                dgvTechnicalDocuments.DataSource = db.TechnicalDocuments.FilldgvTechnicalDocuments(technicalDocuments);
+            }
+        }
+
+        private void BtmDelete_Click(object sender, EventArgs e)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                if (RtlMessageBox.Show($"آیا از حذف مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    var selectItems = dgvTechnicalDocuments.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToBoolean(t.Cells["bitSelect"].Value) == true).ToList();
+
+                    foreach (var item in selectItems)
+                    {
+                        var id = int.Parse(item.Cells["intID"].Value.ToString());
+                        var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == id);
+                        db.TechnicalDocuments.Delete(technicalDocuments);
+                    }
+                    db.Save();
+                    Filter();
+                }
+
+            }
+        }
+
+        private void BtmInsert_Click(object sender, EventArgs e)
+        {
+            TechnicalDocumentInsert frmTechnicalDocumentInsert = new TechnicalDocumentInsert();
+            frmTechnicalDocumentInsert.Show();
         }
 
         private void SetComponentsByPermisions()
         {
-            if (this.usUser.bolTechnicalEnabed)
-            {
-                this.btmDelete.Enabled = true;
-                this.btmInsert.Enabled = true;
-                this.dgvTechnicalDocuments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTechnicalDocuments_CellMouseDoubleClick);
-            }
-            else
-            {
-                this.btmDelete.Enabled = false;
-                this.btmInsert.Enabled = false;
-                this.dgvTechnicalDocuments.CellMouseDoubleClick -= new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTechnicalDocuments_CellMouseDoubleClick);
-            }
+            //if (this.usUser.bolTechnicalEnabed)
+            //{
+            //    this.btmDelete.Enabled = true;
+            //    this.btmInsert.Enabled = true;
+            //    this.dgvTechnicalDocuments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTechnicalDocuments_CellMouseDoubleClick);
+            //}
+            //else
+            //{
+            //    this.btmDelete.Enabled = false;
+            //    this.btmInsert.Enabled = false;
+            //    this.dgvTechnicalDocuments.CellMouseDoubleClick -= new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTechnicalDocuments_CellMouseDoubleClick);
+            //}
         }
 
         private void btmClose_Click(object sender, EventArgs e)
@@ -77,10 +146,10 @@ namespace Baran.Ferroalloy.Management
 
         private void TechnicalDocuments_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bolIsRunning = false;
+            //bolIsRunning = false;
 
-            Management frmManagement = (Management)this.MdiParent;
-            frmManagement.menWindows.DropDownItems["menWindowsTechnicalDocuments"].Dispose();
+            //Management frmManagement = (Management)this.MdiParent;
+            //frmManagement.menWindows.DropDownItems["menWindowsTechnicalDocuments"].Dispose();
         }
 
         private void btmExit_Click(object sender, EventArgs e)
@@ -88,85 +157,26 @@ namespace Baran.Ferroalloy.Management
             this.Close();
         }
 
-        private void btmSearch_Click(object sender, EventArgs e)
-        {
-            SearchTechnicalDocuments();
-        }
-
-        public void SearchTechnicalDocuments()
-        {
-            this.tdSearch = new TechnicalDocument();
-            this.tdSearch.intCategory = Category.GetNumberByName(this.cnConnection,this.cbCategory.Text);
-            this.tdSearch.strZonePty = Zone.GetZoneCode(this.cnConnection, this.cbZone.Text);
-            this.tdSearch.strCodePty = this.tbCode.Text;
-            this.tdSearch.strCoDesignerPty =this.tbCoDesigner.Text;
-            this.tdSearch.strPersonDesignerPty = this.tbDesignerName.Text;
-            this.tdSearch.strRevisionNumberPty = this.tbRevisionNumber.Text;
-            this.dsTechnicalDocuments = TechnicalDocument.GetTechnicalDocuments(this.cnConnection, this.tdSearch);
-
-            foreach (DataRow drTechnicalDocument in this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows)
-            {
-                drTechnicalDocument["intCategory"] = Category.GetNameByNumber(this.cnConnection, (int)drTechnicalDocument["intCategory"]);
-                drTechnicalDocument["nvcZone"] = Zone.GetZoneName(this.cnConnection, drTechnicalDocument["nvcZone"].ToString());
-            }
-
-            this.dgvTechnicalDocuments.DataSource = this.dsTechnicalDocuments;
-            this.dgvTechnicalDocuments.DataMember = "tabTechnicalDocuments";
-        }
-
-        private void btmDelete_Click(object sender, EventArgs e)
-        {
-            Int16 intSelectedTechnicalDocuments = 0;
-            foreach (DataRow drTechnicalDocument in this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows)
-            {
-                if ((Boolean)drTechnicalDocument["bitSelect"])
-                {
-                    ++intSelectedTechnicalDocuments;
-                }
-            }
-
-            if (intSelectedTechnicalDocuments > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("آیا می خواهید " + intSelectedTechnicalDocuments.ToString() + " قطعه را حذف کنید؟", "حذف", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    TechnicalDocument.DeleteTechnicalDocuments(this.cnConnection, this.dsTechnicalDocuments);
-                    SearchTechnicalDocuments();
-                }
-            }
-            else
-            {
-                MessageBox.Show(".هیچ قطعه ای انتخاب نشده است", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
-            }
-        }
-
-        private void dgvTechnicalDocuments_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvTechnicalDocuments_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             TechnicalDocumentUpdate frmTechnicalDocumentUpdate = new TechnicalDocumentUpdate();
-            frmTechnicalDocumentUpdate.Owner = this;
-            this.tdUpdate = new TechnicalDocument();
-            frmTechnicalDocumentUpdate.tdTechnicalDocument = this.tdUpdate;
-            frmTechnicalDocumentUpdate.cnConnection = this.cnConnection;
-
-            this.tdUpdate.intIDPty = (Int16)this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["intID"];
-            this.tdUpdate.intCategory = (int)this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["intCategory"];
-            this.tdUpdate.strZonePty = this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["nvcZone"].ToString();
-            this.tdUpdate.strCodePty = this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["nvcCode"].ToString();
-            this.tdUpdate.strCoDesignerPty = this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["nvcCoDesigner"].ToString();
-            this.tdUpdate.strPersonDesignerPty = this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["nvcPersonDesigner"].ToString();
-            this.tdUpdate.strRevisionNumberPty = this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["nvcRevisionNumber"].ToString();
-            this.tdUpdate.strTipPty = this.dsTechnicalDocuments.Tables["tabTechnicalDocuments"].Rows[e.RowIndex]["nvcTip"].ToString();
-
+            frmTechnicalDocumentUpdate.technicalDocumentId = Convert.ToInt32(dgvTechnicalDocuments.CurrentRow.Cells["intID"].Value.ToString());
             frmTechnicalDocumentUpdate.ShowDialog();
         }
 
-        private void btmInsert_Click(object sender, EventArgs e)
+        private void BtnTachnicalDocumentItems_Click(object sender, EventArgs e)
         {
-            TechnicalDocumentInsert frmTechnicalDocumentInsert = new TechnicalDocumentInsert();
-            frmTechnicalDocumentInsert.Owner = this;
-            frmTechnicalDocumentInsert.cnConnection = this.cnConnection;
-            frmTechnicalDocumentInsert.ShowDialog();
+            if (dgvTechnicalDocuments.CurrentRow != null)
+            {
+                FrmTechnicalDocumentItems frmTechnicalDocumentItems = new FrmTechnicalDocumentItems();
+                var technicalDocumentId= Convert.ToInt32(dgvTechnicalDocuments.CurrentRow.Cells["intID"].Value.ToString());
+                frmTechnicalDocumentItems.technicalDocumentId = technicalDocumentId;
+                frmTechnicalDocumentItems.ShowDialog();
+            }
+            else
+            {
+                RtlMessageBox.Show("لطفا یک مستند را انتخاب کنید", "توجه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
     }
 }

@@ -32,6 +32,10 @@ namespace Baran.Ferroalloy.Automation
         private IEquipSamples _equipSamples;
         private ICompanies _companies;
         private ILocations _locations;
+        private ITechnicalDocuments _technicalDocuments;
+        private ITechnicalDocumentItems _technicalDocumentItems;
+        private IPartSamples _partSamples;
+        private ITechnicalDocumentTypes _technicalDocumentTypes;
 
 
         public IPartTypes PartTypes
@@ -304,6 +308,58 @@ namespace Baran.Ferroalloy.Automation
                 }
 
                 return _locations;
+            }
+        }
+
+        public ITechnicalDocuments TechnicalDocuments
+        {
+            get
+            {
+                if (_technicalDocuments == null)
+                {
+                    _technicalDocuments=new TechnicalDocumentsService(db);
+                }
+
+                return _technicalDocuments;
+            }
+        }
+
+        public ITechnicalDocumentItems TechnicalDocumentItems
+        {
+            get
+            {
+                if (_technicalDocumentItems == null)
+                {
+                    _technicalDocumentItems=new TechnicalDocumentItemsService(db);
+                }
+
+                return _technicalDocumentItems;
+            }
+        }
+
+        public IPartSamples PartSamples
+        {
+            get
+            {
+                if (_partSamples == null)
+                {
+                    _partSamples=new PartSamplesService(db);
+                }
+
+                return _partSamples;
+            }
+        }
+
+        public ITechnicalDocumentTypes TechnicalDocumentTypes
+        {
+            get
+            {
+                if (_technicalDocumentTypes == null)
+                {
+                    _technicalDocumentTypes=new TechnicalDocumentTypesService(db);
+                }
+
+                return _technicalDocumentTypes;
             }
         }
 

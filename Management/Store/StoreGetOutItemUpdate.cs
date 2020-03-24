@@ -82,17 +82,17 @@ namespace Baran.Ferroalloy.Management
 
         private void ButStuff_Click(object sender, EventArgs e)
         {
-            SelectStuff frmSelectStuff = new SelectStuff();
-            frmSelectStuff.Owner = this;
-            frmSelectStuff.cnConnection = this.cnConnection;
-            frmSelectStuff.setSettings = this.setSettings;
-            frmSelectStuff.usUser = this.usUser;
-            frmSelectStuff.ShowDialog();
-            if(SelectStuff.strStuffStoreCode.Length != 0 )
-            {
-                this.sgoiUpdate.strStuffStoreCode = SelectStuff.strStuffStoreCode;
-                this.labStuff.Text = SelectStuff.strStuffName;
-            }
+            //SelectStuff frmSelectStuff = new SelectStuff();
+            //frmSelectStuff.Owner = this;
+            //frmSelectStuff.cnConnection = this.cnConnection;
+            //frmSelectStuff.setSettings = this.setSettings;
+            //frmSelectStuff.usUser = this.usUser;
+            //frmSelectStuff.ShowDialog();
+            //if(SelectStuff.strStuffStoreCode.Length != 0 )
+            //{
+            //    this.sgoiUpdate.strStuffStoreCode = SelectStuff.strStuffStoreCode;
+            //    this.labStuff.Text = SelectStuff.strStuffName;
+            //}
 
             SetEnableBtmOk();
         }

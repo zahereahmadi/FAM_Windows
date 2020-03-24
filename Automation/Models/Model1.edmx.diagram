@@ -60,12 +60,9 @@
         <AssociationConnector Association="dbAfrzModel.FK_tabProperties_tabMeasurementUnits" ManuallyRouted="false" />
         <AssociationConnector Association="dbAfrzModel.FK_tabSubZones_tabZones" ManuallyRouted="false" />
         <EntityTypeShape EntityType="dbAfrzModel.tabPartTypes" Width="1.5" PointX="13.75" PointY="22.875" />
-        <EntityTypeShape EntityType="dbAfrzModel.tabTechnicalDocumentItems" Width="1.5" PointX="7.375" PointY="21.75" />
         <AssociationConnector Association="dbAfrzModel.FK_tabParts_tabCategories1" />
         <AssociationConnector Association="dbAfrzModel.FK_tabParts_tabMeasurementUnits1" />
         <EntityTypeShape EntityType="dbAfrzModel.tabUsers" Width="1.5" PointX="21.375" PointY="17.75" />
-        <EntityTypeShape EntityType="dbAfrzModel.tabStores" Width="1.5" PointX="21.375" PointY="3.875" />
-        <AssociationConnector Association="dbAfrzModel.FK_tabParts_tabStores" />
         <EntityTypeShape EntityType="dbAfrzModel.tabPosts" Width="1.5" PointX="5.375" PointY="14.75" />
         <EntityTypeShape EntityType="dbAfrzModel.tabEquipSamples" Width="1.5" PointX="4.25" PointY="0.5" />
         <AssociationConnector Association="dbAfrzModel.FK_tabEquips_tabCategories1" />
@@ -85,6 +82,16 @@
         <EntityTypeShape EntityType="dbAfrzModel.tabLocationes" Width="1.5" PointX="5.375" PointY="8.875" />
         <AssociationConnector Association="dbAfrzModel.FK_tabEquipSamples_tabCompanies" />
         <AssociationConnector Association="dbAfrzModel.FK_tabEquipSamples_tabLocationes" />
+        <EntityTypeShape EntityType="dbAfrzModel.tabTechnicalDocuments" Width="1.5" PointX="7.625" PointY="8.75" />
+        <AssociationConnector Association="dbAfrzModel.FK_tabTechnicalDocuments_tabCategories" />
+        <AssociationConnector Association="dbAfrzModel.FK_tabTechnicalDocuments_tabCompanies" />
+        <AssociationConnector Association="dbAfrzModel.FK_tabTechnicalDocuments_tabLocationes" />
+        <EntityTypeShape EntityType="dbAfrzModel.tabStores" Width="1.5" PointX="21.375" PointY="3.875" />
+        <AssociationConnector Association="dbAfrzModel.FK_tabParts_tabStores" />
+        <EntityTypeShape EntityType="dbAfrzModel.tabTechnicalDocumentItems" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="dbAfrzModel.tabPartSamples" Width="1.5" PointX="7.375" PointY="21.75" />
+        <EntityTypeShape EntityType="dbAfrzModel.tabTechnicalDocumentTypes" Width="1.5" PointX="16.375" PointY="21.875" />
+        <AssociationConnector Association="dbAfrzModel.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

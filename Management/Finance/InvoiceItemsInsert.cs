@@ -92,18 +92,18 @@ namespace Baran.Ferroalloy.Management
 
         private void BtmStuff_Click(object sender, EventArgs e)
         {
-            SelectStuff frmSelectStuff = new SelectStuff();
-            frmSelectStuff.Owner = this;
-            frmSelectStuff.cnConnection = this.cnConnection;
-            frmSelectStuff.setSettings = this.setSettings;
-            frmSelectStuff.usUser = this.usUser;
-            frmSelectStuff.ShowDialog();
+            //SelectStuff frmSelectStuff = new SelectStuff();
+            //frmSelectStuff.Owner = this;
+            //frmSelectStuff.cnConnection = this.cnConnection;
+            //frmSelectStuff.setSettings = this.setSettings;
+            //frmSelectStuff.usUser = this.usUser;
+            //frmSelectStuff.ShowDialog();
 
-            if (SelectStuff.strStuffStoreCode != "")
-            {
-                this.iiInsert.strEquipStorecode = SelectStuff.strStuffStoreCode;
-                this.labStuff.Text = SelectStuff.strStuffName;
-            }
+            //if (SelectStuff.strStuffStoreCode != "")
+            //{
+            //    this.iiInsert.strEquipStorecode = SelectStuff.strStuffStoreCode;
+            //    this.labStuff.Text = SelectStuff.strStuffName;
+            //}
 
             SetEnableBtmOk();
         }

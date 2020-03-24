@@ -314,7 +314,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     {
                         subBranchId = subBranchId;
                     }
-                    partCode = storeId + "-" + categoryId + "-" + nameId + "-" + branchId + "-" + subBranchId;
+                    partCode = storeId + "" + categoryId + "" + nameId + "" + branchId + "" + subBranchId;
                 }
                 this.Close();
             }

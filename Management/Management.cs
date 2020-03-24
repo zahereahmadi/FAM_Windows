@@ -430,32 +430,32 @@ namespace Baran.Ferroalloy.Management
 
         private void menStoreDepartmentStuffs_Click(object sender, EventArgs e)
         {
-            if (!Stuffs.bolIsRunning)
-            {
-                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
-                menWindowsStuffs.Name = "menWindowsStuffs";
-                menWindowsStuffs.Text = "کالا";
-                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsStuffs_Click);
-                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+            //if (!Stuffs.bolIsRunning)
+            //{
+            //    ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+            //    menWindowsStuffs.Name = "menWindowsStuffs";
+            //    menWindowsStuffs.Text = "کالا";
+            //    menWindowsStuffs.Click += new System.EventHandler(this.menWindowsStuffs_Click);
+            //    this.menWindows.DropDownItems.Add(menWindowsStuffs);
 
-                Stuffs frmStuffs = new Stuffs();
-                frmStuffs.MdiParent = this;
-                frmStuffs.setSettings = this.setSettings;
-                frmStuffs.cnConnection = this.cnConnection;
-                frmStuffs.usUser = this.usLogined;
-                frmStuffs.Show();
-                frmStuffs.WindowState = FormWindowState.Maximized;
-            }
+            //    Stuffs frmStuffs = new Stuffs();
+            //    frmStuffs.MdiParent = this;
+            //    frmStuffs.setSettings = this.setSettings;
+            //    frmStuffs.cnConnection = this.cnConnection;
+            //    frmStuffs.usUser = this.usLogined;
+            //    frmStuffs.Show();
+            //    frmStuffs.WindowState = FormWindowState.Maximized;
+            //}
         }
 
         private void menWindowsStuffs_Click(object sender, EventArgs e)
         {
             foreach (Form frmIntended in this.MdiChildren)
             {
-                if (frmIntended is Stuffs)
-                {
-                    frmIntended.BringToFront();
-                }
+                //if (frmIntended is Stuffs)
+                //{
+                //    frmIntended.BringToFront();
+                //}
             }
         }
 
@@ -467,23 +467,23 @@ namespace Baran.Ferroalloy.Management
 
         private void MenStoreDepartmentStoreGetOuts_Click(object sender, EventArgs e)
         {
-            if (!Stuffs.bolIsRunning)
-            {
-                ToolStripMenuItem menWindowsStoreDepartmentStoreGetOuts = new ToolStripMenuItem();
-                menWindowsStoreDepartmentStoreGetOuts.Name = "menWindowsStoreDepartmentStoreGetOuts";
-                menWindowsStoreDepartmentStoreGetOuts.Text = "درخواست‌های کالا از انبار";
-                menWindowsStoreDepartmentStoreGetOuts.Click += new System.EventHandler(this.menWindowsStoreDepartmentStoreGetOuts_Click);
-                this.menWindows.DropDownItems.Add(menWindowsStoreDepartmentStoreGetOuts);
+            //if (!Stuffs.bolIsRunning)
+            //{
+            //    ToolStripMenuItem menWindowsStoreDepartmentStoreGetOuts = new ToolStripMenuItem();
+            //    menWindowsStoreDepartmentStoreGetOuts.Name = "menWindowsStoreDepartmentStoreGetOuts";
+            //    menWindowsStoreDepartmentStoreGetOuts.Text = "درخواست‌های کالا از انبار";
+            //    menWindowsStoreDepartmentStoreGetOuts.Click += new System.EventHandler(this.menWindowsStoreDepartmentStoreGetOuts_Click);
+            //    this.menWindows.DropDownItems.Add(menWindowsStoreDepartmentStoreGetOuts);
 
-                StoreGetOuts frmStoreGetOuts = new StoreGetOuts();
-                frmStoreGetOuts.MdiParent = this;
-                frmStoreGetOuts.setSettings = this.setSettings;
-                frmStoreGetOuts.cnConnection = this.cnConnection;
-                frmStoreGetOuts.usLogined = this.usLogined;
-                frmStoreGetOuts.emLogined = this.emLogined;
-                frmStoreGetOuts.Show();
-                frmStoreGetOuts.WindowState = FormWindowState.Maximized;
-            }
+            //    StoreGetOuts frmStoreGetOuts = new StoreGetOuts();
+            //    frmStoreGetOuts.MdiParent = this;
+            //    frmStoreGetOuts.setSettings = this.setSettings;
+            //    frmStoreGetOuts.cnConnection = this.cnConnection;
+            //    frmStoreGetOuts.usLogined = this.usLogined;
+            //    frmStoreGetOuts.emLogined = this.emLogined;
+            //    frmStoreGetOuts.Show();
+            //    frmStoreGetOuts.WindowState = FormWindowState.Maximized;
+            //}
         }
 
         private void menWindowsStoreDepartmentStoreGetOuts_Click(object sender, EventArgs e)
@@ -804,6 +804,26 @@ namespace Baran.Ferroalloy.Management
                 frmEquips.usUser = this.usLogined;
                 frmEquips.Show();
                 frmEquips.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MenTechnicalDocuments_Click(object sender, EventArgs e)
+        {
+            if (!TechnicalDocuments.bolIsRunning)
+            {
+                ToolStripMenuItem menTechnicalDocuments = new ToolStripMenuItem();
+                menTechnicalDocuments.Name = "menTechnicalDocuments";
+                menTechnicalDocuments.Text = "مستندات";
+                menTechnicalDocuments.Click += new System.EventHandler(this.MenTechnicalDocuments_Click);
+                this.menWindows.DropDownItems.Add(menTechnicalDocuments);
+
+                TechnicalDocuments frmTechnicalDocuments = new TechnicalDocuments();
+                frmTechnicalDocuments.MdiParent = this;
+                frmTechnicalDocuments.setSettings = this.setSettings;
+                frmTechnicalDocuments.cnConnection = this.cnConnection;
+                frmTechnicalDocuments.usUser = this.usLogined;
+                frmTechnicalDocuments.Show();
+                frmTechnicalDocuments.WindowState = FormWindowState.Maximized;
             }
         }
     }

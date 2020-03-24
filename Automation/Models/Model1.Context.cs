@@ -68,9 +68,7 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabZones> tabZones { get; set; }
         public virtual DbSet<VieEmployeesInfo> VieEmployeesInfo { get; set; }
         public virtual DbSet<tabPartTypes> tabPartTypes { get; set; }
-        public virtual DbSet<tabTechnicalDocumentItems> tabTechnicalDocumentItems { get; set; }
         public virtual DbSet<tabUsers> tabUsers { get; set; }
-        public virtual DbSet<tabStores> tabStores { get; set; }
         public virtual DbSet<tabPosts> tabPosts { get; set; }
         public virtual DbSet<tabEquipSamples> tabEquipSamples { get; set; }
         public virtual DbSet<tabPartName> tabPartName { get; set; }
@@ -78,6 +76,11 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabPartSubBranch> tabPartSubBranch { get; set; }
         public virtual DbSet<tabCompanies> tabCompanies { get; set; }
         public virtual DbSet<tabLocationes> tabLocationes { get; set; }
+        public virtual DbSet<tabTechnicalDocuments> tabTechnicalDocuments { get; set; }
+        public virtual DbSet<tabStores> tabStores { get; set; }
+        public virtual DbSet<tabTechnicalDocumentItems> tabTechnicalDocumentItems { get; set; }
+        public virtual DbSet<tabPartSamples> tabPartSamples { get; set; }
+        public virtual DbSet<tabTechnicalDocumentTypes> tabTechnicalDocumentTypes { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

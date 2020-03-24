@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -18,6 +19,7 @@ namespace Baran.Ferroalloy.Management
         public TechnicalDocument tdTechnicalDocument = new TechnicalDocument();
         public Connection cnConnection;
         private Category[] caCategories;
+        public int technicalDocumentId;
 
         public TechnicalDocumentUpdate()
         {
@@ -26,46 +28,70 @@ namespace Baran.Ferroalloy.Management
 
         private void TechnicalDocumentUpdate_Load(object sender, EventArgs e)
         {
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            this.cbCategory.Items.Add("");
-            foreach (Category ctCategory in this.caCategories)
+            using (UnitOfWork db=new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
-            }
+                var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == technicalDocumentId);
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
+                cbCompanies.SelectedItem = technicalDocuments.tabCompanies.nvcName;
 
-            //Fill cbZone ComboBox
-            Zone[] zoZones = Zone.GetZones(this.cnConnection);
-            this.cbZone.Items.Clear();
-            this.cbZone.Items.Add("");
-            foreach (Zone zoZone in zoZones)
-            {
-                this.cbZone.Items.Add(zoZone.strNamePty);
-            }
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocations.Items.Add(item.nvcName);
+                }
+                cbLocations.SelectedItem = technicalDocuments.tabLocationes.nvcName;
 
-            this.cbCategory.Text = Category.GetNameByNumber(this.cnConnection,this.tdTechnicalDocument.intCategory);
-            this.cbZone.Text = tdTechnicalDocument.strZonePty;
-            this.tbCode.Text = tdTechnicalDocument.strCodePty;
-            this.tbCoDesigner.Text = tdTechnicalDocument.strCoDesignerPty;
-            this.tbPersonDesigner.Text = tdTechnicalDocument.strPersonDesignerPty;
-            this.tbRevisionNumber.Text = tdTechnicalDocument.strRevisionNumberPty;
-            this.tbTip.Text = tdTechnicalDocument.strTipPty;
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategories.Items.Add(item.nvcName);
+                }
+                cbCategories.SelectedItem = technicalDocuments.tabCategories.nvcName;
+
+                tbCoDesigner.Text = technicalDocuments.nvcCoDesigner;
+                tbDesignerName.Text = technicalDocuments.nvcPersonDesigner;
+                tbRevisionNumber.Text = technicalDocuments.nvcRevisionNumber;
+
+                var technicalDocumentTypes = db.TechnicalDocumentTypes.GetAll();
+                foreach (var item in technicalDocumentTypes)
+                {
+                    cbType.Items.Add(item.nvcName);
+                }
+                cbType.SelectedItem = technicalDocuments.tabTechnicalDocumentTypes.nvcName;
+            }
         }
 
         private void btmOK_Click(object sender, EventArgs e)
         {
-            tdTechnicalDocument.intCategory = Category.GetNumberByName(this.cnConnection,this.cbCategory.Text);
-            tdTechnicalDocument.strZonePty = Zone.GetZoneCode(this.cnConnection,this.cbZone.Text);
-            tdTechnicalDocument.strCodePty = this.tbCode.Text;
-            tdTechnicalDocument.strCoDesignerPty = this.tbCoDesigner.Text;
-            tdTechnicalDocument.strPersonDesignerPty = this.tbPersonDesigner.Text;
-            tdTechnicalDocument.strRevisionNumberPty = this.tbRevisionNumber.Text;
-            tdTechnicalDocument.strTipPty = this.tbTip.Text;
-            tdTechnicalDocument.Update(this.cnConnection);
-
-            TechnicalDocuments frmTechnicalDocuments = (TechnicalDocuments)this.Owner;
-            frmTechnicalDocuments.SearchTechnicalDocuments();
-            this.Close();
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber;
+                var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber;
+                var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber;
+                var typeId = db.TechnicalDocumentTypes.GetEntityByName(t => t.nvcName == cbType.SelectedItem).intNumber;
+                var coDesigner = tbCoDesigner.Text.Trim();
+                var designerName = tbDesignerName.Text.Trim();
+                var revisionNumber = tbRevisionNumber.Text.Trim();
+                var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == technicalDocumentId);
+                technicalDocuments.intID = technicalDocumentId;
+                technicalDocuments.bitSelect = false;
+                technicalDocuments.intCompany = companyId;
+                technicalDocuments.intLocation = locationId;
+                technicalDocuments.intCategory = categoryId;
+                technicalDocuments.intType = typeId;
+                technicalDocuments.intOrder = technicalDocuments.intOrder;
+                technicalDocuments.nvcCoDesigner = coDesigner;
+                technicalDocuments.nvcPersonDesigner = designerName;
+                technicalDocuments.nvcRevisionNumber = revisionNumber;
+                db.TechnicalDocuments.Update(technicalDocuments);
+                db.Save();
+                this.Close();
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void btmCancel_Click(object sender, EventArgs e)

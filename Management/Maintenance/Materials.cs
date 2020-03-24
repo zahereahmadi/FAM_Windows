@@ -63,16 +63,16 @@ namespace Baran.Ferroalloy.Management.Technical
                 }
             }
 
-            if (this.Owner is StuffUpdate)
-            {
-                StuffUpdate frmStuffUpdate = (StuffUpdate)this.Owner;
-                frmStuffUpdate.FillMaterials();
-            }
-            if (this.Owner is StuffInsert)
-            {
-                StuffInsert frmStuffInsert = (StuffInsert)this.Owner;
-                frmStuffInsert.FillMaterials();
-            }
+            //if (this.Owner is StuffUpdate)
+            //{
+            //    StuffUpdate frmStuffUpdate = (StuffUpdate)this.Owner;
+            //    frmStuffUpdate.FillMaterials();
+            //}
+            //if (this.Owner is StuffInsert)
+            //{
+            //    StuffInsert frmStuffInsert = (StuffInsert)this.Owner;
+            //    frmStuffInsert.FillMaterials();
+            //}
 
             this.Close();
         }

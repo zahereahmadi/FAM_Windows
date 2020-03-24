@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Baran.Ferroalloy.Automation;
 using Baran.Ferroalloy.Automation.Models;
+using Baran.Ferroalloy.Management.Office;
 
 namespace Baran.Ferroalloy.Management.Maintenance
 {
@@ -55,25 +56,25 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var employees = db.Employees.Get(t =>
-                    t.intWorkGroup == (int)cbWorkGroup.SelectedItem && t.intDepartment == 5 &&
-                    t.tabSubDepartments.nvcName == cbSubDepartment.SelectedItem && t.intSubDepartmentSubset == 3); //فنی=5 کوره=3
-                var workGroupsName = "";
-                var leaderName = "";
-                if (employees != null)
-                {
-                    foreach (var item in employees)
-                    {
-                        workGroupsName += item.nvcFirstname + " " + item.nvcLastname + "-";
-                        if (item.bitIsLeader == true)
-                        {
-                            leaderName = item.nvcFirstname + " " + item.nvcLastname;
-                        }
-                    }
-                    workGroupsName = workGroupsName.Remove(workGroupsName.Length - 1);
-                    txtworkGrop.Text = workGroupsName;
-                    txtLeaderWorkGroup.Text = leaderName;
-                }
+                //var employees = db.Employees.Get(t =>
+                //    t.intWorkGroup == (int)cbWorkGroup.SelectedItem && t.intDepartment == 5 &&
+                //    t.tabSubDepartments.nvcName == cbSubDepartment.SelectedItem && t.intSubDepartmentSubset == 3); //فنی=5 کوره=3
+                //var workGroupsName = "";
+                //var leaderName = "";
+                //if (employees != null)
+                //{
+                //    foreach (var item in employees)
+                //    {
+                //        workGroupsName += item.nvcFirstname + " " + item.nvcLastname + "-";
+                //        if (item.bitIsLeader == true)
+                //        {
+                //            leaderName = item.nvcFirstname + " " + item.nvcLastname;
+                //        }
+                //    }
+                //    workGroupsName = workGroupsName.Remove(workGroupsName.Length - 1);
+                //    txtworkGrop.Text = workGroupsName;
+                //    txtLeaderWorkGroup.Text = leaderName;
+                //}
                 SetEnableBtmOk();
             }
         }
@@ -81,7 +82,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
         private void SetEnableBtmOk()
         {
             if (this.cbShift.SelectedIndex >= 0 && this.cbSubDepartment.SelectedIndex >= 0 &&
-                this.cbSubDepartment.SelectedIndex >= 0 && this.txtworkGrop.Text.Trim().Length != 0 &&
+                this.cbSubDepartment.SelectedIndex >= 0 &&
                 this.txtLeaderWorkGroup.Text.Trim().Length != 0)
             {
                 this.btmOK.Enabled = true;
@@ -98,16 +99,19 @@ namespace Baran.Ferroalloy.Management.Maintenance
             {
                 var shiftId = db.shift.GetEntity(t => t.nvcName == cbShift.SelectedItem).intNumber;
                 var subDepartmentId = db.subDepartment.GetEntity(t => t.nvcName == cbSubDepartment.SelectedItem).intNumber;
-                var workGroup = txtworkGrop.Text.Split('-');
-
                 var coIds = "";
-                foreach (var item in workGroup)
+                var coIdLeader = txtLeaderWorkGroup.Text;
+                var nameWorker = lbWorkers.Items;
+                foreach (var item in nameWorker)
                 {
-                    coIds += db.Employees.GetEntity(t => t.nvcFirstname + " " + t.nvcLastname == item).nvcCoID +"-";
+                    coIds += db.Employees.GetEntity(t => t.nvcFirstname + " " + t.nvcLastname == item).nvcCoID + "-";
+                    //coIdLeader = db.Employees.GetEntity(t =>
+                       // t.nvcFirstname + " " + t.nvcLastname == item && t.bitIsLeader == true).nvcCoID;
                 }
+
                 coIds = coIds.Remove(coIds.Length - 1);
 
-                var coIdLeader = db.Employees.GetEntity(t => t.nvcFirstname + " " + t.nvcLastname == txtLeaderWorkGroup.Text).nvcCoID;
+                //var coIdLeader = db.Employees.GetEntity(t => t.nvcFirstname + " " + t.nvcLastname == txtLeaderWorkGroup.Text).nvcCoID;
                 tabMaintenances tabMaintenances = new tabMaintenances()
                 {
                     intDepartment = 5,
@@ -122,18 +126,40 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 var maintenancInsert = db.Maintenance.Insert(tabMaintenances);
                 db.Save();
                 this.Close();
-                FrmMaintenanceItems frmMaintenanceItems=new FrmMaintenanceItems();
+                FrmMaintenanceItems frmMaintenanceItems = new FrmMaintenanceItems();
                 frmMaintenanceItems.coIdsWorker = tabMaintenances.nvcCoIdsWorkGroup;
                 frmMaintenanceItems.maintenanceId = maintenancInsert.intID;
                 frmMaintenanceItems.Show();
-                
+
             }
         }
 
-        private void BtnSelectEmployee_Click(object sender, EventArgs e)
+
+        private void BtnSelectEmployee_Click_1(object sender, EventArgs e)
         {
-            //SelectEmployee selectEmployee =new SelectEmployee();
-            //selectEmployee.Show();
+            FrmSelectEmployee frmSelectEmployee = new FrmSelectEmployee();
+            frmSelectEmployee.ShowDialog();
+            lbWorkers.Items.Add(frmSelectEmployee.fullName);
+        }
+
+        private void BtmDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            if (lbWorkers.SelectedItem != null)
+            {
+                this.lbWorkers.Items.RemoveAt(this.lbWorkers.SelectedIndex);
+            }
+            else
+            {
+                RtlMessageBox.Show("لطفا تعمیرکار مورد نظر را انتخاب کنید", "اخطار", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnSelectWorkerLeader_Click(object sender, EventArgs e)
+        {
+            FrmSelectEmployee frmSelectEmployee = new FrmSelectEmployee();
+            frmSelectEmployee.ShowDialog();
+            txtLeaderWorkGroup.Text = frmSelectEmployee.fullName;
         }
     }
 }
