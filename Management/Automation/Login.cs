@@ -31,6 +31,7 @@ namespace Baran.Ferroalloy.Management
 
         private void Login_Load(object sender, EventArgs e)
         {
+            //test
             this.frmManagement = (Management)this.Owner;
 
             if (FamSetting.GetSaveUserName(this.setSettings.strXmlPath))
