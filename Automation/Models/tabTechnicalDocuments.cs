@@ -24,6 +24,7 @@ namespace Baran.Ferroalloy.Automation.Models
         public string nvcCoDesigner { get; set; }
         public string nvcPersonDesigner { get; set; }
         public string nvcRevisionNumber { get; set; }
+        public string nvcTitle { get; set; }
     
         public virtual tabCategories tabCategories { get; set; }
         public virtual tabCompanies tabCompanies { get; set; }

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btmExit = new System.Windows.Forms.Button();
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.butPicNext = new System.Windows.Forms.Button();
@@ -380,14 +380,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStuffs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStuffs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan", 10F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStuffs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStuffs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStuffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStuffs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intID,
@@ -409,7 +409,6 @@
             this.dgvStuffs.RowTemplate.Height = 55;
             this.dgvStuffs.Size = new System.Drawing.Size(1100, 353);
             this.dgvStuffs.TabIndex = 21;
-            this.dgvStuffs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStuffs_CellClick);
             this.dgvStuffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStuffs_CellContentClick);
             this.dgvStuffs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStuffs_CellDoubleClick);
             this.dgvStuffs.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStuffs_CellValueChanged);
@@ -418,8 +417,8 @@
             // intID
             // 
             this.intID.DataPropertyName = "intID";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.intID.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.intID.DefaultCellStyle = dataGridViewCellStyle2;
             this.intID.HeaderText = "intID";
             this.intID.MinimumWidth = 10;
             this.intID.Name = "intID";
@@ -428,10 +427,10 @@
             // bitSelect
             // 
             this.bitSelect.DataPropertyName = "bitSelect";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.NullValue = false;
-            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = false;
+            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle3;
             this.bitSelect.HeaderText = "انتخاب";
             this.bitSelect.MinimumWidth = 10;
             this.bitSelect.Name = "bitSelect";
@@ -469,8 +468,8 @@
             // nvcMeasurementUnitAsName
             // 
             this.nvcMeasurementUnitAsName.DataPropertyName = "measurementUnitTitle";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nvcMeasurementUnitAsName.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nvcMeasurementUnitAsName.DefaultCellStyle = dataGridViewCellStyle4;
             this.nvcMeasurementUnitAsName.HeaderText = "واحد اندازه‌گیری";
             this.nvcMeasurementUnitAsName.MinimumWidth = 10;
             this.nvcMeasurementUnitAsName.Name = "nvcMeasurementUnitAsName";
@@ -480,8 +479,8 @@
             // floOrderPoint
             // 
             this.floOrderPoint.DataPropertyName = "floOrderPoint";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.floOrderPoint.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.floOrderPoint.DefaultCellStyle = dataGridViewCellStyle5;
             this.floOrderPoint.HeaderText = "نقطه سفارش";
             this.floOrderPoint.MinimumWidth = 10;
             this.floOrderPoint.Name = "floOrderPoint";
@@ -491,8 +490,8 @@
             // floSupply
             // 
             this.floSupply.DataPropertyName = "floSupply";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.floSupply.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.floSupply.DefaultCellStyle = dataGridViewCellStyle6;
             this.floSupply.HeaderText = "موجودی";
             this.floSupply.MinimumWidth = 10;
             this.floSupply.Name = "floSupply";

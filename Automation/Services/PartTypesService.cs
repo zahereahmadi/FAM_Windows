@@ -11,10 +11,9 @@ namespace Baran.Ferroalloy.Automation
     public class PartTypesService : Generic<tabPartTypes>, IPartTypes
 
     {
-        private dbAfrzEntities _db;
+        private dbAfrzEntities _db=new dbAfrzEntities();
         public PartTypesService(DbContext db) : base(db)
         {
-            _db = (dbAfrzEntities) db;
         }
 
         public List<dgvListStoresViewModel> ListParts(string filter = "")
@@ -45,6 +44,36 @@ namespace Baran.Ferroalloy.Automation
             }
 
             return list.Where(t=>t.namePart.Contains(filter)).ToList();
+        }
+
+        public List<tabPartTypes> FilterPartTypes(object store, object category, object name, object branch, object subBranch)
+        {
+            var list = _db.tabPartTypes.ToList().Where(t =>
+                t.tabStores.nvcName.Equals(store) || t.tabCategories.Equals(category) || t.tabPartName.Equals(name) ||
+                t.tabPartBranch.Equals(branch) || t.tabPartSubBranch.Equals(subBranch));
+            return list.ToList();
+        }
+
+        public List<PartsViewModel> FillDgvParts(List<tabPartTypes> list)
+        {
+            List<PartsViewModel> models=new List<PartsViewModel>();
+            foreach (var item in list)
+            {
+                models.Add(new PartsViewModel()
+                {
+                    intID = item.intID,
+                    storeTitle = item.tabStores.nvcName,
+                    categoryTitle = item.tabCategories.nvcName,
+                    nameTitle = item.tabPartName.nvcName,
+                    branchTitle = item.tabPartBranch.nvcName,
+                    subBranchTitle = item.tabPartSubBranch.nvcName,
+                    measurementUnitTitle = item.tabMeasurementUnits.nvcName,
+                    floOrderPoint = item.floOrderPoint,
+                    floSupply = item.floSupply,
+                });
+            }
+
+            return models;
         }
     }
 }

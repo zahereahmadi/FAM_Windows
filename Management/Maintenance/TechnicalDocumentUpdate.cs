@@ -62,6 +62,7 @@ namespace Baran.Ferroalloy.Management
                     cbType.Items.Add(item.nvcName);
                 }
                 cbType.SelectedItem = technicalDocuments.tabTechnicalDocumentTypes.nvcName;
+                txtTitle.Text = technicalDocuments.nvcTitle;
             }
         }
 
@@ -76,6 +77,7 @@ namespace Baran.Ferroalloy.Management
                 var coDesigner = tbCoDesigner.Text.Trim();
                 var designerName = tbDesignerName.Text.Trim();
                 var revisionNumber = tbRevisionNumber.Text.Trim();
+                var title = txtTitle.Text.Trim();
                 var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == technicalDocumentId);
                 technicalDocuments.intID = technicalDocumentId;
                 technicalDocuments.bitSelect = false;
@@ -87,6 +89,7 @@ namespace Baran.Ferroalloy.Management
                 technicalDocuments.nvcCoDesigner = coDesigner;
                 technicalDocuments.nvcPersonDesigner = designerName;
                 technicalDocuments.nvcRevisionNumber = revisionNumber;
+                technicalDocuments.nvcTitle = title;
                 db.TechnicalDocuments.Update(technicalDocuments);
                 db.Save();
                 this.Close();

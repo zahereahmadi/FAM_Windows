@@ -305,6 +305,10 @@
     <Compile Include="ViewModels\dgvPartSamplesViewModel.cs" />
     <Compile Include="ViewModels\dgvTechnicalDocumentItemsViewModel.cs" />
     <Compile Include="ViewModels\dgvTechnicalDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\GetEquipSampleViewModel.cs" />
+    <Compile Include="ViewModels\GetPartTypeByIdsViewModel.cs" />
+    <Compile Include="ViewModels\GetPartTypeViewModel.cs" />
+    <Compile Include="ViewModels\GetTechnicalDocumentCodeViewModel.cs" />
     <Compile Include="ViewModels\ListMaintenancesViewModel.cs" />
     <Compile Include="ViewModels\dgvListMaintenancePartsViewModel.cs" />
     <Compile Include="ViewModels\dgvListStoresViewModel.cs" />

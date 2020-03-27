@@ -54,40 +54,42 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var leaderWorker = "";
-                var workersName = "";
-                var maintenances = db.Maintenance.GetAll().Where(t =>
-                        t.tabSubDepartments.nvcName.Equals(cbSubDepartment.SelectedItem) ||
-                        t.tabShifts.nvcName.Equals(cbShift.SelectedItem) ||
-                        (t.datWorkGroup.Date >= dtpFromDate.Value.Date && t.datWorkGroup.Date <= dtpToDate.Value.Date)).ToList();
-                List<dgvMaintenanceViewModel> list = new List<dgvMaintenanceViewModel>();
-                foreach (var item in maintenances)
-                {
-                    var leader = db.Employees.GetEntity(t => t.nvcCoID == item.nvcCoIdLeader);
-                    leaderWorker = leader.nvcFirstname + " " + leader.nvcLastname;
-                    var coIds = item.nvcCoIdsWorkGroup.Split('-');
-                    var coId = "";
-                    for (int i = 0; i < coIds.Length; i++)
-                    {
-                        coId = coIds[i];
-                        var coIdEmployee = db.Employees.GetEntity(t => t.nvcCoID == coId);
-                        workersName += coIdEmployee.nvcFirstname + " " + coIdEmployee.nvcLastname + "-";
-                    }
-
-                    workersName = workersName.Remove(workersName.Length - 1);
-                    list.Add(new dgvMaintenanceViewModel()
-                    {
-                        intID = item.intID,
-                        datWorkGroup = item.datWorkGroup.Date,
-                        nameShift = item.tabShifts.nvcName,
-                        nameSubDepartment = item.tabSubDepartments.nvcName,
-                        workers = workersName,
-                        leaderWorker = leaderWorker
-                    });
-                    workersName = "";
-                }
-
+                var tabMaintenances = db.Maintenance.FilterMaintenances(cbSubDepartment.SelectedItem, cbShift.SelectedItem,
+                    dtpFromDate.Value.Date, dtpToDate.Value.Date);
+                var list = db.Maintenance.FillDgvMaintenance(tabMaintenances);
                 dgvMaintenance.DataSource = list;
+                //var maintenances = db.Maintenance.GetAll().Where(t =>
+                //        t.tabSubDepartments.nvcName.Equals(cbSubDepartment.SelectedItem) ||
+                //        t.tabShifts.nvcName.Equals(cbShift.SelectedItem) ||
+                //        (t.datWorkGroup.Date >= dtpFromDate.Value.Date && t.datWorkGroup.Date <= dtpToDate.Value.Date)).ToList();
+                //List<dgvMaintenanceViewModel> list = new List<dgvMaintenanceViewModel>();
+                //foreach (var item in maintenances)
+                //{
+                //    var leader = db.Employees.GetEntity(t => t.nvcCoID == item.nvcCoIdLeader);
+                //    leaderWorker = leader.nvcFirstname + " " + leader.nvcLastname;
+                //    var coIds = item.nvcCoIdsWorkGroup.Split('-');
+                //    var coId = "";
+                //    for (int i = 0; i < coIds.Length; i++)
+                //    {
+                //        coId = coIds[i];
+                //        var coIdEmployee = db.Employees.GetEntity(t => t.nvcCoID == coId);
+                //        workersName += coIdEmployee.nvcFirstname + " " + coIdEmployee.nvcLastname + "-";
+                //    }
+
+                //    workersName = workersName.Remove(workersName.Length - 1);
+                //    list.Add(new dgvMaintenanceViewModel()
+                //    {
+                //        intID = item.intID,
+                //        datWorkGroup = item.datWorkGroup.Date,
+                //        nameShift = item.tabShifts.nvcName,
+                //        nameSubDepartment = item.tabSubDepartments.nvcName,
+                //        workers = workersName,
+                //        leaderWorker = leaderWorker
+                //    });
+                //    workersName = "";
+                //}
+
+                //dgvMaintenance.DataSource = list;
             }
         }
 

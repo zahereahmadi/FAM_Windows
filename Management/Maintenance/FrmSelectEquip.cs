@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Baran.Ferroalloy.Automation;
-using Baran.Ferroalloy.Automation.ViewModels.Maintenance;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -31,6 +30,18 @@ namespace Baran.Ferroalloy.Management
             dgvEquips.AutoGenerateColumns = false;
             using (UnitOfWork db = new UnitOfWork())
             {
+                var companies = db.Companies.GetAll();
+                foreach (var item in companies)
+                {
+                    cbCompanies.Items.Add(item.nvcName);
+                }
+
+                var locationes = db.Locations.GetAll();
+                foreach (var item in locationes)
+                {
+                    cbLocationes.Items.Add(item.nvcName);
+                }
+
                 var zones = db.Zone.GetAll();
                 foreach (var item in zones)
                 {
@@ -82,47 +93,15 @@ namespace Baran.Ferroalloy.Management
             using (UnitOfWork db = new UnitOfWork())
             {
                 this.labName.Text = cbEqiupName.SelectedItem.ToString();
+                var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber.ToString();
+                var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocationes.SelectedItem).intNumber.ToString();
                 var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber.ToString();
-                if (zoneId.Length == 1)
-                {
-                    zoneId = 0 + zoneId;
-                }
-                else
-                {
-                    zoneId = zoneId;
-                }
-
                 var subZoneId = db.SubZone.GetEntityByName(t => t.nvcName == cbSubZones.SelectedItem).intNumber.ToString();
-                if (subZoneId.Length == 1)
-                {
-                    subZoneId = 0 + subZoneId;
-                }
-                else
-                {
-                    subZoneId = subZoneId;
-                }
-
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber.ToString();
-                if (categoryId.Length == 1)
-                {
-                    categoryId = 0 + categoryId;
-                }
-                else
-                {
-                    categoryId = categoryId;
-                }
-
                 var eqiupNameId = db.EquipName.GetEntityByName(t => t.nvcName == cbEqiupName.SelectedItem).intNumber.ToString();
-                if (eqiupNameId.Length == 1)
-                {
-                    eqiupNameId = 0 + eqiupNameId;
-                }
-                else
-                {
-                    eqiupNameId = eqiupNameId;
-                }
-
-                labCode.Text = zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId;
+                var model = MyExtentions.GetEquipSample(companyId, locationId, zoneId, subZoneId, categoryId, eqiupNameId,"");
+                labCode.Text = model.CompanyId + "" + model.LocationId + "" + model.ZoneId + "" + model.SubZoneId + "" +
+                               model.CategoryId + "" + model.EquipNameId;
             }
         }
 
@@ -130,25 +109,30 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var equips = db.EquipSamples.GetAll().Where(t =>
-                    t.tabZones.nvcName.Equals(cbZones.SelectedItem) ||
-                    t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) ||
-                    t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
-                    t.tabEquipName.Equals(cbEqiupName.SelectedItem));
-                List<EquipsViewModel> list = new List<EquipsViewModel>();
-                foreach (var item in equips)
-                {
-                    list.Add(new EquipsViewModel()
-                    {
-                        intID = item.intID,
-                        categoryTitle = item.tabCategories.nvcName,
-                        equipNameTitle = item.tabEquipName.nvcName,
-                        subZoneTitle = item.tabSubZones.nvcName,
-                        zoneTitle = item.tabZones.nvcName
-                    });
-                }
-
+                var tabEquipSamples = db.EquipSamples.FilterEquipSamples(cbCompanies.SelectedItem,
+                    cbLocationes.SelectedItem, cbZones.SelectedItem, cbSubZones.SelectedItem, cbCategories.SelectedItem,
+                    cbEqiupName.SelectedItem);
+                var list = db.EquipSamples.FillDgvEquips(tabEquipSamples);
                 dgvEquips.DataSource = list;
+                //var equips = db.EquipSamples.GetAll().Where(t =>
+                //    t.tabZones.nvcName.Equals(cbZones.SelectedItem) ||
+                //    t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) ||
+                //    t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
+                //    t.tabEquipName.Equals(cbEqiupName.SelectedItem));
+                //List<EquipsViewModel> list = new List<EquipsViewModel>();
+                //foreach (var item in equips)
+                //{
+                //    list.Add(new EquipsViewModel()
+                //    {
+                //        intID = item.intID,
+                //        categoryTitle = item.tabCategories.nvcName,
+                //        equipNameTitle = item.tabEquipName.nvcName,
+                //        subZoneTitle = item.tabSubZones.nvcName,
+                //        zoneTitle = item.tabZones.nvcName
+                //    });
+                //}
+
+                //dgvEquips.DataSource = list;
             }
         }
 
@@ -172,77 +156,15 @@ namespace Baran.Ferroalloy.Management
                     var equips = db.EquipSamples.GetEntity(t => t.intID == equipId);
                     equipName = equips.tabEquipName.nvcName;
                     var company = equips.intCompany.ToString();
-                    if (company.Length == 1)
-                    {
-                        company = 0 + company;
-                    }
-                    else
-                    {
-                        company = company;
-                    }
-
                     var location = equips.intLocation.ToString();
-                    if (location.Length == 1)
-                    {
-                        location = 0 + location;
-                    }
-                    else
-                    {
-                        location = location;
-                    }
-
                     var zone = equips.intZone.ToString();
-                    if (zone.Length == 1)
-                    {
-                        zone = 0 + zone;
-                    }
-                    else
-                    {
-                        zone = zone;
-                    }
-
                     var subZone = equips.intSubZone.ToString();
-                    if (subZone.Length == 1)
-                    {
-                        subZone = 0 + subZone;
-                    }
-                    else
-                    {
-                        subZone = subZone;
-                    }
-
-                    var cateqory = equips.intCategory.ToString();
-                    if (cateqory.Length == 1)
-                    {
-                        cateqory = 0 + cateqory;
-                    }
-                    else
-                    {
-                        cateqory = cateqory;
-                    }
-
+                    var category = equips.intCategory.ToString();
                     var name = equips.intEquipName.ToString();
-                    if (name.Length == 1)
-                    {
-                        name = 0 + name;
-                    }
-                    else
-                    {
-                        name = name;
-                    }
-
                     var order = equips.intOrder.ToString();
-                    if (order.Length == 1)
-                    {
-                        order = 0 + order;
-                    }
-                    else
-                    {
-                        order = order;
-                    }
-
-                    equipCode = company + "" + location + "" + zone + "" + subZone + "" + cateqory + "" + name +
-                                "" + order;
+                    var model = MyExtentions.GetEquipSample(company, location, zone, subZone, category, name, order);
+                    equipCode = model.CompanyId + "" + model.LocationId + "" + model.ZoneId + "" + model.SubZoneId +
+                                "" + model.CategoryId + "" + model.EquipNameId + "" + model.OrderId;
                     this.Close();
                 }
             }

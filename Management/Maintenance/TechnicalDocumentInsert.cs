@@ -67,6 +67,7 @@ namespace Baran.Ferroalloy.Management
                 var coDesigner = tbCoDesigner.Text.Trim();
                 var designerName = tbDesignerName.Text.Trim();
                 var revisionNumber = tbRevisionNumber.Text.Trim();
+                var title = txtTitle.Text.Trim();
 
                 var technicalDocuments = db.TechnicalDocuments.GetByWhere(t =>
                     t.intCompany == companyId && t.intLocation == locationId && t.intCategory == categoryId && t.intType == typeId).ToList();
@@ -89,6 +90,7 @@ namespace Baran.Ferroalloy.Management
                 tabTechnicalDocuments.nvcCoDesigner = coDesigner;
                 tabTechnicalDocuments.nvcPersonDesigner = designerName;
                 tabTechnicalDocuments.nvcRevisionNumber = revisionNumber;
+                tabTechnicalDocuments.nvcTitle = title;
 
                 db.TechnicalDocuments.Insert(tabTechnicalDocuments);
                 db.Save();

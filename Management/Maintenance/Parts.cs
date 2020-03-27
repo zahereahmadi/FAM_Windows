@@ -241,51 +241,12 @@ namespace Baran.Ferroalloy.Management
             {
                 this.labName.Text = cbName.SelectedItem + " " + cbBranch.SelectedItem + " " + cbSubBranch.SelectedItem;
                 var storeId = db.Stores.GetEntityByName(t => t.nvcName == cbStores.SelectedItem).intNumber.ToString();
-                if (storeId.Length == 1)
-                {
-                    storeId = 0 + storeId;
-                }
-                else
-                {
-                    storeId = storeId;
-                }
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber.ToString();
-                if (categoryId.Length == 1)
-                {
-                    categoryId = 0 + categoryId;
-                }
-                else
-                {
-                    categoryId = categoryId;
-                }
                 var nameId = db.PartName.GetEntityByName(t => t.nvcName == cbName.SelectedItem).intNumber.ToString();
-                if (nameId.Length == 1)
-                {
-                    nameId = 0 + nameId;
-                }
-                else
-                {
-                    nameId = nameId;
-                }
                 var branchId = db.PartBranch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber.ToString();
-                if (branchId.Length == 1)
-                {
-                    branchId = 0 + branchId;
-                }
-                else
-                {
-                    branchId = branchId;
-                }
                 var subBranchId = db.PartSubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber.ToString();
-                if (subBranchId.Length == 1)
-                {
-                    subBranchId = 0 + subBranchId;
-                }
-                else
-                {
-                    subBranchId = subBranchId;
-                }
-                this.labCode.Text = storeId + "" + categoryId + "" + nameId + "" + branchId + "" + subBranchId;
+                var model = MyExtentions.GetPartTypeByIds(storeId, categoryId, nameId, branchId, subBranchId);
+                this.labCode.Text = model.Store + "" + model.Category + "" + model.PartName + "" + model.PartBranch + "" + model.PartSubBranch;
 
                 var parts = db.PartTypes.GetAll().FirstOrDefault(t =>
                     t.intStore == int.Parse(storeId) && t.intCategory == int.Parse(categoryId) && t.intName == int.Parse(nameId) &&
@@ -310,36 +271,38 @@ namespace Baran.Ferroalloy.Management
 
         #region Filter
 
-        
         public void Filter()
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-
-                var filter = db.PartTypes.GetAll().Where(t =>
-                    t.tabStores.nvcName.Equals(cbStores.SelectedItem) ||
-                    t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
-                    t.tabPartName.nvcName.Equals(cbName.SelectedItem) ||
-                    t.tabPartBranch.Equals(cbBranch.SelectedItem) ||
-                    t.tabPartSubBranch.nvcName.Equals(cbSubBranch.SelectedItem));
-                List<PartsViewModel> list = new List<PartsViewModel>();
-                foreach (var item in filter)
-                {
-                    var parts = db.PartTypes.GetEntityById(item.intID);
-                    list.Add(new PartsViewModel()
-                    {
-                        storeTitle = item.tabStores.nvcName,
-                        categoryTitle = item.tabCategories.nvcName,
-                        nameTitle = item.tabPartName.nvcName,
-                        branchTitle = item.tabPartBranch.nvcName,
-                        subBranchTitle = item.tabPartSubBranch.nvcName,
-                        measurementUnitTitle = item.tabMeasurementUnits.nvcName,
-                        floOrderPoint = parts.floOrderPoint,
-                        floSupply = parts.floSupply,
-                        intID = item.intID
-                    });
-                }
+                var tabPartTypes = db.PartTypes.FilterPartTypes(cbStores.SelectedItem, cbCategories.SelectedItem, cbName.SelectedItem,
+                    cbBranch.SelectedItem, cbSubBranch.SelectedItem);
+                var list = db.PartTypes.FillDgvParts(tabPartTypes);
                 dgvStuffs.DataSource = list;
+                //var filter = db.PartTypes.GetAll().Where(t =>
+                //    t.tabStores.nvcName.Equals(cbStores.SelectedItem) ||
+                //    t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
+                //    t.tabPartName.nvcName.Equals(cbName.SelectedItem) ||
+                //    t.tabPartBranch.Equals(cbBranch.SelectedItem) ||
+                //    t.tabPartSubBranch.nvcName.Equals(cbSubBranch.SelectedItem));
+                //List<PartsViewModel> list = new List<PartsViewModel>();
+                //foreach (var item in filter)
+                //{
+                //    var parts = db.PartTypes.GetEntityById(item.intID);
+                //    list.Add(new PartsViewModel()
+                //    {
+                //        storeTitle = item.tabStores.nvcName,
+                //        categoryTitle = item.tabCategories.nvcName,
+                //        nameTitle = item.tabPartName.nvcName,
+                //        branchTitle = item.tabPartBranch.nvcName,
+                //        subBranchTitle = item.tabPartSubBranch.nvcName,
+                //        measurementUnitTitle = item.tabMeasurementUnits.nvcName,
+                //        floOrderPoint = parts.floOrderPoint,
+                //        floSupply = parts.floSupply,
+                //        intID = item.intID
+                //    });
+                //}
+                //dgvStuffs.DataSource = list;
             }
         }
 
@@ -473,53 +436,6 @@ namespace Baran.Ferroalloy.Management
         }
 
 
-
-        public void SearchStuffs()
-        {
-            this.stSearch.strStore = StoreCode.GetStoreCodeByName(this.cnConnection, this.cbStores.Text);
-            this.stSearch.strSection = StoreCode.GetSectionCodeByName(this.cnConnection, this.stSearch.strStore, this.cbCategories.Text);
-            this.stSearch.strMaterial = StoreCode.GetMaterialCodeByName(this.cnConnection, this.stSearch.strStore, this.stSearch.strSection, this.cbName.Text);
-            this.stSearch.strType = StoreCode.GetTypeCodeByName(this.cnConnection, this.stSearch.strStore, this.stSearch.strSection, this.stSearch.strMaterial, this.cbBranch.Text);
-            //this.stSearch.intCategory = Category.GetNumberByName(this.cnConnection, this.cbCategory.Text);
-            this.stSearch.strMeasurementUnit = MeasurementUnit.GetCodeByName(this.cnConnection, this.cbMeasuementUnits.Text);
-
-            this.dsStuffs = Stuff.GetStuffs(this.cnConnection, this.stSearch);
-
-            this.dgvStuffs.DataSource = this.dsStuffs;
-            this.dgvStuffs.DataMember = "tabStuffs";
-
-            //for (int i = 0; i < this.dgvStuffs.Rows.Count; i++)
-            //{
-            //    this.dgvStuffs.Rows[i].Cells["intCategoryAsName"].Value =
-            //        Category.GetNameByNumber(this.cnConnection, (int)this.dsStuffs.Tables["tabStuffs"].Rows[i]["intCategory"]);
-
-            //    this.dgvStuffs.Rows[i].Cells["nvcStoreAsName"].Value =
-            //        StoreCode.GetStoreNameByCode(this.cnConnection, this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcStore"].ToString());
-
-            //    this.dgvStuffs.Rows[i].Cells["nvcSectionAsName"].Value =
-            //        StoreCode.GetSectionNameByCode(this.cnConnection, this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcStore"].ToString(),
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcSection"].ToString());
-
-            //    this.dgvStuffs.Rows[i].Cells["nvcMaterialAsName"].Value =
-            //        StoreCode.GetMaterialNameByCode(this.cnConnection,
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcStore"].ToString(),
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcSection"].ToString(),
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcMaterial"].ToString());
-
-            //    this.dgvStuffs.Rows[i].Cells["nvcTypeAsName"].Value =
-            //        StoreCode.GetTypeNameByCode(this.cnConnection,
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcStore"].ToString(),
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcSection"].ToString(),
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcMaterial"].ToString(),
-            //        this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcType"].ToString());
-
-            //    this.dgvStuffs.Rows[i].Cells["nvcMeasurementUnitAsName"].Value =
-            //        MeasurementUnit.GetNameByCode(this.cnConnection, this.dsStuffs.Tables["tabStuffs"].Rows[i]["nvcMeasurementUnit"].ToString());
-            //}
-        }
-
-       
-
         private void dgvStuffs_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //if (e.RowIndex != -1)
@@ -557,23 +473,6 @@ namespace Baran.Ferroalloy.Management
             this.btmInsert.Enabled = true;
         }
 
-        private void ShowPics(int intIDArg, int intPicsCountArg, int intPicNumberArg)
-        {
-            //String strPath = this.setSettings.strEquipPicsPathPty + @"\" + this.intPicsID.ToString() + "-" + intPicNumberArg.ToString() + ".jpg";
-            //this.pbPicture.ImageLocation = strPath;
-
-        }
-
-        private void dgvStuffs_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == -1)
-            {
-                //this.intPicNumber = 1;
-                //this.intPicsID = (Int16)this.dsStuffs.Tables["tabParts"].Rows[e.RowIndex]["intID"];
-                //this.intPicsCount = (Byte)this.dsStuffs.Tables["tabParts"].Rows[e.RowIndex]["tinPicsCount"];
-                //ShowPics(this.intPicsID, this.intPicsCount, this.intPicNumber);
-            }
-        }
 
         private void butPicNext_Click(object sender, EventArgs e)
         {
@@ -605,34 +504,6 @@ namespace Baran.Ferroalloy.Management
             {
                 e.Handled = true;
             }
-        }
-
-
-
-
-
-
-        private void CbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Fill cbMeasuementUnits
-            this.cbMeasuementUnits.Items.Clear();
-            //this.meMeasurementUnits = MeasurementUnit.GetMeasurementUnits(this.cnConnection, this.caCategories[this.cbCategory.SelectedIndex - 1].intNumber);
-            this.cbMeasuementUnits.Items.Add("");
-            foreach (MeasurementUnit meMeasurementUnit in this.meMeasurementUnits)
-            {
-                this.cbMeasuementUnits.Items.Add(meMeasurementUnit.strName);
-            }
-
-            //Fill cbProperties
-            this.cbProperties.Items.Clear();
-            //this.prProperties = Property.GetProperties(this.cnConnection, this.caCategories[this.cbCategory.SelectedIndex - 1].intNumber);
-            this.cbProperties.Items.Add("");
-            foreach (Property prProperty in this.prProperties)
-            {
-                this.cbProperties.Items.Add(prProperty.strName);
-            }
-
-            SetEnableBtmSearch();
         }
 
         private void SetEnableBtmSearch()

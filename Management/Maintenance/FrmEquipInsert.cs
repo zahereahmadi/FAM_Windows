@@ -99,81 +99,20 @@ namespace Baran.Ferroalloy.Management
                     cbEqiupName.Enabled = true;
                     this.labName.Text = cbEqiupName.SelectedItem.ToString();
                     var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber.ToString();
-                    if (companyId.Length == 1)
-                    {
-                        companyId = 0 + companyId;
-                    }
-                    else
-                    {
-                        companyId = companyId;
-                    }
-
                     var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber.ToString();
-                    if (locationId.Length == 1)
-                    {
-                        locationId = 0 + locationId;
-                    }
-                    else
-                    {
-                        locationId = locationId;
-                    }
-
                     var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber.ToString();
-                    if (zoneId.Length == 1)
-                    {
-                        zoneId = 0 + zoneId;
-                    }
-                    else
-                    {
-                        zoneId = zoneId;
-                    }
-
                     var subZoneId = db.SubZone.GetEntityByName(t => t.nvcName == cbSubZones.SelectedItem).intNumber.ToString();
-                    if (subZoneId.Length == 1)
-                    {
-                        subZoneId = 0 + subZoneId;
-                    }
-                    else
-                    {
-                        subZoneId = subZoneId;
-                    }
-
                     var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber.ToString();
-                    if (categoryId.Length == 1)
-                    {
-                        categoryId = 0 + categoryId;
-                    }
-                    else
-                    {
-                        categoryId = categoryId;
-                    }
-
                     var eqiupNameId = db.EquipName.GetEntityByName(t => t.nvcName == cbEqiupName.SelectedItem).intNumber.ToString();
-                    if (eqiupNameId.Length == 1)
-                    {
-                        eqiupNameId = 0 + eqiupNameId;
-                    }
-                    else
-                    {
-                        eqiupNameId = eqiupNameId;
-                    }
-
                     var order = db.EquipSamples.GetAll().FirstOrDefault(t =>
-                        t.tabCompanies.nvcName.Equals(cbCompanies.SelectedItem) &&
-                        t.tabLocationes.nvcName.Equals(cbLocations.SelectedItem) &&
                         t.tabZones.nvcName.Equals(cbZones.SelectedItem) &&
                         t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) &&
                         t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) &&
                         t.tabEquipName.nvcName.Equals(cbEqiupName.SelectedItem)).intOrder.ToString();
-                    if (order.Length == 1)
-                    {
-                        order = 0 + order;
-                    }
-                    else
-                    {
-                        order = order;
-                    }
-                    labCode.Text = companyId + "" + locationId + "" + zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId + "" + order;
+
+                    var model = MyExtentions.GetEquipSample(companyId, locationId, zoneId, subZoneId, categoryId, eqiupNameId, order);
+                    labCode.Text = model.CompanyId + "" + model.LocationId + "" + model.ZoneId + "" + model.SubZoneId + "" +
+                                   model.CategoryId + "" + model.EquipNameId;
                 }
                 else
                 {
@@ -215,11 +154,12 @@ namespace Baran.Ferroalloy.Management
                 var equips = db.EquipSamples.GetByWhere(t =>
                     t.intCompany == companyId && t.intLocation == locationId &&
                     t.intZone == zoneId && t.intSubZone == subZonesId && t.intCategory == categoryId &&
-                    t.intEquipName == eqiupNameId).Last();
+                    t.intEquipName == eqiupNameId).ToList();
                 tabEquipSamples tabEquips = new tabEquipSamples();
-                if (equips != null)
+                if (equips.Any())
                 {
-                    tabEquips.intOrder = equips.intOrder + 1;
+                    var last = equips.Last();
+                    tabEquips.intOrder = last.intOrder + 1;
                 }
                 else
                 {
@@ -232,19 +172,11 @@ namespace Baran.Ferroalloy.Management
                 tabEquips.intSubZone = subZonesId;
                 tabEquips.intCategory = categoryId;
                 tabEquips.intEquipName = eqiupNameId;
-                if (equips.intOrder.ToString().Length == 2)
-                {
-                    RtlMessageBox.Show("سقف ورود این تجهیز پر شده است", "اخطار", MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    db.EquipSamples.Insert(tabEquips);
-                    db.Save();
-                    this.Close();
-                    DialogResult = DialogResult.OK;
-                }
-                
+                db.EquipSamples.Insert(tabEquips);
+                db.Save();
+                this.Close();
+                DialogResult = DialogResult.OK;
+
                 //if (equips != null)
                 //{
                 //    RtlMessageBox.Show("این تجهیز قبلا ثبت شده است", "اخطار", MessageBoxButtons.OK, MessageBoxIcon.Error);

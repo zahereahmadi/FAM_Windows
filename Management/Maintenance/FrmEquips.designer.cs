@@ -27,17 +27,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEquips = new System.Windows.Forms.DataGridView();
-            this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bitSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.zoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subZoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipNameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btmInsert = new System.Windows.Forms.Button();
             this.btmDelete = new System.Windows.Forms.Button();
             this.btmExit = new System.Windows.Forms.Button();
@@ -59,6 +52,15 @@
             this.cbLocations = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnPartTypeInsert = new System.Windows.Forms.Button();
+            this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bitSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.companyTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subZoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipNameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquips)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,23 +74,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEquips.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquips.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquips.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquips.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEquips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquips.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intID,
             this.bitSelect,
+            this.companyTitle,
+            this.locationTitle,
             this.zoneTitle,
             this.subZoneTitle,
             this.categoryTitle,
             this.equipNameTitle,
-            this.intOrder});
+            this.order});
             this.dgvEquips.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvEquips.Location = new System.Drawing.Point(136, 187);
             this.dgvEquips.Margin = new System.Windows.Forms.Padding(4);
@@ -99,57 +103,6 @@
             this.dgvEquips.Size = new System.Drawing.Size(1100, 353);
             this.dgvEquips.TabIndex = 25;
             this.dgvEquips.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEquips_CellDoubleClick);
-            // 
-            // intID
-            // 
-            this.intID.DataPropertyName = "intID";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.intID.DefaultCellStyle = dataGridViewCellStyle8;
-            this.intID.HeaderText = "intID";
-            this.intID.MinimumWidth = 10;
-            this.intID.Name = "intID";
-            this.intID.Visible = false;
-            // 
-            // bitSelect
-            // 
-            this.bitSelect.DataPropertyName = "bitSelect";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.NullValue = false;
-            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle9;
-            this.bitSelect.HeaderText = "انتخاب";
-            this.bitSelect.MinimumWidth = 10;
-            this.bitSelect.Name = "bitSelect";
-            // 
-            // zoneTitle
-            // 
-            this.zoneTitle.DataPropertyName = "zoneTitle";
-            this.zoneTitle.HeaderText = "بخش";
-            this.zoneTitle.Name = "zoneTitle";
-            // 
-            // subZoneTitle
-            // 
-            this.subZoneTitle.DataPropertyName = "subZoneTitle";
-            this.subZoneTitle.HeaderText = "زیربخش";
-            this.subZoneTitle.Name = "subZoneTitle";
-            // 
-            // categoryTitle
-            // 
-            this.categoryTitle.DataPropertyName = "categoryTitle";
-            this.categoryTitle.HeaderText = "رسته";
-            this.categoryTitle.Name = "categoryTitle";
-            // 
-            // equipNameTitle
-            // 
-            this.equipNameTitle.DataPropertyName = "equipNameTitle";
-            this.equipNameTitle.HeaderText = "نام";
-            this.equipNameTitle.Name = "equipNameTitle";
-            // 
-            // intOrder
-            // 
-            this.intOrder.DataPropertyName = "intOrder";
-            this.intOrder.HeaderText = "ترتیب";
-            this.intOrder.Name = "intOrder";
             // 
             // btmInsert
             // 
@@ -418,6 +371,69 @@
             this.btnPartTypeInsert.UseVisualStyleBackColor = true;
             this.btnPartTypeInsert.Click += new System.EventHandler(this.BtnPartTypeInsert_Click);
             // 
+            // intID
+            // 
+            this.intID.DataPropertyName = "intID";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.intID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.intID.HeaderText = "intID";
+            this.intID.MinimumWidth = 10;
+            this.intID.Name = "intID";
+            this.intID.Visible = false;
+            // 
+            // bitSelect
+            // 
+            this.bitSelect.DataPropertyName = "bitSelect";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = false;
+            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle3;
+            this.bitSelect.HeaderText = "انتخاب";
+            this.bitSelect.MinimumWidth = 10;
+            this.bitSelect.Name = "bitSelect";
+            // 
+            // companyTitle
+            // 
+            this.companyTitle.DataPropertyName = "companyTitle";
+            this.companyTitle.HeaderText = "شرکت";
+            this.companyTitle.Name = "companyTitle";
+            // 
+            // locationTitle
+            // 
+            this.locationTitle.DataPropertyName = "locationTitle";
+            this.locationTitle.HeaderText = "محل";
+            this.locationTitle.Name = "locationTitle";
+            // 
+            // zoneTitle
+            // 
+            this.zoneTitle.DataPropertyName = "zoneTitle";
+            this.zoneTitle.HeaderText = "بخش";
+            this.zoneTitle.Name = "zoneTitle";
+            // 
+            // subZoneTitle
+            // 
+            this.subZoneTitle.DataPropertyName = "subZoneTitle";
+            this.subZoneTitle.HeaderText = "زیربخش";
+            this.subZoneTitle.Name = "subZoneTitle";
+            // 
+            // categoryTitle
+            // 
+            this.categoryTitle.DataPropertyName = "categoryTitle";
+            this.categoryTitle.HeaderText = "رسته";
+            this.categoryTitle.Name = "categoryTitle";
+            // 
+            // equipNameTitle
+            // 
+            this.equipNameTitle.DataPropertyName = "equipNameTitle";
+            this.equipNameTitle.HeaderText = "نام";
+            this.equipNameTitle.Name = "equipNameTitle";
+            // 
+            // order
+            // 
+            this.order.DataPropertyName = "order";
+            this.order.HeaderText = "ترتیب";
+            this.order.Name = "order";
+            // 
             // FrmEquips
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -482,17 +498,19 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btmSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intID;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn bitSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zoneTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subZoneTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipNameTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intOrder;
         private System.Windows.Forms.ComboBox cbCompanies;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbLocations;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnPartTypeInsert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intID;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bitSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn locationTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zoneTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subZoneTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipNameTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order;
     }
 }

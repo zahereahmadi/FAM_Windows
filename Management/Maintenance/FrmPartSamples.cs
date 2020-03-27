@@ -26,75 +26,16 @@ namespace Baran.Ferroalloy.Management.Maintenance
             {
                 var equipSamples = db.EquipSamples.GetEntity(t => t.intID == equipId);
                 var company = equipSamples.intCompany.ToString();
-                if (company.Length == 1)
-                {
-                    company = 0 + company;
-                }
-                else
-                {
-                    company = company;
-                }
-
                 var location = equipSamples.intLocation.ToString();
-                if (location.Length == 1)
-                {
-                    location = 0 + location;
-                }
-                else
-                {
-                    location = location;
-                }
-
                 var zone = equipSamples.intZone.ToString();
-                if (zone.Length == 1)
-                {
-                    zone = 0 + zone;
-                }
-                else
-                {
-                    zone = zone;
-                }
-
                 var subZone = equipSamples.intSubZone.ToString();
-                if (subZone.Length == 1)
-                {
-                    subZone = 0 + subZone;
-                }
-                else
-                {
-                    subZone = subZone;
-                }
-
                 var category = equipSamples.intCategory.ToString();
-                if (category.Length == 1)
-                {
-                    category = 0 + category;
-                }
-                else
-                {
-                    category = category;
-                }
-
                 var equipName = equipSamples.intEquipName.ToString();
-                if (equipName.Length == 1)
-                {
-                    equipName = 0 + equipName;
-                }
-                else
-                {
-                    equipName = equipName;
-                }
-
                 var order = equipSamples.intOrder.ToString();
-                if (order.Length == 1)
-                {
-                    order = 0 + order;
-                }
-                else
-                {
-                    order = order;
-                }
-                txtEquipSampleCode.Text = company+"" + location + "" +zone + "" + subZone + "" +category + "" + equipName + "" + order;
+                var model = MyExtentions.GetEquipSample(company, location, zone, subZone, category, equipName, order);
+                txtEquipSampleCode.Text = model.CompanyId + "" + model.LocationId + "" + model.ZoneId + "" +
+                                          model.SubZoneId + "" + model.CategoryId + "" + model.EquipNameId + "" +
+                                          model.OrderId;
 
                 var name = db.EquipName.GetEntity(t => t.intNumber == equipSamples.intEquipName).nvcName;
                 txtEquipSampleName.Text = name;
