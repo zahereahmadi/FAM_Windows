@@ -46,11 +46,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvTechnicalDocumentItems = new System.Windows.Forms.DataGridView();
-            this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTechnicalDocumentItems)).BeginInit();
@@ -235,35 +234,12 @@
             this.dgvTechnicalDocumentItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTechnicalDocumentItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intID,
-            this.equipName,
-            this.partName});
+            this.name});
             this.dgvTechnicalDocumentItems.Location = new System.Drawing.Point(6, 62);
             this.dgvTechnicalDocumentItems.Name = "dgvTechnicalDocumentItems";
             this.dgvTechnicalDocumentItems.ReadOnly = true;
             this.dgvTechnicalDocumentItems.Size = new System.Drawing.Size(337, 232);
             this.dgvTechnicalDocumentItems.TabIndex = 2;
-            // 
-            // intID
-            // 
-            this.intID.DataPropertyName = "intID";
-            this.intID.HeaderText = "intID";
-            this.intID.Name = "intID";
-            this.intID.ReadOnly = true;
-            this.intID.Visible = false;
-            // 
-            // equipName
-            // 
-            this.equipName.DataPropertyName = "equipName";
-            this.equipName.HeaderText = "نام تجهیز";
-            this.equipName.Name = "equipName";
-            this.equipName.ReadOnly = true;
-            // 
-            // partName
-            // 
-            this.partName.DataPropertyName = "partName";
-            this.partName.HeaderText = "نام قطعه";
-            this.partName.Name = "partName";
-            this.partName.ReadOnly = true;
             // 
             // txtSearch
             // 
@@ -281,6 +257,21 @@
             this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "جستجو:";
+            // 
+            // intID
+            // 
+            this.intID.DataPropertyName = "intID";
+            this.intID.HeaderText = "intID";
+            this.intID.Name = "intID";
+            this.intID.ReadOnly = true;
+            this.intID.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "نام تجهیز / قطعه";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // FrmTechnicalDocumentItems
             // 
@@ -331,7 +322,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn intID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn partName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }

@@ -29,53 +29,12 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 
                 var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == technicalDocumentId);
                 var companyId = technicalDocuments.intCompany.ToString();
-                if (companyId.Length == 1)
-                {
-                    companyId = 0 + companyId;
-                }
-                else
-                {
-                    companyId = companyId;
-                }
-
                 var locationId = technicalDocuments.intLocation.ToString();
-                if (locationId.Length == 1)
-                {
-                    locationId = 0 + locationId;
-                }
-                else
-                {
-                    locationId = locationId;
-                }
-
                 var categoryId = technicalDocuments.intCategory.ToString();
-                if (categoryId.Length == 1)
-                {
-                    categoryId = 0 + categoryId;
-                }
-                else
-                {
-                    categoryId = categoryId;
-                }
-
                 var order = technicalDocuments.intOrder.ToString();
-                switch (order.Length)
-                {
-                    case 1:
-                        order = "0" + "0" + "0" + order;
-                        break;
-                    case 2:
-                        order = "0" + "0" + order;
-                        break;
-                    case 3:
-                        order = "0" + order;
-                        break;
-                    case 4:
-                        order = order;
-                        break;
-                }
+                var model = MyExtentions.GetTechnicalDocumentCode(companyId, locationId, categoryId, order);
 
-                technicalDocumentCode = companyId + "" + locationId + "" + categoryId + "" + order;
+                technicalDocumentCode = model.Company + "" + model.Location + "" + model.Category + "" + model.Order;
                 txtTechnicalDocument.Text = technicalDocumentCode;
                 ListRefresh();
             }

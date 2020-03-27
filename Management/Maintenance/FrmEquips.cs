@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Baran.Ferroalloy.Automation.ViewModels.Maintenance;
 using Baran.Ferroalloy.Management.Maintenance;
 
 namespace Baran.Ferroalloy.Management
@@ -91,61 +90,22 @@ namespace Baran.Ferroalloy.Management
             using (UnitOfWork db = new UnitOfWork())
             {
                 this.labName.Text = cbEqiupName.SelectedItem.ToString();
+
+                var companyId = db.Companies.GetEntityByName(t => t.nvcName == cbCompanies.SelectedItem).intNumber.ToString();
+                var locationId = db.Locations.GetEntityByName(t => t.nvcName == cbLocations.SelectedItem).intNumber.ToString();
                 var zoneId = db.Zone.GetEntityByName(t => t.nvcName == cbZones.SelectedItem).intNumber.ToString();
-                if (zoneId.Length == 1)
-                {
-                    zoneId = 0 + zoneId;
-                }
-                else
-                {
-                    zoneId = zoneId;
-                }
-
                 var subZoneId = db.SubZone.GetEntityByName(t => t.nvcName == cbSubZones.SelectedItem).intNumber.ToString();
-                if (subZoneId.Length == 1)
-                {
-                    subZoneId = 0 + subZoneId;
-                }
-                else
-                {
-                    subZoneId = subZoneId;
-                }
-
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber.ToString();
-                if (categoryId.Length == 1)
-                {
-                    categoryId = 0 + categoryId;
-                }
-                else
-                {
-                    categoryId = categoryId;
-                }
-
                 var eqiupNameId = db.EquipName.GetEntityByName(t => t.nvcName == cbEqiupName.SelectedItem).intNumber.ToString();
-                if (eqiupNameId.Length == 1)
-                {
-                    eqiupNameId = 0 + eqiupNameId;
-                }
-                else
-                {
-                    eqiupNameId = eqiupNameId;
-                }
-
                 var order = db.EquipSamples.GetAll().FirstOrDefault(t =>
                     t.tabZones.nvcName.Equals(cbZones.SelectedItem) &&
                     t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) &&
                     t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) &&
                     t.tabEquipName.nvcName.Equals(cbEqiupName.SelectedItem)).intOrder.ToString();
-                if (order.Length == 1)
-                {
-                    order = 0 + order;
-                }
-                else
-                {
-                    order = order;
-                }
 
-                labCode.Text = zoneId + "" + subZoneId + "" + categoryId + "" + eqiupNameId + "" + order;
+                var model = MyExtentions.GetEquipSample(companyId, locationId, zoneId, subZoneId, categoryId, eqiupNameId, order);
+                labCode.Text = model.CompanyId + "" + model.LocationId + "" + model.ZoneId + "" + model.SubZoneId + "" +
+                               model.CategoryId + "" + model.EquipNameId;
             }
         }
 
@@ -158,28 +118,32 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                var equips = db.EquipSamples.GetAll().Where(t =>
-                    t.tabCompanies.nvcName.Equals(cbCompanies.SelectedItem)||
-                    t.tabLocationes.nvcName.Equals(cbLocations.SelectedItem) ||
-                    t.tabZones.nvcName.Equals(cbZones.SelectedItem) ||
-                    t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) ||
-                    t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
-                    t.tabEquipName.Equals(cbEqiupName.SelectedItem));
-                List<EquipsViewModel> list = new List<EquipsViewModel>();
-                foreach (var item in equips)
-                {
-                    list.Add(new EquipsViewModel()
-                    {
-                        intID = item.intID,
-                        categoryTitle = item.tabCategories.nvcName,
-                        equipNameTitle = item.tabEquipName.nvcName,
-                        subZoneTitle = item.tabSubZones.nvcName,
-                        zoneTitle = item.tabZones.nvcName,
-                        intOrder = item.intOrder
-                    });
-                }
-
+                var tabEquipSamples = db.EquipSamples.FilterEquipSamples(cbCompanies.SelectedItem, cbLocations.SelectedItem, cbZones.SelectedItem,
+                    cbSubZones.SelectedItem, cbCategories.SelectedItem, cbEqiupName.SelectedItem);
+                var list = db.EquipSamples.FillDgvEquips(tabEquipSamples);
                 dgvEquips.DataSource = list;
+                //var equips = db.EquipSamples.GetAll().Where(t =>
+                //    t.tabCompanies.nvcName.Equals(cbCompanies.SelectedItem)||
+                //    t.tabLocationes.nvcName.Equals(cbLocations.SelectedItem) ||
+                //    t.tabZones.nvcName.Equals(cbZones.SelectedItem) ||
+                //    t.tabSubZones.nvcName.Equals(cbSubZones.SelectedItem) ||
+                //    t.tabCategories.nvcName.Equals(cbCategories.SelectedItem) ||
+                //    t.tabEquipName.Equals(cbEqiupName.SelectedItem));
+                //List<EquipsViewModel> list = new List<EquipsViewModel>();
+                //foreach (var item in equips)
+                //{
+                //    list.Add(new EquipsViewModel()
+                //    {
+                //        intID = item.intID,
+                //        categoryTitle = item.tabCategories.nvcName,
+                //        equipNameTitle = item.tabEquipName.nvcName,
+                //        subZoneTitle = item.tabSubZones.nvcName,
+                //        zoneTitle = item.tabZones.nvcName,
+                //        intOrder = item.intOrder
+                //    });
+                //}
+
+                //dgvEquips.DataSource = list;
             }
         }
 

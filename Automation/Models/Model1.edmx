@@ -577,6 +577,7 @@
           </Key>
           <Property Name="intID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="bitSelect" Type="bit" />
+          <Property Name="nvcTitle" Type="nvarchar" MaxLength="250" />
           <Property Name="intCompany" Type="int" />
           <Property Name="intLocation" Type="int" />
           <Property Name="intCategory" Type="int" />
@@ -2585,6 +2586,7 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <NavigationProperty Name="tabCompanies" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabCompanies" FromRole="tabTechnicalDocuments" ToRole="tabCompanies" />
           <NavigationProperty Name="tabLocationes" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabLocationes" FromRole="tabTechnicalDocuments" ToRole="tabLocationes" />
           <NavigationProperty Name="tabTechnicalDocumentTypes" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" FromRole="tabTechnicalDocuments" ToRole="tabTechnicalDocumentTypes" />
+          <Property Name="nvcTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_tabTechnicalDocuments_tabCategories">
           <End Type="dbAfrzModel.tabCategories" Role="tabCategories" Multiplicity="0..1" />
@@ -3383,6 +3385,7 @@ warning 6002: The table/view 'dbAfrz.Sadegh.VieEmployeesInfo' does not have a pr
           <EntitySetMapping Name="tabTechnicalDocuments">
             <EntityTypeMapping TypeName="dbAfrzModel.tabTechnicalDocuments">
               <MappingFragment StoreEntitySet="tabTechnicalDocuments">
+                <ScalarProperty Name="nvcTitle" ColumnName="nvcTitle" />
                 <ScalarProperty Name="nvcRevisionNumber" ColumnName="nvcRevisionNumber" />
                 <ScalarProperty Name="nvcPersonDesigner" ColumnName="nvcPersonDesigner" />
                 <ScalarProperty Name="nvcCoDesigner" ColumnName="nvcCoDesigner" />

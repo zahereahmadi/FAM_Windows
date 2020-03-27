@@ -47,52 +47,13 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 cbSubBranch.SelectedItem = part.tabPartSubBranch.nvcName;
 
                 labName.Text = part.tabPartName.nvcName + " " + part.tabPartBranch.nvcName + " " + part.tabPartSubBranch.nvcName;
-                var storeId ="";
-                var categoryId = "";
-                var nameId = "";
-                var branchId = "";
-                var subBranchId = "";
-                if (part.tabStores.intNumber.ToString().Length == 1)
-                {
-                    storeId = 0 + part.tabStores.intNumber.ToString();
-                }
-                else
-                {
-                    storeId = part.tabStores.intNumber.ToString();
-                }
-                if (part.tabCategories.intNumber.ToString().Length == 1)
-                {
-                    categoryId = 0 + part.tabCategories.intNumber.ToString();
-                }
-                else
-                {
-                    categoryId = part.tabCategories.intNumber.ToString();
-                }
-                if (part.tabPartName.intNumber.ToString().Length == 1)
-                {
-                    nameId = 0 + part.tabPartName.intNumber.ToString();
-                }
-                else
-                {
-                    nameId = part.tabPartName.intNumber.ToString();
-                }
-                if (part.tabPartBranch.intNumber.ToString().Length == 1)
-                {
-                    branchId = 0 + part.tabPartBranch.intNumber.ToString();
-                }
-                else
-                {
-                    branchId = part.tabPartBranch.intNumber.ToString();
-                }
-                if (part.tabPartSubBranch.intNumber.ToString().Length == 1)
-                {
-                    subBranchId = 0 + part.tabPartSubBranch.intNumber.ToString();
-                }
-                else
-                {
-                    subBranchId = part.tabPartSubBranch.intNumber.ToString();
-                }
-                labCode.Text = storeId + "" + categoryId + "" + nameId + "" + branchId + "" + subBranchId;
+                var storeId = part.tabStores.intNumber.ToString();
+                var categoryId = part.tabCategories.intNumber.ToString();
+                var nameId = part.tabPartName.intNumber.ToString();
+                var branchId = part.tabPartBranch.intNumber.ToString();
+                var subBranchId = part.tabPartSubBranch.intNumber.ToString();
+                var model = MyExtentions.GetPartTypeByIds(storeId, categoryId, nameId, branchId, subBranchId);
+                this.labCode.Text = model.Store + "" + model.Category + "" + model.PartName + "" + model.PartBranch + "" + model.PartSubBranch;
                 var measurementUnits = db.MeasurementUnits.Get(t => t.intCategory == cbCategories.SelectedIndex);
                 foreach (var item in measurementUnits)
                 {
@@ -205,51 +166,12 @@ namespace Baran.Ferroalloy.Management.Maintenance
             {
                 this.labName.Text = cbName.SelectedItem + " " + cbBranch.SelectedItem + " " + cbSubBranch.SelectedItem;
                 var storeId = db.Stores.GetEntityByName(t => t.nvcName == cbStores.SelectedItem).intNumber.ToString();
-                if (storeId.Length == 1)
-                {
-                    storeId = 0 + storeId;
-                }
-                else
-                {
-                    storeId = storeId;
-                }
                 var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber.ToString();
-                if (categoryId.Length == 1)
-                {
-                    categoryId = 0 + categoryId;
-                }
-                else
-                {
-                    categoryId = categoryId;
-                }
                 var nameId = db.PartName.GetEntityByName(t => t.nvcName == cbName.SelectedItem).intNumber.ToString();
-                if (nameId.Length == 1)
-                {
-                    nameId = 0 + nameId;
-                }
-                else
-                {
-                    nameId = nameId;
-                }
                 var branchId = db.PartBranch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber.ToString();
-                if (branchId.Length == 1)
-                {
-                    branchId = 0 + branchId;
-                }
-                else
-                {
-                    branchId = branchId;
-                }
                 var subBranchId = db.PartSubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber.ToString();
-                if (subBranchId.Length == 1)
-                {
-                    subBranchId = 0 + subBranchId;
-                }
-                else
-                {
-                    subBranchId = subBranchId;
-                }
-                this.labCode.Text = storeId + "" + categoryId + "" + nameId + "" + branchId + "" + subBranchId;
+                var model = MyExtentions.GetPartTypeByIds(storeId, categoryId, nameId, branchId, subBranchId);
+                this.labCode.Text = model.Store + "" + model.Category + "" + model.PartName + "" + model.PartBranch + "" + model.PartSubBranch;
 
             }
         }
