@@ -54,7 +54,7 @@ namespace Baran.Ferroalloy.Management
             }
             else
             {
-                string equipName = txtEquipName.Text;
+                string equipName = txtEquipName.Text.Trim();
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     var categories = db.Categories.GetEntity(t => t.nvcName == categoryName);
@@ -98,7 +98,7 @@ namespace Baran.Ferroalloy.Management
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     var categories = db.Categories.GetEntity(t => t.nvcName == categoryName);
-                    string equipName = txtEditEquipName.Text;
+                    string equipName = txtEditEquipName.Text.Trim();
                     if (dgvListEquipName.CurrentRow != null)
                     {
                         int equipNameId = int.Parse(dgvListEquipName.CurrentRow.Cells[0].Value.ToString());
@@ -159,6 +159,21 @@ namespace Baran.Ferroalloy.Management
                 RtlMessageBox.Show("لطفا یک نام تجهیز را از لیست انتخاب کنید", "توجه", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void TxtEquipName_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtSearchEquipName_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtEditEquipName_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
         }
     }
 }

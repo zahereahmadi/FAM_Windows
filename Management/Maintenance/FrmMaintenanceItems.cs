@@ -37,20 +37,21 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     MaintenanceTypes.MaintenaceTypes.تعمیر.ToString(), MaintenanceTypes.MaintenaceTypes.تعویض.ToString(),
                     MaintenanceTypes.MaintenaceTypes.گسترش.ToString()
                 };
+                
                 foreach (var item in maintenanceTypesList)
                 {
                     cbWorkGroup.Items.Add(item);
                 }
 
-                string fullName = "";
-                var coId = coIdsWorker.Split('-');
-                foreach (var item in coId)
-                {
-                    var employees = db.Employees.GetEntity(t => t.nvcCoID == item);
-                    string name = employees.nvcFirstname + " " + employees.nvcLastname + "-";
-                    fullName += name;
-                }
-                fullName = fullName.Remove(fullName.Length - 1);
+                //string fullName = "";
+                //var coId = coIdsWorker.Split('-');
+                //foreach (var item in coId)
+                //{
+                //    var employees = db.Employees.GetEntity(t => t.nvcCoID == item);
+                //    string name = employees.nvcFirstname + " " + employees.nvcLastname + "-";
+                //    fullName += name;
+                //}
+                //fullName = fullName.Remove(fullName.Length - 1);
 
                 //txtWorker.Text = fullName;
             }
@@ -132,7 +133,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                         bitIsNeedToShutDown = chbIsNeedToShutDown.Checked,
                         bitIsSuccessful = chbIsSuccessful.Checked,
                         bitSelect = false,
-                        intDuration = int.Parse(txtDuration.Text),
+                        intDuration = int.Parse(Language.GetEnglishText(txtDuration.Text)),
                         timItem = DateTime.Now.TimeOfDay,
                         intMaintenanceType = maintenanceType,
                         nvcEquip = equipCode,
@@ -241,6 +242,31 @@ namespace Baran.Ferroalloy.Management.Maintenance
             }
 
             frmMaintenanceParts.Show();
+        }
+
+        private void TxtTimeItem_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtDuration_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtSearch_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtTips_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtTimeItem_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

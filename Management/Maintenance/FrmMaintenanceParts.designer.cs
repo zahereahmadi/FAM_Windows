@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labMeasurementUnit = new System.Windows.Forms.Label();
+            this.btnSelectPart = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.txtCount = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbMaintenaceType = new System.Windows.Forms.ComboBox();
+            this.labCode = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labName = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvMaintenanceParts = new System.Windows.Forms.DataGridView();
@@ -38,18 +50,6 @@
             this.intCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.txtCount = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbMaintenaceType = new System.Windows.Forms.ComboBox();
-            this.labCode = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labName = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnSelectPart = new System.Windows.Forms.Button();
-            this.labMeasurementUnit = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenanceParts)).BeginInit();
@@ -74,93 +74,46 @@
             this.groupBox1.Size = new System.Drawing.Size(295, 349);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ورود قطعه تعمیری";
+            this.groupBox1.Text = "ورود قطعه";
             // 
-            // groupBox2
+            // label3
             // 
-            this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Controls.Add(this.dgvMaintenanceParts);
-            this.groupBox2.Controls.Add(this.txtSearch);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(313, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(676, 349);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "لیست قطعات تعمیری";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(218, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.TabIndex = 92;
+            this.label3.Text = "نوع تعمیر:";
             // 
-            // btnDelete
+            // label2
             // 
-            this.btnDelete.Location = new System.Drawing.Point(6, 313);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 30);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "حذف";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(204, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "انتخاب قطعه:";
             // 
-            // dgvMaintenanceParts
+            // labMeasurementUnit
             // 
-            this.dgvMaintenanceParts.AllowUserToAddRows = false;
-            this.dgvMaintenanceParts.AllowUserToDeleteRows = false;
-            this.dgvMaintenanceParts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMaintenanceParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaintenanceParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.intID,
-            this.nvcPart,
-            this.intMaintenaceType,
-            this.intCount});
-            this.dgvMaintenanceParts.Location = new System.Drawing.Point(6, 57);
-            this.dgvMaintenanceParts.Name = "dgvMaintenanceParts";
-            this.dgvMaintenanceParts.ReadOnly = true;
-            this.dgvMaintenanceParts.Size = new System.Drawing.Size(664, 250);
-            this.dgvMaintenanceParts.TabIndex = 2;
+            this.labMeasurementUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labMeasurementUnit.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.labMeasurementUnit.Location = new System.Drawing.Point(18, 245);
+            this.labMeasurementUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labMeasurementUnit.Name = "labMeasurementUnit";
+            this.labMeasurementUnit.Size = new System.Drawing.Size(93, 27);
+            this.labMeasurementUnit.TabIndex = 90;
             // 
-            // intID
+            // btnSelectPart
             // 
-            this.intID.DataPropertyName = "intID";
-            this.intID.HeaderText = "intID";
-            this.intID.Name = "intID";
-            this.intID.ReadOnly = true;
-            this.intID.Visible = false;
-            // 
-            // nvcPart
-            // 
-            this.nvcPart.DataPropertyName = "namePart";
-            this.nvcPart.HeaderText = "نام قطعه";
-            this.nvcPart.Name = "nvcPart";
-            this.nvcPart.ReadOnly = true;
-            // 
-            // intMaintenaceType
-            // 
-            this.intMaintenaceType.DataPropertyName = "maintenanceType";
-            this.intMaintenaceType.HeaderText = "نوع تعمیر";
-            this.intMaintenaceType.Name = "intMaintenaceType";
-            this.intMaintenaceType.ReadOnly = true;
-            // 
-            // intCount
-            // 
-            this.intCount.DataPropertyName = "count";
-            this.intCount.HeaderText = "تعداد";
-            this.intCount.Name = "intCount";
-            this.intCount.ReadOnly = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(6, 24);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(600, 27);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(622, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "جستجو:";
+            this.btnSelectPart.Location = new System.Drawing.Point(48, 27);
+            this.btnSelectPart.Name = "btnSelectPart";
+            this.btnSelectPart.Size = new System.Drawing.Size(150, 29);
+            this.btnSelectPart.TabIndex = 89;
+            this.btnSelectPart.Text = "انتخاب";
+            this.btnSelectPart.UseVisualStyleBackColor = true;
+            this.btnSelectPart.Click += new System.EventHandler(this.BtnSelectPart_Click);
             // 
             // btnRegister
             // 
@@ -179,6 +132,7 @@
             this.txtCount.Size = new System.Drawing.Size(93, 27);
             this.txtCount.TabIndex = 87;
             this.txtCount.TextChanged += new System.EventHandler(this.TxtCount_TextChanged);
+            this.txtCount.Enter += new System.EventHandler(this.TxtCount_Enter);
             // 
             // label7
             // 
@@ -254,44 +208,91 @@
             this.label9.TabIndex = 80;
             this.label9.Text = "نام:";
             // 
-            // btnSelectPart
+            // groupBox2
             // 
-            this.btnSelectPart.Location = new System.Drawing.Point(48, 27);
-            this.btnSelectPart.Name = "btnSelectPart";
-            this.btnSelectPart.Size = new System.Drawing.Size(150, 29);
-            this.btnSelectPart.TabIndex = 89;
-            this.btnSelectPart.Text = "انتخاب";
-            this.btnSelectPart.UseVisualStyleBackColor = true;
-            this.btnSelectPart.Click += new System.EventHandler(this.BtnSelectPart_Click);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.dgvMaintenanceParts);
+            this.groupBox2.Controls.Add(this.txtSearch);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(313, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(676, 349);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "لیست قطعات";
             // 
-            // labMeasurementUnit
+            // btnDelete
             // 
-            this.labMeasurementUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labMeasurementUnit.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.labMeasurementUnit.Location = new System.Drawing.Point(18, 245);
-            this.labMeasurementUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labMeasurementUnit.Name = "labMeasurementUnit";
-            this.labMeasurementUnit.Size = new System.Drawing.Size(93, 27);
-            this.labMeasurementUnit.TabIndex = 90;
+            this.btnDelete.Location = new System.Drawing.Point(6, 313);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 30);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "حذف";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // label2
+            // dgvMaintenanceParts
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(204, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 91;
-            this.label2.Text = "انتخاب قطعه:";
+            this.dgvMaintenanceParts.AllowUserToAddRows = false;
+            this.dgvMaintenanceParts.AllowUserToDeleteRows = false;
+            this.dgvMaintenanceParts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaintenanceParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaintenanceParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.intID,
+            this.nvcPart,
+            this.intMaintenaceType,
+            this.intCount});
+            this.dgvMaintenanceParts.Location = new System.Drawing.Point(6, 57);
+            this.dgvMaintenanceParts.Name = "dgvMaintenanceParts";
+            this.dgvMaintenanceParts.ReadOnly = true;
+            this.dgvMaintenanceParts.Size = new System.Drawing.Size(664, 250);
+            this.dgvMaintenanceParts.TabIndex = 2;
             // 
-            // label3
+            // intID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 92;
-            this.label3.Text = "نوع تعمیر:";
+            this.intID.DataPropertyName = "intID";
+            this.intID.HeaderText = "intID";
+            this.intID.Name = "intID";
+            this.intID.ReadOnly = true;
+            this.intID.Visible = false;
+            // 
+            // nvcPart
+            // 
+            this.nvcPart.DataPropertyName = "namePart";
+            this.nvcPart.HeaderText = "نام قطعه";
+            this.nvcPart.Name = "nvcPart";
+            this.nvcPart.ReadOnly = true;
+            // 
+            // intMaintenaceType
+            // 
+            this.intMaintenaceType.DataPropertyName = "maintenanceType";
+            this.intMaintenaceType.HeaderText = "نوع تعمیر";
+            this.intMaintenaceType.Name = "intMaintenaceType";
+            this.intMaintenaceType.ReadOnly = true;
+            // 
+            // intCount
+            // 
+            this.intCount.DataPropertyName = "count";
+            this.intCount.HeaderText = "تعداد";
+            this.intCount.Name = "intCount";
+            this.intCount.ReadOnly = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 24);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(600, 27);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(622, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "جستجو:";
             // 
             // FrmMaintenanceParts
             // 
@@ -308,7 +309,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "قطعات تعمیری";
+            this.Text = "قطعات";
             this.Load += new System.EventHandler(this.FrmMaintenanceParts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

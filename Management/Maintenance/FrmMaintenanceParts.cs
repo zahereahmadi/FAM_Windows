@@ -144,7 +144,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     }
 
                 }
-                var count = txtCount.Text.Trim();
+                var count = Language.GetEnglishText(txtCount.Text.Trim());
                 tabMaintenanceParts tabMaintenanceParts = new tabMaintenanceParts()
                 {
                     intMaintenanceItem = maintenanceItemId,
@@ -157,6 +157,11 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 db.Save();
                 ListRefresh();
             }
+        }
+
+        private void TxtCount_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
         }
     }
 }

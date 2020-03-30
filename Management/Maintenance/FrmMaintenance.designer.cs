@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btmInsert = new System.Windows.Forms.Button();
             this.btmDelete = new System.Windows.Forms.Button();
             this.btmSearchItems = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             // 
             // btmInsert
             // 
-            this.btmInsert.Location = new System.Drawing.Point(584, 594);
+            this.btmInsert.Location = new System.Drawing.Point(584, 565);
             this.btmInsert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btmInsert.Name = "btmInsert";
             this.btmInsert.Size = new System.Drawing.Size(125, 35);
@@ -69,7 +69,7 @@
             // 
             // btmDelete
             // 
-            this.btmDelete.Location = new System.Drawing.Point(434, 594);
+            this.btmDelete.Location = new System.Drawing.Point(434, 565);
             this.btmDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btmDelete.Name = "btmDelete";
             this.btmDelete.Size = new System.Drawing.Size(125, 35);
@@ -118,7 +118,7 @@
             "2",
             "3",
             "4"});
-            this.cbSubDepartment.Location = new System.Drawing.Point(430, 109);
+            this.cbSubDepartment.Location = new System.Drawing.Point(443, 109);
             this.cbSubDepartment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbSubDepartment.Name = "cbSubDepartment";
             this.cbSubDepartment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -128,11 +128,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(390, 112);
+            this.label2.Location = new System.Drawing.Point(382, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 60;
-            this.label2.Text = "بخش:";
+            this.label2.Text = "زیربخش:";
             // 
             // cbShift
             // 
@@ -143,7 +143,7 @@
             "صبح",
             "عصر",
             "شب"});
-            this.cbShift.Location = new System.Drawing.Point(730, 109);
+            this.cbShift.Location = new System.Drawing.Point(751, 109);
             this.cbShift.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbShift.Name = "cbShift";
             this.cbShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -155,9 +155,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(682, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 58;
-            this.label1.Text = "شیفت:";
+            this.label1.Text = "نوبت کاری:";
             // 
             // dtpFromDate
             // 
@@ -181,13 +181,14 @@
             // btmExit
             // 
             this.btmExit.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btmExit.Location = new System.Drawing.Point(584, 655);
+            this.btmExit.Location = new System.Drawing.Point(584, 626);
             this.btmExit.Margin = new System.Windows.Forms.Padding(0);
             this.btmExit.Name = "btmExit";
             this.btmExit.Size = new System.Drawing.Size(125, 35);
             this.btmExit.TabIndex = 44;
             this.btmExit.Text = "خروج";
             this.btmExit.UseVisualStyleBackColor = true;
+            this.btmExit.Click += new System.EventHandler(this.BtmExit_Click);
             // 
             // dgvMaintenance
             // 
@@ -199,14 +200,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMaintenance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaintenance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaintenance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intID,
@@ -230,8 +231,8 @@
             // intID
             // 
             this.intID.DataPropertyName = "intID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.intID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.intID.DefaultCellStyle = dataGridViewCellStyle5;
             this.intID.HeaderText = "intID";
             this.intID.MinimumWidth = 10;
             this.intID.Name = "intID";
@@ -240,10 +241,10 @@
             // bitSelect
             // 
             this.bitSelect.DataPropertyName = "bitSelect";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = false;
-            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.NullValue = false;
+            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle6;
             this.bitSelect.FillWeight = 85.27919F;
             this.bitSelect.HeaderText = "انتخاب";
             this.bitSelect.MinimumWidth = 10;
@@ -260,14 +261,14 @@
             // 
             this.nameSubDepartment.DataPropertyName = "nameSubDepartment";
             this.nameSubDepartment.FillWeight = 85.27919F;
-            this.nameSubDepartment.HeaderText = "بخش";
+            this.nameSubDepartment.HeaderText = "زیربخش";
             this.nameSubDepartment.Name = "nameSubDepartment";
             // 
             // nameShift
             // 
             this.nameShift.DataPropertyName = "nameShift";
             this.nameShift.FillWeight = 85.27919F;
-            this.nameShift.HeaderText = "شیفت";
+            this.nameShift.HeaderText = "نوبت کاری";
             this.nameShift.Name = "nameShift";
             // 
             // Workers
@@ -286,7 +287,8 @@
             // 
             // btnMaintenanceItem
             // 
-            this.btnMaintenanceItem.Location = new System.Drawing.Point(738, 594);
+            this.btnMaintenanceItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnMaintenanceItem.Location = new System.Drawing.Point(738, 565);
             this.btnMaintenanceItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMaintenanceItem.Name = "btnMaintenanceItem";
             this.btnMaintenanceItem.Size = new System.Drawing.Size(125, 35);
@@ -298,7 +300,7 @@
             // chbDateCheck
             // 
             this.chbDateCheck.AutoSize = true;
-            this.chbDateCheck.Location = new System.Drawing.Point(341, 40);
+            this.chbDateCheck.Location = new System.Drawing.Point(385, 43);
             this.chbDateCheck.Name = "chbDateCheck";
             this.chbDateCheck.Size = new System.Drawing.Size(52, 24);
             this.chbDateCheck.TabIndex = 71;
@@ -359,6 +361,7 @@
         private System.Windows.Forms.Button btmExit;
         private System.Windows.Forms.DataGridView dgvMaintenance;
         private System.Windows.Forms.Button btnMaintenanceItem;
+        private System.Windows.Forms.CheckBox chbDateCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn intID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn bitSelect;
         private System.Windows.Forms.DataGridViewTextBoxColumn datWorkGroup;
@@ -366,6 +369,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameShift;
         private System.Windows.Forms.DataGridViewTextBoxColumn Workers;
         private System.Windows.Forms.DataGridViewTextBoxColumn LeaderWorker;
-        private System.Windows.Forms.CheckBox chbDateCheck;
     }
 }

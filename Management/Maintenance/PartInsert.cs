@@ -168,6 +168,15 @@ namespace Baran.Ferroalloy.Management
         {
             FrmCategoryInsert frmCategoryInsert = new FrmCategoryInsert();
             frmCategoryInsert.ShowDialog();
+            cbCategories.Items.Clear();
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategories.Items.Add(item.nvcName);
+                }
+            }
             //FrmCategories categories = new FrmCategories();
             //categories.cnConnection = this.cnConnection;
             //categories.Owner = this;
@@ -209,7 +218,16 @@ namespace Baran.Ferroalloy.Management
             frmNameInsert.Owner = this;
             //seSections.strStore = this.stStores[this.cbStores.SelectedIndex].strCode;
             frmNameInsert.ShowDialog();
-            this.cbCategories.SelectedIndex = -1;
+            cbName.Items.Clear();
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                var categoryId = cbCategories.SelectedIndex;
+                var names = db.PartName.Get(t => t.intCategory == categoryId);
+                foreach (var item in names)
+                {
+                    cbName.Items.Add(item.nvcName);
+                }
+            }
         }
 
         #endregion
@@ -245,8 +263,16 @@ namespace Baran.Ferroalloy.Management
             frmBranchInsert.Owner = this;
             //seSections.strStore = this.stStores[this.cbStores.SelectedIndex].strCode;
             frmBranchInsert.ShowDialog();
-            this.cbCategories.SelectedIndex = -1;
-            cbName.Items.Clear();
+            cbBranch.Items.Clear();
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                var name = cbName.SelectedItem;
+                var branches = db.PartBranch.GetAll().Where(t => t.tabPartName.nvcName.Equals(name));
+                foreach (var item in branches)
+                {
+                    cbBranch.Items.Add(item.nvcName);
+                }
+            }
         }
 
         #endregion
@@ -301,9 +327,16 @@ namespace Baran.Ferroalloy.Management
             frmSubBranchInsert.Owner = this;
             //seSections.strStore = this.stStores[this.cbStores.SelectedIndex].strCode;
             frmSubBranchInsert.ShowDialog();
-            this.cbCategories.SelectedIndex = -1;
-            cbName.Items.Clear();
-            cbBranch.Items.Clear();
+            cbSubBranch.Items.Clear();
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var name = cbBranch.SelectedItem;
+                var branches = db.PartSubBranch.GetAll().Where(t => t.tabPartBranch.nvcName.Equals(name));
+                foreach (var item in branches)
+                {
+                    cbSubBranch.Items.Add(item.nvcName);
+                }
+            }
         }
 
         #endregion
@@ -331,12 +364,16 @@ namespace Baran.Ferroalloy.Management
             frmMeasurementUnitsInsert.categoryName = cbCategories.SelectedItem.ToString();
             frmMeasurementUnitsInsert.Owner = this;
             frmMeasurementUnitsInsert.ShowDialog();
-            this.cbCategories.SelectedIndex = -1;
-            cbName.Items.Clear();
-            cbBranch.Items.Clear();
-            cbSubBranch.Items.Clear();
-            lbSelectedProperties.Items.Clear();
-            tbOrderPoint.Clear();
+            cbMeasuementUnits.Items.Clear();
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                var categoryId = db.Categories.GetEntityByName(t => t.nvcName == cbCategories.SelectedItem).intNumber.ToString();
+                var measurementUnits = db.MeasurementUnits.GetAll().Where(t => t.intCategory == int.Parse(categoryId));
+                foreach (var item in measurementUnits)
+                {
+                    cbMeasuementUnits.Items.Add(item.nvcName);
+                }
+            }
             SetEnableBtmOk();
         }
 
@@ -393,7 +430,7 @@ namespace Baran.Ferroalloy.Management
                 var branchId = db.PartBranch.GetEntityByName(t => t.nvcName == cbBranch.SelectedItem).intNumber;
                 var subBranchId = db.PartSubBranch.GetEntityByName(t => t.nvcName == cbSubBranch.SelectedItem).intNumber;
                 var measuementUnitsId = db.MeasurementUnits.GetEntityByName(t => t.nvcName == cbMeasuementUnits.SelectedItem).intNumber;
-                var orderPoint = tbOrderPoint.Text;
+                var orderPoint = Language.GetEnglishText(tbOrderPoint.Text.Trim());
                 var parts = db.PartTypes.GetEntity(t =>
                     t.intStore == storeId && t.intCategory == categoryId && t.intName == nameId &&
                     t.intBranch == branchId && t.intSubBranch == subBranchId);
@@ -457,10 +494,6 @@ namespace Baran.Ferroalloy.Management
             //}
 
         }
-
-
-
-
 
 
 

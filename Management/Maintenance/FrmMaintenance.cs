@@ -211,6 +211,9 @@ namespace Baran.Ferroalloy.Management.Maintenance
             Filter();
         }
 
-
+        private void BtmExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -164,13 +164,13 @@ namespace Baran.Ferroalloy.Management
                 {
                     //مدیریت
                     case 4:
-                        this.frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentElectricalWorkShop.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentElectricalSunStation.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalFurnace.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalWorkShop.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalMetal.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalPiping.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentElectricalWorkShop.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentElectricalSunStation.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalFurnace.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalWorkShop.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalMetal.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalPiping.Enabled = true;
                         this.frmManagement.menTechnicalDepartmentMechanicalTechnicalInfo.Enabled = true;
                         this.frmManagement.menTechnicalDepartmentMechanicalMaintenanceInfo.Enabled = true;
                         this.frmManagement.menTechnicalDepartmentProjects.Enabled = true;

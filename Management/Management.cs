@@ -220,37 +220,6 @@ namespace Baran.Ferroalloy.Management
             }
         }
 
-        private void menMaintenanceElectricalFurnace_Click(object sender, EventArgs e)
-        {
-            if (!MaintenanceElectricalFurnace.bolIsRunning)
-            {
-                ToolStripMenuItem menWindowsMaintenanceElectricalFurnace = new ToolStripMenuItem();
-                menWindowsMaintenanceElectricalFurnace.Name = "menWindowsMaintenanceElectricalFurnace";
-                menWindowsMaintenanceElectricalFurnace.Text = "نگهداری برق کوره";
-                menWindowsMaintenanceElectricalFurnace.AutoSize = false;
-                menWindowsMaintenanceElectricalFurnace.Height = 45;
-                menWindowsMaintenanceElectricalFurnace.Width = 400;
-                menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.menWindowsMaintenanceElectricalFurnace_Click);
-                this.menWindows.DropDownItems.Add(menWindowsMaintenanceElectricalFurnace);
-
-                //MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
-                //frmFurnaceElectricalMaintenance.MdiParent = this;
-                //frmFurnaceElectricalMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                //frmFurnaceElectricalMaintenance.Dock = DockStyle.Fill;
-                //frmFurnaceElectricalMaintenance.cnConnection = this.cnConnection;
-                //frmFurnaceElectricalMaintenance.usUser = this.usLogined;
-                //frmFurnaceElectricalMaintenance.setSetings = this.setSettings;
-                //frmFurnaceElectricalMaintenance.Show();
-
-                FrmMaintenance frmMaintenance = new FrmMaintenance();
-                frmMaintenance.MdiParent = this;
-                frmMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                frmMaintenance.Dock = DockStyle.Fill;
-                frmMaintenance.usUser = this.usLogined;
-                frmMaintenance.Show();
-            }
-        }
-
         private void menWindowsLoadingRegister_Click(object sender, EventArgs e)
         {
             foreach (Form frmIntended in this.MdiChildren)
@@ -824,6 +793,37 @@ namespace Baran.Ferroalloy.Management
                 frmTechnicalDocuments.usUser = this.usLogined;
                 frmTechnicalDocuments.Show();
                 frmTechnicalDocuments.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MenTechnicalDepartmentElectricalFurnace_Click(object sender, EventArgs e)
+        {
+            if (!MaintenanceElectricalFurnace.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsMaintenanceElectricalFurnace = new ToolStripMenuItem();
+                menWindowsMaintenanceElectricalFurnace.Name = "menWindowsMaintenanceElectricalFurnace";
+                menWindowsMaintenanceElectricalFurnace.Text = "تعمیرات کوره";
+                menWindowsMaintenanceElectricalFurnace.AutoSize = false;
+                menWindowsMaintenanceElectricalFurnace.Height = 45;
+                menWindowsMaintenanceElectricalFurnace.Width = 400;
+                menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.menWindowsMaintenanceElectricalFurnace_Click);
+                this.menWindows.DropDownItems.Add(menWindowsMaintenanceElectricalFurnace);
+
+                //MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
+                //frmFurnaceElectricalMaintenance.MdiParent = this;
+                //frmFurnaceElectricalMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                //frmFurnaceElectricalMaintenance.Dock = DockStyle.Fill;
+                //frmFurnaceElectricalMaintenance.cnConnection = this.cnConnection;
+                //frmFurnaceElectricalMaintenance.usUser = this.usLogined;
+                //frmFurnaceElectricalMaintenance.setSetings = this.setSettings;
+                //frmFurnaceElectricalMaintenance.Show();
+
+                FrmMaintenance frmMaintenance = new FrmMaintenance();
+                frmMaintenance.MdiParent = this;
+                frmMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                frmMaintenance.Dock = DockStyle.Fill;
+                frmMaintenance.usUser = this.usLogined;
+                frmMaintenance.Show();
             }
         }
     }

@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btmExit = new System.Windows.Forms.Button();
+            //this.btmExit = new System.Windows.Forms.Button();
             this.tbRevisionNumber = new System.Windows.Forms.TextBox();
             this.tbCoDesigner = new System.Windows.Forms.TextBox();
             this.cbLocations = new System.Windows.Forms.ComboBox();
@@ -71,16 +71,16 @@
             // 
             // btmExit
             // 
-            this.btmExit.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btmExit.Location = new System.Drawing.Point(578, 798);
-            this.btmExit.Margin = new System.Windows.Forms.Padding(0);
-            this.btmExit.Name = "btmExit";
-            this.btmExit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btmExit.Size = new System.Drawing.Size(128, 33);
-            this.btmExit.TabIndex = 4;
-            this.btmExit.Text = "خروج";
-            this.btmExit.UseVisualStyleBackColor = true;
-            this.btmExit.Click += new System.EventHandler(this.btmExit_Click);
+            //this.btmExit.Font = new System.Drawing.Font("Segoe UI", 10F);
+            //this.btmExit.Location = new System.Drawing.Point(578, 798);
+            //this.btmExit.Margin = new System.Windows.Forms.Padding(0);
+            //this.btmExit.Name = "btmExit";
+            //this.btmExit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            //this.btmExit.Size = new System.Drawing.Size(128, 33);
+            //this.btmExit.TabIndex = 4;
+            //this.btmExit.Text = "خروج";
+            //this.btmExit.UseVisualStyleBackColor = true;
+            //this.btmExit.Click += new System.EventHandler(this.btmExit_Click);
             // 
             // tbRevisionNumber
             // 
@@ -388,7 +388,7 @@
             this.btmInsert.Name = "btmInsert";
             this.btmInsert.Size = new System.Drawing.Size(127, 35);
             this.btmInsert.TabIndex = 69;
-            this.btmInsert.Text = "ورود";
+            this.btmInsert.Text = "ورود سند";
             this.btmInsert.UseVisualStyleBackColor = true;
             this.btmInsert.Click += new System.EventHandler(this.BtmInsert_Click);
             // 
@@ -428,9 +428,9 @@
             this.btnTachnicalDocumentItems.Location = new System.Drawing.Point(722, 620);
             this.btnTachnicalDocumentItems.Margin = new System.Windows.Forms.Padding(0);
             this.btnTachnicalDocumentItems.Name = "btnTachnicalDocumentItems";
-            this.btnTachnicalDocumentItems.Size = new System.Drawing.Size(161, 35);
+            this.btnTachnicalDocumentItems.Size = new System.Drawing.Size(167, 35);
             this.btnTachnicalDocumentItems.TabIndex = 71;
-            this.btnTachnicalDocumentItems.Text = "ورود آیتم های مستند";
+            this.btnTachnicalDocumentItems.Text = "ورود تجهیز یا قطعه مستند";
             this.btnTachnicalDocumentItems.UseVisualStyleBackColor = true;
             this.btnTachnicalDocumentItems.Click += new System.EventHandler(this.BtnTachnicalDocumentItems_Click);
             // 
@@ -438,7 +438,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1362, 764);
+            this.ClientSize = new System.Drawing.Size(1362, 749);
             this.Controls.Add(this.btnTachnicalDocumentItems);
             this.Controls.Add(this.btmInsert);
             this.Controls.Add(this.btmDelete);
@@ -459,7 +459,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbCompanies);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btmExit);
+            //this.Controls.Add(this.btmExit);
             this.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -481,7 +481,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btmExit;
+        //private System.Windows.Forms.Button btmExit;
         private System.Windows.Forms.TextBox tbRevisionNumber;
         private System.Windows.Forms.TextBox tbCoDesigner;
         private System.Windows.Forms.ComboBox cbLocations;
