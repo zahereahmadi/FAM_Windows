@@ -41,6 +41,7 @@ namespace Baran.Ferroalloy.Management
         private bool bolEnableBtmInsertByInterface;
         private bool bolEnableBtmInsertByPermision;
         public List<ReportColumnProperty> lisEmployeesColumns;
+        public bool accessType;
 
         public Employees()
         {
@@ -75,25 +76,48 @@ namespace Baran.Ferroalloy.Management
 
         private void SetComponentsByPermisions()
         {
-            if(this.usUser.bolOfficeEnabed)
+            if (accessType)
             {
-                this.bolEnableBtmSearchByPermision = true;
-                this.bolEnableBtmDeleteByPermision = true;
-                this.bolEnableBtmInsertByPermision = true;
+                this.btmSearch.Enabled = true;
+                this.btmDelete.Enabled = true;
+                this.btmInsert.Enabled = true;
                 this.dgvEmployees.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployees_CellMouseDoubleClick);
                 this.dgvEmployees.Columns["bitSelect"].Visible = true;
+
             }
             else
             {
-                this.bolEnableBtmSearchByPermision = true;
-                this.bolEnableBtmDeleteByPermision = false;
-                this.bolEnableBtmInsertByPermision = false;
+                this.btmSearch.Enabled = false;
+                this.btmDelete.Enabled = false;
+                this.btmInsert.Enabled = false;
                 this.dgvEmployees.CellMouseDoubleClick -= new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployees_CellMouseDoubleClick);
                 this.dgvEmployees.Columns["bitSelect"].Visible = false;
             }
-
             SetEnableComponents();
+
         }
+
+        //private void SetComponentsByPermisions()
+        //{
+        //    if(this.usUser.bolOfficeEnabed)
+        //    {
+        //        this.bolEnableBtmSearchByPermision = true;
+        //        this.bolEnableBtmDeleteByPermision = true;
+        //        this.bolEnableBtmInsertByPermision = true;
+        //        this.dgvEmployees.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployees_CellMouseDoubleClick);
+        //        this.dgvEmployees.Columns["bitSelect"].Visible = true;
+        //    }
+        //    else
+        //    {
+        //        this.bolEnableBtmSearchByPermision = true;
+        //        this.bolEnableBtmDeleteByPermision = false;
+        //        this.bolEnableBtmInsertByPermision = false;
+        //        this.dgvEmployees.CellMouseDoubleClick -= new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployees_CellMouseDoubleClick);
+        //        this.dgvEmployees.Columns["bitSelect"].Visible = false;
+        //    }
+
+        //    SetEnableComponents();
+        //}
 
         private void SetEnableComponents()
         {
