@@ -31,6 +31,7 @@ namespace Baran.Ferroalloy.Management
 
         private void Login_Load(object sender, EventArgs e)
         {
+            //test
             this.frmManagement = (Management)this.Owner;
 
             if (FamSetting.GetSaveUserName(this.setSettings.strXmlPath))
@@ -65,7 +66,7 @@ namespace Baran.Ferroalloy.Management
                     this.labMessage.Text = "این کاربر پیش از این به سامانه وارد شده است. ";
                     DialogResult drResult = MessageBox.Show("آیا کاربری که پیش از این وارد شده است خارج و شما وارد شوید؟", "پرسش", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                         MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
-                    if(drResult == DialogResult.Yes)
+                    if (drResult == DialogResult.Yes)
                     {
                         User.Login(this.cnConnection, ref this.usLogined, this.tbUsername.Text, this.tbPassword.Text);
                         Employee.GetByCoID(this.cnConnection, this.usLogined.strCoID, this.emLogined);
@@ -164,13 +165,13 @@ namespace Baran.Ferroalloy.Management
                 {
                     //مدیریت
                     case 4:
-                        this.frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentElectricalWorkShop.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentElectricalSunStation.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalFurnace.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalWorkShop.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalMetal.Enabled = true;
-                        this.frmManagement.menTechnicalDepartmentMechanicalPiping.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentElectricalWorkShop.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentElectricalSunStation.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalFurnace.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalWorkShop.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalMetal.Enabled = true;
+                        //this.frmManagement.menTechnicalDepartmentMechanicalPiping.Enabled = true;
                         this.frmManagement.menTechnicalDepartmentMechanicalTechnicalInfo.Enabled = true;
                         this.frmManagement.menTechnicalDepartmentMechanicalMaintenanceInfo.Enabled = true;
                         this.frmManagement.menTechnicalDepartmentProjects.Enabled = true;
@@ -193,7 +194,7 @@ namespace Baran.Ferroalloy.Management
                 {
                     //مدیریت
                     case 4:
-                        this.frmManagement.menStoreDepartmentStuffs.Enabled = true;
+                        //this.frmManagement.menStoreDepartmentStuffs.Enabled = true;
                         this.frmManagement.menStoreDepartmentVendors.Enabled = true;
                         this.frmManagement.menStoreDepartmentInvoices.Enabled = true;
                         this.frmManagement.MensStoreDepartmentStorePurchaseRequests.Enabled = true;
@@ -226,7 +227,7 @@ namespace Baran.Ferroalloy.Management
             {
                 this.frmManagement.menLab.Enabled = false;
             }
-          
+
             //this.menExit.Enabled = true;
             //this.menLogIn.Enabled = false;
         }
@@ -243,7 +244,7 @@ namespace Baran.Ferroalloy.Management
 
         private void CbSaveUserName_CheckedChanged(object sender, EventArgs e)
         {
-            FamSetting.SetSaveUserName(this.setSettings.strXmlPath,this.CbSaveUserName.Checked);
+            FamSetting.SetSaveUserName(this.setSettings.strXmlPath, this.CbSaveUserName.Checked);
         }
 
         private void TbUsername_Enter(object sender, EventArgs e)

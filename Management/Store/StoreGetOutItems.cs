@@ -102,7 +102,7 @@ namespace Baran.Ferroalloy.Management
                 this.dgvStoreGetOutItems.Rows[i].Cells["nvcStuffStoreCodeAsName"].Value =
                     StoreCode.GetNameByStoreCode(this.cnConnection, this.dgvStoreGetOutItems.Rows[i].Cells["nvcStuffStoreCode"].Value.ToString());
                 this.dgvStoreGetOutItems.Rows[i].Cells["intTechnicalActionTypeAsName"].Value =
-                     (Maintenance.ActionType)this.dgvStoreGetOutItems.Rows[i].Cells["intTechnicalActionType"].Value;
+                     (ActionType)this.dgvStoreGetOutItems.Rows[i].Cells["intTechnicalActionType"].Value;
             }
         }                                                               
 

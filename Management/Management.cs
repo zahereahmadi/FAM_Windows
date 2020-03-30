@@ -13,6 +13,7 @@ using Baran.Ferroalloy.Automation.Security;
 using Baran.Ferroalloy.Management.Automation;
 using System.IO;
 using System.Globalization;
+using Baran.Ferroalloy.Management.Maintenance;
 using Baran.Ferroalloy.Office;
 
 namespace Baran.Ferroalloy.Management
@@ -44,7 +45,7 @@ namespace Baran.Ferroalloy.Management
             {
                 this.setSettings = new FamSetting(this.cnConnection, this.strXmlPath);
 
-                this.setSettings.strAppVersion = "1.6.12";
+                this.setSettings.strAppVersion = "1.6.14";
                 this.staVersion.Text = this.setSettings.strAppVersion;
                 this.Text += String.Format(" - {0}", FamSetting.GetCoInformation(this.cnConnection).strName);
             }
@@ -216,30 +217,6 @@ namespace Baran.Ferroalloy.Management
                 {
                     frmIntended.BringToFront();
                 }
-            }
-        }
-
-        private void menMaintenanceElectricalFurnace_Click(object sender, EventArgs e)
-        {
-            if (!MaintenanceElectricalFurnace.bolIsRunning)
-            {
-                ToolStripMenuItem menWindowsMaintenanceElectricalFurnace = new ToolStripMenuItem();
-                menWindowsMaintenanceElectricalFurnace.Name = "menWindowsMaintenanceElectricalFurnace";
-                menWindowsMaintenanceElectricalFurnace.Text = "نگهداری برق کوره";
-                menWindowsMaintenanceElectricalFurnace.AutoSize = false;
-                menWindowsMaintenanceElectricalFurnace.Height = 45;
-                menWindowsMaintenanceElectricalFurnace.Width = 400;
-                menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.menWindowsMaintenanceElectricalFurnace_Click);
-                this.menWindows.DropDownItems.Add(menWindowsMaintenanceElectricalFurnace);
-
-                MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
-                frmFurnaceElectricalMaintenance.MdiParent = this;
-                frmFurnaceElectricalMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                frmFurnaceElectricalMaintenance.Dock = DockStyle.Fill;
-                frmFurnaceElectricalMaintenance.cnConnection = this.cnConnection;
-                frmFurnaceElectricalMaintenance.usUser = this.usLogined;
-                frmFurnaceElectricalMaintenance.setSetings = this.setSettings;
-                frmFurnaceElectricalMaintenance.Show();
             }
         }
 
@@ -422,32 +399,32 @@ namespace Baran.Ferroalloy.Management
 
         private void menStoreDepartmentStuffs_Click(object sender, EventArgs e)
         {
-            if (!Stuffs.bolIsRunning)
-            {
-                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
-                menWindowsStuffs.Name = "menWindowsStuffs";
-                menWindowsStuffs.Text = "کالا";
-                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsStuffs_Click);
-                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+            //if (!Stuffs.bolIsRunning)
+            //{
+            //    ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+            //    menWindowsStuffs.Name = "menWindowsStuffs";
+            //    menWindowsStuffs.Text = "کالا";
+            //    menWindowsStuffs.Click += new System.EventHandler(this.menWindowsStuffs_Click);
+            //    this.menWindows.DropDownItems.Add(menWindowsStuffs);
 
-                Stuffs frmStuffs = new Stuffs();
-                frmStuffs.MdiParent = this;
-                frmStuffs.setSettings = this.setSettings;
-                frmStuffs.cnConnection = this.cnConnection;
-                frmStuffs.usUser = this.usLogined;
-                frmStuffs.Show();
-                frmStuffs.WindowState = FormWindowState.Maximized;
-            }
+            //    Stuffs frmStuffs = new Stuffs();
+            //    frmStuffs.MdiParent = this;
+            //    frmStuffs.setSettings = this.setSettings;
+            //    frmStuffs.cnConnection = this.cnConnection;
+            //    frmStuffs.usUser = this.usLogined;
+            //    frmStuffs.Show();
+            //    frmStuffs.WindowState = FormWindowState.Maximized;
+            //}
         }
 
         private void menWindowsStuffs_Click(object sender, EventArgs e)
         {
             foreach (Form frmIntended in this.MdiChildren)
             {
-                if (frmIntended is Stuffs)
-                {
-                    frmIntended.BringToFront();
-                }
+                //if (frmIntended is Stuffs)
+                //{
+                //    frmIntended.BringToFront();
+                //}
             }
         }
 
@@ -459,23 +436,23 @@ namespace Baran.Ferroalloy.Management
 
         private void MenStoreDepartmentStoreGetOuts_Click(object sender, EventArgs e)
         {
-            if (!Stuffs.bolIsRunning)
-            {
-                ToolStripMenuItem menWindowsStoreDepartmentStoreGetOuts = new ToolStripMenuItem();
-                menWindowsStoreDepartmentStoreGetOuts.Name = "menWindowsStoreDepartmentStoreGetOuts";
-                menWindowsStoreDepartmentStoreGetOuts.Text = "درخواست‌های کالا از انبار";
-                menWindowsStoreDepartmentStoreGetOuts.Click += new System.EventHandler(this.menWindowsStoreDepartmentStoreGetOuts_Click);
-                this.menWindows.DropDownItems.Add(menWindowsStoreDepartmentStoreGetOuts);
+            //if (!Stuffs.bolIsRunning)
+            //{
+            //    ToolStripMenuItem menWindowsStoreDepartmentStoreGetOuts = new ToolStripMenuItem();
+            //    menWindowsStoreDepartmentStoreGetOuts.Name = "menWindowsStoreDepartmentStoreGetOuts";
+            //    menWindowsStoreDepartmentStoreGetOuts.Text = "درخواست‌های کالا از انبار";
+            //    menWindowsStoreDepartmentStoreGetOuts.Click += new System.EventHandler(this.menWindowsStoreDepartmentStoreGetOuts_Click);
+            //    this.menWindows.DropDownItems.Add(menWindowsStoreDepartmentStoreGetOuts);
 
-                StoreGetOuts frmStoreGetOuts = new StoreGetOuts();
-                frmStoreGetOuts.MdiParent = this;
-                frmStoreGetOuts.setSettings = this.setSettings;
-                frmStoreGetOuts.cnConnection = this.cnConnection;
-                frmStoreGetOuts.usLogined = this.usLogined;
-                frmStoreGetOuts.emLogined = this.emLogined;
-                frmStoreGetOuts.Show();
-                frmStoreGetOuts.WindowState = FormWindowState.Maximized;
-            }
+            //    StoreGetOuts frmStoreGetOuts = new StoreGetOuts();
+            //    frmStoreGetOuts.MdiParent = this;
+            //    frmStoreGetOuts.setSettings = this.setSettings;
+            //    frmStoreGetOuts.cnConnection = this.cnConnection;
+            //    frmStoreGetOuts.usLogined = this.usLogined;
+            //    frmStoreGetOuts.emLogined = this.emLogined;
+            //    frmStoreGetOuts.Show();
+            //    frmStoreGetOuts.WindowState = FormWindowState.Maximized;
+            //}
         }
 
         private void menWindowsStoreDepartmentStoreGetOuts_Click(object sender, EventArgs e)
@@ -756,6 +733,97 @@ namespace Baran.Ferroalloy.Management
                 case Keys.F10:
                     Application.Exit();
                     break;
+            }
+        }
+
+        private void MenuParts_Click(object sender, EventArgs e)
+        {
+            if (!Parts.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsStuffs";
+                menWindowsStuffs.Text = "کالا";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsStuffs_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                Parts frmStuffs = new Parts();
+                frmStuffs.MdiParent = this;
+                frmStuffs.setSettings = this.setSettings;
+                frmStuffs.cnConnection = this.cnConnection;
+                frmStuffs.usUser = this.usLogined;
+                frmStuffs.Show();
+                frmStuffs.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MenuEquips_Click(object sender, EventArgs e)
+        {
+            if (!FrmEquips.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsEquips = new ToolStripMenuItem();
+                menWindowsEquips.Name = "menWindowsEquips";
+                menWindowsEquips.Text = "تجهیز";
+                menWindowsEquips.Click += new System.EventHandler(this.MenuEquips_Click);
+                this.menWindows.DropDownItems.Add(menWindowsEquips);
+
+                FrmEquips frmEquips = new FrmEquips();
+                frmEquips.MdiParent = this;
+                frmEquips.setSettings = this.setSettings;
+                frmEquips.cnConnection = this.cnConnection;
+                frmEquips.usUser = this.usLogined;
+                frmEquips.Show();
+                frmEquips.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MenTechnicalDocuments_Click(object sender, EventArgs e)
+        {
+            if (!TechnicalDocuments.bolIsRunning)
+            {
+                ToolStripMenuItem menTechnicalDocuments = new ToolStripMenuItem();
+                menTechnicalDocuments.Name = "menTechnicalDocuments";
+                menTechnicalDocuments.Text = "مستندات";
+                menTechnicalDocuments.Click += new System.EventHandler(this.MenTechnicalDocuments_Click);
+                this.menWindows.DropDownItems.Add(menTechnicalDocuments);
+
+                TechnicalDocuments frmTechnicalDocuments = new TechnicalDocuments();
+                frmTechnicalDocuments.MdiParent = this;
+                frmTechnicalDocuments.setSettings = this.setSettings;
+                frmTechnicalDocuments.cnConnection = this.cnConnection;
+                frmTechnicalDocuments.usUser = this.usLogined;
+                frmTechnicalDocuments.Show();
+                frmTechnicalDocuments.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MenTechnicalDepartmentElectricalFurnace_Click(object sender, EventArgs e)
+        {
+            if (!MaintenanceElectricalFurnace.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsMaintenanceElectricalFurnace = new ToolStripMenuItem();
+                menWindowsMaintenanceElectricalFurnace.Name = "menWindowsMaintenanceElectricalFurnace";
+                menWindowsMaintenanceElectricalFurnace.Text = "تعمیرات کوره";
+                menWindowsMaintenanceElectricalFurnace.AutoSize = false;
+                menWindowsMaintenanceElectricalFurnace.Height = 45;
+                menWindowsMaintenanceElectricalFurnace.Width = 400;
+                menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.menWindowsMaintenanceElectricalFurnace_Click);
+                this.menWindows.DropDownItems.Add(menWindowsMaintenanceElectricalFurnace);
+
+                //MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
+                //frmFurnaceElectricalMaintenance.MdiParent = this;
+                //frmFurnaceElectricalMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                //frmFurnaceElectricalMaintenance.Dock = DockStyle.Fill;
+                //frmFurnaceElectricalMaintenance.cnConnection = this.cnConnection;
+                //frmFurnaceElectricalMaintenance.usUser = this.usLogined;
+                //frmFurnaceElectricalMaintenance.setSetings = this.setSettings;
+                //frmFurnaceElectricalMaintenance.Show();
+
+                FrmMaintenance frmMaintenance = new FrmMaintenance();
+                frmMaintenance.MdiParent = this;
+                frmMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                frmMaintenance.Dock = DockStyle.Fill;
+                frmMaintenance.usUser = this.usLogined;
+                frmMaintenance.Show();
             }
         }
     }
