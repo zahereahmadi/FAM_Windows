@@ -79,6 +79,7 @@
             this.txtRegisterCategory.Name = "txtRegisterCategory";
             this.txtRegisterCategory.Size = new System.Drawing.Size(331, 27);
             this.txtRegisterCategory.TabIndex = 1;
+            this.txtRegisterCategory.Enter += new System.EventHandler(this.TxtRegisterCategory_Enter);
             // 
             // label2
             // 
@@ -129,6 +130,7 @@
             this.txtEditCategory.Name = "txtEditCategory";
             this.txtEditCategory.Size = new System.Drawing.Size(331, 27);
             this.txtEditCategory.TabIndex = 4;
+            this.txtEditCategory.Enter += new System.EventHandler(this.TxtEditCategory_Enter);
             // 
             // label3
             // 
@@ -211,6 +213,7 @@
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Size = new System.Drawing.Size(204, 27);
             this.txtSearchCategory.TabIndex = 1;
+            this.txtSearchCategory.Click += new System.EventHandler(this.TxtSearchCategory_Click);
             this.txtSearchCategory.TextChanged += new System.EventHandler(this.TxtSearchCategory_TextChanged);
             // 
             // label1

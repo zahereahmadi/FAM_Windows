@@ -31,6 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEquips = new System.Windows.Forms.DataGridView();
+            this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bitSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.companyTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subZoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipNameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btmInsert = new System.Windows.Forms.Button();
             this.btmDelete = new System.Windows.Forms.Button();
             this.btmExit = new System.Windows.Forms.Button();
@@ -52,15 +61,6 @@
             this.cbLocations = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnPartTypeInsert = new System.Windows.Forms.Button();
-            this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bitSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.companyTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subZoneTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipNameTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquips)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,69 @@
             this.dgvEquips.TabIndex = 25;
             this.dgvEquips.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEquips_CellDoubleClick);
             // 
+            // intID
+            // 
+            this.intID.DataPropertyName = "intID";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.intID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.intID.HeaderText = "intID";
+            this.intID.MinimumWidth = 10;
+            this.intID.Name = "intID";
+            this.intID.Visible = false;
+            // 
+            // bitSelect
+            // 
+            this.bitSelect.DataPropertyName = "bitSelect";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = false;
+            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle3;
+            this.bitSelect.HeaderText = "انتخاب";
+            this.bitSelect.MinimumWidth = 10;
+            this.bitSelect.Name = "bitSelect";
+            // 
+            // companyTitle
+            // 
+            this.companyTitle.DataPropertyName = "companyTitle";
+            this.companyTitle.HeaderText = "شرکت";
+            this.companyTitle.Name = "companyTitle";
+            // 
+            // locationTitle
+            // 
+            this.locationTitle.DataPropertyName = "locationTitle";
+            this.locationTitle.HeaderText = "محل";
+            this.locationTitle.Name = "locationTitle";
+            // 
+            // zoneTitle
+            // 
+            this.zoneTitle.DataPropertyName = "zoneTitle";
+            this.zoneTitle.HeaderText = "بخش";
+            this.zoneTitle.Name = "zoneTitle";
+            // 
+            // subZoneTitle
+            // 
+            this.subZoneTitle.DataPropertyName = "subZoneTitle";
+            this.subZoneTitle.HeaderText = "زیربخش";
+            this.subZoneTitle.Name = "subZoneTitle";
+            // 
+            // categoryTitle
+            // 
+            this.categoryTitle.DataPropertyName = "categoryTitle";
+            this.categoryTitle.HeaderText = "رسته";
+            this.categoryTitle.Name = "categoryTitle";
+            // 
+            // equipNameTitle
+            // 
+            this.equipNameTitle.DataPropertyName = "equipNameTitle";
+            this.equipNameTitle.HeaderText = "نام";
+            this.equipNameTitle.Name = "equipNameTitle";
+            // 
+            // order
+            // 
+            this.order.DataPropertyName = "order";
+            this.order.HeaderText = "ترتیب";
+            this.order.Name = "order";
+            // 
             // btmInsert
             // 
             this.btmInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -114,7 +177,7 @@
             this.btmInsert.Name = "btmInsert";
             this.btmInsert.Size = new System.Drawing.Size(127, 35);
             this.btmInsert.TabIndex = 26;
-            this.btmInsert.Text = "ورود";
+            this.btmInsert.Text = "ورود تجهیز";
             this.btmInsert.UseVisualStyleBackColor = true;
             this.btmInsert.Click += new System.EventHandler(this.BtmInsert_Click);
             // 
@@ -137,7 +200,7 @@
             this.btmExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmExit.Font = new System.Drawing.Font("B Yekan", 11F);
-            this.btmExit.Location = new System.Drawing.Point(621, 646);
+            this.btmExit.Location = new System.Drawing.Point(619, 646);
             this.btmExit.Margin = new System.Windows.Forms.Padding(0);
             this.btmExit.Name = "btmExit";
             this.btmExit.Size = new System.Drawing.Size(125, 35);
@@ -370,69 +433,6 @@
             this.btnPartTypeInsert.Text = "ورود قطعه";
             this.btnPartTypeInsert.UseVisualStyleBackColor = true;
             this.btnPartTypeInsert.Click += new System.EventHandler(this.BtnPartTypeInsert_Click);
-            // 
-            // intID
-            // 
-            this.intID.DataPropertyName = "intID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.intID.DefaultCellStyle = dataGridViewCellStyle2;
-            this.intID.HeaderText = "intID";
-            this.intID.MinimumWidth = 10;
-            this.intID.Name = "intID";
-            this.intID.Visible = false;
-            // 
-            // bitSelect
-            // 
-            this.bitSelect.DataPropertyName = "bitSelect";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = false;
-            this.bitSelect.DefaultCellStyle = dataGridViewCellStyle3;
-            this.bitSelect.HeaderText = "انتخاب";
-            this.bitSelect.MinimumWidth = 10;
-            this.bitSelect.Name = "bitSelect";
-            // 
-            // companyTitle
-            // 
-            this.companyTitle.DataPropertyName = "companyTitle";
-            this.companyTitle.HeaderText = "شرکت";
-            this.companyTitle.Name = "companyTitle";
-            // 
-            // locationTitle
-            // 
-            this.locationTitle.DataPropertyName = "locationTitle";
-            this.locationTitle.HeaderText = "محل";
-            this.locationTitle.Name = "locationTitle";
-            // 
-            // zoneTitle
-            // 
-            this.zoneTitle.DataPropertyName = "zoneTitle";
-            this.zoneTitle.HeaderText = "بخش";
-            this.zoneTitle.Name = "zoneTitle";
-            // 
-            // subZoneTitle
-            // 
-            this.subZoneTitle.DataPropertyName = "subZoneTitle";
-            this.subZoneTitle.HeaderText = "زیربخش";
-            this.subZoneTitle.Name = "subZoneTitle";
-            // 
-            // categoryTitle
-            // 
-            this.categoryTitle.DataPropertyName = "categoryTitle";
-            this.categoryTitle.HeaderText = "رسته";
-            this.categoryTitle.Name = "categoryTitle";
-            // 
-            // equipNameTitle
-            // 
-            this.equipNameTitle.DataPropertyName = "equipNameTitle";
-            this.equipNameTitle.HeaderText = "نام";
-            this.equipNameTitle.Name = "equipNameTitle";
-            // 
-            // order
-            // 
-            this.order.DataPropertyName = "order";
-            this.order.HeaderText = "ترتیب";
-            this.order.Name = "order";
             // 
             // FrmEquips
             // 

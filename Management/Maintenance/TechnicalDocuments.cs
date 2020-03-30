@@ -99,20 +99,28 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                if (RtlMessageBox.Show($"آیا از حذف مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (dgvTechnicalDocuments.CurrentRow.Cells != null)
                 {
-                    var selectItems = dgvTechnicalDocuments.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToBoolean(t.Cells["bitSelect"].Value) == true).ToList();
-
-                    foreach (var item in selectItems)
+                    if (RtlMessageBox.Show($"آیا از حذف مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        var id = int.Parse(item.Cells["intID"].Value.ToString());
-                        var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == id);
-                        db.TechnicalDocuments.Delete(technicalDocuments);
+                        var selectItems = dgvTechnicalDocuments.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToBoolean(t.Cells["bitSelect"].Value) == true).ToList();
+
+                        foreach (var item in selectItems)
+                        {
+                            var id = int.Parse(item.Cells["intID"].Value.ToString());
+                            var technicalDocuments = db.TechnicalDocuments.GetEntity(t => t.intID == id);
+                            db.TechnicalDocuments.Delete(technicalDocuments);
+                        }
+                        db.Save();
+                        Filter();
                     }
-                    db.Save();
-                    Filter();
                 }
+                else
+                {
+                    RtlMessageBox.Show("لطفا یک سند را انتخاب کنید", "توجه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
 
             }
         }
@@ -152,10 +160,10 @@ namespace Baran.Ferroalloy.Management
             //frmManagement.menWindows.DropDownItems["menWindowsTechnicalDocuments"].Dispose();
         }
 
-        private void btmExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        //private void btmExit_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
 
         private void DgvTechnicalDocuments_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -175,7 +183,7 @@ namespace Baran.Ferroalloy.Management
             }
             else
             {
-                RtlMessageBox.Show("لطفا یک مستند را انتخاب کنید", "توجه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RtlMessageBox.Show("لطفا یک سند را انتخاب کنید", "توجه", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

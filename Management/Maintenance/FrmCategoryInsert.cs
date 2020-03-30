@@ -50,7 +50,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
             }
             else
             {
-                string categoryName = txtRegisterCategory.Text;
+                string categoryName = txtRegisterCategory.Text.Trim();
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     var categories = db.Categories.GetEntity(t => t.nvcName == categoryName);
@@ -91,7 +91,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
             {
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    string categoryName = txtEditCategory.Text;
+                    string categoryName = txtEditCategory.Text.Trim();
                     if (dgvListCategory.CurrentRow != null)
                     {
                         int categoryId = int.Parse(dgvListCategory.CurrentRow.Cells[0].Value.ToString());
@@ -157,6 +157,19 @@ namespace Baran.Ferroalloy.Management.Maintenance
             }
         }
 
-        
+        private void TxtRegisterCategory_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtSearchCategory_Click(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtEditCategory_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
     }
 }

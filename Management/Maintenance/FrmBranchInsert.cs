@@ -54,7 +54,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
             }
             else
             {
-                string nameBranch = txtRegisterBranch.Text;
+                string nameBranch = txtRegisterBranch.Text.Trim();
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
@@ -98,7 +98,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     var nameEntity = db.PartName.GetEntity(t => t.nvcName == name);
-                    string nameBranch = txtEditBranch.Text;
+                    string nameBranch = txtEditBranch.Text.Trim();
                     if (dgvListBranch.CurrentRow != null)
                     {
                         int nameId = int.Parse(dgvListBranch.CurrentRow.Cells[0].Value.ToString());
@@ -167,6 +167,19 @@ namespace Baran.Ferroalloy.Management.Maintenance
             }
         }
 
-        
+        private void TxtRegisterBranch_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtSearchBranch_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TxtEditBranch_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
     }
 }

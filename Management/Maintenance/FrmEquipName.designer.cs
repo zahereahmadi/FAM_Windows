@@ -35,18 +35,18 @@ namespace Baran.Ferroalloy.Management
             this.txtEquipName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btmEdit = new System.Windows.Forms.Button();
             this.txtEditEquipName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvListEquipName = new System.Windows.Forms.DataGridView();
-            this.txtSearchEquipName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchEquipName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbRegister.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,6 +81,7 @@ namespace Baran.Ferroalloy.Management
             this.txtEquipName.Name = "txtEquipName";
             this.txtEquipName.Size = new System.Drawing.Size(331, 27);
             this.txtEquipName.TabIndex = 1;
+            this.txtEquipName.Enter += new System.EventHandler(this.TxtEquipName_Enter);
             // 
             // label2
             // 
@@ -103,6 +104,15 @@ namespace Baran.Ferroalloy.Management
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ویرایش نام";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(356, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "نام تجهیز:";
             // 
             // label4
             // 
@@ -131,6 +141,7 @@ namespace Baran.Ferroalloy.Management
             this.txtEditEquipName.Name = "txtEditEquipName";
             this.txtEditEquipName.Size = new System.Drawing.Size(331, 27);
             this.txtEditEquipName.TabIndex = 4;
+            this.txtEditEquipName.Enter += new System.EventHandler(this.TxtEditEquipName_Enter);
             // 
             // groupBox3
             // 
@@ -173,32 +184,6 @@ namespace Baran.Ferroalloy.Management
             this.dgvListEquipName.TabIndex = 2;
             this.dgvListEquipName.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListEquipName_CellClick);
             // 
-            // txtSearchEquipName
-            // 
-            this.txtSearchEquipName.Location = new System.Drawing.Point(16, 26);
-            this.txtSearchEquipName.Name = "txtSearchEquipName";
-            this.txtSearchEquipName.Size = new System.Drawing.Size(204, 27);
-            this.txtSearchEquipName.TabIndex = 1;
-            this.txtSearchEquipName.TextChanged += new System.EventHandler(this.TxtSearchEquipName_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(226, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "جستجو:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(356, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "نام تجهیز:";
-            // 
             // intID
             // 
             this.intID.DataPropertyName = "intID";
@@ -221,6 +206,24 @@ namespace Baran.Ferroalloy.Management
             this.intNumber.Name = "intNumber";
             this.intNumber.ReadOnly = true;
             this.intNumber.Visible = false;
+            // 
+            // txtSearchEquipName
+            // 
+            this.txtSearchEquipName.Location = new System.Drawing.Point(16, 26);
+            this.txtSearchEquipName.Name = "txtSearchEquipName";
+            this.txtSearchEquipName.Size = new System.Drawing.Size(204, 27);
+            this.txtSearchEquipName.TabIndex = 1;
+            this.txtSearchEquipName.TextChanged += new System.EventHandler(this.TxtSearchEquipName_TextChanged);
+            this.txtSearchEquipName.Enter += new System.EventHandler(this.TxtSearchEquipName_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(226, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "جستجو:";
             // 
             // FrmEquipName
             // 

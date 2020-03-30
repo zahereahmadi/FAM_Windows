@@ -79,6 +79,7 @@
             this.txtRegisterBranch.Name = "txtRegisterBranch";
             this.txtRegisterBranch.Size = new System.Drawing.Size(337, 27);
             this.txtRegisterBranch.TabIndex = 1;
+            this.txtRegisterBranch.Enter += new System.EventHandler(this.TxtRegisterBranch_Enter);
             // 
             // label2
             // 
@@ -129,6 +130,7 @@
             this.txtEditBranch.Name = "txtEditBranch";
             this.txtEditBranch.Size = new System.Drawing.Size(337, 27);
             this.txtEditBranch.TabIndex = 4;
+            this.txtEditBranch.Enter += new System.EventHandler(this.TxtEditBranch_Enter);
             // 
             // label3
             // 
@@ -188,6 +190,7 @@
             this.txtSearchBranch.Size = new System.Drawing.Size(204, 27);
             this.txtSearchBranch.TabIndex = 1;
             this.txtSearchBranch.TextChanged += new System.EventHandler(this.TxtSearchBranch_TextChanged);
+            this.txtSearchBranch.Enter += new System.EventHandler(this.TxtSearchBranch_Enter);
             // 
             // label1
             // 
