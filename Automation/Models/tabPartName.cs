@@ -17,8 +17,8 @@ namespace Baran.Ferroalloy.Automation.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tabPartName()
         {
-            this.tabPartTypes = new HashSet<tabPartTypes>();
             this.tabPartBranch = new HashSet<tabPartBranch>();
+            this.tabPartTypes = new HashSet<tabPartTypes>();
         }
     
         public int intID { get; set; }
@@ -29,8 +29,8 @@ namespace Baran.Ferroalloy.Automation.Models
     
         public virtual tabCategories tabCategories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabPartTypes> tabPartTypes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabPartBranch> tabPartBranch { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabPartTypes> tabPartTypes { get; set; }
     }
 }

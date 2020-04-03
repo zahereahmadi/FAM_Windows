@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -20,7 +21,7 @@ namespace Baran.Ferroalloy.Management
         public Project proUpdate;
         public Connection cnConnection;
         private Category[] caCategories;
-
+        public int projectId;
         public ProjectUpdate()
         {
             InitializeComponent();
@@ -28,32 +29,72 @@ namespace Baran.Ferroalloy.Management
 
         private void ProjectUpdate_Load(object sender, EventArgs e)
         {
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            foreach (Category ctCategory in this.caCategories)
+            using (UnitOfWork db=new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
-            }
+                var projects = db.Projects.GetEntity(t => t.intID == projectId);
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategory.Items.Add(item.nvcName);
+                }
 
-            //Fill Controls with Part Properties
-            this.cbCategory.Text = Category.GetNameByNumber(this.cnConnection,this.proUpdate.intCategory);
-            this.tbName.Text = this.proUpdate.strName;
-            this.tbNumber.Text = this.proUpdate.intNumber.ToString();
-            this.tbTip.Text = this.proUpdate.strTip;
+                cbCategory.SelectedItem = projects.tabCategories.nvcName;
+                tbNumber.Text = projects.intNumber.ToString();
+                tbName.Text = projects.nvcName.Trim();
+                tbTip.Text = projects.nvcTip.Trim();
+
+            }
         }
 
         private void btmOK_Click(object sender, EventArgs e)
         {
-            this.proUpdate.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
-            this.proUpdate.strName = this.tbName.Text;
-            this.proUpdate.intNumber = int.Parse(this.tbNumber.Text);
-            this.proUpdate.strTip = this.tbTip.Text;
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                var projects = db.Projects.GetEntity(t => t.intID == projectId);
+                var categoryId = db.Categories.GetEntity(t => t.nvcName == cbCategory.SelectedItem).intNumber;
+                var number = Convert.ToInt32(tbNumber.Text.Trim());
+                projects.intID = projectId;
+                projects.nvcName = tbName.Text.Trim();
+                projects.nvcTip = tbTip.Text.Trim();
+                projects.intCategory = categoryId;
+                projects.bitSelect = projects.bitSelect;
+                if (projects.intNumber == number)
+                {
+                    projects.intNumber = projects.intNumber;
+                    db.Projects.Update(projects);
+                    db.Save();
+                    this.Close();
+                }
+                else
+                {
+                    var searchProject = db.Projects.GetEntity(t => t.intNumber == number);
+                    if (searchProject != null)
+                    {
+                        RtlMessageBox.Show("شماره وارد شده تکراری می باشد!", "اخطار", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        projects.intNumber = number;
+                        db.Projects.Update(projects);
+                        db.Save();
+                        this.Close();
+                    }
 
-            this.proUpdate.Update(this.cnConnection);
+                }
 
-            Projects frmProjects = (Projects)this.Owner;
-            frmProjects.SearchProjects();
-            this.Close();
+                
+            }
+            //this.proUpdate.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
+            //this.proUpdate.strName = this.tbName.Text;
+            //this.proUpdate.intNumber = int.Parse(this.tbNumber.Text);
+            //this.proUpdate.strTip = this.tbTip.Text;
+
+            //this.proUpdate.Update(this.cnConnection);
+
+            //Projects frmProjects = (Projects)this.Owner;
+            //frmProjects.SearchProjects();
+            //this.Close();
         }
 
         private void SetEnableBtmOk()

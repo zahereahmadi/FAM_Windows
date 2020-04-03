@@ -18,11 +18,13 @@ namespace Baran.Ferroalloy.Automation.Models
         public tabCategories()
         {
             this.tabEquipName = new HashSet<tabEquipName>();
-            this.tabMeasurementUnits = new HashSet<tabMeasurementUnits>();
-            this.tabProperties = new HashSet<tabProperties>();
-            this.tabPartTypes = new HashSet<tabPartTypes>();
             this.tabEquipSamples = new HashSet<tabEquipSamples>();
+            this.tabMeasurementUnits = new HashSet<tabMeasurementUnits>();
             this.tabPartName = new HashSet<tabPartName>();
+            this.tabPartTypes = new HashSet<tabPartTypes>();
+            this.tabProjects = new HashSet<tabProjects>();
+            this.tabProperties = new HashSet<tabProperties>();
+            this.tabSubProjects = new HashSet<tabSubProjects>();
             this.tabTechnicalDocuments = new HashSet<tabTechnicalDocuments>();
         }
     
@@ -35,15 +37,19 @@ namespace Baran.Ferroalloy.Automation.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabEquipName> tabEquipName { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabMeasurementUnits> tabMeasurementUnits { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabProperties> tabProperties { get; set; }
+        public virtual ICollection<tabPartName> tabPartName { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabPartTypes> tabPartTypes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
+        public virtual ICollection<tabProjects> tabProjects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tabPartName> tabPartName { get; set; }
+        public virtual ICollection<tabProperties> tabProperties { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabSubProjects> tabSubProjects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabTechnicalDocuments> tabTechnicalDocuments { get; set; }
     }
