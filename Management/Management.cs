@@ -802,12 +802,12 @@ namespace Baran.Ferroalloy.Management
             if (!MaintenanceElectricalFurnace.bolIsRunning)
             {
                 ToolStripMenuItem menWindowsMaintenanceElectricalFurnace = new ToolStripMenuItem();
-                menWindowsMaintenanceElectricalFurnace.Name = "menWindowsMaintenanceElectricalFurnace";
+                menWindowsMaintenanceElectricalFurnace.Name = "menTechnicalDepartmentElectricalFurnace";
                 menWindowsMaintenanceElectricalFurnace.Text = "تعمیرات کوره";
                 menWindowsMaintenanceElectricalFurnace.AutoSize = false;
                 menWindowsMaintenanceElectricalFurnace.Height = 45;
                 menWindowsMaintenanceElectricalFurnace.Width = 400;
-                menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.menWindowsMaintenanceElectricalFurnace_Click);
+                menWindowsMaintenanceElectricalFurnace.Click += new System.EventHandler(this.MenTechnicalDepartmentElectricalFurnace_Click);
                 this.menWindows.DropDownItems.Add(menWindowsMaintenanceElectricalFurnace);
 
                 //MaintenanceElectricalFurnace frmFurnaceElectricalMaintenance = new MaintenanceElectricalFurnace();
@@ -820,11 +820,14 @@ namespace Baran.Ferroalloy.Management
                 //frmFurnaceElectricalMaintenance.Show();
 
                 FrmMaintenance frmMaintenance = new FrmMaintenance();
+                frmMaintenance.setSettings = this.setSettings;
                 frmMaintenance.MdiParent = this;
-                frmMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                frmMaintenance.Dock = DockStyle.Fill;
+                //frmMaintenance.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                frmMaintenance.cnConnection = this.cnConnection;
+                //frmMaintenance.Dock = DockStyle.Fill;
                 frmMaintenance.usUser = this.usLogined;
                 frmMaintenance.Show();
+                frmMaintenance.WindowState = FormWindowState.Maximized;
             }
         }
     }

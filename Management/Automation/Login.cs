@@ -123,12 +123,12 @@ namespace Baran.Ferroalloy.Management
 
         private void SetApplicationFacilities(int? postId, int? departmentId, int? subDepartmentId)
         {
-           if(postId == 1 && departmentId == 1)
+           if(postId == 1 && departmentId == 1/* && subDepartmentId == 0*/)
             {
                 frmManagement.menOffice.Enabled = true;
                 frmManagement.menEmployees.Enabled = true;
                 frmManagement.menAttendance.Enabled = true;
-               // frmManagement.menOfficeStore.Enabled = true;
+                frmManagement.menOfficeStore.Enabled = true;
                 frmManagement.MensOfficeDepartmentStorePurchaseRequests.Enabled = true;
                 frmManagement.MensOfficeDepartmentStoreGetOuts.Enabled = true;
                 frmManagement.menOfficeDepartmentPrefrences.Enabled = true;
@@ -142,11 +142,11 @@ namespace Baran.Ferroalloy.Management
                 frmManagement.MensProductionDepartmentStorePurchaseRequests.Enabled = true;
                 frmManagement.mensProductionDepartmentStoreGetOuts.Enabled = true;
                 frmManagement.menTechnical.Enabled = true;
-                //frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
+                frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
                 frmManagement.menTechnicalDepartmentProjects.Enabled = true;
-                //frmManagement.menuParts.Enabled = true;
-                //frmManagement.menuEquips.Enabled = true;
-                //frmManagement.menTechnicalDocuments.Enabled = true;
+                frmManagement.menuParts.Enabled = true;
+                frmManagement.menuEquips.Enabled = true;
+                frmManagement.menTechnicalDocuments.Enabled = true;
                 frmManagement.menTechnicalDepartmentPrefrences.Enabled = true;
                 frmManagement.menStore.Enabled = true;
                 frmManagement.menStoreDepartmentVendors.Enabled = true;
@@ -159,7 +159,7 @@ namespace Baran.Ferroalloy.Management
 
 
             }
-            if ((postId == 3 || postId == 4) && departmentId == 1 && subDepartmentId == 0)
+            else if ((postId == 3 || postId == 4) && departmentId == 1 && subDepartmentId == 0)
             {
                 frmManagement.menOffice.Enabled = true;
                 frmManagement.menEmployees.Enabled = true;
