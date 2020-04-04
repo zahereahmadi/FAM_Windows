@@ -12,16 +12,20 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabSubprojects
+    public partial class tabSubProjects
     {
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public Nullable<int> intCategory { get; set; }
-        public Nullable<int> intProjectNumber { get; set; }
+        public int intCategory { get; set; }
+        public int intProject { get; set; }
         public string nvcName { get; set; }
-        public Nullable<System.DateTime> datStart { get; set; }
-        public Nullable<int> intDuration { get; set; }
-        public Nullable<int> intProgress { get; set; }
+        public System.DateTime datStart { get; set; }
+        public int intDuration { get; set; }
+        public int intProgress { get; set; }
         public string nvcTip { get; set; }
+        public Nullable<int> intWeight { get; set; }
+    
+        public virtual tabCategories tabCategories { get; set; }
+        public virtual tabProjects tabProjects { get; set; }
     }
 }

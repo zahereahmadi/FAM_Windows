@@ -43,11 +43,11 @@
             this.cbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.cbCategory.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(289, 49);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(150, 24);
+            this.cbCategory.Size = new System.Drawing.Size(150, 28);
             this.cbCategory.TabIndex = 85;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.CbCategory_SelectedIndexChanged);
             // 
@@ -56,10 +56,10 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.label4.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label4.Location = new System.Drawing.Point(245, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 92;
             this.label4.Text = "رسته:";
             // 
@@ -67,23 +67,24 @@
             // 
             this.tbTip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTip.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.tbTip.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.tbTip.Location = new System.Drawing.Point(165, 141);
             this.tbTip.Multiline = true;
             this.tbTip.Name = "tbTip";
             this.tbTip.Size = new System.Drawing.Size(400, 75);
             this.tbTip.TabIndex = 87;
             this.tbTip.TextChanged += new System.EventHandler(this.TbTip_TextChanged);
+            this.tbTip.Enter += new System.EventHandler(this.TbTip_Enter);
             // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.label7.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label7.Location = new System.Drawing.Point(116, 140);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 90;
             this.label7.Text = "توضیح:";
             // 
@@ -91,22 +92,23 @@
             // 
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbName.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.tbName.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.tbName.Location = new System.Drawing.Point(119, 98);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(469, 24);
+            this.tbName.Size = new System.Drawing.Size(469, 27);
             this.tbName.TabIndex = 86;
             this.tbName.TextChanged += new System.EventHandler(this.TbName_TextChanged);
+            this.tbName.Enter += new System.EventHandler(this.TbName_Enter);
             // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.label6.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label6.Location = new System.Drawing.Point(90, 101);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 17);
+            this.label6.Size = new System.Drawing.Size(27, 20);
             this.label6.TabIndex = 91;
             this.label6.Text = "نام:";
             // 
@@ -114,7 +116,7 @@
             // 
             this.btmCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btmCancel.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.btmCancel.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btmCancel.Location = new System.Drawing.Point(382, 245);
             this.btmCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btmCancel.Name = "btmCancel";
@@ -129,7 +131,7 @@
             this.btmOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmOK.Enabled = false;
-            this.btmOK.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.btmOK.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btmOK.Location = new System.Drawing.Point(222, 245);
             this.btmOK.Margin = new System.Windows.Forms.Padding(4);
             this.btmOK.Name = "btmOK";
@@ -153,7 +155,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btmCancel);
             this.Controls.Add(this.btmOK);
-            this.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

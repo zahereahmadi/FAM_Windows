@@ -43,6 +43,19 @@ namespace Baran.Ferroalloy.Management.Maintenance
                     cbWorkGroup.Items.Add(item);
                 }
 
+                var maintenances = db.Maintenance.GetEntity(t => t.intID == maintenanceId);
+                var coIds = maintenances.nvcCoIdsWorkGroup.Split('-');
+                var fullName = "";
+                foreach (var item in coIds)
+                {
+                    var employees = db.Employees.GetEntity(t => t.nvcCoID == item);
+                    fullName = employees.nvcFirstname + " " + employees.nvcLastname /*+ "-"*/;
+                    lbWorkers.Items.Add(fullName);
+                }
+
+                //fullName = fullName.Remove(fullName.Length - 1);
+                
+
                 //string fullName = "";
                 //var coId = coIdsWorker.Split('-');
                 //foreach (var item in coId)

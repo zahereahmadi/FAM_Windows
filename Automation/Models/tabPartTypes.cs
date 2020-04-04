@@ -28,8 +28,8 @@ namespace Baran.Ferroalloy.Automation.Models
     
         public virtual tabCategories tabCategories { get; set; }
         public virtual tabMeasurementUnits tabMeasurementUnits { get; set; }
-        public virtual tabPartName tabPartName { get; set; }
         public virtual tabPartBranch tabPartBranch { get; set; }
+        public virtual tabPartName tabPartName { get; set; }
         public virtual tabPartSubBranch tabPartSubBranch { get; set; }
         public virtual tabStores tabStores { get; set; }
     }

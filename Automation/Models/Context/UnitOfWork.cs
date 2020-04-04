@@ -36,6 +36,8 @@ namespace Baran.Ferroalloy.Automation
         private ITechnicalDocumentItems _technicalDocumentItems;
         private IPartSamples _partSamples;
         private ITechnicalDocumentTypes _technicalDocumentTypes;
+        private IProjects _projects;
+        private ISubProjects _subProjects;
 
 
         public IPartTypes PartTypes
@@ -360,6 +362,32 @@ namespace Baran.Ferroalloy.Automation
                 }
 
                 return _technicalDocumentTypes;
+            }
+        }
+
+        public IProjects Projects
+        {
+            get
+            {
+                if (_projects == null)
+                {
+                    _projects=new ProjectsService(db);
+                }
+
+                return _projects;
+            }
+        }
+
+        public ISubProjects SubProjects
+        {
+            get
+            {
+                if (_subProjects == null)
+                {
+                    _subProjects=new SubProjectsService(db);
+                }
+
+                return _subProjects;
             }
         }
 

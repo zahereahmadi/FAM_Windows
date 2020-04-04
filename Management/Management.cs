@@ -26,8 +26,8 @@ namespace Baran.Ferroalloy.Management
         private FamSetting setSettings;
         private Employee emLogined;
         private string strXmlPath;
-        
-       
+        public bool type;
+
         public Management()
         {
             InitializeComponent();
@@ -45,7 +45,6 @@ namespace Baran.Ferroalloy.Management
             if (CheckApplicationStatus()) 
             {
                 this.setSettings = new FamSetting(this.cnConnection, this.strXmlPath);
-
                 this.setSettings.strAppVersion = "1.6.17";
                 this.staVersion.Text = this.setSettings.strAppVersion;
                 this.Text += String.Format(" - {0}", FamSetting.GetCoInformation(this.cnConnection).strName);
@@ -171,6 +170,7 @@ namespace Baran.Ferroalloy.Management
                 frmEmployees.setSettings = this.setSettings;
                 frmEmployees.usUser = this.usLogined;
                 frmEmployees.cnConnection = this.cnConnection;
+                frmEmployees.accessType = type;
                 frmEmployees.Show();
                 frmEmployees.WindowState = FormWindowState.Maximized;
             }

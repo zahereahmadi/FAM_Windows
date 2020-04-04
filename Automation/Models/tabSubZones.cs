@@ -26,8 +26,8 @@ namespace Baran.Ferroalloy.Automation.Models
         public int intNumber { get; set; }
         public int intZone { get; set; }
     
-        public virtual tabZones tabZones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabEquipSamples> tabEquipSamples { get; set; }
+        public virtual tabZones tabZones { get; set; }
     }
 }
