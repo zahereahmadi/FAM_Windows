@@ -39,27 +39,26 @@
     <ApplicationIcon>ICON3.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\FAM_Project\Automation\bin\Debug\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\c#\!!!TopLearn.Com_CsharpAdvanced_04\MyContacts\MyContacts\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\FAM_Project\Automation\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\c#\!!!TopLearn.Com_CsharpAdvanced_04\MyContacts\MyContacts\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Base">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_22\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Controls">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_22\Accounting\Accounting.App\bin\Debug\Stimulsoft.Controls.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Controls.Win">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Controls.Win.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Controls.Win.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_22\Accounting\Accounting.App\bin\Debug\Stimulsoft.Report.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Report.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report.Win">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Report.Win.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Report.Win.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
