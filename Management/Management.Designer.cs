@@ -277,12 +277,12 @@
             // 
             this.menTechnical.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menTechnicalDepartmentElectricalFurnace,
-            this.نگهداریPMToolStripMenuItem,
             this.menTechnicalDepartmentProjects,
-            this.انبارToolStripMenuItem2,
-            this.menuParts,
-            this.menuEquips,
             this.menTechnicalDocuments,
+            this.menuEquips,
+            this.menuParts,
+            this.نگهداریPMToolStripMenuItem,
+            this.انبارToolStripMenuItem2,
             this.menTechnicalDepartmentPrefrences});
             this.menTechnical.Enabled = false;
             this.menTechnical.Name = "menTechnical";
@@ -291,9 +291,8 @@
             // 
             // menTechnicalDepartmentElectricalFurnace
             // 
-            this.menTechnicalDepartmentElectricalFurnace.Enabled = false;
             this.menTechnicalDepartmentElectricalFurnace.Name = "menTechnicalDepartmentElectricalFurnace";
-            this.menTechnicalDepartmentElectricalFurnace.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDepartmentElectricalFurnace.Size = new System.Drawing.Size(180, 24);
             this.menTechnicalDepartmentElectricalFurnace.Text = "تعمیرات کوره";
             this.menTechnicalDepartmentElectricalFurnace.Click += new System.EventHandler(this.MenTechnicalDepartmentElectricalFurnace_Click);
             // 
@@ -312,20 +311,20 @@
             // 
             this.menTechnicalDepartmentMechanicalTechnicalInfo.Enabled = false;
             this.menTechnicalDepartmentMechanicalTechnicalInfo.Name = "menTechnicalDepartmentMechanicalTechnicalInfo";
-            this.menTechnicalDepartmentMechanicalTechnicalInfo.Size = new System.Drawing.Size(160, 22);
+            this.menTechnicalDepartmentMechanicalTechnicalInfo.Size = new System.Drawing.Size(158, 24);
             this.menTechnicalDepartmentMechanicalTechnicalInfo.Text = "اطلاعات فنی";
             // 
             // menTechnicalDepartmentMechanicalMaintenanceInfo
             // 
             this.menTechnicalDepartmentMechanicalMaintenanceInfo.Enabled = false;
             this.menTechnicalDepartmentMechanicalMaintenanceInfo.Name = "menTechnicalDepartmentMechanicalMaintenanceInfo";
-            this.menTechnicalDepartmentMechanicalMaintenanceInfo.Size = new System.Drawing.Size(160, 22);
+            this.menTechnicalDepartmentMechanicalMaintenanceInfo.Size = new System.Drawing.Size(158, 24);
             this.menTechnicalDepartmentMechanicalMaintenanceInfo.Text = "اطلاعات نگهداری";
             // 
             // menTechnicalDepartmentProjects
             // 
-            this.menTechnicalDepartmentProjects.Enabled = false;
-            this.menTechnicalDepartmentProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.menTechnicalDepartmentProjects.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+
             this.menTechnicalDepartmentProjects.Name = "menTechnicalDepartmentProjects";
             this.menTechnicalDepartmentProjects.Size = new System.Drawing.Size(149, 22);
             this.menTechnicalDepartmentProjects.Text = "پروژه‌ها";

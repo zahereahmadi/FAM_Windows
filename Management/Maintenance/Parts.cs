@@ -322,22 +322,29 @@ namespace Baran.Ferroalloy.Management
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                if (RtlMessageBox.Show($"آیا از حذف مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (dgvStuffs.CurrentRow != null)
                 {
-                    var selectItems = dgvStuffs.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToBoolean(t.Cells[1].Value) == true).ToList();
-
-                    foreach (var item in selectItems)
+                    if (RtlMessageBox.Show($"آیا از حذف مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        var id = int.Parse(item.Cells[0].Value.ToString());
-                        var part = db.PartTypes.GetEntity(t => t.intID == id);
-                        db.PartTypes.Delete(part);
-                        
+                        var selectItems = dgvStuffs.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToBoolean(t.Cells[1].Value) == true).ToList();
+
+                        foreach (var item in selectItems)
+                        {
+                            var id = int.Parse(item.Cells[0].Value.ToString());
+                            var part = db.PartTypes.GetEntity(t => t.intID == id);
+                            db.PartTypes.Delete(part);
+
+                        }
+                        db.Save();
+                        Filter();
                     }
-                    db.Save();
-                    Filter();
                 }
-                 
+                else
+                {
+                    RtlMessageBox.Show("لطفا سطر یا سطرهای مورد نظر خود را انتخاب کنید", "توجه", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
             //Int16 intSelectedEmployees = 0;
             //foreach (DataRow drEmployee in this.dsStuffs.Tables["tabStuffs"].Rows)

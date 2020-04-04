@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -21,6 +22,7 @@ namespace Baran.Ferroalloy.Management
 
         public Connection cnConnection;
         private Category[] caCategories;
+        public int projectNumber;
 
         public SubprojectInsert()
         {
@@ -31,31 +33,52 @@ namespace Baran.Ferroalloy.Management
 
         private void SubprojectInsert_Load(object sender, EventArgs e)
         {
-            
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            this.cbCategory.Items.Add("");
-            foreach (Category ctCategory in this.caCategories)
+
+            using (UnitOfWork db = new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategory.Items.Add(item.nvcName);
+                }
             }
         }
 
         private void btmOK_Click(object sender, EventArgs e)
         {
             this.btmOK.Enabled = false;
-            this.spInsert.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
-            this.spInsert.dtStart = this.dtpStartDate.Value;
-            this.spInsert.strName = this.tbName.Text;
-            this.spInsert.intDuration = int.Parse(this.tbDuration.Text);
-            this.spInsert.strTip = this.tbTip.Text;
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                int categoryId = db.Categories.GetEntity(t => t.nvcName == cbCategory.SelectedItem).intNumber;
+                tabSubProjects tabSubProjects = new tabSubProjects()
+                {
+                    nvcName = tbName.Text.Trim(),
+                    bitSelect = false,
+                    datStart = dtpStartDate.Value,
+                    intCategory = categoryId,
+                    intDuration = Convert.ToInt32(Language.GetEnglishText(tbDuration.Text)),
+                    intProgress = Convert.ToInt32(Language.GetEnglishText(tbprogress.Text)),
+                    //intWeight = 0,
+                    nvcTip = tbTip.Text.Trim(),
+                    intProject = projectNumber
+                };
+                db.SubProjects.Insert(tabSubProjects);
+                db.Save();
+
+                this.Close();
+            }
+            //this.spInsert.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
+            //this.spInsert.dtStart = this.dtpStartDate.Value;
+            //this.spInsert.strName = this.tbName.Text;
+            //this.spInsert.intDuration = int.Parse(this.tbDuration.Text);
+            //this.spInsert.strTip = this.tbTip.Text;
 
 
-            spInsert.Insert(this.cnConnection);
+            //spInsert.Insert(this.cnConnection);
 
-            Subprojects frmSubprojects = (Subprojects)this.Owner;
-            frmSubprojects.SearchSubprojects();
-            this.Close();
+            //Subprojects frmSubprojects = (Subprojects)this.Owner;
+            //frmSubprojects.SearchSubProjects();
+
         }
 
         private void btmCancel_Click(object sender, EventArgs e)
@@ -76,12 +99,6 @@ namespace Baran.Ferroalloy.Management
                 this.btmOK.Enabled = false;
             }
         }
-
-        private void SetFarsiLanguageTextBoxes(object sender, EventArgs e)
-        {
-            Language.SetFarsiLanguage();
-        }
-
         private void SetNumbericCharsTextBoxes(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -92,7 +109,7 @@ namespace Baran.Ferroalloy.Management
 
         private void DtpStartDate_ValueChanged(object sender, EventArgs e)
         {
-            
+
 
             SetEnableBtmOk();
         }
@@ -120,6 +137,31 @@ namespace Baran.Ferroalloy.Management
         private void TbTip_TextChanged(object sender, EventArgs e)
         {
             SetEnableBtmOk();
+        }
+
+        private void TbName_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TbDuration_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void Tbprogress_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TbTip_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void SubprojectInsert_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RtlMessageBox.Show("");
         }
     }
 }
