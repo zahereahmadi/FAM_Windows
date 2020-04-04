@@ -131,7 +131,7 @@
             this.menEmployees.Enabled = false;
             this.menEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menEmployees.Name = "menEmployees";
-            this.menEmployees.Size = new System.Drawing.Size(143, 22);
+            this.menEmployees.Size = new System.Drawing.Size(180, 22);
             this.menEmployees.Text = "کارمندان";
             this.menEmployees.Click += new System.EventHandler(this.menEmployees_Click);
             // 
@@ -139,7 +139,7 @@
             // 
             this.menAttendance.Enabled = false;
             this.menAttendance.Name = "menAttendance";
-            this.menAttendance.Size = new System.Drawing.Size(143, 22);
+            this.menAttendance.Size = new System.Drawing.Size(180, 22);
             this.menAttendance.Text = "حضور و غیاب";
             // 
             // menOfficeStore
@@ -147,10 +147,9 @@
             this.menOfficeStore.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MensOfficeDepartmentStorePurchaseRequests,
             this.MensOfficeDepartmentStoreGetOuts});
-            this.menOfficeStore.Enabled = false;
             this.menOfficeStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menOfficeStore.Name = "menOfficeStore";
-            this.menOfficeStore.Size = new System.Drawing.Size(143, 22);
+            this.menOfficeStore.Size = new System.Drawing.Size(180, 22);
             this.menOfficeStore.Text = "انبار";
             // 
             // MensOfficeDepartmentStorePurchaseRequests
@@ -174,7 +173,7 @@
             this.menOfficeDepartmentPrefrences.Enabled = false;
             this.menOfficeDepartmentPrefrences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menOfficeDepartmentPrefrences.Name = "menOfficeDepartmentPrefrences";
-            this.menOfficeDepartmentPrefrences.Size = new System.Drawing.Size(143, 22);
+            this.menOfficeDepartmentPrefrences.Size = new System.Drawing.Size(180, 22);
             this.menOfficeDepartmentPrefrences.Text = "تنطیمات";
             this.menOfficeDepartmentPrefrences.Click += new System.EventHandler(this.MenOfficeDepartmentPrefrences_Click);
             // 
@@ -224,17 +223,16 @@
             // 
             this.menLoading.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menLoadingRegister});
-            this.menLoading.Enabled = false;
             this.menLoading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menLoading.Name = "menLoading";
-            this.menLoading.Size = new System.Drawing.Size(119, 22);
+            this.menLoading.Size = new System.Drawing.Size(180, 22);
             this.menLoading.Text = "بارگیری";
             // 
             // menLoadingRegister
             // 
             this.menLoadingRegister.Enabled = false;
             this.menLoadingRegister.Name = "menLoadingRegister";
-            this.menLoadingRegister.Size = new System.Drawing.Size(139, 22);
+            this.menLoadingRegister.Size = new System.Drawing.Size(180, 22);
             this.menLoadingRegister.Text = "ثبت بارگیری";
             this.menLoadingRegister.Click += new System.EventHandler(this.menLoadingRegister_Click);
             // 
@@ -246,7 +244,7 @@
             this.انبارToolStripMenuItem1.Enabled = false;
             this.انبارToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.انبارToolStripMenuItem1.Name = "انبارToolStripMenuItem1";
-            this.انبارToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
+            this.انبارToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.انبارToolStripMenuItem1.Text = "انبار";
             // 
             // MensProductionDepartmentStorePurchaseRequests
@@ -269,7 +267,7 @@
             this.menProductionDepartmentPrefrences.Enabled = false;
             this.menProductionDepartmentPrefrences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menProductionDepartmentPrefrences.Name = "menProductionDepartmentPrefrences";
-            this.menProductionDepartmentPrefrences.Size = new System.Drawing.Size(119, 22);
+            this.menProductionDepartmentPrefrences.Size = new System.Drawing.Size(180, 22);
             this.menProductionDepartmentPrefrences.Text = "تنظیمات";
             this.menProductionDepartmentPrefrences.Click += new System.EventHandler(this.MenProductionDepartmentPrefrences_Click);
             // 
@@ -293,7 +291,7 @@
             // 
             this.menTechnicalDepartmentElectricalFurnace.Enabled = false;
             this.menTechnicalDepartmentElectricalFurnace.Name = "menTechnicalDepartmentElectricalFurnace";
-            this.menTechnicalDepartmentElectricalFurnace.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDepartmentElectricalFurnace.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentElectricalFurnace.Text = "تعمیرات کوره";
             this.menTechnicalDepartmentElectricalFurnace.Click += new System.EventHandler(this.MenTechnicalDepartmentElectricalFurnace_Click);
             // 
@@ -305,21 +303,21 @@
             this.نگهداریPMToolStripMenuItem.Enabled = false;
             this.نگهداریPMToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.نگهداریPMToolStripMenuItem.Name = "نگهداریPMToolStripMenuItem";
-            this.نگهداریPMToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.نگهداریPMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.نگهداریPMToolStripMenuItem.Text = "نگهداری (PM)";
             // 
             // menTechnicalDepartmentMechanicalTechnicalInfo
             // 
             this.menTechnicalDepartmentMechanicalTechnicalInfo.Enabled = false;
             this.menTechnicalDepartmentMechanicalTechnicalInfo.Name = "menTechnicalDepartmentMechanicalTechnicalInfo";
-            this.menTechnicalDepartmentMechanicalTechnicalInfo.Size = new System.Drawing.Size(160, 22);
+            this.menTechnicalDepartmentMechanicalTechnicalInfo.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentMechanicalTechnicalInfo.Text = "اطلاعات فنی";
             // 
             // menTechnicalDepartmentMechanicalMaintenanceInfo
             // 
             this.menTechnicalDepartmentMechanicalMaintenanceInfo.Enabled = false;
             this.menTechnicalDepartmentMechanicalMaintenanceInfo.Name = "menTechnicalDepartmentMechanicalMaintenanceInfo";
-            this.menTechnicalDepartmentMechanicalMaintenanceInfo.Size = new System.Drawing.Size(160, 22);
+            this.menTechnicalDepartmentMechanicalMaintenanceInfo.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentMechanicalMaintenanceInfo.Text = "اطلاعات نگهداری";
             // 
             // menTechnicalDepartmentProjects
@@ -327,7 +325,7 @@
             this.menTechnicalDepartmentProjects.Enabled = false;
             this.menTechnicalDepartmentProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menTechnicalDepartmentProjects.Name = "menTechnicalDepartmentProjects";
-            this.menTechnicalDepartmentProjects.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDepartmentProjects.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentProjects.Text = "پروژه‌ها";
             this.menTechnicalDepartmentProjects.Click += new System.EventHandler(this.MenProjects_Click);
             // 
@@ -339,7 +337,7 @@
             this.انبارToolStripMenuItem2.Enabled = false;
             this.انبارToolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.انبارToolStripMenuItem2.Name = "انبارToolStripMenuItem2";
-            this.انبارToolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
+            this.انبارToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.انبارToolStripMenuItem2.Text = "انبار";
             // 
             // MensTechnicalDepartmentStorePurchaseRequests
@@ -361,7 +359,7 @@
             // 
             this.menuParts.Enabled = false;
             this.menuParts.Name = "menuParts";
-            this.menuParts.Size = new System.Drawing.Size(149, 22);
+            this.menuParts.Size = new System.Drawing.Size(180, 22);
             this.menuParts.Text = "کالا";
             this.menuParts.Click += new System.EventHandler(this.MenuParts_Click);
             // 
@@ -369,7 +367,7 @@
             // 
             this.menuEquips.Enabled = false;
             this.menuEquips.Name = "menuEquips";
-            this.menuEquips.Size = new System.Drawing.Size(149, 22);
+            this.menuEquips.Size = new System.Drawing.Size(180, 22);
             this.menuEquips.Text = "تجهیز";
             this.menuEquips.Click += new System.EventHandler(this.MenuEquips_Click);
             // 
@@ -377,7 +375,7 @@
             // 
             this.menTechnicalDocuments.Enabled = false;
             this.menTechnicalDocuments.Name = "menTechnicalDocuments";
-            this.menTechnicalDocuments.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDocuments.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDocuments.Text = "مستندات";
             this.menTechnicalDocuments.Click += new System.EventHandler(this.MenTechnicalDocuments_Click);
             // 
@@ -386,7 +384,7 @@
             this.menTechnicalDepartmentPrefrences.Enabled = false;
             this.menTechnicalDepartmentPrefrences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menTechnicalDepartmentPrefrences.Name = "menTechnicalDepartmentPrefrences";
-            this.menTechnicalDepartmentPrefrences.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDepartmentPrefrences.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentPrefrences.Text = "تنظیمات";
             this.menTechnicalDepartmentPrefrences.Click += new System.EventHandler(this.MenTechnicalDepartmentPrefrences_Click);
             // 
@@ -466,7 +464,7 @@
             this.انبارToolStripMenuItem3.Enabled = false;
             this.انبارToolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.انبارToolStripMenuItem3.Name = "انبارToolStripMenuItem3";
-            this.انبارToolStripMenuItem3.Size = new System.Drawing.Size(115, 22);
+            this.انبارToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.انبارToolStripMenuItem3.Text = "انبار";
             // 
             // menLabDepartmentStorePurchaseRequests
@@ -487,7 +485,7 @@
             this.menLabDepartmentPrefrences.Enabled = false;
             this.menLabDepartmentPrefrences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menLabDepartmentPrefrences.Name = "menLabDepartmentPrefrences";
-            this.menLabDepartmentPrefrences.Size = new System.Drawing.Size(115, 22);
+            this.menLabDepartmentPrefrences.Size = new System.Drawing.Size(180, 22);
             this.menLabDepartmentPrefrences.Text = "تنظیمات";
             this.menLabDepartmentPrefrences.Click += new System.EventHandler(this.menLabDepartmentPrefrences_Click);
             // 
@@ -506,7 +504,7 @@
             // 
             this.menLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menLogIn.Name = "menLogIn";
-            this.menLogIn.Size = new System.Drawing.Size(120, 22);
+            this.menLogIn.Size = new System.Drawing.Size(180, 22);
             this.menLogIn.Text = "ورود";
             this.menLogIn.Click += new System.EventHandler(this.menLogIn_Click);
             // 
@@ -515,7 +513,7 @@
             this.menUsers.Enabled = false;
             this.menUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menUsers.Name = "menUsers";
-            this.menUsers.Size = new System.Drawing.Size(120, 22);
+            this.menUsers.Size = new System.Drawing.Size(180, 22);
             this.menUsers.Text = "کاربران";
             // 
             // menLogOut
@@ -523,7 +521,7 @@
             this.menLogOut.Enabled = false;
             this.menLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menLogOut.Name = "menLogOut";
-            this.menLogOut.Size = new System.Drawing.Size(120, 22);
+            this.menLogOut.Size = new System.Drawing.Size(180, 22);
             this.menLogOut.Text = "خروج";
             this.menLogOut.Click += new System.EventHandler(this.menLogOut_Click);
             // 
@@ -531,7 +529,7 @@
             // 
             this.menAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menAbout.Name = "menAbout";
-            this.menAbout.Size = new System.Drawing.Size(120, 22);
+            this.menAbout.Size = new System.Drawing.Size(180, 22);
             this.menAbout.Text = "درباره ...";
             this.menAbout.Click += new System.EventHandler(this.menAbout_Click);
             // 
