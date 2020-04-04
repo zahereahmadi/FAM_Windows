@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tbCoId = new System.Windows.Forms.TextBox();
             this.btmOk = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -43,34 +43,34 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(148, 59);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 21);
+            this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "نام کاربری:";
+            this.label1.Text = "کدپرسنلی:";
             // 
-            // tbUsername
+            // tbCoId
             // 
-            this.tbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbCoId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbUsername.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.tbUsername.Location = new System.Drawing.Point(217, 58);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.tbUsername.MaxLength = 20;
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbUsername.Size = new System.Drawing.Size(127, 28);
-            this.tbUsername.TabIndex = 1;
-            this.tbUsername.Enter += new System.EventHandler(this.TbUsername_Enter);
+            this.tbCoId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbCoId.Location = new System.Drawing.Point(217, 58);
+            this.tbCoId.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCoId.MaxLength = 20;
+            this.tbCoId.Name = "tbCoId";
+            this.tbCoId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbCoId.Size = new System.Drawing.Size(127, 23);
+            this.tbCoId.TabIndex = 1;
+            this.tbCoId.Enter += new System.EventHandler(this.TbUsername_Enter);
             // 
             // btmOk
             // 
             this.btmOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmOk.AutoSize = true;
-            this.btmOk.Font = new System.Drawing.Font("B Yekan", 11F);
+            this.btmOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btmOk.Location = new System.Drawing.Point(115, 184);
             this.btmOk.Margin = new System.Windows.Forms.Padding(0);
             this.btmOk.Name = "btmOk";
@@ -85,11 +85,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(148, 93);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 21);
+            this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "گذر واژه:";
             // 
@@ -97,13 +97,13 @@
             // 
             this.tbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPassword.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbPassword.Location = new System.Drawing.Point(217, 91);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.MaxLength = 20;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPassword.Size = new System.Drawing.Size(127, 28);
+            this.tbPassword.Size = new System.Drawing.Size(127, 23);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.UseSystemPasswordChar = true;
             this.tbPassword.Enter += new System.EventHandler(this.TbPassword_Enter);
@@ -113,7 +113,7 @@
             this.btmExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmExit.AutoSize = true;
-            this.btmExit.Font = new System.Drawing.Font("B Yekan", 11F);
+            this.btmExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btmExit.Location = new System.Drawing.Point(260, 184);
             this.btmExit.Margin = new System.Windows.Forms.Padding(0);
             this.btmExit.Name = "btmExit";
@@ -128,11 +128,11 @@
             this.CbSaveUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CbSaveUserName.AutoSize = true;
-            this.CbSaveUserName.Font = new System.Drawing.Font("B Yekan", 10F);
-            this.CbSaveUserName.Location = new System.Drawing.Point(71, 119);
+            this.CbSaveUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CbSaveUserName.Location = new System.Drawing.Point(71, 123);
             this.CbSaveUserName.Margin = new System.Windows.Forms.Padding(2);
             this.CbSaveUserName.Name = "CbSaveUserName";
-            this.CbSaveUserName.Size = new System.Drawing.Size(144, 25);
+            this.CbSaveUserName.Size = new System.Drawing.Size(135, 21);
             this.CbSaveUserName.TabIndex = 5;
             this.CbSaveUserName.Text = "نام کاربری ذخیره گردد";
             this.CbSaveUserName.UseVisualStyleBackColor = true;
@@ -143,12 +143,12 @@
             this.labMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labMessage.AutoSize = true;
-            this.labMessage.Font = new System.Drawing.Font("B Yekan", 10F);
+            this.labMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labMessage.ForeColor = System.Drawing.Color.Blue;
             this.labMessage.Location = new System.Drawing.Point(68, 146);
             this.labMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labMessage.Name = "labMessage";
-            this.labMessage.Size = new System.Drawing.Size(186, 21);
+            this.labMessage.Size = new System.Drawing.Size(174, 17);
             this.labMessage.TabIndex = 4;
             this.labMessage.Text = "نام کاربری و گذرواژه را وارد کنید.";
             // 
@@ -164,9 +164,9 @@
             this.Controls.Add(this.btmExit);
             this.Controls.Add(this.btmOk);
             this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.tbCoId);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("B Yekan", 9F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -187,7 +187,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.TextBox tbCoId;
         private System.Windows.Forms.Button btmOk;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPassword;
