@@ -40,10 +40,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\c#\!!!TopLearn.Com_CsharpAdvanced_04\MyContacts\MyContacts\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>.\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\c#\!!!TopLearn.Com_CsharpAdvanced_04\MyContacts\MyContacts\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>.\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net">
+      <HintPath>..\..\..\..\s7netplus\S7.Net\bin\Debug\net452\S7.Net.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Base">
       <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>
@@ -313,6 +316,12 @@
     </Compile>
     <Compile Include="Office\OfficePrefrences.Designer.cs">
       <DependentUpon>OfficePrefrences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControl.Designer.cs">
+      <DependentUpon>frmFurnaceControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\ProductionPrefrences.cs">
       <SubType>Form</SubType>
@@ -671,6 +680,9 @@
     <EmbeddedResource Include="Office\OfficePrefrences.resx">
       <DependentUpon>OfficePrefrences.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControl.resx">
+      <DependentUpon>frmFurnaceControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production\ProductionPrefrences.resx">
       <DependentUpon>ProductionPrefrences.cs</DependentUpon>
     </EmbeddedResource>
@@ -841,6 +853,7 @@
     <Content Include="ICON3.ico" />
     <Content Include="Resources\7_1.png" />
     <Content Include="Resources\7_2.png" />
+    <None Include="Resources\image3.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Automation\Automation.csproj">
