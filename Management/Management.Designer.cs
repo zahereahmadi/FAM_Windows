@@ -150,7 +150,6 @@
             this.menOfficeStore.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MensOfficeDepartmentStorePurchaseRequests,
             this.MensOfficeDepartmentStoreGetOuts});
-            this.menOfficeStore.Enabled = false;
             this.menOfficeStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menOfficeStore.Name = "menOfficeStore";
             this.menOfficeStore.Size = new System.Drawing.Size(143, 22);
@@ -195,14 +194,14 @@
             // 
             this.menNormalAccounting.Enabled = false;
             this.menNormalAccounting.Name = "menNormalAccounting";
-            this.menNormalAccounting.Size = new System.Drawing.Size(180, 22);
+            this.menNormalAccounting.Size = new System.Drawing.Size(163, 22);
             this.menNormalAccounting.Text = "حسابداری عادی";
             // 
             // menIndustrialAccounting
             // 
             this.menIndustrialAccounting.Enabled = false;
             this.menIndustrialAccounting.Name = "menIndustrialAccounting";
-            this.menIndustrialAccounting.Size = new System.Drawing.Size(180, 22);
+            this.menIndustrialAccounting.Size = new System.Drawing.Size(163, 22);
             this.menIndustrialAccounting.Text = "حسابداری صنعتی";
             // 
             // menCommerce
@@ -228,7 +227,6 @@
             // 
             this.menLoading.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menLoadingRegister});
-            this.menLoading.Enabled = false;
             this.menLoading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menLoading.Name = "menLoading";
             this.menLoading.Size = new System.Drawing.Size(180, 24);
@@ -296,7 +294,7 @@
             // menTechnicalDepartmentElectricalFurnace
             // 
             this.menTechnicalDepartmentElectricalFurnace.Name = "menTechnicalDepartmentElectricalFurnace";
-            this.menTechnicalDepartmentElectricalFurnace.Size = new System.Drawing.Size(180, 24);
+            this.menTechnicalDepartmentElectricalFurnace.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentElectricalFurnace.Text = "تعمیرات کوره";
             this.menTechnicalDepartmentElectricalFurnace.Click += new System.EventHandler(this.MenTechnicalDepartmentElectricalFurnace_Click);
             // 
@@ -308,7 +306,7 @@
             this.نگهداریPMToolStripMenuItem.Enabled = false;
             this.نگهداریPMToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.نگهداریPMToolStripMenuItem.Name = "نگهداریPMToolStripMenuItem";
-            this.نگهداریPMToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.نگهداریPMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.نگهداریPMToolStripMenuItem.Text = "نگهداری (PM)";
             // 
             // menTechnicalDepartmentMechanicalTechnicalInfo
@@ -330,7 +328,7 @@
             this.menTechnicalDepartmentProjects.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
 
             this.menTechnicalDepartmentProjects.Name = "menTechnicalDepartmentProjects";
-            this.menTechnicalDepartmentProjects.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDepartmentProjects.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentProjects.Text = "پروژه‌ها";
             this.menTechnicalDepartmentProjects.Click += new System.EventHandler(this.MenProjects_Click);
             // 
@@ -342,7 +340,7 @@
             this.انبارToolStripMenuItem2.Enabled = false;
             this.انبارToolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.انبارToolStripMenuItem2.Name = "انبارToolStripMenuItem2";
-            this.انبارToolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
+            this.انبارToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.انبارToolStripMenuItem2.Text = "انبار";
             // 
             // MensTechnicalDepartmentStorePurchaseRequests
@@ -364,7 +362,7 @@
             // 
             this.menuParts.Enabled = false;
             this.menuParts.Name = "menuParts";
-            this.menuParts.Size = new System.Drawing.Size(149, 22);
+            this.menuParts.Size = new System.Drawing.Size(180, 22);
             this.menuParts.Text = "کالا";
             this.menuParts.Click += new System.EventHandler(this.MenuParts_Click);
             // 
@@ -372,7 +370,7 @@
             // 
             this.menuEquips.Enabled = false;
             this.menuEquips.Name = "menuEquips";
-            this.menuEquips.Size = new System.Drawing.Size(149, 22);
+            this.menuEquips.Size = new System.Drawing.Size(180, 22);
             this.menuEquips.Text = "تجهیز";
             this.menuEquips.Click += new System.EventHandler(this.MenuEquips_Click);
             // 
@@ -380,7 +378,7 @@
             // 
             this.menTechnicalDocuments.Enabled = false;
             this.menTechnicalDocuments.Name = "menTechnicalDocuments";
-            this.menTechnicalDocuments.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDocuments.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDocuments.Text = "مستندات";
             this.menTechnicalDocuments.Click += new System.EventHandler(this.MenTechnicalDocuments_Click);
             // 
@@ -389,7 +387,7 @@
             this.menTechnicalDepartmentPrefrences.Enabled = false;
             this.menTechnicalDepartmentPrefrences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menTechnicalDepartmentPrefrences.Name = "menTechnicalDepartmentPrefrences";
-            this.menTechnicalDepartmentPrefrences.Size = new System.Drawing.Size(149, 22);
+            this.menTechnicalDepartmentPrefrences.Size = new System.Drawing.Size(180, 22);
             this.menTechnicalDepartmentPrefrences.Text = "تنظیمات";
             this.menTechnicalDepartmentPrefrences.Click += new System.EventHandler(this.MenTechnicalDepartmentPrefrences_Click);
             // 
@@ -687,28 +685,28 @@
         public System.Windows.Forms.ToolStripMenuItem menTechnical;
         public System.Windows.Forms.ToolStripMenuItem menStore;
         public System.Windows.Forms.ToolStripMenuItem menEmployees;
-        private System.Windows.Forms.ToolStripMenuItem menAutomation;
-        private System.Windows.Forms.ToolStripMenuItem menUsers;
-        private System.Windows.Forms.ToolStripMenuItem menAbout;
+        public System.Windows.Forms.ToolStripMenuItem menAutomation;
+        public System.Windows.Forms.ToolStripMenuItem menUsers;
+        public System.Windows.Forms.ToolStripMenuItem menAbout;
         public System.Windows.Forms.ToolStripMenuItem menWindows;
-        private System.Windows.Forms.ToolStripMenuItem menLoading;
+        public System.Windows.Forms.ToolStripMenuItem menLoading;
         public System.Windows.Forms.ToolStripStatusLabel staUser;
-        private System.Windows.Forms.StatusStrip staMain;
-        private System.Windows.Forms.Timer timCurrentDateTime;
-        private System.Windows.Forms.Label labTime;
-        private System.Windows.Forms.Label labDate;
-        private System.Windows.Forms.ToolStripProgressBar staConnectionStatus;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripMenuItem نگهداریPMToolStripMenuItem;
+        public System.Windows.Forms.StatusStrip staMain;
+        public System.Windows.Forms.Timer timCurrentDateTime;
+        public System.Windows.Forms.Label labTime;
+        public System.Windows.Forms.Label labDate;
+        public System.Windows.Forms.ToolStripProgressBar staConnectionStatus;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        public System.Windows.Forms.ToolStripMenuItem نگهداریPMToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem menFinance;
         public System.Windows.Forms.ToolStripMenuItem menCommerce;
-        private System.Windows.Forms.ToolStripMenuItem menOfficeStore;
+        public System.Windows.Forms.ToolStripMenuItem menOfficeStore;
         public System.Windows.Forms.ToolStripMenuItem MensOfficeDepartmentStorePurchaseRequests;
         public System.Windows.Forms.ToolStripMenuItem menOfficeDepartmentPrefrences;
-        private System.Windows.Forms.ToolStripMenuItem انبارToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem انبارToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem انبارToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripStatusLabel staVersion;
+        public System.Windows.Forms.ToolStripMenuItem انبارToolStripMenuItem1;
+        public System.Windows.Forms.ToolStripMenuItem انبارToolStripMenuItem2;
+        public System.Windows.Forms.ToolStripMenuItem انبارToolStripMenuItem3;
+        public System.Windows.Forms.ToolStripStatusLabel staVersion;
         public System.Windows.Forms.ToolStripMenuItem menLogIn;
         public System.Windows.Forms.ToolStripMenuItem menLogOut;
         public System.Windows.Forms.ToolStripMenuItem MensOfficeDepartmentStoreGetOuts;
@@ -730,13 +728,13 @@
         public System.Windows.Forms.ToolStripMenuItem menLabDepartmentStorePurchaseRequests;
         public System.Windows.Forms.ToolStripMenuItem menLabDepartmentPrefrences;
         public System.Windows.Forms.ToolStripMenuItem menLabDepartmentStoreGetOuts;
-        private System.Windows.Forms.ToolStripMenuItem menuParts;
-        private System.Windows.Forms.ToolStripMenuItem menuEquips;
-        private System.Windows.Forms.ToolStripMenuItem menTechnicalDocuments;
-        private System.Windows.Forms.ToolStripMenuItem menTechnicalDepartmentElectricalFurnace;
-        private System.Windows.Forms.ToolStripMenuItem کنترلکورهToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menFurnaceControl;
-
+        public System.Windows.Forms.ToolStripMenuItem menuParts;
+        public System.Windows.Forms.ToolStripMenuItem menuEquips;
+        public System.Windows.Forms.ToolStripMenuItem menTechnicalDocuments;
+        public System.Windows.Forms.ToolStripMenuItem menTechnicalDepartmentElectricalFurnace;
+        public System.Windows.Forms.ToolStripMenuItem menAttendance;
+        public System.Windows.Forms.ToolStripMenuItem menNormalAccounting;
+        public System.Windows.Forms.ToolStripMenuItem menIndustrialAccounting;
     }
 }
 
