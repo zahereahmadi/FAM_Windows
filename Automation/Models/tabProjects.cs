@@ -14,11 +14,21 @@ namespace Baran.Ferroalloy.Automation.Models
     
     public partial class tabProjects
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tabProjects()
+        {
+            this.tabSubProjects = new HashSet<tabSubProjects>();
+        }
+    
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public Nullable<int> intNumber { get; set; }
-        public Nullable<int> intCategory { get; set; }
+        public int intNumber { get; set; }
+        public int intCategory { get; set; }
         public string nvcName { get; set; }
         public string nvcTip { get; set; }
+    
+        public virtual tabCategories tabCategories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabSubProjects> tabSubProjects { get; set; }
     }
 }

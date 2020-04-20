@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btmExit = new System.Windows.Forms.Button();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,11 +50,10 @@
             this.dgvProjects = new System.Windows.Forms.DataGridView();
             this.intID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bitSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.intNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intCategoryAsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nvcTip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,9 +80,9 @@
             this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(803, 55);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(150, 24);
+            this.cbCategory.Size = new System.Drawing.Size(150, 28);
             this.cbCategory.TabIndex = 60;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.CbCategory_SelectedIndexChanged);
             // 
@@ -96,7 +94,7 @@
             this.label4.Location = new System.Drawing.Point(758, 59);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 67;
             this.label4.Text = "رسته:";
             // 
@@ -105,7 +103,7 @@
             this.tbTip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTip.Location = new System.Drawing.Point(470, 110);
-            this.tbTip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTip.Margin = new System.Windows.Forms.Padding(2);
             this.tbTip.MaxLength = 200;
             this.tbTip.Multiline = true;
             this.tbTip.Name = "tbTip";
@@ -119,10 +117,10 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(422, 113);
+            this.label7.Location = new System.Drawing.Point(421, 113);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 65;
             this.label7.Text = "توضیح:";
             // 
@@ -131,10 +129,10 @@
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbName.Location = new System.Drawing.Point(377, 54);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.MaxLength = 200;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(150, 24);
+            this.tbName.Size = new System.Drawing.Size(150, 27);
             this.tbName.TabIndex = 61;
             this.tbName.TextChanged += new System.EventHandler(this.TbName_TextChanged);
             this.tbName.Enter += new System.EventHandler(this.SetFarsiLanguageTextBoxes);
@@ -147,7 +145,7 @@
             this.label6.Location = new System.Drawing.Point(348, 58);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 17);
+            this.label6.Size = new System.Drawing.Size(27, 20);
             this.label6.TabIndex = 66;
             this.label6.Text = "نام:";
             // 
@@ -156,11 +154,11 @@
             this.tbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNumber.Location = new System.Drawing.Point(609, 54);
-            this.tbNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbNumber.MaxLength = 20;
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbNumber.Size = new System.Drawing.Size(120, 24);
+            this.tbNumber.Size = new System.Drawing.Size(120, 27);
             this.tbNumber.TabIndex = 59;
             this.tbNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbNumber.TextChanged += new System.EventHandler(this.TbNumber_TextChanged);
@@ -175,7 +173,7 @@
             this.label2.Location = new System.Drawing.Point(557, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 62;
             this.label2.Text = "شماره:";
             // 
@@ -185,7 +183,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmSearch.AutoSize = true;
             this.btmSearch.Location = new System.Drawing.Point(873, 192);
-            this.btmSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btmSearch.Name = "btmSearch";
             this.btmSearch.Size = new System.Drawing.Size(125, 35);
             this.btmSearch.TabIndex = 64;
@@ -198,9 +196,8 @@
             this.btmSubprojects.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmSubprojects.AutoSize = true;
-            this.btmSubprojects.Enabled = false;
             this.btmSubprojects.Font = new System.Drawing.Font("Tahoma", 10.125F);
-            this.btmSubprojects.Location = new System.Drawing.Point(392, 624);
+            this.btmSubprojects.Location = new System.Drawing.Point(715, 624);
             this.btmSubprojects.Margin = new System.Windows.Forms.Padding(0);
             this.btmSubprojects.Name = "btmSubprojects";
             this.btmSubprojects.Size = new System.Drawing.Size(125, 35);
@@ -215,7 +212,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmDelete.AutoSize = true;
             this.btmDelete.Font = new System.Drawing.Font("Tahoma", 10.125F);
-            this.btmDelete.Location = new System.Drawing.Point(548, 624);
+            this.btmDelete.Location = new System.Drawing.Point(377, 624);
             this.btmDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btmDelete.Name = "btmDelete";
             this.btmDelete.Size = new System.Drawing.Size(125, 35);
@@ -230,7 +227,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btmInsert.AutoSize = true;
             this.btmInsert.Font = new System.Drawing.Font("Tahoma", 10.125F);
-            this.btmInsert.Location = new System.Drawing.Point(704, 624);
+            this.btmInsert.Location = new System.Drawing.Point(548, 624);
             this.btmInsert.Margin = new System.Windows.Forms.Padding(0);
             this.btmInsert.Name = "btmInsert";
             this.btmInsert.Size = new System.Drawing.Size(125, 35);
@@ -247,11 +244,11 @@
             this.dgvProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -261,21 +258,20 @@
             this.dgvProjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.intID,
             this.bitSelect,
-            this.intNumber,
-            this.intCategory,
-            this.intCategoryAsName,
-            this.nvcName,
-            this.nvcTip});
+            this.number,
+            this.name,
+            this.categoryName,
+            this.tip});
             this.dgvProjects.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvProjects.Location = new System.Drawing.Point(129, 247);
-            this.dgvProjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProjects.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvProjects.RowTemplate.Height = 55;
             this.dgvProjects.Size = new System.Drawing.Size(1100, 353);
             this.dgvProjects.TabIndex = 68;
             this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
-            this.dgvProjects.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvProjects_CellMouseClick);
+            this.dgvProjects.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProjects_CellDoubleClick);
             this.dgvProjects.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellValueChanged);
             this.dgvProjects.Sorted += new System.EventHandler(this.DgvProjects_Sorted);
             // 
@@ -288,7 +284,6 @@
             this.intID.MinimumWidth = 10;
             this.intID.Name = "intID";
             this.intID.Visible = false;
-            this.intID.Width = 62;
             // 
             // bitSelect
             // 
@@ -300,65 +295,47 @@
             this.bitSelect.HeaderText = "انتخاب";
             this.bitSelect.MinimumWidth = 10;
             this.bitSelect.Name = "bitSelect";
-            this.bitSelect.Width = 51;
             // 
-            // intNumber
+            // number
             // 
-            this.intNumber.DataPropertyName = "intNumber";
+            this.number.DataPropertyName = "number";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.intNumber.DefaultCellStyle = dataGridViewCellStyle4;
-            this.intNumber.HeaderText = "شماره پروژه";
-            this.intNumber.MinimumWidth = 10;
-            this.intNumber.Name = "intNumber";
-            this.intNumber.ReadOnly = true;
-            this.intNumber.ToolTipText = "شماره پروژه";
-            this.intNumber.Width = 104;
+            this.number.DefaultCellStyle = dataGridViewCellStyle4;
+            this.number.HeaderText = "شماره پروژه";
+            this.number.MinimumWidth = 10;
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.ToolTipText = "شماره پروژه";
             // 
-            // intCategory
+            // name
             // 
-            this.intCategory.DataPropertyName = "intCategory";
+            this.name.DataPropertyName = "name";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.intCategory.DefaultCellStyle = dataGridViewCellStyle5;
-            this.intCategory.HeaderText = "کد رسته";
-            this.intCategory.MinimumWidth = 10;
-            this.intCategory.Name = "intCategory";
-            this.intCategory.ReadOnly = true;
-            this.intCategory.ToolTipText = "کد رسته";
-            this.intCategory.Visible = false;
-            this.intCategory.Width = 84;
+            this.name.DefaultCellStyle = dataGridViewCellStyle5;
+            this.name.HeaderText = "نام";
+            this.name.MinimumWidth = 10;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.ToolTipText = "نام";
             // 
-            // intCategoryAsName
+            // categoryName
             // 
-            this.intCategoryAsName.DataPropertyName = "intCategoryAsName";
-            this.intCategoryAsName.HeaderText = "رسته";
-            this.intCategoryAsName.MinimumWidth = 10;
-            this.intCategoryAsName.Name = "intCategoryAsName";
-            this.intCategoryAsName.ToolTipText = "رسته";
-            this.intCategoryAsName.Width = 65;
+            this.categoryName.DataPropertyName = "categoryName";
+            this.categoryName.HeaderText = "رسته";
+            this.categoryName.MinimumWidth = 10;
+            this.categoryName.Name = "categoryName";
+            this.categoryName.ToolTipText = "رسته";
             // 
-            // nvcName
+            // tip
             // 
-            this.nvcName.DataPropertyName = "nvcName";
+            this.tip.DataPropertyName = "tip";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nvcName.DefaultCellStyle = dataGridViewCellStyle6;
-            this.nvcName.HeaderText = "نام";
-            this.nvcName.MinimumWidth = 10;
-            this.nvcName.Name = "nvcName";
-            this.nvcName.ReadOnly = true;
-            this.nvcName.ToolTipText = "نام";
-            this.nvcName.Width = 49;
-            // 
-            // nvcTip
-            // 
-            this.nvcTip.DataPropertyName = "nvcTip";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nvcTip.DefaultCellStyle = dataGridViewCellStyle7;
-            this.nvcTip.HeaderText = "توضیح";
-            this.nvcTip.MinimumWidth = 10;
-            this.nvcTip.Name = "nvcTip";
-            this.nvcTip.ReadOnly = true;
-            this.nvcTip.ToolTipText = "توضیح";
-            this.nvcTip.Width = 69;
+            this.tip.DefaultCellStyle = dataGridViewCellStyle6;
+            this.tip.HeaderText = "توضیح";
+            this.tip.MinimumWidth = 10;
+            this.tip.Name = "tip";
+            this.tip.ReadOnly = true;
+            this.tip.ToolTipText = "توضیح";
             // 
             // Projects
             // 
@@ -381,9 +358,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btmSearch);
             this.Controls.Add(this.btmExit);
-            this.Font = new System.Drawing.Font("Tahoma", 10.125F);
+            this.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Projects";
@@ -393,7 +370,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "پروژه‌ها";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Projects_FormClosing);
-            this.Load += new System.EventHandler(this.Vendors_Load);
+            this.Load += new System.EventHandler(this.Projects_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -418,10 +395,9 @@
         private System.Windows.Forms.DataGridView dgvProjects;
         private System.Windows.Forms.DataGridViewTextBoxColumn intID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn bitSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intCategoryAsName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nvcName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nvcTip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tip;
     }
 }

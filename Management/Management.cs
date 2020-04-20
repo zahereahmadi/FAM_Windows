@@ -15,6 +15,7 @@ using System.IO;
 using System.Globalization;
 using Baran.Ferroalloy.Management.Maintenance;
 using Baran.Ferroalloy.Office;
+using Baran.Ferroalloy.Management.Production;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -828,6 +829,38 @@ namespace Baran.Ferroalloy.Management
                 frmMaintenance.usUser = this.usLogined;
                 frmMaintenance.Show();
                 frmMaintenance.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void menFurnaceControl_Click(object sender, EventArgs e)
+        {
+            if (!frmFurnaceControl.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsFurnaceControl";
+                menWindowsStuffs.Text = "کنترل کوره";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsFurnaceControl_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                frmFurnaceControl fcForm = new frmFurnaceControl();
+                fcForm.MdiParent = this;
+                fcForm.setSettings = this.setSettings;
+                fcForm.cnConnection = this.cnConnection;
+                fcForm.usUser = this.usLogined;
+
+                fcForm.Show();
+                fcForm.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void menWindowsFurnaceControl_Click(object sender, EventArgs e)
+        {
+            foreach (Form fcForm in this.MdiChildren)
+            {
+                if (fcForm is frmFurnaceControl)
+                {
+                    fcForm.BringToFront();
+                }
             }
         }
     }
