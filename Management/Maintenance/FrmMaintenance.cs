@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Baran.Ferroalloy.Automation;
 using Baran.Ferroalloy.Automation.Models;
 using Baran.Ferroalloy.Automation.Security;
+using Baran.Ferroalloy.Automation.SqlDataBase;
 using Baran.Ferroalloy.Automation.ViewModels;
 
 namespace Baran.Ferroalloy.Management.Maintenance
@@ -17,6 +18,8 @@ namespace Baran.Ferroalloy.Management.Maintenance
     public partial class FrmMaintenance : Form
     {
         public User usUser;
+        public FamSetting setSettings;
+        public Connection cnConnection;
 
         public FrmMaintenance()
         {
