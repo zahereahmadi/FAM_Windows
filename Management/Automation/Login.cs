@@ -66,7 +66,6 @@ namespace Baran.Ferroalloy.Management
                         this.frmManagement.menLogIn.Enabled = false;
                         this.frmManagement.menLogOut.Enabled = true;
                         this.Close();
-
                     }
                     else
                     {
@@ -124,7 +123,43 @@ namespace Baran.Ferroalloy.Management
 
         private void SetApplicationFacilities(int? postId, int? departmentId, int? subDepartmentId)
         {
-            if ((postId == 3 || postId == 4) && departmentId == 1 && subDepartmentId == 0)
+           if(postId == 1 && departmentId == 1/* && subDepartmentId == 0*/)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.menOfficeStore.Enabled = true;
+                frmManagement.MensOfficeDepartmentStorePurchaseRequests.Enabled = true;
+                frmManagement.MensOfficeDepartmentStoreGetOuts.Enabled = true;
+                frmManagement.menOfficeDepartmentPrefrences.Enabled = true;
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menNormalAccounting.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.menCommerce.Enabled = true;
+                frmManagement.menProduction.Enabled = true;
+                frmManagement.menLoadingRegister.Enabled = true;
+                frmManagement.menProductionDepartmentPrefrences.Enabled = true;
+                frmManagement.MensProductionDepartmentStorePurchaseRequests.Enabled = true;
+                frmManagement.mensProductionDepartmentStoreGetOuts.Enabled = true;
+                frmManagement.menTechnical.Enabled = true;
+                frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
+                frmManagement.menTechnicalDepartmentProjects.Enabled = true;
+                frmManagement.menuParts.Enabled = true;
+                frmManagement.menuEquips.Enabled = true;
+                frmManagement.menTechnicalDocuments.Enabled = true;
+                frmManagement.menTechnicalDepartmentPrefrences.Enabled = true;
+                frmManagement.menStore.Enabled = true;
+                frmManagement.menStoreDepartmentVendors.Enabled = true;
+                frmManagement.menStoreDepartmentInvoices.Enabled = true;
+                frmManagement.MensStoreDepartmentStorePurchaseRequests.Enabled = true;
+                frmManagement.mensStoreDepartmentStoreGetOuts.Enabled = true;
+                frmManagement.menStoreDepartmentPrefrences.Enabled = true;
+                frmManagement.menLab.Enabled = true;
+                frmManagement.menLabDepartmentPrefrences.Enabled = true;
+
+
+            }
+            else if ((postId == 3 || postId == 4) && departmentId == 1 && subDepartmentId == 0)
             {
                 frmManagement.menOffice.Enabled = true;
                 frmManagement.menEmployees.Enabled = true;
@@ -182,7 +217,6 @@ namespace Baran.Ferroalloy.Management
                 frmManagement.type = false;
                 // سطح دسترسی = خودشخص  و نوع دسترسی = خواندن
             }
-
 
             //   مالی
             // حسابداری عادی
