@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation.Models;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -30,11 +31,13 @@ namespace Baran.Ferroalloy.Management
 
         private void ProjectInsert_Load(object sender, EventArgs e)
         {
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            foreach (Category ctCategory in this.caCategories)
+            using (UnitOfWork db=new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategory.Items.Add(item.nvcName);
+                }
             }
         }
 
@@ -52,15 +55,31 @@ namespace Baran.Ferroalloy.Management
 
         private void btmOK_Click(object sender, EventArgs e)
         {
-            this.proInsert.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
-            this.proInsert.strName = this.tbName.Text;
-            this.proInsert.strTip = this.tbTip.Text;
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                var categoryId=db.Categories.GetEntity(t => t.nvcName==cbCategory.SelectedItem).intNumber;
+                var maxNumber = db.Projects.GetAll().Max(t => t.intNumber);
+                tabProjects tabProjects=new tabProjects()
+                {
+                    bitSelect = false,
+                    nvcName = tbName.Text.Trim(),
+                    intNumber = maxNumber+1,
+                    intCategory = categoryId,
+                    nvcTip = tbTip.Text.Trim()
+                };
+                db.Projects.Insert(tabProjects);
+                db.Save();
+                this.Close();
+            }
+            //this.proInsert.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
+            //this.proInsert.strName = this.tbName.Text;
+            //this.proInsert.strTip = this.tbTip.Text;
 
-            proInsert.Insert(this.cnConnection);
+            //proInsert.Insert(this.cnConnection);
 
-            Projects frmProjects = (Projects)this.Owner;
-            frmProjects.SearchProjects();
-            this.Close();
+            //Projects frmProjects = (Projects)this.Owner;
+            //frmProjects.SearchProjects();
+            //this.Close();
         }
 
         private void SetFarsiLanguageTextBoxes(object sender, EventArgs e)
@@ -87,6 +106,16 @@ namespace Baran.Ferroalloy.Management
         private void TbTip_TextChanged(object sender, EventArgs e)
         {
             SetEnableBtmOk();
+        }
+
+        private void TbName_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
+        }
+
+        private void TbTip_Enter(object sender, EventArgs e)
+        {
+            Language.SetFarsiLanguage();
         }
     }
 }
