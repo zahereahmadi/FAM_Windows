@@ -65,5 +65,10 @@ namespace Baran.Ferroalloy.Management.Maintenance
                 }
             }
         }
+
+        private void BtmOK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.btmOK.TabIndex = 59;
             this.btmOK.Text = "تایید";
             this.btmOK.UseVisualStyleBackColor = true;
+            this.btmOK.Click += new System.EventHandler(this.BtmOK_Click);
             // 
             // label6
             // 

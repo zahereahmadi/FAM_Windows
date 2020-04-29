@@ -10,10 +10,16 @@
 namespace Baran.Ferroalloy.Automation.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class tabBuyRequestItems
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int intID { get; set; }
+        public Nullable<bool> bitSelect { get; set; }
+        public int intRequestNumber { get; set; }
+        public string nvcPartCode { get; set; }
+        public double floAmount { get; set; }
+    
+        public virtual tabBuyRequests tabBuyRequests { get; set; }
     }
 }

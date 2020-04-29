@@ -19,6 +19,7 @@ namespace Baran.Ferroalloy.Automation.Models
         {
             this.tabEmployees = new HashSet<tabEmployees>();
             this.tabMaintenances = new HashSet<tabMaintenances>();
+            this.tabMenusEmployees = new HashSet<tabMenusEmployees>();
         }
     
         public int intID { get; set; }
@@ -33,5 +34,7 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual ICollection<tabEmployees> tabEmployees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabMaintenances> tabMaintenances { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabMenusEmployees> tabMenusEmployees { get; set; }
     }
 }

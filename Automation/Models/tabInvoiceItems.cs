@@ -18,8 +18,11 @@ namespace Baran.Ferroalloy.Automation.Models
         public Nullable<bool> bitSelect { get; set; }
         public Nullable<int> intInvoiceNumber { get; set; }
         public Nullable<int> intRequestNumber { get; set; }
-        public string nvcStoreCode { get; set; }
+        public string nvcPartCode { get; set; }
         public Nullable<double> floAmount { get; set; }
-        public Nullable<double> floPrice { get; set; }
+        public Nullable<int> intPrice { get; set; }
+    
+        public virtual tabBuyRequests tabBuyRequests { get; set; }
+        public virtual tabInvoices tabInvoices { get; set; }
     }
 }
