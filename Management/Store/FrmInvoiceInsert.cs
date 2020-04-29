@@ -63,6 +63,7 @@ namespace Baran.Ferroalloy.Management.Store
                     db.Invoices.Insert(tabInvoices);
                     db.Save();
                     this.Close();
+
                 }
                 
             }
