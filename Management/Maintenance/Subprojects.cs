@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Baran.Ferroalloy.Automation;
 
 namespace Baran.Ferroalloy.Management
 {
@@ -26,6 +27,8 @@ namespace Baran.Ferroalloy.Management
         public DataSet dsSubprojects;
         public Subproject spSearch;
         private Subproject spUpdate;
+        public int projectId;
+        public DataGridView dataGridView;
 
         public Subprojects()
         {
@@ -35,18 +38,43 @@ namespace Baran.Ferroalloy.Management
             this.proProject = new Project();
             this.spSearch = new Subproject();
             this.spUpdate = new Subproject();
+            dataGridView = dgvSubProjects;
         }
 
-        private void Subprojects_Load(object sender, EventArgs e)
+        private void SubProjects_Load(object sender, EventArgs e)
         {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var projects = db.Projects.GetEntity(t => t.intID == projectId);
+                var subProjects = db.SubProjects.GetEntity(t => t.intProject == projectId);
+                labProjectNumber.Text = projects.intNumber.ToString();
+                labCategory.Text = projects.tabCategories.nvcName;
+                labName.Text = projects.nvcName;
+            }
             SetComponentsByPermisions();
+            SearchSubProjects();
+            //this.labProjectNumber.Text = this.proProject.intNumber.ToString();
+            //this.labName.Text = this.proProject.strName;
+            //this.labCategory.Text = Category.GetNameByNumber(this.cnConnection,this.proProject.intCategory);
+            //this.labTip.Text = this.proProject.strTip;
+        }
 
-            this.labProjectNumber.Text = this.proProject.intNumber.ToString();
-            this.labName.Text = this.proProject.strName;
-            this.labCategory.Text = Category.GetNameByNumber(this.cnConnection,this.proProject.intCategory);
-            this.labTip.Text = this.proProject.strTip;
+        public void SearchSubProjects()
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                dgvSubProjects.DataSource = db.SubProjects.FillDgvSubProjects(projectId);
+            }
+            //this.dsSubprojects = Subproject.GetSubprojects(this.cnConnection, this.spSearch);
 
-            SearchSubprojects();
+            //this.dgvSubProjects.DataSource = this.dsSubprojects;
+            //this.dgvSubProjects.DataMember = "tabSubprojects";
+
+            //for (int i = 0; i < this.dgvSubProjects.Rows.Count; i++)
+            //{
+            //    this.dgvSubProjects.Rows[i].Cells["intCategoryAsName"].Value =
+            //        Category.GetNameByNumber(this.cnConnection, (int)this.dgvSubProjects.Rows[i].Cells["intCategory"].Value);
+            //}
         }
 
         private void SetComponentsByPermisions()
@@ -55,99 +83,70 @@ namespace Baran.Ferroalloy.Management
             {
                 this.btmDelete.Enabled = true;
                 this.btmInsert.Enabled = true;
-                this.dgvSubprojects.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubprojects_CellMouseDoubleClick);
-                this.dgvSubprojects.Columns["bitSelect"].Visible = true;
+                //this.dgvSubProjects.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubprojects_CellMouseDoubleClick);
+                this.dgvSubProjects.Columns["bitSelect"].Visible = true;
             }
             else
             {
                 this.btmDelete.Enabled = false;
                 this.btmInsert.Enabled = false;
-                this.dgvSubprojects.CellMouseDoubleClick -= new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubprojects_CellMouseDoubleClick);
-                this.dgvSubprojects.Columns["bitSelect"].Visible = false;
+                //this.dgvSubProjects.CellMouseDoubleClick -= new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubprojects_CellMouseDoubleClick);
+                this.dgvSubProjects.Columns["bitSelect"].Visible = false;
             }
-        }
-
-        private void Subprojects_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        public void SearchSubprojects()
-        {
-            this.dsSubprojects = Subproject.GetSubprojects(this.cnConnection, this.spSearch);
-
-            this.dgvSubprojects.DataSource = this.dsSubprojects;
-            this.dgvSubprojects.DataMember = "tabSubprojects";
-
-            for (int i = 0; i < this.dgvSubprojects.Rows.Count; i++)
-            {
-                this.dgvSubprojects.Rows[i].Cells["intCategoryAsName"].Value =
-                    Category.GetNameByNumber(this.cnConnection, (int)this.dgvSubprojects.Rows[i].Cells["intCategory"].Value);
-            }
-        }
-
-        private void btmClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btmExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btmDelete_Click(object sender, EventArgs e)
         {
-            Int16 intSelectedSubprojects = 0;
-            foreach (DataRow drVendor in this.dsSubprojects.Tables["tabSubprojects"].Rows)
+            if (dgvSubProjects.CurrentRow != null)
             {
-                if ((Boolean)drVendor["bitSelect"])
+                using (UnitOfWork db = new UnitOfWork())
                 {
-                    ++intSelectedSubprojects;
+                    if (RtlMessageBox.Show($"آیا از حذف مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        var selectItems = dgvSubProjects.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToBoolean(t.Cells["bitSelect"].Value) == true).ToList();
+
+                        foreach (var item in selectItems)
+                        {
+                            var id = int.Parse(item.Cells["intID"].Value.ToString());
+                            var subProjects = db.SubProjects.GetEntity(t => t.intID == id);
+                            db.SubProjects.Delete(subProjects);
+
+
+                        }
+                        db.Save();
+                        SearchSubProjects();
+                    }
                 }
             }
+            //Int16 intSelectedSubprojects = 0;
+            //foreach (DataRow drVendor in this.dsSubprojects.Tables["tabSubprojects"].Rows)
+            //{
+            //    if ((Boolean)drVendor["bitSelect"])
+            //    {
+            //        ++intSelectedSubprojects;
+            //    }
+            //}
 
-            if (intSelectedSubprojects > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("آیا می خواهید " + intSelectedSubprojects.ToString() + " زیرپروژه‌ها را حذف کنید؟", "حذف", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Subproject.DeleteSubprojects(this.cnConnection, this.dsSubprojects);
-                    SearchSubprojects();
-                }
-            }
-            else
-            {
-                MessageBox.Show(".هیچ زیرپروژه‌ای انتخاب نشده است", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
-            }
-        }
-
-        private void dgvSubprojects_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {   
-            if(e.RowIndex != -1)
-            {
-                SubprojectUpdate frmSubprojectUpdate = new SubprojectUpdate();
-
-                frmSubprojectUpdate.Owner = this;
-                frmSubprojectUpdate.spUpdate = this.spUpdate;
-                frmSubprojectUpdate.cnConnection = this.cnConnection;
-
-                this.spUpdate.intID = (int)this.dgvSubprojects.Rows[e.RowIndex].Cells["intID"].Value;
-                this.spUpdate.intProjectNumber = (int)this.dgvSubprojects.Rows[e.RowIndex].Cells["intProjectNumber"].Value;
-                this.spUpdate.intCategory = (int)this.dgvSubprojects.Rows[e.RowIndex].Cells["intCategory"].Value;
-                this.spUpdate.strName = this.dgvSubprojects.Rows[e.RowIndex].Cells["nvcName"].Value.ToString();
-                this.spUpdate.dtStart = (DateTime)this.dgvSubprojects.Rows[e.RowIndex].Cells["datStart"].Value;
-                this.spUpdate.intDuration = (int)this.dgvSubprojects.Rows[e.RowIndex].Cells["intDuration"].Value;
-                this.spUpdate.intProgress = (int)this.dgvSubprojects.Rows[e.RowIndex].Cells["intProgress"].Value;
-                this.spUpdate.strTip = this.dgvSubprojects.Rows[e.RowIndex].Cells["nvcTip"].Value.ToString();
-
-                frmSubprojectUpdate.ShowDialog();
-            }
+            //if (intSelectedSubprojects > 0)
+            //{
+            //    DialogResult dialogResult = MessageBox.Show("آیا می خواهید " + intSelectedSubprojects.ToString() + " زیرپروژه‌ها را حذف کنید؟", "حذف", MessageBoxButtons.YesNo);
+            //    if (dialogResult == DialogResult.Yes)
+            //    {
+            //        Subproject.DeleteSubprojects(this.cnConnection, this.dsSubprojects);
+            //        SearchSubProjects();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show(".هیچ زیرپروژه‌ای انتخاب نشده است", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+            //}
         }
 
         private void btmInsert_Click(object sender, EventArgs e)
         {
             SubprojectInsert frmSubprojectInsert = new SubprojectInsert();
+            frmSubprojectInsert.projectNumber = Convert.ToInt32(labProjectNumber.Text);
             frmSubprojectInsert.Owner = this;
             frmSubprojectInsert.cnConnection = this.cnConnection;
             frmSubprojectInsert.spInsert.intProjectNumber = this.proProject.intNumber;
@@ -159,29 +158,14 @@ namespace Baran.Ferroalloy.Management
             this.Close();
         }
 
-        private void DgvSubprojects_Sorted(object sender, EventArgs e)
+        private void DgvSubProjects_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < this.dgvSubprojects.Rows.Count; i++)
-            {
-                this.dgvSubprojects.Rows[i].Cells["intCategoryAsName"].Value =
-                    Category.GetNameByNumber(this.cnConnection, (int)this.dgvSubprojects.Rows[i].Cells["intCategory"].Value);
-            }
-        }
-        private void dgvSubprojects_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.dgvSubprojects.CommitEdit(DataGridViewDataErrorContexts.Commit);
-        }
-        private void dgvSubprojects_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            this.btmDelete.Enabled = false;
 
-            for (int i = 0; i < this.dgvSubprojects.Rows.Count; i++)
-            {
-                if ((bool)this.dgvSubprojects.Rows[i].Cells["bitSelect"].Value)
-                {
-                    this.btmDelete.Enabled = true;
-                }
-            }
+            SubprojectUpdate frmSubProjectUpdate = new SubprojectUpdate();
+            frmSubProjectUpdate.subProjectId = Convert.ToInt32(dgvSubProjects.CurrentRow.Cells["intID"].Value.ToString());
+            frmSubProjectUpdate.Owner = this;
+            frmSubProjectUpdate.cnConnection = this.cnConnection;
+            frmSubProjectUpdate.ShowDialog();
         }
     }
 }

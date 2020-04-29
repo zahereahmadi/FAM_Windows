@@ -74,12 +74,12 @@
             this.btmCancel.TabIndex = 60;
             this.btmCancel.Text = "رد";
             this.btmCancel.UseVisualStyleBackColor = true;
+            this.btmCancel.Click += new System.EventHandler(this.BtmCancel_Click);
             // 
             // btmOK
             // 
             this.btmOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btmOK.Enabled = false;
             this.btmOK.Font = new System.Drawing.Font("B Yekan", 11F);
             this.btmOK.Location = new System.Drawing.Point(348, 292);
             this.btmOK.Margin = new System.Windows.Forms.Padding(4);
@@ -209,6 +209,7 @@
             this.btnSelectWorkerLeader.TabIndex = 64;
             this.btnSelectWorkerLeader.Text = "انتخاب فرد سرگروه";
             this.btnSelectWorkerLeader.UseVisualStyleBackColor = true;
+            this.btnSelectWorkerLeader.Click += new System.EventHandler(this.BtnSelectWorkerLeader_Click);
             // 
             // groupBox3
             // 
@@ -230,6 +231,7 @@
             this.btmDeleteEmployee.TabIndex = 45;
             this.btmDeleteEmployee.Text = "حذف";
             this.btmDeleteEmployee.UseVisualStyleBackColor = true;
+            this.btmDeleteEmployee.Click += new System.EventHandler(this.BtmDeleteEmployee_Click);
             // 
             // lbWorkers
             // 
@@ -248,6 +250,7 @@
             this.btnSelectEmployee.TabIndex = 44;
             this.btnSelectEmployee.Text = "انتخاب";
             this.btnSelectEmployee.UseVisualStyleBackColor = true;
+            this.btnSelectEmployee.Click += new System.EventHandler(this.BtnSelectEmployee_Click);
             // 
             // txtLeaderWorkGroup
             // 

@@ -20,6 +20,7 @@ namespace Baran.Ferroalloy.Management
         public Subproject spUpdate;
         public Connection cnConnection;
         private Category[] caCategories;
+        public int subProjectId;
 
         public SubprojectUpdate()
         {
@@ -30,40 +31,59 @@ namespace Baran.Ferroalloy.Management
 
         private void InvoiceUpdate_Load(object sender, EventArgs e)
         {
-            //Fill cbCategory ComboBox
-            this.caCategories = Category.GetCategories(this.cnConnection);
-            this.cbCategory.Items.Add("");
-            foreach (Category ctCategory in this.caCategories)
+            using (UnitOfWork db=new UnitOfWork())
             {
-                this.cbCategory.Items.Add(ctCategory.strName);
-            }
+                var subProjects = db.SubProjects.GetEntity(t => t.intID == subProjectId);
+                var categories = db.Categories.GetAll();
+                foreach (var item in categories)
+                {
+                    cbCategory.Items.Add(item.nvcName);
+                }
 
-            //Fill Controls with Part Properties
-            this.tbProjectNumber.Text = this.spUpdate.intProjectNumber.ToString();
-            this.cbCategory.Text = Category.GetNameByNumber(this.cnConnection,this.spUpdate.intCategory);
-            this.tbName.Text = this.spUpdate.strName;
-            this.dtpStartDate.Value = this.spUpdate.dtStart;
-            this.tbprogress.Text = this.spUpdate.intProgress.ToString();
-            this.tbDuration.Text = this.spUpdate.intDuration.ToString();
-            this.tbTip.Text = this.spUpdate.strTip;
+                cbCategory.SelectedItem = db.Categories.GetEntity(t => t.intNumber == subProjects.intCategory).nvcName;
+                this.tbProjectNumber.Text = subProjects.intProject.ToString();
+                this.tbName.Text = subProjects.nvcName;
+                this.dtpStartDate.Value = subProjects.datStart;
+                this.tbprogress.Text = subProjects.intProgress.ToString();
+                this.tbDuration.Text = subProjects.intDuration.ToString();
+                this.tbTip.Text = subProjects.nvcTip;
+            }
+            
         }
 
         private void btmOK_Click(object sender, EventArgs e)
         {
             this.btmOK.Enabled = false;
-            this.spUpdate.intProjectNumber = int.Parse(this.tbProjectNumber.Text.Trim());
-            this.spUpdate.dtStart = this.dtpStartDate.Value;
-            this.spUpdate.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
-            this.spUpdate.strName = this.tbName.Text.Trim();
-            this.spUpdate.dtStart = this.dtpStartDate.Value;
-            this.spUpdate.intProgress = int.Parse(this.tbprogress.Text.Trim());
-            this.spUpdate.intDuration = int.Parse(this.tbDuration.Text.Trim());
-            this.spUpdate.strTip = this.tbTip.Text.Trim();
+            using (UnitOfWork db=new UnitOfWork())
+            {
+                int categoryId = db.Categories.GetEntity(t => t.nvcName == cbCategory.SelectedItem).intNumber;
+                var subProjects = db.SubProjects.GetEntity(t => t.intID == subProjectId);
+                subProjects.intID = subProjects.intID;
+                subProjects.nvcName = tbName.Text.Trim();
+                subProjects.datStart = dtpStartDate.Value;
+                subProjects.intCategory = categoryId;
+                subProjects.intDuration = Convert.ToInt32(Language.GetEnglishText(tbDuration.Text));
+                subProjects.intProgress = Convert.ToInt32(Language.GetEnglishText(tbprogress.Text));
+                subProjects.intProject = Convert.ToInt32(tbProjectNumber.Text);
+                subProjects.nvcTip = tbTip.Text.Trim();
+                subProjects.bitSelect = subProjects.bitSelect;
+                subProjects.intWeight = subProjects.intWeight;
+                db.SubProjects.Update(subProjects);
+                db.Save();
+            }
+            //this.spUpdate.intProjectNumber = int.Parse(this.tbProjectNumber.Text.Trim());
+            //this.spUpdate.dtStart = this.dtpStartDate.Value;
+            //this.spUpdate.intCategory = this.caCategories[this.cbCategory.SelectedIndex].intNumber;
+            //this.spUpdate.strName = this.tbName.Text.Trim();
+            //this.spUpdate.dtStart = this.dtpStartDate.Value;
+            //this.spUpdate.intProgress = int.Parse(this.tbprogress.Text.Trim());
+            //this.spUpdate.intDuration = int.Parse(this.tbDuration.Text.Trim());
+            //this.spUpdate.strTip = this.tbTip.Text.Trim();
 
-            this.spUpdate.Update(this.cnConnection);
+            //this.spUpdate.Update(this.cnConnection);
 
-            Subprojects frmSubprojects = (Subprojects)this.Owner;
-            frmSubprojects.SearchSubprojects();
+            //Subprojects frmSubprojects = (Subprojects)this.Owner;
+            //frmSubprojects.SearchSubProjects();
             this.Close();
         }
 

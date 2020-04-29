@@ -42,15 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElectricalMotor.cs" />
+    <Compile Include="Hoist.cs" />
+    <Compile Include="Hydraulic.cs" />
     <Compile Include="MaintenanceAction.cs" />
     <Compile Include="MaintenanceFurnaceItem.cs" />
     <Compile Include="MaintenanceFurnaceShift.cs" />
     <Compile Include="MaintenanceTypes.cs" />
+    <Compile Include="FurnacePower.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Property.cs" />
+    <Compile Include="Slip.cs" />
     <Compile Include="StoreCode.cs" />
     <Compile Include="StuffProperty.cs" />
     <Compile Include="Subproject.cs" />
+    <Compile Include="Transformator.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="MeasurementUnit.cs" />

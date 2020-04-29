@@ -72,13 +72,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabBanks.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabBuyRequestItems.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tabBuyRequests.cs">
@@ -139,27 +139,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tabMeasurementUnits.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabMenus.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabMenusEmployees.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabPartBranch.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabPartName.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabPartSamples.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabPartSubBranch.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tabPartTypes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tabPosts.cs">
@@ -237,66 +216,6 @@
     <Compile Include="Models\tabZones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\ICompanies.cs" />
-    <Compile Include="Repositories\IInvoices.cs" />
-    <Compile Include="Repositories\ILocations.cs" />
-    <Compile Include="Repositories\IPartSamples.cs" />
-    <Compile Include="Repositories\ITechnicalDocumentItems.cs" />
-    <Compile Include="Repositories\ITechnicalDocuments.cs" />
-    <Compile Include="Repositories\ITechnicalDocumentTypes.cs" />
-    <Compile Include="Repositories\IVendors.cs" />
-    <Compile Include="Services\CompaniesService.cs" />
-    <Compile Include="Services\Generic.cs" />
-    <Compile Include="Services\InvoicesService.cs" />
-    <Compile Include="Services\LocationsService.cs" />
-    <Compile Include="Services\PartBranchService.cs" />
-    <Compile Include="Services\Categories.cs" />
-    <Compile Include="Services\DepartmentSrvice.cs" />
-    <Compile Include="Services\EmployeesService.cs" />
-    <Compile Include="Services\EquipNameService.cs" />
-    <Compile Include="Services\EquipSamplesService.cs" />
-    <Compile Include="Services\MaintenanceItemsService.cs" />
-    <Compile Include="Services\MaintenancePartsService.cs" />
-    <Compile Include="Services\MaintenanceService.cs" />
-    <Compile Include="Services\MeasurementUnits.cs" />
-    <Compile Include="Services\PartNameService.cs" />
-    <Compile Include="Services\PartSamplesService.cs" />
-    <Compile Include="Services\PartTypesService.cs" />
-    <Compile Include="Services\Properties.cs" />
-    <Compile Include="Services\Shift.cs" />
-    <Compile Include="Services\Store.cs" />
-    <Compile Include="Services\PartSubBranchService.cs" />
-    <Compile Include="Services\SubDepartmentService.cs" />
-    <Compile Include="Services\SubZoneService.cs" />
-    <Compile Include="Services\TechnicalDocumentItemsService.cs" />
-    <Compile Include="Services\TechnicalDocumentsService.cs" />
-    <Compile Include="Services\TechnicalDocumentTypesService.cs" />
-    <Compile Include="Services\VendorsService.cs" />
-    <Compile Include="Services\ZoneService.cs" />
-    <Compile Include="Connection.cs" />
-    <Compile Include="ExceptionConnection.cs" />
-    <Compile Include="Cryption.cs" />
-    <Compile Include="Repositories\IGeneric.cs" />
-    <Compile Include="Repositories\IPartBranch.cs" />
-    <Compile Include="Repositories\ICategories.cs" />
-    <Compile Include="Repositories\IDepartment.cs" />
-    <Compile Include="Repositories\IEmployees.cs" />
-    <Compile Include="Repositories\IEquipSamples.cs" />
-    <Compile Include="Repositories\IEquipName.cs" />
-    <Compile Include="Repositories\IMaintenance.cs" />
-    <Compile Include="Repositories\IMaintenanceItem.cs" />
-    <Compile Include="Repositories\IMaintenanceParts.cs" />
-    <Compile Include="Repositories\IMeasurementUnits.cs" />
-    <Compile Include="Repositories\IName.cs" />
-    <Compile Include="Repositories\IPartTypes.cs" />
-    <Compile Include="Repositories\IProperties.cs" />
-    <Compile Include="Repositories\IShift.cs" />
-    <Compile Include="Repositories\IStore.cs" />
-    <Compile Include="Repositories\IPartSubBranch.cs" />
-    <Compile Include="Repositories\ISubDepartment.cs" />
-    <Compile Include="Repositories\ISubZone.cs" />
-    <Compile Include="Repositories\IZone.cs" />
-    <Compile Include="Language.cs" />
     <Compile Include="Models\Context\UnitOfWork.cs" />
     <Compile Include="Utilities\MyExtentions.cs" />
     <Compile Include="Utilities\RtlMessageBox.cs" />
@@ -305,6 +224,8 @@
     <Compile Include="ViewModels\dgvInvoicesViewModel.cs" />
     <Compile Include="ViewModels\dgvMaintenanceItemsViewModel.cs" />
     <Compile Include="ViewModels\dgvPartSamplesViewModel.cs" />
+    <Compile Include="ViewModels\DgvProjectsViewModel.cs" />
+    <Compile Include="ViewModels\DgvSubProjectsViewModel.cs" />
     <Compile Include="ViewModels\dgvTechnicalDocumentItemsViewModel.cs" />
     <Compile Include="ViewModels\dgvTechnicalDocumentsViewModel.cs" />
     <Compile Include="ViewModels\dgvVendorsViewModel.cs" />
