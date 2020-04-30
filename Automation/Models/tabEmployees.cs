@@ -41,6 +41,7 @@ namespace Baran.Ferroalloy.Automation.Models
         public string nvcPostalCode { get; set; }
         public string nvcPassword { get; set; }
         public Nullable<bool> bitLogined { get; set; }
+        public Nullable<bool> bitAppAccess { get; set; }
     
         public virtual tabDepartments tabDepartments { get; set; }
         public virtual tabSubDepartments tabSubDepartments { get; set; }

@@ -133,5 +133,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
             frmSelectEmployee.ShowDialog();
             txtLeaderWorkGroup.Text = frmSelectEmployee.fullName;
         }
+
+
     }
 }

@@ -12,17 +12,14 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabInvoiceItems
+    public partial class tabBuyRequestItems
     {
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public Nullable<int> intInvoiceNumber { get; set; }
-        public Nullable<int> intRequestNumber { get; set; }
+        public int intRequestNumber { get; set; }
         public string nvcPartCode { get; set; }
-        public Nullable<double> floAmount { get; set; }
-        public Nullable<int> intPrice { get; set; }
+        public double floAmount { get; set; }
     
         public virtual tabBuyRequests tabBuyRequests { get; set; }
-        public virtual tabInvoices tabInvoices { get; set; }
     }
 }

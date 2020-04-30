@@ -17,8 +17,10 @@ namespace Baran.Ferroalloy.Automation.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tabDepartments()
         {
+            this.tabBuyRequests = new HashSet<tabBuyRequests>();
             this.tabEmployees = new HashSet<tabEmployees>();
             this.tabMaintenances = new HashSet<tabMaintenances>();
+            this.tabMenusEmployees = new HashSet<tabMenusEmployees>();
             this.tabSubDepartments = new HashSet<tabSubDepartments>();
         }
     
@@ -29,9 +31,13 @@ namespace Baran.Ferroalloy.Automation.Models
         public int intNumber { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabBuyRequests> tabBuyRequests { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabEmployees> tabEmployees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabMaintenances> tabMaintenances { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabMenusEmployees> tabMenusEmployees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabSubDepartments> tabSubDepartments { get; set; }
     }

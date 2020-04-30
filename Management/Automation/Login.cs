@@ -51,13 +51,14 @@ namespace Baran.Ferroalloy.Management
             {
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    if (this.CbSaveUserName.Checked)
-                    {
-                        FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbCoId.Text);
-                    }
+                    
                     var employees = db.Employees.GetEntity(t => t.nvcCoID == tbCoId.Text && t.nvcPassword == tbPassword.Text);
                     if (employees != null)
                     {
+                        if (this.CbSaveUserName.Checked)
+                        {
+                            FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbCoId.Text);
+                        }
                         employees.bitLogined = true;
                         db.Save();
                         frmManagement.staUser.Text = employees.nvcFirstname + " " + employees.nvcLastname;
