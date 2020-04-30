@@ -42,6 +42,8 @@
             this.menProduction = new System.Windows.Forms.ToolStripMenuItem();
             this.کنترلکورهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menFurnaceControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.menCoolingControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.menMaterialHandelingControl = new System.Windows.Forms.ToolStripMenuItem();
             this.menLoading = new System.Windows.Forms.ToolStripMenuItem();
             this.menLoadingRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.انبارToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -195,17 +197,33 @@
             // کنترلکورهToolStripMenuItem
             // 
             this.کنترلکورهToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menFurnaceControl});
+            this.menFurnaceControl,
+            this.menCoolingControl,
+            this.menMaterialHandelingControl});
             this.کنترلکورهToolStripMenuItem.Name = "کنترلکورهToolStripMenuItem";
-            this.کنترلکورهToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.کنترلکورهToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.کنترلکورهToolStripMenuItem.Text = "کنترل";
             // 
             // menFurnaceControl
             // 
             this.menFurnaceControl.Name = "menFurnaceControl";
-            this.menFurnaceControl.Size = new System.Drawing.Size(180, 24);
+            this.menFurnaceControl.Size = new System.Drawing.Size(132, 24);
             this.menFurnaceControl.Text = "کوره";
             this.menFurnaceControl.Click += new System.EventHandler(this.menFurnaceControl_Click);
+            // 
+            // menCoolingControl
+            // 
+            this.menCoolingControl.Name = "menCoolingControl";
+            this.menCoolingControl.Size = new System.Drawing.Size(132, 24);
+            this.menCoolingControl.Text = "آبگرد";
+            this.menCoolingControl.Click += new System.EventHandler(this.menCoolingControl_Click);
+            // 
+            // menMaterialHandelingControl
+            // 
+            this.menMaterialHandelingControl.Name = "menMaterialHandelingControl";
+            this.menMaterialHandelingControl.Size = new System.Drawing.Size(132, 24);
+            this.menMaterialHandelingControl.Text = "انتقال مواد";
+            this.menMaterialHandelingControl.Click += new System.EventHandler(this.menMaterialHandelingControl_Click);
             // 
             // menLoading
             // 
@@ -213,7 +231,7 @@
             this.menLoadingRegister});
             this.menLoading.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menLoading.Name = "menLoading";
-            this.menLoading.Size = new System.Drawing.Size(180, 24);
+            this.menLoading.Size = new System.Drawing.Size(116, 24);
             this.menLoading.Text = "بارگیری";
             // 
             // menLoadingRegister
@@ -231,7 +249,7 @@
             this.mensProductionDepartmentStoreGetOuts});
             this.انبارToolStripMenuItem1.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.انبارToolStripMenuItem1.Name = "انبارToolStripMenuItem1";
-            this.انبارToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.انبارToolStripMenuItem1.Size = new System.Drawing.Size(116, 24);
             this.انبارToolStripMenuItem1.Text = "انبار";
             // 
             // MensProductionDepartmentStorePurchaseRequests
@@ -254,7 +272,7 @@
             this.menProductionDepartmentPrefrences.Enabled = false;
             this.menProductionDepartmentPrefrences.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.menProductionDepartmentPrefrences.Name = "menProductionDepartmentPrefrences";
-            this.menProductionDepartmentPrefrences.Size = new System.Drawing.Size(180, 24);
+            this.menProductionDepartmentPrefrences.Size = new System.Drawing.Size(116, 24);
             this.menProductionDepartmentPrefrences.Text = "تنظیمات";
             this.menProductionDepartmentPrefrences.Click += new System.EventHandler(this.MenProductionDepartmentPrefrences_Click);
             // 
@@ -694,6 +712,8 @@
         private System.Windows.Forms.ToolStripMenuItem menTechnicalDepartmentElectricalFurnace;
         private System.Windows.Forms.ToolStripMenuItem کنترلکورهToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menFurnaceControl;
+        private System.Windows.Forms.ToolStripMenuItem menCoolingControl;
+        private System.Windows.Forms.ToolStripMenuItem menMaterialHandelingControl;
     }
 }
 

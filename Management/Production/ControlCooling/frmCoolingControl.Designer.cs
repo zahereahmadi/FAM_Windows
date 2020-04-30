@@ -28,7 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pbCooling = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCooling)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pbCooling
+            // 
+            this.pbCooling.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCooling.ErrorImage = null;
+            this.pbCooling.Location = new System.Drawing.Point(0, 0);
+            this.pbCooling.Name = "pbCooling";
+            this.pbCooling.Size = new System.Drawing.Size(1920, 1000);
+            this.pbCooling.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCooling.TabIndex = 0;
+            this.pbCooling.TabStop = false;
             // 
             // frmCoolingControl
             // 
@@ -36,14 +49,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1920, 1000);
+            this.Controls.Add(this.pbCooling);
             this.Font = new System.Drawing.Font("Arial", 8F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCoolingControl";
             this.Text = "frmCoolingControl";
+            this.Load += new System.EventHandler(this.frmCoolingControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCooling)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pbCooling;
     }
 }

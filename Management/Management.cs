@@ -859,5 +859,47 @@ namespace Baran.Ferroalloy.Management
                 }
             }
         }
+
+        private void menCoolingControl_Click(object sender, EventArgs e)
+        {
+            if (!frmFurnaceControl.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsFurnaceControl";
+                menWindowsStuffs.Text = "کنترل کوره";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsFurnaceControl_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                frmCoolingControl fcForm = new frmCoolingControl();
+                fcForm.MdiParent = this;
+                fcForm.setSettings = this.setSettings;
+                fcForm.cnConnection = this.cnConnection;
+                fcForm.usUser = this.usLogined;
+
+                fcForm.Show();
+                fcForm.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void menMaterialHandelingControl_Click(object sender, EventArgs e)
+        {
+            if (!frmFurnaceControl.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsMaterialHandelingControl";
+                menWindowsStuffs.Text = "کنترل انتقال مواد";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsFurnaceControl_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                frmMaterialHandelingControl fcForm = new frmMaterialHandelingControl();
+                fcForm.MdiParent = this;
+                fcForm.setSettings = this.setSettings;
+                fcForm.cnConnection = this.cnConnection;
+                fcForm.usUser = this.usLogined;
+
+                fcForm.Show();
+                fcForm.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Baran.Ferroalloy.Management.Production
 {
-    public partial class frmCoolingControl : Form
+    public partial class frmCoolingControlReports : Form
     {
-        public frmCoolingControl()
+        public frmCoolingControlReports()
         {
             InitializeComponent();
         }
