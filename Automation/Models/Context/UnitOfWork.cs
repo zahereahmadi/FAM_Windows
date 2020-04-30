@@ -36,35 +36,9 @@ namespace Baran.Ferroalloy.Automation
         private ITechnicalDocumentItems _technicalDocumentItems;
         private IPartSamples _partSamples;
         private ITechnicalDocumentTypes _technicalDocumentTypes;
-        private IVendors _vendors;
-        private IInvoices _invoices;
+        private IProjects _projects;
+        private ISubProjects _subProjects;
 
-
-        public IInvoices Invoices
-        {
-            get
-            {
-                if (_invoices == null)
-                {
-                    _invoices = new InvoicesService(db);
-                }
-
-                return _invoices;
-            }
-
-        }
-        public IVendors Vendors
-        {
-            get
-            {
-                if (_vendors == null)
-                {
-                    _vendors = new VendorsService(db);
-                }
-
-                return _vendors;
-            }
-        }
 
         public IPartTypes PartTypes
         {
@@ -388,6 +362,32 @@ namespace Baran.Ferroalloy.Automation
                 }
 
                 return _technicalDocumentTypes;
+            }
+        }
+
+        public IProjects Projects
+        {
+            get
+            {
+                if (_projects == null)
+                {
+                    _projects = new ProjectsService(db);
+                }
+
+                return _projects;
+            }
+        }
+
+        public ISubProjects SubProjects
+        {
+            get
+            {
+                if (_subProjects == null)
+                {
+                    _subProjects = new SubProjectsService(db);
+                }
+
+                return _subProjects;
             }
         }
 

@@ -25,6 +25,7 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             this.dgvListBranch.AutoGenerateColumns = false;
 
+
             ListRefresh();
         }
 
@@ -180,11 +181,6 @@ namespace Baran.Ferroalloy.Management.Maintenance
         private void TxtEditBranch_Enter(object sender, EventArgs e)
         {
             Language.SetFarsiLanguage();
-        }
-
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
