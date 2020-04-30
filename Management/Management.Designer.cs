@@ -176,6 +176,13 @@
             this.menFinance.Size = new System.Drawing.Size(40, 24);
             this.menFinance.Text = "مالی";
             // 
+            // menAttendance 
+            // 
+            this.menAttendance.Enabled = false;
+            this.menAttendance.Name = "menFinance";
+            this.menAttendance.Size = new System.Drawing.Size(40, 24);
+            this.menAttendance.Text = "حضور و غیاب";
+            // 
 
             // menNormalAccounting
             // 
@@ -721,14 +728,17 @@
         public System.Windows.Forms.ToolStripMenuItem menLabDepartmentStorePurchaseRequests;
         public System.Windows.Forms.ToolStripMenuItem menLabDepartmentPrefrences;
         public System.Windows.Forms.ToolStripMenuItem menLabDepartmentStoreGetOuts;
-        private System.Windows.Forms.ToolStripMenuItem menuParts;
-        private System.Windows.Forms.ToolStripMenuItem menuEquips;
-        private System.Windows.Forms.ToolStripMenuItem menTechnicalDocuments;
-        private System.Windows.Forms.ToolStripMenuItem menTechnicalDepartmentElectricalFurnace;
-        private System.Windows.Forms.ToolStripMenuItem کنترلکورهToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menFurnaceControl;
-        private System.Windows.Forms.ToolStripMenuItem menCoolingControl;
-        private System.Windows.Forms.ToolStripMenuItem menMaterialHandelingControl;
+        public System.Windows.Forms.ToolStripMenuItem menuParts;
+        public System.Windows.Forms.ToolStripMenuItem menuEquips;
+        public System.Windows.Forms.ToolStripMenuItem menTechnicalDocuments;
+        public System.Windows.Forms.ToolStripMenuItem menTechnicalDepartmentElectricalFurnace;
+        public System.Windows.Forms.ToolStripMenuItem کنترلکورهToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem menFurnaceControl;
+        public System.Windows.Forms.ToolStripMenuItem menCoolingControl;
+        public System.Windows.Forms.ToolStripMenuItem menMaterialHandelingControl; 
+        public System.Windows.Forms.ToolStripMenuItem menNormalAccounting; 
+        public System.Windows.Forms.ToolStripMenuItem menIndustrialAccounting;
+        public System.Windows.Forms.ToolStripMenuItem menAttendance;
     }
 }
 

@@ -61,6 +61,10 @@
       <Project>{ce89cdfb-421d-4a57-834e-fb4ad4067939}</Project>
       <Name>Finance</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Maintenance\Maintenance.csproj">
+      <Project>{609700CA-BD32-4150-9B4F-C9912C869A5C}</Project>
+      <Name>Maintenance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Office\Office.csproj">
       <Project>{fdaeabd6-712c-45cf-bd9b-d6f299c7053f}</Project>
       <Name>Office</Name>
