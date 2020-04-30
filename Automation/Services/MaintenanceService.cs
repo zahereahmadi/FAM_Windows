@@ -76,7 +76,7 @@ namespace Baran.Ferroalloy.Automation
                 models.Add(new dgvMaintenanceViewModel()
                 {
                     intID = item.intID,
-                    datWorkGroup = item.datWorkGroup.ToString("D"),
+                    datWorkGroup = item.datWorkGroup.Date,
                     nameShift = item.tabShifts.nvcName,
                     nameSubDepartment = item.tabSubDepartments.nvcName,
                     workers = workersName,

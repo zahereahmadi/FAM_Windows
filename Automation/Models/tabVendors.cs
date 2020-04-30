@@ -14,17 +14,28 @@ namespace Baran.Ferroalloy.Automation.Models
     
     public partial class tabVendors
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tabVendors()
+        {
+            this.tabInvoices = new HashSet<tabInvoices>();
+        }
+    
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public Nullable<int> intNumber { get; set; }
-        public Nullable<int> intCategory { get; set; }
+        public int intNumber { get; set; }
+        public int intCategory { get; set; }
         public string nvcBrand { get; set; }
         public string nvcActivityType { get; set; }
-        public string nvcActivities { get; set; }
+        public string nvcTip { get; set; }
         public string nvcTell { get; set; }
         public string nvcFirstName { get; set; }
         public string nvcLastName { get; set; }
         public string nvcCity { get; set; }
         public string nvcAddress { get; set; }
+        public Nullable<bool> bitIsActive { get; set; }
+    
+        public virtual tabCategories tabCategories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabInvoices> tabInvoices { get; set; }
     }
 }

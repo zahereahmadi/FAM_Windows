@@ -46,7 +46,7 @@
       <HintPath>.\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="S7.Net">
-      <HintPath>C:\Users\rayana\Desktop\S7.Net.dll</HintPath>
+      <HintPath>..\..\..\..\s7netplus\S7.Net\bin\Debug\net452\S7.Net.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Base">
       <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>
@@ -688,6 +688,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Store\FrmInvoiceInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmInvoiceInsert.Designer.cs">
+      <DependentUpon>FrmInvoiceInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\FrmInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmInvoices.Designer.cs">
+      <DependentUpon>FrmInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\FrmInvoiceUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmInvoiceUpdate.Designer.cs">
+      <DependentUpon>FrmInvoiceUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\FrmSelectVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmSelectVendor.Designer.cs">
+      <DependentUpon>FrmSelectVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\FrmVendorInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmVendorInsert.Designer.cs">
+      <DependentUpon>FrmVendorInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\FrmVendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmVendors.designer.cs">
+      <DependentUpon>FrmVendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store\FrmVendorUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\FrmVendorUpdate.Designer.cs">
+      <DependentUpon>FrmVendorUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Store\StorePrefrences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1216,6 +1258,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production\ProductionPrefrences.resx">
       <DependentUpon>ProductionPrefrences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmInvoiceInsert.resx">
+      <DependentUpon>FrmInvoiceInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmInvoices.resx">
+      <DependentUpon>FrmInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmInvoiceUpdate.resx">
+      <DependentUpon>FrmInvoiceUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmSelectVendor.resx">
+      <DependentUpon>FrmSelectVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmVendorInsert.resx">
+      <DependentUpon>FrmVendorInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmVendors.resx">
+      <DependentUpon>FrmVendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\FrmVendorUpdate.resx">
+      <DependentUpon>FrmVendorUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Store\StorePrefrences.resx">
       <DependentUpon>StorePrefrences.cs</DependentUpon>

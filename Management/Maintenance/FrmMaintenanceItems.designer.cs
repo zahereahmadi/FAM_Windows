@@ -144,6 +144,7 @@
             this.btnSelectEquip.TabIndex = 64;
             this.btnSelectEquip.Text = "انتخاب";
             this.btnSelectEquip.UseVisualStyleBackColor = true;
+            this.btnSelectEquip.Click += new System.EventHandler(this.BtnSelectEquip_Click);
             // 
             // label11
             // 

@@ -12,17 +12,18 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabRequests
+    public partial class tabMenusEmployees
     {
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public Nullable<int> intNumber { get; set; }
+        public string nvcMenus { get; set; }
+        public Nullable<int> intPost { get; set; }
         public Nullable<int> intDepartment { get; set; }
-        public Nullable<int> intRowBudget { get; set; }
-        public Nullable<System.DateTime> datDate { get; set; }
-        public string nvcRequesterCoID { get; set; }
-        public string nvcSupervisorCoID { get; set; }
-        public string nvcPlantmanagerCoID { get; set; }
-        public string nvcCeoCoID { get; set; }
+        public Nullable<int> intSubDepartment { get; set; }
+        public Nullable<bool> bitReadWrite { get; set; }
+    
+        public virtual tabDepartments tabDepartments { get; set; }
+        public virtual tabPosts tabPosts { get; set; }
+        public virtual tabSubDepartments tabSubDepartments { get; set; }
     }
 }

@@ -27,6 +27,8 @@ namespace Baran.Ferroalloy.Automation.Models
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tabBanks> tabBanks { get; set; }
+        public virtual DbSet<tabBuyRequestItems> tabBuyRequestItems { get; set; }
+        public virtual DbSet<tabBuyRequests> tabBuyRequests { get; set; }
         public virtual DbSet<tabCategories> tabCategories { get; set; }
         public virtual DbSet<tabCoInformation> tabCoInformation { get; set; }
         public virtual DbSet<tabCompanies> tabCompanies { get; set; }
@@ -46,18 +48,10 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabMaintenanceParts> tabMaintenanceParts { get; set; }
         public virtual DbSet<tabMaintenances> tabMaintenances { get; set; }
         public virtual DbSet<tabMeasurementUnits> tabMeasurementUnits { get; set; }
-        public virtual DbSet<tabPartBranch> tabPartBranch { get; set; }
-        public virtual DbSet<tabPartName> tabPartName { get; set; }
-        public virtual DbSet<tabPartSamples> tabPartSamples { get; set; }
-        public virtual DbSet<tabPartSubBranch> tabPartSubBranch { get; set; }
-        public virtual DbSet<tabPartTypes> tabPartTypes { get; set; }
-        public virtual DbSet<tabPosts> tabPosts { get; set; }
         public virtual DbSet<tabProductionMeltLoadings> tabProductionMeltLoadings { get; set; }
         public virtual DbSet<tabProjects> tabProjects { get; set; }
         public virtual DbSet<tabProperties> tabProperties { get; set; }
         public virtual DbSet<tabProvinces> tabProvinces { get; set; }
-        public virtual DbSet<tabRequestItems> tabRequestItems { get; set; }
-        public virtual DbSet<tabRequests> tabRequests { get; set; }
         public virtual DbSet<tabShifts> tabShifts { get; set; }
         public virtual DbSet<tabShiftType> tabShiftType { get; set; }
         public virtual DbSet<tabStoreGetOutItems> tabStoreGetOutItems { get; set; }

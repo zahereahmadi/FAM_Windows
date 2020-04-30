@@ -36,9 +36,35 @@ namespace Baran.Ferroalloy.Automation
         private ITechnicalDocumentItems _technicalDocumentItems;
         private IPartSamples _partSamples;
         private ITechnicalDocumentTypes _technicalDocumentTypes;
-        private IProjects _projects;
-        private ISubProjects _subProjects;
+        private IVendors _vendors;
+        private IInvoices _invoices;
 
+
+        public IInvoices Invoices
+        {
+            get
+            {
+                if (_invoices == null)
+                {
+                    _invoices = new InvoicesService(db);
+                }
+
+                return _invoices;
+            }
+
+        }
+        public IVendors Vendors
+        {
+            get
+            {
+                if (_vendors == null)
+                {
+                    _vendors = new VendorsService(db);
+                }
+
+                return _vendors;
+            }
+        }
 
         public IPartTypes PartTypes
         {
@@ -58,7 +84,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_categories == null)
                 {
-                    _categories=new Categories(db);
+                    _categories = new Categories(db);
                 }
 
                 return _categories;
@@ -71,7 +97,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_stores == null)
                 {
-                    _stores=new Store(db);
+                    _stores = new Store(db);
                 }
 
                 return _stores;
@@ -97,7 +123,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_partBranch == null)
                 {
-                    _partBranch=new PartBranchService(db);
+                    _partBranch = new PartBranchService(db);
                 }
 
                 return _partBranch;
@@ -110,7 +136,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_partSubBranch == null)
                 {
-                    _partSubBranch=new PartSubBranchService(db);
+                    _partSubBranch = new PartSubBranchService(db);
                 }
 
                 return _partSubBranch;
@@ -123,7 +149,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_measurementUnits == null)
                 {
-                    _measurementUnits=new MeasurementUnits(db);
+                    _measurementUnits = new MeasurementUnits(db);
                 }
 
                 return _measurementUnits;
@@ -136,7 +162,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_properties == null)
                 {
-                    _properties=new Properties(db);
+                    _properties = new Properties(db);
                 }
 
                 return _properties;
@@ -149,7 +175,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_shift == null)
                 {
-                    _shift=new Shift(db);
+                    _shift = new Shift(db);
                 }
 
                 return _shift;
@@ -162,7 +188,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_department == null)
                 {
-                    _department=new DepartmentService(db);
+                    _department = new DepartmentService(db);
                 }
 
                 return _department;
@@ -175,7 +201,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_subDepartment == null)
                 {
-                    _subDepartment=new SubDepartmentService(db);
+                    _subDepartment = new SubDepartmentService(db);
                 }
 
                 return _subDepartment;
@@ -188,7 +214,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_maintenanceItem == null)
                 {
-                    _maintenanceItem=new MaintenanceItemsService(db);
+                    _maintenanceItem = new MaintenanceItemsService(db);
                 }
 
                 return _maintenanceItem;
@@ -201,7 +227,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_maintenanceParts == null)
                 {
-                    _maintenanceParts=new MaintenancePartsService(db);
+                    _maintenanceParts = new MaintenancePartsService(db);
                 }
 
                 return _maintenanceParts;
@@ -219,7 +245,7 @@ namespace Baran.Ferroalloy.Automation
 
                 return _employees;
             }
-            
+
         }
 
         public IMaintenance Maintenance
@@ -228,7 +254,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_maintenance == null)
                 {
-                    _maintenance=new MaintenanceService(db);
+                    _maintenance = new MaintenanceService(db);
                 }
 
                 return _maintenance;
@@ -241,7 +267,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_zone == null)
                 {
-                    _zone=new ZoneService(db);
+                    _zone = new ZoneService(db);
                 }
 
                 return _zone;
@@ -254,7 +280,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_subZone == null)
                 {
-                    _subZone=new SubZoneService(db);
+                    _subZone = new SubZoneService(db);
                 }
 
                 return _subZone;
@@ -267,7 +293,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_equipName == null)
                 {
-                    _equipName=new EquipNameService(db);
+                    _equipName = new EquipNameService(db);
                 }
 
                 return _equipName;
@@ -293,7 +319,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_companies == null)
                 {
-                    _companies=new CompaniesService(db);
+                    _companies = new CompaniesService(db);
                 }
 
                 return _companies;
@@ -306,7 +332,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_locations == null)
                 {
-                    _locations=new LocationsService(db);
+                    _locations = new LocationsService(db);
                 }
 
                 return _locations;
@@ -319,7 +345,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_technicalDocuments == null)
                 {
-                    _technicalDocuments=new TechnicalDocumentsService(db);
+                    _technicalDocuments = new TechnicalDocumentsService(db);
                 }
 
                 return _technicalDocuments;
@@ -332,7 +358,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_technicalDocumentItems == null)
                 {
-                    _technicalDocumentItems=new TechnicalDocumentItemsService(db);
+                    _technicalDocumentItems = new TechnicalDocumentItemsService(db);
                 }
 
                 return _technicalDocumentItems;
@@ -345,7 +371,7 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_partSamples == null)
                 {
-                    _partSamples=new PartSamplesService(db);
+                    _partSamples = new PartSamplesService(db);
                 }
 
                 return _partSamples;
@@ -358,36 +384,10 @@ namespace Baran.Ferroalloy.Automation
             {
                 if (_technicalDocumentTypes == null)
                 {
-                    _technicalDocumentTypes=new TechnicalDocumentTypesService(db);
+                    _technicalDocumentTypes = new TechnicalDocumentTypesService(db);
                 }
 
                 return _technicalDocumentTypes;
-            }
-        }
-
-        public IProjects Projects
-        {
-            get
-            {
-                if (_projects == null)
-                {
-                    _projects=new ProjectsService(db);
-                }
-
-                return _projects;
-            }
-        }
-
-        public ISubProjects SubProjects
-        {
-            get
-            {
-                if (_subProjects == null)
-                {
-                    _subProjects=new SubProjectsService(db);
-                }
-
-                return _subProjects;
             }
         }
 
