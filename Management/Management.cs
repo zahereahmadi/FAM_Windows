@@ -46,7 +46,8 @@ namespace Baran.Ferroalloy.Management
             if (CheckApplicationStatus()) 
             {
                 this.setSettings = new FamSetting(this.cnConnection, this.strXmlPath);
-                this.setSettings.strAppVersion = "1.6.20";
+
+                this.setSettings.strAppVersion = "1.6.16";
                 this.staVersion.Text = this.setSettings.strAppVersion;
                 this.Text += String.Format(" - {0}", FamSetting.GetCoInformation(this.cnConnection).strName);
             }
@@ -861,6 +862,48 @@ namespace Baran.Ferroalloy.Management
                 {
                     fcForm.BringToFront();
                 }
+            }
+        }
+
+        private void menCoolingControl_Click(object sender, EventArgs e)
+        {
+            if (!frmFurnaceControl.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsFurnaceControl";
+                menWindowsStuffs.Text = "کنترل کوره";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsFurnaceControl_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                frmCoolingControl fcForm = new frmCoolingControl();
+                fcForm.MdiParent = this;
+                fcForm.setSettings = this.setSettings;
+                fcForm.cnConnection = this.cnConnection;
+                fcForm.usUser = this.usLogined;
+
+                fcForm.Show();
+                fcForm.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void menMaterialHandelingControl_Click(object sender, EventArgs e)
+        {
+            if (!frmFurnaceControl.bolIsRunning)
+            {
+                ToolStripMenuItem menWindowsStuffs = new ToolStripMenuItem();
+                menWindowsStuffs.Name = "menWindowsMaterialHandelingControl";
+                menWindowsStuffs.Text = "کنترل انتقال مواد";
+                menWindowsStuffs.Click += new System.EventHandler(this.menWindowsFurnaceControl_Click);
+                this.menWindows.DropDownItems.Add(menWindowsStuffs);
+
+                frmMaterialHandelingControl fcForm = new frmMaterialHandelingControl();
+                fcForm.MdiParent = this;
+                fcForm.setSettings = this.setSettings;
+                fcForm.cnConnection = this.cnConnection;
+                fcForm.usUser = this.usLogined;
+
+                fcForm.Show();
+                fcForm.WindowState = FormWindowState.Maximized;
             }
         }
     }

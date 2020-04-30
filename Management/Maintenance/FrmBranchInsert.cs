@@ -181,5 +181,10 @@ namespace Baran.Ferroalloy.Management.Maintenance
         {
             Language.SetFarsiLanguage();
         }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
