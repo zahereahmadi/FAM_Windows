@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFurnaceControlPowerDetails));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,16 +49,6 @@
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.label46 = new System.Windows.Forms.Label();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.pictureBox47 = new System.Windows.Forms.PictureBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.pictureBox48 = new System.Windows.Forms.PictureBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.pictureBox49 = new System.Windows.Forms.PictureBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.pictureBox50 = new System.Windows.Forms.PictureBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.pictureBox51 = new System.Windows.Forms.PictureBox();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
@@ -78,35 +69,14 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label108 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label72 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.pictureBox37 = new System.Windows.Forms.PictureBox();
-            this.label55 = new System.Windows.Forms.Label();
             this.pictureBox38 = new System.Windows.Forms.PictureBox();
-            this.label56 = new System.Windows.Forms.Label();
             this.pictureBox39 = new System.Windows.Forms.PictureBox();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
             this.pictureBox40 = new System.Windows.Forms.PictureBox();
             this.label84 = new System.Windows.Forms.Label();
             this.pictureBox41 = new System.Windows.Forms.PictureBox();
@@ -119,7 +89,6 @@
             this.label88 = new System.Windows.Forms.Label();
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
-            this.label89 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -128,14 +97,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label74 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label77 = new System.Windows.Forms.Label();
@@ -148,35 +112,14 @@
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label81 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.label91 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.label96 = new System.Windows.Forms.Label();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.label97 = new System.Windows.Forms.Label();
             this.pictureBox31 = new System.Windows.Forms.PictureBox();
-            this.pbPowerDetails = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -191,24 +134,49 @@
             this.label101 = new System.Windows.Forms.Label();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pbPowerDetails = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox47 = new System.Windows.Forms.PictureBox();
+            this.pictureBox48 = new System.Windows.Forms.PictureBox();
+            this.pictureBox49 = new System.Windows.Forms.PictureBox();
+            this.pictureBox50 = new System.Windows.Forms.PictureBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
@@ -229,22 +197,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPowerDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPowerDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -301,7 +272,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(421, 356);
+            this.label6.Location = new System.Drawing.Point(422, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 14);
             this.label6.TabIndex = 1;
@@ -311,7 +282,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(480, 356);
+            this.label7.Location = new System.Drawing.Point(483, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 14);
             this.label7.TabIndex = 3;
@@ -321,7 +292,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(248, 356);
+            this.label8.Location = new System.Drawing.Point(253, 356);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 14);
             this.label8.TabIndex = 1;
@@ -351,16 +322,16 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label42.Location = new System.Drawing.Point(468, 148);
+            this.label42.Location = new System.Drawing.Point(432, 138);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(23, 10);
+            this.label42.Size = new System.Drawing.Size(58, 10);
             this.label42.TabIndex = 69;
-            this.label42.Text = "Local";
+            this.label42.Text = "General Alarms";
             // 
             // pictureBox32
             // 
             this.pictureBox32.BackColor = System.Drawing.Color.Red;
-            this.pictureBox32.Location = new System.Drawing.Point(492, 148);
+            this.pictureBox32.Location = new System.Drawing.Point(492, 138);
             this.pictureBox32.Name = "pictureBox32";
             this.pictureBox32.Size = new System.Drawing.Size(10, 10);
             this.pictureBox32.TabIndex = 66;
@@ -370,16 +341,16 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label43.Location = new System.Drawing.Point(440, 136);
+            this.label43.Location = new System.Drawing.Point(449, 126);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(51, 10);
+            this.label43.Size = new System.Drawing.Size(40, 10);
             this.label43.TabIndex = 70;
-            this.label43.Text = "CB in Service";
+            this.label43.Text = "TCS Fault";
             // 
             // pictureBox33
             // 
             this.pictureBox33.BackColor = System.Drawing.Color.Red;
-            this.pictureBox33.Location = new System.Drawing.Point(492, 136);
+            this.pictureBox33.Location = new System.Drawing.Point(492, 126);
             this.pictureBox33.Name = "pictureBox33";
             this.pictureBox33.Size = new System.Drawing.Size(10, 10);
             this.pictureBox33.TabIndex = 67;
@@ -389,16 +360,16 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label44.Location = new System.Drawing.Point(439, 124);
+            this.label44.Location = new System.Drawing.Point(443, 114);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(52, 10);
+            this.label44.Size = new System.Drawing.Size(47, 10);
             this.label44.TabIndex = 71;
-            this.label44.Text = "UnderVoltage";
+            this.label44.Text = "OverVoltage";
             // 
             // pictureBox34
             // 
             this.pictureBox34.BackColor = System.Drawing.Color.Red;
-            this.pictureBox34.Location = new System.Drawing.Point(492, 124);
+            this.pictureBox34.Location = new System.Drawing.Point(492, 114);
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.Size = new System.Drawing.Size(10, 10);
             this.pictureBox34.TabIndex = 68;
@@ -408,16 +379,16 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label45.Location = new System.Drawing.Point(444, 112);
+            this.label45.Location = new System.Drawing.Point(438, 102);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(47, 10);
+            this.label45.Size = new System.Drawing.Size(52, 10);
             this.label45.TabIndex = 65;
-            this.label45.Text = "OverVoltage";
+            this.label45.Text = "UnderVoltage";
             // 
             // pictureBox35
             // 
             this.pictureBox35.BackColor = System.Drawing.Color.Red;
-            this.pictureBox35.Location = new System.Drawing.Point(492, 112);
+            this.pictureBox35.Location = new System.Drawing.Point(492, 102);
             this.pictureBox35.Name = "pictureBox35";
             this.pictureBox35.Size = new System.Drawing.Size(10, 10);
             this.pictureBox35.TabIndex = 64;
@@ -427,7 +398,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label46.Location = new System.Drawing.Point(444, 100);
+            this.label46.Location = new System.Drawing.Point(444, 90);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(47, 10);
             this.label46.TabIndex = 63;
@@ -436,106 +407,11 @@
             // pictureBox36
             // 
             this.pictureBox36.BackColor = System.Drawing.Color.Red;
-            this.pictureBox36.Location = new System.Drawing.Point(492, 100);
+            this.pictureBox36.Location = new System.Drawing.Point(492, 90);
             this.pictureBox36.Name = "pictureBox36";
             this.pictureBox36.Size = new System.Drawing.Size(10, 10);
             this.pictureBox36.TabIndex = 62;
             this.pictureBox36.TabStop = false;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label57.Location = new System.Drawing.Point(583, 156);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(23, 10);
-            this.label57.TabIndex = 99;
-            this.label57.Text = "Local";
-            // 
-            // pictureBox47
-            // 
-            this.pictureBox47.BackColor = System.Drawing.Color.Red;
-            this.pictureBox47.Location = new System.Drawing.Point(572, 156);
-            this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox47.TabIndex = 96;
-            this.pictureBox47.TabStop = false;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label58.Location = new System.Drawing.Point(583, 144);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(51, 10);
-            this.label58.TabIndex = 100;
-            this.label58.Text = "CB in Service";
-            // 
-            // pictureBox48
-            // 
-            this.pictureBox48.BackColor = System.Drawing.Color.Red;
-            this.pictureBox48.Location = new System.Drawing.Point(572, 144);
-            this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox48.TabIndex = 97;
-            this.pictureBox48.TabStop = false;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label59.Location = new System.Drawing.Point(583, 132);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(52, 10);
-            this.label59.TabIndex = 101;
-            this.label59.Text = "UnderVoltage";
-            // 
-            // pictureBox49
-            // 
-            this.pictureBox49.BackColor = System.Drawing.Color.Red;
-            this.pictureBox49.Location = new System.Drawing.Point(572, 132);
-            this.pictureBox49.Name = "pictureBox49";
-            this.pictureBox49.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox49.TabIndex = 98;
-            this.pictureBox49.TabStop = false;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label60.Location = new System.Drawing.Point(583, 120);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(47, 10);
-            this.label60.TabIndex = 95;
-            this.label60.Text = "OverVoltage";
-            // 
-            // pictureBox50
-            // 
-            this.pictureBox50.BackColor = System.Drawing.Color.Red;
-            this.pictureBox50.Location = new System.Drawing.Point(572, 120);
-            this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox50.TabIndex = 94;
-            this.pictureBox50.TabStop = false;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label61.Location = new System.Drawing.Point(583, 108);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(47, 10);
-            this.label61.TabIndex = 93;
-            this.label61.Text = "OverCurrent";
-            // 
-            // pictureBox51
-            // 
-            this.pictureBox51.BackColor = System.Drawing.Color.Red;
-            this.pictureBox51.Location = new System.Drawing.Point(572, 108);
-            this.pictureBox51.Name = "pictureBox51";
-            this.pictureBox51.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox51.TabIndex = 92;
-            this.pictureBox51.TabStop = false;
             // 
             // label62
             // 
@@ -748,17 +624,6 @@
             this.label109.TabIndex = 150;
             this.label109.Text = "305A";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(696, 145);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 8);
-            this.label11.TabIndex = 161;
-            this.label11.Text = "305MW";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -766,9 +631,9 @@
             this.label12.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label12.Location = new System.Drawing.Point(703, 135);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(18, 8);
+            this.label12.Size = new System.Drawing.Size(19, 8);
             this.label12.TabIndex = 162;
-            this.label12.Text = "305A";
+            this.label12.Text = "20KV";
             // 
             // label13
             // 
@@ -777,9 +642,9 @@
             this.label13.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label13.Location = new System.Drawing.Point(703, 125);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(18, 8);
+            this.label13.Size = new System.Drawing.Size(19, 8);
             this.label13.TabIndex = 163;
-            this.label13.Text = "305A";
+            this.label13.Text = "20KV";
             // 
             // label14
             // 
@@ -788,66 +653,9 @@
             this.label14.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label14.Location = new System.Drawing.Point(703, 116);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(18, 8);
+            this.label14.Size = new System.Drawing.Size(19, 8);
             this.label14.TabIndex = 164;
-            this.label14.Text = "305A";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label15.Location = new System.Drawing.Point(739, 158);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 10);
-            this.label15.TabIndex = 158;
-            this.label15.Text = "Local";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Red;
-            this.pictureBox2.Location = new System.Drawing.Point(728, 158);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox2.TabIndex = 155;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label70.Location = new System.Drawing.Point(739, 146);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(51, 10);
-            this.label70.TabIndex = 159;
-            this.label70.Text = "CB in Service";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Red;
-            this.pictureBox3.Location = new System.Drawing.Point(728, 146);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox3.TabIndex = 156;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label71.Location = new System.Drawing.Point(739, 134);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(52, 10);
-            this.label71.TabIndex = 160;
-            this.label71.Text = "UnderVoltage";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Red;
-            this.pictureBox4.Location = new System.Drawing.Point(728, 134);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox4.TabIndex = 157;
-            this.pictureBox4.TabStop = false;
+            this.label14.Text = "20KV";
             // 
             // label72
             // 
@@ -855,9 +663,9 @@
             this.label72.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label72.Location = new System.Drawing.Point(739, 122);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(47, 10);
+            this.label72.Size = new System.Drawing.Size(54, 10);
             this.label72.TabIndex = 154;
-            this.label72.Text = "OverVoltage";
+            this.label72.Text = "General Alarm";
             // 
             // pictureBox5
             // 
@@ -868,112 +676,6 @@
             this.pictureBox5.TabIndex = 153;
             this.pictureBox5.TabStop = false;
             // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label73.Location = new System.Drawing.Point(739, 110);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(47, 10);
-            this.label73.TabIndex = 152;
-            this.label73.Text = "OverCurrent";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Red;
-            this.pictureBox6.Location = new System.Drawing.Point(728, 110);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox6.TabIndex = 151;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label47.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label47.Location = new System.Drawing.Point(472, 321);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(25, 8);
-            this.label47.TabIndex = 202;
-            this.label47.Text = "305MW";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label48.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label48.Location = new System.Drawing.Point(479, 311);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(18, 8);
-            this.label48.TabIndex = 203;
-            this.label48.Text = "305A";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label49.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label49.Location = new System.Drawing.Point(479, 292);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(18, 8);
-            this.label49.TabIndex = 204;
-            this.label49.Text = "305A";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label50.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label50.Location = new System.Drawing.Point(442, 312);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(25, 8);
-            this.label50.TabIndex = 201;
-            this.label50.Text = "305MW";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label51.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label51.Location = new System.Drawing.Point(442, 302);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(18, 8);
-            this.label51.TabIndex = 200;
-            this.label51.Text = "305A";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label52.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label52.Location = new System.Drawing.Point(442, 292);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(18, 8);
-            this.label52.TabIndex = 199;
-            this.label52.Text = "305A";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label53.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label53.Location = new System.Drawing.Point(442, 283);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(18, 8);
-            this.label53.TabIndex = 198;
-            this.label53.Text = "305A";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label54.Location = new System.Drawing.Point(515, 334);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(23, 10);
-            this.label54.TabIndex = 195;
-            this.label54.Text = "Local";
-            // 
             // pictureBox37
             // 
             this.pictureBox37.BackColor = System.Drawing.Color.Red;
@@ -982,16 +684,6 @@
             this.pictureBox37.Size = new System.Drawing.Size(10, 10);
             this.pictureBox37.TabIndex = 192;
             this.pictureBox37.TabStop = false;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label55.Location = new System.Drawing.Point(515, 322);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(51, 10);
-            this.label55.TabIndex = 196;
-            this.label55.Text = "CB in Service";
             // 
             // pictureBox38
             // 
@@ -1002,16 +694,6 @@
             this.pictureBox38.TabIndex = 193;
             this.pictureBox38.TabStop = false;
             // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label56.Location = new System.Drawing.Point(515, 310);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(52, 10);
-            this.label56.TabIndex = 197;
-            this.label56.Text = "UnderVoltage";
-            // 
             // pictureBox39
             // 
             this.pictureBox39.BackColor = System.Drawing.Color.Red;
@@ -1020,26 +702,6 @@
             this.pictureBox39.Size = new System.Drawing.Size(10, 10);
             this.pictureBox39.TabIndex = 194;
             this.pictureBox39.TabStop = false;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label82.Location = new System.Drawing.Point(515, 298);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(47, 10);
-            this.label82.TabIndex = 191;
-            this.label82.Text = "OverVoltage";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label83.Location = new System.Drawing.Point(515, 286);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(47, 10);
-            this.label83.TabIndex = 190;
-            this.label83.Text = "OverCurrent";
             // 
             // pictureBox40
             // 
@@ -1054,11 +716,11 @@
             // 
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label84.Location = new System.Drawing.Point(400, 326);
+            this.label84.Location = new System.Drawing.Point(380, 326);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(23, 10);
+            this.label84.Size = new System.Drawing.Size(43, 10);
             this.label84.TabIndex = 186;
-            this.label84.Text = "Local";
+            this.label84.Text = "Emergency";
             // 
             // pictureBox41
             // 
@@ -1075,9 +737,9 @@
             this.label85.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label85.Location = new System.Drawing.Point(372, 314);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(51, 10);
+            this.label85.Size = new System.Drawing.Size(52, 10);
             this.label85.TabIndex = 187;
-            this.label85.Text = "CB in Service";
+            this.label85.Text = "Remote Mode";
             // 
             // pictureBox42
             // 
@@ -1092,11 +754,11 @@
             // 
             this.label86.AutoSize = true;
             this.label86.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label86.Location = new System.Drawing.Point(371, 302);
+            this.label86.Location = new System.Drawing.Point(382, 302);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(52, 10);
+            this.label86.Size = new System.Drawing.Size(40, 10);
             this.label86.TabIndex = 188;
-            this.label86.Text = "UnderVoltage";
+            this.label86.Text = "TCS Fault";
             // 
             // pictureBox43
             // 
@@ -1111,11 +773,11 @@
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label87.Location = new System.Drawing.Point(376, 290);
+            this.label87.Location = new System.Drawing.Point(349, 290);
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(47, 10);
+            this.label87.Size = new System.Drawing.Size(74, 10);
             this.label87.TabIndex = 182;
-            this.label87.Text = "OverVoltage";
+            this.label87.Text = "Ground OverCurrent";
             // 
             // pictureBox44
             // 
@@ -1153,17 +815,6 @@
             this.pictureBox46.Size = new System.Drawing.Size(10, 10);
             this.pictureBox46.TabIndex = 189;
             this.pictureBox46.TabStop = false;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label89.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label89.Location = new System.Drawing.Point(479, 302);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(18, 8);
-            this.label89.TabIndex = 204;
-            this.label89.Text = "305A";
             // 
             // label17
             // 
@@ -1253,16 +904,6 @@
             this.label24.TabIndex = 225;
             this.label24.Text = "305A";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label25.Location = new System.Drawing.Point(739, 333);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(23, 10);
-            this.label25.TabIndex = 222;
-            this.label25.Text = "Local";
-            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Red;
@@ -1271,16 +912,6 @@
             this.pictureBox7.Size = new System.Drawing.Size(10, 10);
             this.pictureBox7.TabIndex = 219;
             this.pictureBox7.TabStop = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label26.Location = new System.Drawing.Point(739, 321);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(51, 10);
-            this.label26.TabIndex = 223;
-            this.label26.Text = "CB in Service";
             // 
             // pictureBox8
             // 
@@ -1291,16 +922,6 @@
             this.pictureBox8.TabIndex = 220;
             this.pictureBox8.TabStop = false;
             // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label74.Location = new System.Drawing.Point(739, 309);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(52, 10);
-            this.label74.TabIndex = 224;
-            this.label74.Text = "UnderVoltage";
-            // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Red;
@@ -1309,26 +930,6 @@
             this.pictureBox9.Size = new System.Drawing.Size(10, 10);
             this.pictureBox9.TabIndex = 221;
             this.pictureBox9.TabStop = false;
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label75.Location = new System.Drawing.Point(739, 297);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(47, 10);
-            this.label75.TabIndex = 218;
-            this.label75.Text = "OverVoltage";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label76.Location = new System.Drawing.Point(739, 285);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(47, 10);
-            this.label76.TabIndex = 217;
-            this.label76.Text = "OverCurrent";
             // 
             // pictureBox10
             // 
@@ -1352,11 +953,11 @@
             // 
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label77.Location = new System.Drawing.Point(624, 325);
+            this.label77.Location = new System.Drawing.Point(603, 325);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(23, 10);
+            this.label77.Size = new System.Drawing.Size(43, 10);
             this.label77.TabIndex = 212;
-            this.label77.Text = "Local";
+            this.label77.Text = "Emergency";
             // 
             // pictureBox12
             // 
@@ -1371,11 +972,11 @@
             // 
             this.label78.AutoSize = true;
             this.label78.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label78.Location = new System.Drawing.Point(596, 313);
+            this.label78.Location = new System.Drawing.Point(595, 313);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(51, 10);
+            this.label78.Size = new System.Drawing.Size(52, 10);
             this.label78.TabIndex = 213;
-            this.label78.Text = "CB in Service";
+            this.label78.Text = "Remote Mode";
             // 
             // pictureBox13
             // 
@@ -1390,11 +991,11 @@
             // 
             this.label79.AutoSize = true;
             this.label79.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label79.Location = new System.Drawing.Point(595, 301);
+            this.label79.Location = new System.Drawing.Point(593, 301);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(52, 10);
+            this.label79.Size = new System.Drawing.Size(54, 10);
             this.label79.TabIndex = 214;
-            this.label79.Text = "UnderVoltage";
+            this.label79.Text = "General Alarm";
             // 
             // pictureBox14
             // 
@@ -1409,11 +1010,11 @@
             // 
             this.label80.AutoSize = true;
             this.label80.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label80.Location = new System.Drawing.Point(600, 289);
+            this.label80.Location = new System.Drawing.Point(607, 289);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(47, 10);
+            this.label80.Size = new System.Drawing.Size(40, 10);
             this.label80.TabIndex = 208;
-            this.label80.Text = "OverVoltage";
+            this.label80.Text = "TCS Fault";
             // 
             // pictureBox15
             // 
@@ -1443,160 +1044,15 @@
             this.pictureBox16.TabIndex = 205;
             this.pictureBox16.TabStop = false;
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label32.Location = new System.Drawing.Point(123, 321);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(25, 8);
-            this.label32.TabIndex = 257;
-            this.label32.Text = "305MW";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label33.Location = new System.Drawing.Point(130, 311);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(18, 8);
-            this.label33.TabIndex = 258;
-            this.label33.Text = "305A";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label34.Location = new System.Drawing.Point(130, 302);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(18, 8);
-            this.label34.TabIndex = 260;
-            this.label34.Text = "305A";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label35.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label35.Location = new System.Drawing.Point(130, 292);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(18, 8);
-            this.label35.TabIndex = 259;
-            this.label35.Text = "305A";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label36.Location = new System.Drawing.Point(93, 312);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(25, 8);
-            this.label36.TabIndex = 256;
-            this.label36.Text = "305MW";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label37.Location = new System.Drawing.Point(93, 302);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(18, 8);
-            this.label37.TabIndex = 255;
-            this.label37.Text = "305A";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label38.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label38.Location = new System.Drawing.Point(93, 292);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(18, 8);
-            this.label38.TabIndex = 254;
-            this.label38.Text = "305A";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label39.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label39.Location = new System.Drawing.Point(93, 283);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(18, 8);
-            this.label39.TabIndex = 253;
-            this.label39.Text = "305A";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label40.Location = new System.Drawing.Point(166, 334);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(23, 10);
-            this.label40.TabIndex = 250;
-            this.label40.Text = "Local";
-            // 
-            // pictureBox22
-            // 
-            this.pictureBox22.BackColor = System.Drawing.Color.Red;
-            this.pictureBox22.Location = new System.Drawing.Point(155, 334);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox22.TabIndex = 247;
-            this.pictureBox22.TabStop = false;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label41.Location = new System.Drawing.Point(166, 322);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(51, 10);
-            this.label41.TabIndex = 251;
-            this.label41.Text = "CB in Service";
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.BackColor = System.Drawing.Color.Red;
-            this.pictureBox23.Location = new System.Drawing.Point(155, 322);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox23.TabIndex = 248;
-            this.pictureBox23.TabStop = false;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label90.Location = new System.Drawing.Point(166, 310);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(52, 10);
-            this.label90.TabIndex = 252;
-            this.label90.Text = "UnderVoltage";
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.BackColor = System.Drawing.Color.Red;
-            this.pictureBox24.Location = new System.Drawing.Point(155, 310);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox24.TabIndex = 249;
-            this.pictureBox24.TabStop = false;
-            // 
             // label91
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label91.Location = new System.Drawing.Point(166, 298);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(47, 10);
+            this.label91.Size = new System.Drawing.Size(43, 10);
             this.label91.TabIndex = 246;
-            this.label91.Text = "OverVoltage";
+            this.label91.Text = "Emergency";
             // 
             // label92
             // 
@@ -1604,9 +1060,9 @@
             this.label92.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label92.Location = new System.Drawing.Point(166, 286);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(47, 10);
+            this.label92.Size = new System.Drawing.Size(52, 10);
             this.label92.TabIndex = 245;
-            this.label92.Text = "OverCurrent";
+            this.label92.Text = "Remote Mode";
             // 
             // pictureBox25
             // 
@@ -1626,72 +1082,15 @@
             this.pictureBox26.TabIndex = 243;
             this.pictureBox26.TabStop = false;
             // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label93.Location = new System.Drawing.Point(51, 326);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(23, 10);
-            this.label93.TabIndex = 240;
-            this.label93.Text = "Local";
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.BackColor = System.Drawing.Color.Red;
-            this.pictureBox27.Location = new System.Drawing.Point(75, 326);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox27.TabIndex = 237;
-            this.pictureBox27.TabStop = false;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label94.Location = new System.Drawing.Point(23, 314);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(51, 10);
-            this.label94.TabIndex = 241;
-            this.label94.Text = "CB in Service";
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.BackColor = System.Drawing.Color.Red;
-            this.pictureBox28.Location = new System.Drawing.Point(75, 314);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox28.TabIndex = 238;
-            this.pictureBox28.TabStop = false;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label95.Location = new System.Drawing.Point(22, 302);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(52, 10);
-            this.label95.TabIndex = 242;
-            this.label95.Text = "UnderVoltage";
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.BackColor = System.Drawing.Color.Red;
-            this.pictureBox29.Location = new System.Drawing.Point(75, 302);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox29.TabIndex = 239;
-            this.pictureBox29.TabStop = false;
-            // 
             // label96
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label96.Location = new System.Drawing.Point(27, 290);
+            this.label96.Location = new System.Drawing.Point(30, 290);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(47, 10);
+            this.label96.Size = new System.Drawing.Size(43, 10);
             this.label96.TabIndex = 236;
-            this.label96.Text = "OverVoltage";
+            this.label96.Text = "Emergency";
             // 
             // pictureBox30
             // 
@@ -1706,11 +1105,11 @@
             // 
             this.label97.AutoSize = true;
             this.label97.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label97.Location = new System.Drawing.Point(27, 278);
+            this.label97.Location = new System.Drawing.Point(22, 278);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(47, 10);
+            this.label97.Size = new System.Drawing.Size(52, 10);
             this.label97.TabIndex = 234;
-            this.label97.Text = "OverCurrent";
+            this.label97.Text = "Remote Mode";
             // 
             // pictureBox31
             // 
@@ -1720,15 +1119,6 @@
             this.pictureBox31.Size = new System.Drawing.Size(10, 10);
             this.pictureBox31.TabIndex = 233;
             this.pictureBox31.TabStop = false;
-            // 
-            // pbPowerDetails
-            // 
-            this.pbPowerDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPowerDetails.Location = new System.Drawing.Point(0, 0);
-            this.pbPowerDetails.Name = "pbPowerDetails";
-            this.pbPowerDetails.Size = new System.Drawing.Size(805, 400);
-            this.pbPowerDetails.TabIndex = 0;
-            this.pbPowerDetails.TabStop = false;
             // 
             // label27
             // 
@@ -1780,9 +1170,9 @@
             this.label31.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label31.Location = new System.Drawing.Point(291, 326);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(23, 10);
+            this.label31.Size = new System.Drawing.Size(43, 10);
             this.label31.TabIndex = 268;
-            this.label31.Text = "Local";
+            this.label31.Text = "Emergency";
             // 
             // pictureBox17
             // 
@@ -1799,9 +1189,9 @@
             this.label98.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label98.Location = new System.Drawing.Point(291, 314);
             this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(51, 10);
+            this.label98.Size = new System.Drawing.Size(52, 10);
             this.label98.TabIndex = 269;
-            this.label98.Text = "CB in Service";
+            this.label98.Text = "Remote Mode";
             // 
             // pictureBox18
             // 
@@ -1818,9 +1208,9 @@
             this.label99.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label99.Location = new System.Drawing.Point(291, 302);
             this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(52, 10);
+            this.label99.Size = new System.Drawing.Size(54, 10);
             this.label99.TabIndex = 270;
-            this.label99.Text = "UnderVoltage";
+            this.label99.Text = "General Alarm";
             // 
             // pictureBox19
             // 
@@ -1837,9 +1227,9 @@
             this.label100.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label100.Location = new System.Drawing.Point(291, 290);
             this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(47, 10);
+            this.label100.Size = new System.Drawing.Size(40, 10);
             this.label100.TabIndex = 264;
-            this.label100.Text = "OverVoltage";
+            this.label100.Text = "TCS Fault";
             // 
             // label101
             // 
@@ -1869,12 +1259,373 @@
             this.pictureBox21.TabIndex = 261;
             this.pictureBox21.TabStop = false;
             // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label110.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label110.Location = new System.Drawing.Point(510, 143);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(28, 8);
+            this.label110.TabIndex = 102;
+            this.label110.Text = "305MVar";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label111.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label111.Location = new System.Drawing.Point(537, 152);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(28, 8);
+            this.label111.TabIndex = 102;
+            this.label111.Text = "305MVar";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(492, 150);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox1.TabIndex = 66;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label11.Location = new System.Drawing.Point(437, 150);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 10);
+            this.label11.TabIndex = 69;
+            this.label11.Text = "Remote Mode";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Red;
+            this.pictureBox2.Location = new System.Drawing.Point(492, 162);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox2.TabIndex = 66;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label15.Location = new System.Drawing.Point(445, 162);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 10);
+            this.label15.TabIndex = 69;
+            this.label15.Text = "Emergency";
+            // 
+            // pbPowerDetails
+            // 
+            this.pbPowerDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPowerDetails.Image = ((System.Drawing.Image)(resources.GetObject("pbPowerDetails.Image")));
+            this.pbPowerDetails.Location = new System.Drawing.Point(0, 0);
+            this.pbPowerDetails.Name = "pbPowerDetails";
+            this.pbPowerDetails.Size = new System.Drawing.Size(805, 400);
+            this.pbPowerDetails.TabIndex = 0;
+            this.pbPowerDetails.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Red;
+            this.pictureBox3.Location = new System.Drawing.Point(573, 162);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox3.TabIndex = 277;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Red;
+            this.pictureBox4.Location = new System.Drawing.Point(573, 150);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox4.TabIndex = 278;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Red;
+            this.pictureBox6.Location = new System.Drawing.Point(573, 138);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox6.TabIndex = 279;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox47
+            // 
+            this.pictureBox47.BackColor = System.Drawing.Color.Red;
+            this.pictureBox47.Location = new System.Drawing.Point(573, 126);
+            this.pictureBox47.Name = "pictureBox47";
+            this.pictureBox47.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox47.TabIndex = 280;
+            this.pictureBox47.TabStop = false;
+            // 
+            // pictureBox48
+            // 
+            this.pictureBox48.BackColor = System.Drawing.Color.Red;
+            this.pictureBox48.Location = new System.Drawing.Point(573, 114);
+            this.pictureBox48.Name = "pictureBox48";
+            this.pictureBox48.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox48.TabIndex = 281;
+            this.pictureBox48.TabStop = false;
+            // 
+            // pictureBox49
+            // 
+            this.pictureBox49.BackColor = System.Drawing.Color.Red;
+            this.pictureBox49.Location = new System.Drawing.Point(573, 102);
+            this.pictureBox49.Name = "pictureBox49";
+            this.pictureBox49.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox49.TabIndex = 276;
+            this.pictureBox49.TabStop = false;
+            // 
+            // pictureBox50
+            // 
+            this.pictureBox50.BackColor = System.Drawing.Color.Red;
+            this.pictureBox50.Location = new System.Drawing.Point(573, 90);
+            this.pictureBox50.Name = "pictureBox50";
+            this.pictureBox50.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox50.TabIndex = 275;
+            this.pictureBox50.TabStop = false;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label57.Location = new System.Drawing.Point(583, 162);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(43, 10);
+            this.label57.TabIndex = 284;
+            this.label57.Text = "Emergency";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label58.Location = new System.Drawing.Point(583, 150);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(52, 10);
+            this.label58.TabIndex = 285;
+            this.label58.Text = "Remote Mode";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label59.Location = new System.Drawing.Point(583, 138);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(58, 10);
+            this.label59.TabIndex = 286;
+            this.label59.Text = "General Alarms";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label60.Location = new System.Drawing.Point(583, 126);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(40, 10);
+            this.label60.TabIndex = 287;
+            this.label60.Text = "TCS Fault";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label61.Location = new System.Drawing.Point(583, 114);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(47, 10);
+            this.label61.TabIndex = 288;
+            this.label61.Text = "OverVoltage";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label70.Location = new System.Drawing.Point(583, 102);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(52, 10);
+            this.label70.TabIndex = 283;
+            this.label70.Text = "UnderVoltage";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label71.Location = new System.Drawing.Point(583, 90);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(47, 10);
+            this.label71.TabIndex = 282;
+            this.label71.Text = "OverCurrent";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label25.Location = new System.Drawing.Point(740, 333);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(43, 10);
+            this.label25.TabIndex = 291;
+            this.label25.Text = "Emergency";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label26.Location = new System.Drawing.Point(740, 321);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(52, 10);
+            this.label26.TabIndex = 292;
+            this.label26.Text = "Remote Mode";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label73.Location = new System.Drawing.Point(740, 309);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(54, 10);
+            this.label73.TabIndex = 293;
+            this.label73.Text = "General Alarm";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label74.Location = new System.Drawing.Point(740, 297);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(40, 10);
+            this.label74.TabIndex = 290;
+            this.label74.Text = "TCS Fault";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label75.Location = new System.Drawing.Point(740, 285);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(47, 10);
+            this.label75.TabIndex = 289;
+            this.label75.Text = "OverCurrent";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label76.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label76.Location = new System.Drawing.Point(666, 320);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(28, 8);
+            this.label76.TabIndex = 228;
+            this.label76.Text = "305MVar";
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label112.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label112.Location = new System.Drawing.Point(693, 329);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(28, 8);
+            this.label112.TabIndex = 229;
+            this.label112.Text = "305MVar";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label47.Location = new System.Drawing.Point(513, 334);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(43, 10);
+            this.label47.TabIndex = 296;
+            this.label47.Text = "Emergency";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label48.Location = new System.Drawing.Point(513, 322);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(52, 10);
+            this.label48.TabIndex = 297;
+            this.label48.Text = "Remote Mode";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label49.Location = new System.Drawing.Point(513, 310);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(40, 10);
+            this.label49.TabIndex = 298;
+            this.label49.Text = "TCS Fault";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label50.Location = new System.Drawing.Point(513, 298);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(74, 10);
+            this.label50.TabIndex = 295;
+            this.label50.Text = "Ground OverCurrent";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label51.Location = new System.Drawing.Point(513, 286);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(47, 10);
+            this.label51.TabIndex = 294;
+            this.label51.Text = "OverCurrent";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label52.Font = new System.Drawing.Font("Arial", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label52.Location = new System.Drawing.Point(248, 322);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(25, 8);
+            this.label52.TabIndex = 271;
+            this.label52.Text = "305MW";
+            // 
             // frmFurnaceControlPowerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(805, 400);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.label48);
+            this.Controls.Add(this.label49);
+            this.Controls.Add(this.label50);
+            this.Controls.Add(this.label51);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label73);
+            this.Controls.Add(this.label74);
+            this.Controls.Add(this.label75);
+            this.Controls.Add(this.label57);
+            this.Controls.Add(this.label58);
+            this.Controls.Add(this.label59);
+            this.Controls.Add(this.label60);
+            this.Controls.Add(this.label61);
+            this.Controls.Add(this.label70);
+            this.Controls.Add(this.label71);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox47);
+            this.Controls.Add(this.pictureBox48);
+            this.Controls.Add(this.pictureBox49);
+            this.Controls.Add(this.pictureBox50);
+            this.Controls.Add(this.label52);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label29);
@@ -1889,50 +1640,27 @@
             this.Controls.Add(this.label101);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox21);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.label33);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.label35);
-            this.Controls.Add(this.label36);
-            this.Controls.Add(this.label37);
-            this.Controls.Add(this.label38);
-            this.Controls.Add(this.label39);
-            this.Controls.Add(this.label40);
-            this.Controls.Add(this.pictureBox22);
-            this.Controls.Add(this.label41);
-            this.Controls.Add(this.pictureBox23);
-            this.Controls.Add(this.label90);
-            this.Controls.Add(this.pictureBox24);
             this.Controls.Add(this.label91);
             this.Controls.Add(this.label92);
             this.Controls.Add(this.pictureBox25);
             this.Controls.Add(this.pictureBox26);
-            this.Controls.Add(this.label93);
-            this.Controls.Add(this.pictureBox27);
-            this.Controls.Add(this.label94);
-            this.Controls.Add(this.pictureBox28);
-            this.Controls.Add(this.label95);
-            this.Controls.Add(this.pictureBox29);
             this.Controls.Add(this.label96);
             this.Controls.Add(this.pictureBox30);
             this.Controls.Add(this.label97);
             this.Controls.Add(this.pictureBox31);
+            this.Controls.Add(this.label112);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
+            this.Controls.Add(this.label76);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.label25);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.label26);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.label74);
             this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.label75);
-            this.Controls.Add(this.label76);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.label77);
@@ -1945,22 +1673,9 @@
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.label81);
             this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.label47);
-            this.Controls.Add(this.label48);
-            this.Controls.Add(this.label89);
-            this.Controls.Add(this.label49);
-            this.Controls.Add(this.label50);
-            this.Controls.Add(this.label51);
-            this.Controls.Add(this.label52);
-            this.Controls.Add(this.label53);
-            this.Controls.Add(this.label54);
             this.Controls.Add(this.pictureBox37);
-            this.Controls.Add(this.label55);
             this.Controls.Add(this.pictureBox38);
-            this.Controls.Add(this.label56);
             this.Controls.Add(this.pictureBox39);
-            this.Controls.Add(this.label82);
-            this.Controls.Add(this.label83);
             this.Controls.Add(this.pictureBox46);
             this.Controls.Add(this.pictureBox40);
             this.Controls.Add(this.label84);
@@ -1973,20 +1688,11 @@
             this.Controls.Add(this.pictureBox44);
             this.Controls.Add(this.label88);
             this.Controls.Add(this.pictureBox45);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label70);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label71);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label72);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.label73);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.label109);
@@ -2003,20 +1709,16 @@
             this.Controls.Add(this.label67);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.label69);
+            this.Controls.Add(this.label111);
+            this.Controls.Add(this.label110);
             this.Controls.Add(this.label65);
             this.Controls.Add(this.label64);
             this.Controls.Add(this.label63);
             this.Controls.Add(this.label62);
-            this.Controls.Add(this.label57);
-            this.Controls.Add(this.pictureBox47);
-            this.Controls.Add(this.label58);
-            this.Controls.Add(this.pictureBox48);
-            this.Controls.Add(this.label59);
-            this.Controls.Add(this.pictureBox49);
-            this.Controls.Add(this.label60);
-            this.Controls.Add(this.pictureBox50);
-            this.Controls.Add(this.label61);
-            this.Controls.Add(this.pictureBox51);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.pictureBox32);
             this.Controls.Add(this.label43);
@@ -2053,19 +1755,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
@@ -2086,22 +1779,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPowerDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPowerDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2128,16 +1824,6 @@
         private System.Windows.Forms.PictureBox pictureBox35;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.PictureBox pictureBox36;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.PictureBox pictureBox47;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.PictureBox pictureBox48;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.PictureBox pictureBox49;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.PictureBox pictureBox50;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.PictureBox pictureBox51;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
@@ -2158,35 +1844,14 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label108;
         private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.PictureBox pictureBox37;
-        private System.Windows.Forms.Label label55;
         private System.Windows.Forms.PictureBox pictureBox38;
-        private System.Windows.Forms.Label label56;
         private System.Windows.Forms.PictureBox pictureBox39;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label83;
         private System.Windows.Forms.PictureBox pictureBox40;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.PictureBox pictureBox41;
@@ -2199,7 +1864,6 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.PictureBox pictureBox45;
         private System.Windows.Forms.PictureBox pictureBox46;
-        private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -2208,14 +1872,9 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label74;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label label76;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label77;
@@ -2228,35 +1887,14 @@
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.PictureBox pictureBox22;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.PictureBox pictureBox23;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.PictureBox pictureBox25;
         private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.PictureBox pictureBox27;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.PictureBox pictureBox30;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.PictureBox pictureBox31;
-        private System.Windows.Forms.PictureBox pbPowerDetails;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
@@ -2271,5 +1909,39 @@
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pbPowerDetails;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox47;
+        private System.Windows.Forms.PictureBox pictureBox48;
+        private System.Windows.Forms.PictureBox pictureBox49;
+        private System.Windows.Forms.PictureBox pictureBox50;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
     }
 }

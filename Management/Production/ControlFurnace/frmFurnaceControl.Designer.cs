@@ -33,6 +33,12 @@
             this.ilPower = new System.Windows.Forms.ImageList(this.components);
             this.ilSettings = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbPowerAlarms = new System.Windows.Forms.PictureBox();
+            this.pbPowerSettings = new System.Windows.Forms.PictureBox();
+            this.pbPowerRemote = new System.Windows.Forms.PictureBox();
+            this.pbPowerAuto = new System.Windows.Forms.PictureBox();
+            this.pbPowerReports = new System.Windows.Forms.PictureBox();
+            this.pbPowerManual = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -51,6 +57,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.pbPowerMain = new System.Windows.Forms.PictureBox();
             this.label37 = new System.Windows.Forms.Label();
             this.ilCommand = new System.Windows.Forms.ImageList(this.components);
             this.ilAlarm = new System.Windows.Forms.ImageList(this.components);
@@ -64,19 +71,25 @@
             this.label136 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.pbProductionAlarms = new System.Windows.Forms.PictureBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.pbProductionSettings = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.pbProductionRemote = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
+            this.pbProductionAuto = new System.Windows.Forms.PictureBox();
             this.label67 = new System.Windows.Forms.Label();
+            this.pbProductionReports = new System.Windows.Forms.PictureBox();
             this.label62 = new System.Windows.Forms.Label();
+            this.pbProductionManual = new System.Windows.Forms.PictureBox();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
@@ -89,72 +102,114 @@
             this.label134 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.pbProductionDetails = new System.Windows.Forms.PictureBox();
             this.label39 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pbConnectionAlarms = new System.Windows.Forms.PictureBox();
             this.label41 = new System.Windows.Forms.Label();
+            this.pbConnectionSettings = new System.Windows.Forms.PictureBox();
+            this.pbConnectionRemote = new System.Windows.Forms.PictureBox();
             this.label43 = new System.Windows.Forms.Label();
+            this.pbConnectionAuto = new System.Windows.Forms.PictureBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.pbConnectionReports = new System.Windows.Forms.PictureBox();
             this.label49 = new System.Windows.Forms.Label();
+            this.pbConnectionManual = new System.Windows.Forms.PictureBox();
+            this.pbConnectionMain = new System.Windows.Forms.PictureBox();
             this.label40 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pbCbAlarms = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
+            this.pbCbSettings = new System.Windows.Forms.PictureBox();
             this.label46 = new System.Windows.Forms.Label();
+            this.pbCbRemote = new System.Windows.Forms.PictureBox();
             this.label47 = new System.Windows.Forms.Label();
+            this.pbCbAuto = new System.Windows.Forms.PictureBox();
+            this.pbCbMain = new System.Windows.Forms.PictureBox();
+            this.pbCbManual = new System.Windows.Forms.PictureBox();
+            this.pbCbReports = new System.Windows.Forms.PictureBox();
             this.label48 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pbHydraulicAlarms = new System.Windows.Forms.PictureBox();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
+            this.pbHydraulicSettings = new System.Windows.Forms.PictureBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
+            this.pbHydraulicRemote = new System.Windows.Forms.PictureBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.pbHydraulicAuto = new System.Windows.Forms.PictureBox();
             this.label53 = new System.Windows.Forms.Label();
+            this.pbHydraulicDetails = new System.Windows.Forms.PictureBox();
+            this.pbHydraulicManual = new System.Windows.Forms.PictureBox();
+            this.pbHydraulicReports = new System.Windows.Forms.PictureBox();
             this.label36 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pbTransformatorsAlarms = new System.Windows.Forms.PictureBox();
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
+            this.pbTransformatorsSettings = new System.Windows.Forms.PictureBox();
             this.label85 = new System.Windows.Forms.Label();
+            this.pbTransformatorsRemote = new System.Windows.Forms.PictureBox();
             this.label86 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
+            this.pbTransformatorsAuto = new System.Windows.Forms.PictureBox();
             this.label78 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
+            this.pbTransformatorsManual = new System.Windows.Forms.PictureBox();
             this.label80 = new System.Windows.Forms.Label();
+            this.pbTransformatorsReports = new System.Windows.Forms.PictureBox();
             this.label81 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
+            this.pbTransformatorsDetails = new System.Windows.Forms.PictureBox();
             this.label38 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pbHoistAlarms = new System.Windows.Forms.PictureBox();
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.labEl3SetPoint = new System.Windows.Forms.Label();
+            this.pbHoistSettings = new System.Windows.Forms.PictureBox();
             this.labEl3Current = new System.Windows.Forms.Label();
+            this.pbHoistRemote = new System.Windows.Forms.PictureBox();
             this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
+            this.pbHoistAuto = new System.Windows.Forms.PictureBox();
             this.labEl2SetPoint = new System.Windows.Forms.Label();
             this.labEl2Current = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
+            this.pbHoistManual = new System.Windows.Forms.PictureBox();
             this.label94 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
+            this.pbHoistReports = new System.Windows.Forms.PictureBox();
             this.labEl1SetPoint = new System.Windows.Forms.Label();
             this.labEl1Current = new System.Windows.Forms.Label();
+            this.pbHoistDetails = new System.Windows.Forms.PictureBox();
             this.label98 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pbSlipAlarms = new System.Windows.Forms.PictureBox();
             this.label99 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
+            this.pbSlipSettings = new System.Windows.Forms.PictureBox();
             this.label101 = new System.Windows.Forms.Label();
+            this.pbSlipRemote = new System.Windows.Forms.PictureBox();
             this.label102 = new System.Windows.Forms.Label();
+            this.pbSlipAuto = new System.Windows.Forms.PictureBox();
             this.label103 = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
+            this.pbSlipReports = new System.Windows.Forms.PictureBox();
             this.label105 = new System.Windows.Forms.Label();
             this.label106 = new System.Windows.Forms.Label();
+            this.pbSlipManual = new System.Windows.Forms.PictureBox();
             this.label107 = new System.Windows.Forms.Label();
             this.label108 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
@@ -162,196 +217,62 @@
             this.label111 = new System.Windows.Forms.Label();
             this.label112 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
+            this.pbSlipDetails = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label115 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
-            this.label125 = new System.Windows.Forms.Label();
-            this.labStatus = new System.Windows.Forms.Label();
             this.label123 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
             this.label124 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
+            this.label125 = new System.Windows.Forms.Label();
+            this.labStatus = new System.Windows.Forms.Label();
+            this.pbFurnaceReports = new System.Windows.Forms.PictureBox();
+            this.pbFurnaceManual = new System.Windows.Forms.PictureBox();
             this.label114 = new System.Windows.Forms.Label();
             this.tmr500ms = new System.Windows.Forms.Timer(this.components);
             this.tmr1s = new System.Windows.Forms.Timer(this.components);
             this.tmr5s = new System.Windows.Forms.Timer(this.components);
             this.tmr1min = new System.Windows.Forms.Timer(this.components);
             this.panel10 = new System.Windows.Forms.Panel();
+            this.pbShellAlarms = new System.Windows.Forms.PictureBox();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
+            this.pbShellSettings = new System.Windows.Forms.PictureBox();
             this.label96 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
+            this.pbShellRemote = new System.Windows.Forms.PictureBox();
             this.label118 = new System.Windows.Forms.Label();
             this.label119 = new System.Windows.Forms.Label();
+            this.pbShellDetails = new System.Windows.Forms.PictureBox();
+            this.pbShellAuto = new System.Windows.Forms.PictureBox();
+            this.pbShellReports = new System.Windows.Forms.PictureBox();
+            this.pbShellManual = new System.Windows.Forms.PictureBox();
             this.label120 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.pbStockingAlarms = new System.Windows.Forms.PictureBox();
             this.label121 = new System.Windows.Forms.Label();
             this.label126 = new System.Windows.Forms.Label();
             this.label127 = new System.Windows.Forms.Label();
             this.label128 = new System.Windows.Forms.Label();
+            this.pbStockingSettings = new System.Windows.Forms.PictureBox();
             this.label129 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
+            this.pbStockingRemote = new System.Windows.Forms.PictureBox();
             this.label131 = new System.Windows.Forms.Label();
             this.label132 = new System.Windows.Forms.Label();
+            this.pbStockingDetails = new System.Windows.Forms.PictureBox();
+            this.pbStockingAuto = new System.Windows.Forms.PictureBox();
+            this.pbStockingReports = new System.Windows.Forms.PictureBox();
+            this.pbStockingManual = new System.Windows.Forms.PictureBox();
             this.label133 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pbFurnaceAlarms = new System.Windows.Forms.PictureBox();
             this.pbFurnaceMute = new System.Windows.Forms.PictureBox();
             this.pbFurnaceFullScreen = new System.Windows.Forms.PictureBox();
-            this.pbFurnaceReports = new System.Windows.Forms.PictureBox();
-            this.pbFurnaceManual = new System.Windows.Forms.PictureBox();
-            this.pbSlipAlarms = new System.Windows.Forms.PictureBox();
-            this.pbSlipSettings = new System.Windows.Forms.PictureBox();
-            this.pbSlipRemote = new System.Windows.Forms.PictureBox();
-            this.pbSlipAuto = new System.Windows.Forms.PictureBox();
-            this.pbSlipReports = new System.Windows.Forms.PictureBox();
-            this.pbSlipManual = new System.Windows.Forms.PictureBox();
-            this.pbSlipDetails = new System.Windows.Forms.PictureBox();
-            this.pbHoistAlarms = new System.Windows.Forms.PictureBox();
-            this.pbHoistSettings = new System.Windows.Forms.PictureBox();
-            this.pbHoistRemote = new System.Windows.Forms.PictureBox();
-            this.pbHoistAuto = new System.Windows.Forms.PictureBox();
-            this.pbHoistManual = new System.Windows.Forms.PictureBox();
-            this.pbHoistReports = new System.Windows.Forms.PictureBox();
-            this.pbHoistDetails = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsAlarms = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsSettings = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsRemote = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsAuto = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsManual = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsReports = new System.Windows.Forms.PictureBox();
-            this.pbTransformatorsDetails = new System.Windows.Forms.PictureBox();
-            this.pbStockingAlarms = new System.Windows.Forms.PictureBox();
-            this.pbStockingSettings = new System.Windows.Forms.PictureBox();
-            this.pbStockingRemote = new System.Windows.Forms.PictureBox();
-            this.pbStockingDetails = new System.Windows.Forms.PictureBox();
-            this.pbStockingAuto = new System.Windows.Forms.PictureBox();
-            this.pbStockingReports = new System.Windows.Forms.PictureBox();
-            this.pbStockingManual = new System.Windows.Forms.PictureBox();
-            this.pbShellAlarms = new System.Windows.Forms.PictureBox();
-            this.pbShellSettings = new System.Windows.Forms.PictureBox();
-            this.pbShellRemote = new System.Windows.Forms.PictureBox();
-            this.pbShellDetails = new System.Windows.Forms.PictureBox();
-            this.pbShellAuto = new System.Windows.Forms.PictureBox();
-            this.pbShellReports = new System.Windows.Forms.PictureBox();
-            this.pbShellManual = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicAlarms = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicSettings = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicRemote = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicAuto = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicDetails = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicManual = new System.Windows.Forms.PictureBox();
-            this.pbHydraulicReports = new System.Windows.Forms.PictureBox();
-            this.pbCbAlarms = new System.Windows.Forms.PictureBox();
-            this.pbCbSettings = new System.Windows.Forms.PictureBox();
-            this.pbCbRemote = new System.Windows.Forms.PictureBox();
-            this.pbCbAuto = new System.Windows.Forms.PictureBox();
-            this.pbCbMain = new System.Windows.Forms.PictureBox();
-            this.pbCbManual = new System.Windows.Forms.PictureBox();
-            this.pbCbReports = new System.Windows.Forms.PictureBox();
-            this.pbConnectionAlarms = new System.Windows.Forms.PictureBox();
-            this.pbConnectionSettings = new System.Windows.Forms.PictureBox();
-            this.pbConnectionRemote = new System.Windows.Forms.PictureBox();
-            this.pbConnectionAuto = new System.Windows.Forms.PictureBox();
-            this.pbConnectionReports = new System.Windows.Forms.PictureBox();
-            this.pbConnectionManual = new System.Windows.Forms.PictureBox();
-            this.pbConnectionMain = new System.Windows.Forms.PictureBox();
-            this.pbProductionAlarms = new System.Windows.Forms.PictureBox();
-            this.pbProductionSettings = new System.Windows.Forms.PictureBox();
-            this.pbProductionRemote = new System.Windows.Forms.PictureBox();
-            this.pbProductionAuto = new System.Windows.Forms.PictureBox();
-            this.pbProductionReports = new System.Windows.Forms.PictureBox();
-            this.pbProductionManual = new System.Windows.Forms.PictureBox();
-            this.pbProductionDetails = new System.Windows.Forms.PictureBox();
-            this.pbPowerAlarms = new System.Windows.Forms.PictureBox();
-            this.pbPowerSettings = new System.Windows.Forms.PictureBox();
-            this.pbPowerRemote = new System.Windows.Forms.PictureBox();
-            this.pbPowerAuto = new System.Windows.Forms.PictureBox();
-            this.pbPowerReports = new System.Windows.Forms.PictureBox();
-            this.pbPowerManual = new System.Windows.Forms.PictureBox();
-            this.pbPowerMain = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceMute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceFullScreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionRemote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAuto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerRemote)).BeginInit();
@@ -359,6 +280,85 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerManual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerMain)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionDetails)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionMain)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbReports)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicReports)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsDetails)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistDetails)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipDetails)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceManual)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellManual)).BeginInit();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingRemote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceMute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceFullScreen)).BeginInit();
             this.SuspendLayout();
             // 
             // ilPower
@@ -407,6 +407,88 @@
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(393, 265);
             this.panel1.TabIndex = 45;
+            // 
+            // pbPowerAlarms
+            // 
+            this.pbPowerAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerAlarms.Location = new System.Drawing.Point(210, 224);
+            this.pbPowerAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerAlarms.Name = "pbPowerAlarms";
+            this.pbPowerAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbPowerAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPowerAlarms.TabIndex = 49;
+            this.pbPowerAlarms.TabStop = false;
+            this.pbPowerAlarms.Click += new System.EventHandler(this.pbPowerAlarms_Click);
+            this.pbPowerAlarms.MouseEnter += new System.EventHandler(this.pbPowerAlarms_MouseEnter);
+            this.pbPowerAlarms.MouseLeave += new System.EventHandler(this.pbPowerAlarms_MouseLeave);
+            // 
+            // pbPowerSettings
+            // 
+            this.pbPowerSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerSettings.Location = new System.Drawing.Point(86, 224);
+            this.pbPowerSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerSettings.Name = "pbPowerSettings";
+            this.pbPowerSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbPowerSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPowerSettings.TabIndex = 49;
+            this.pbPowerSettings.TabStop = false;
+            this.pbPowerSettings.Click += new System.EventHandler(this.pbPowerSettings_Click);
+            this.pbPowerSettings.MouseEnter += new System.EventHandler(this.pbPowerSettings_MouseEnter);
+            this.pbPowerSettings.MouseLeave += new System.EventHandler(this.pbPowerSettings_MouseLeave);
+            // 
+            // pbPowerRemote
+            // 
+            this.pbPowerRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerRemote.Location = new System.Drawing.Point(268, 224);
+            this.pbPowerRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerRemote.Name = "pbPowerRemote";
+            this.pbPowerRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbPowerRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPowerRemote.TabIndex = 49;
+            this.pbPowerRemote.TabStop = false;
+            this.pbPowerRemote.MouseEnter += new System.EventHandler(this.pbPowerRemote_MouseEnter);
+            this.pbPowerRemote.MouseLeave += new System.EventHandler(this.pbPowerRemote_MouseLeave);
+            // 
+            // pbPowerAuto
+            // 
+            this.pbPowerAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerAuto.Location = new System.Drawing.Point(239, 224);
+            this.pbPowerAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerAuto.Name = "pbPowerAuto";
+            this.pbPowerAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbPowerAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPowerAuto.TabIndex = 49;
+            this.pbPowerAuto.TabStop = false;
+            this.pbPowerAuto.MouseEnter += new System.EventHandler(this.pbPowerAuto_MouseEnter);
+            this.pbPowerAuto.MouseLeave += new System.EventHandler(this.pbPowerAuto_MouseLeave);
+            // 
+            // pbPowerReports
+            // 
+            this.pbPowerReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerReports.Location = new System.Drawing.Point(144, 224);
+            this.pbPowerReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerReports.Name = "pbPowerReports";
+            this.pbPowerReports.Size = new System.Drawing.Size(25, 25);
+            this.pbPowerReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPowerReports.TabIndex = 49;
+            this.pbPowerReports.TabStop = false;
+            this.pbPowerReports.Click += new System.EventHandler(this.pbPowerReports_Click);
+            this.pbPowerReports.MouseEnter += new System.EventHandler(this.pbPowerReports_MouseEnter);
+            this.pbPowerReports.MouseLeave += new System.EventHandler(this.pbPowerReports_MouseLeave);
+            // 
+            // pbPowerManual
+            // 
+            this.pbPowerManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerManual.Location = new System.Drawing.Point(115, 224);
+            this.pbPowerManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerManual.Name = "pbPowerManual";
+            this.pbPowerManual.Size = new System.Drawing.Size(25, 25);
+            this.pbPowerManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPowerManual.TabIndex = 49;
+            this.pbPowerManual.TabStop = false;
+            this.pbPowerManual.Click += new System.EventHandler(this.pbPowerManual_Click);
+            this.pbPowerManual.MouseEnter += new System.EventHandler(this.pbPowerManual_MouseEnter);
+            this.pbPowerManual.MouseLeave += new System.EventHandler(this.pbPowerManual_MouseLeave);
             // 
             // label18
             // 
@@ -606,6 +688,20 @@
             this.label13.TabIndex = 43;
             this.label13.Text = "Plant Power Factor:";
             // 
+            // pbPowerMain
+            // 
+            this.pbPowerMain.BackColor = System.Drawing.Color.Transparent;
+            this.pbPowerMain.Location = new System.Drawing.Point(17, 25);
+            this.pbPowerMain.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPowerMain.Name = "pbPowerMain";
+            this.pbPowerMain.Size = new System.Drawing.Size(60, 60);
+            this.pbPowerMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPowerMain.TabIndex = 48;
+            this.pbPowerMain.TabStop = false;
+            this.pbPowerMain.Click += new System.EventHandler(this.pbPowerMain_Click);
+            this.pbPowerMain.MouseEnter += new System.EventHandler(this.pbPowerMain_MouseEnter);
+            this.pbPowerMain.MouseLeave += new System.EventHandler(this.pbPowerMain_MouseLeave);
+            // 
             // label37
             // 
             this.label37.AutoSize = true;
@@ -768,6 +864,20 @@
             this.label23.TabIndex = 36;
             this.label23.Text = "00.0 Ton";
             // 
+            // pbProductionAlarms
+            // 
+            this.pbProductionAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionAlarms.Location = new System.Drawing.Point(189, 185);
+            this.pbProductionAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionAlarms.Name = "pbProductionAlarms";
+            this.pbProductionAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbProductionAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionAlarms.TabIndex = 49;
+            this.pbProductionAlarms.TabStop = false;
+            this.pbProductionAlarms.Click += new System.EventHandler(this.pbProductionAlarms_Click);
+            this.pbProductionAlarms.MouseEnter += new System.EventHandler(this.pbProductionAlarms_MouseEnter);
+            this.pbProductionAlarms.MouseLeave += new System.EventHandler(this.pbProductionAlarms_MouseLeave);
+            // 
             // label35
             // 
             this.label35.AutoSize = true;
@@ -823,6 +933,20 @@
             this.label33.TabIndex = 63;
             this.label33.Text = "MPT:";
             // 
+            // pbProductionSettings
+            // 
+            this.pbProductionSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionSettings.Location = new System.Drawing.Point(65, 185);
+            this.pbProductionSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionSettings.Name = "pbProductionSettings";
+            this.pbProductionSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbProductionSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionSettings.TabIndex = 49;
+            this.pbProductionSettings.TabStop = false;
+            this.pbProductionSettings.Click += new System.EventHandler(this.pbProductionSettings_Click);
+            this.pbProductionSettings.MouseEnter += new System.EventHandler(this.pbProductionSettings_MouseEnter);
+            this.pbProductionSettings.MouseLeave += new System.EventHandler(this.pbProductionSettings_MouseLeave);
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -855,6 +979,19 @@
             this.label30.Size = new System.Drawing.Size(48, 14);
             this.label30.TabIndex = 65;
             this.label30.Text = "00.0 Ton";
+            // 
+            // pbProductionRemote
+            // 
+            this.pbProductionRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionRemote.Location = new System.Drawing.Point(247, 185);
+            this.pbProductionRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionRemote.Name = "pbProductionRemote";
+            this.pbProductionRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbProductionRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionRemote.TabIndex = 49;
+            this.pbProductionRemote.TabStop = false;
+            this.pbProductionRemote.MouseEnter += new System.EventHandler(this.pbProductionRemote_MouseEnter);
+            this.pbProductionRemote.MouseLeave += new System.EventHandler(this.pbProductionRemote_MouseLeave);
             // 
             // label26
             // 
@@ -889,6 +1026,19 @@
             this.label66.TabIndex = 59;
             this.label66.Text = "Rate:";
             // 
+            // pbProductionAuto
+            // 
+            this.pbProductionAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionAuto.Location = new System.Drawing.Point(218, 185);
+            this.pbProductionAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionAuto.Name = "pbProductionAuto";
+            this.pbProductionAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbProductionAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionAuto.TabIndex = 49;
+            this.pbProductionAuto.TabStop = false;
+            this.pbProductionAuto.MouseEnter += new System.EventHandler(this.pbProductionAuto_MouseEnter);
+            this.pbProductionAuto.MouseLeave += new System.EventHandler(this.pbProductionAuto_MouseLeave);
+            // 
             // label67
             // 
             this.label67.AutoSize = true;
@@ -900,6 +1050,20 @@
             this.label67.TabIndex = 60;
             this.label67.Text = "00 TPM";
             // 
+            // pbProductionReports
+            // 
+            this.pbProductionReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionReports.Location = new System.Drawing.Point(123, 185);
+            this.pbProductionReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionReports.Name = "pbProductionReports";
+            this.pbProductionReports.Size = new System.Drawing.Size(25, 25);
+            this.pbProductionReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionReports.TabIndex = 49;
+            this.pbProductionReports.TabStop = false;
+            this.pbProductionReports.Click += new System.EventHandler(this.pbProductionReports_Click);
+            this.pbProductionReports.MouseEnter += new System.EventHandler(this.pbProductionReports_MouseEnter);
+            this.pbProductionReports.MouseLeave += new System.EventHandler(this.pbProductionReports_MouseLeave);
+            // 
             // label62
             // 
             this.label62.AutoSize = true;
@@ -910,6 +1074,20 @@
             this.label62.Size = new System.Drawing.Size(43, 14);
             this.label62.TabIndex = 55;
             this.label62.Text = "Weight:";
+            // 
+            // pbProductionManual
+            // 
+            this.pbProductionManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionManual.Location = new System.Drawing.Point(94, 185);
+            this.pbProductionManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionManual.Name = "pbProductionManual";
+            this.pbProductionManual.Size = new System.Drawing.Size(25, 25);
+            this.pbProductionManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionManual.TabIndex = 49;
+            this.pbProductionManual.TabStop = false;
+            this.pbProductionManual.Click += new System.EventHandler(this.pbProductionManual_Click);
+            this.pbProductionManual.MouseEnter += new System.EventHandler(this.pbProductionManual_MouseEnter);
+            this.pbProductionManual.MouseLeave += new System.EventHandler(this.pbProductionManual_MouseLeave);
             // 
             // label63
             // 
@@ -1043,6 +1221,20 @@
             this.label21.TabIndex = 36;
             this.label21.Text = "FeSi:";
             // 
+            // pbProductionDetails
+            // 
+            this.pbProductionDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbProductionDetails.Location = new System.Drawing.Point(19, 26);
+            this.pbProductionDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbProductionDetails.Name = "pbProductionDetails";
+            this.pbProductionDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbProductionDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbProductionDetails.TabIndex = 48;
+            this.pbProductionDetails.TabStop = false;
+            this.pbProductionDetails.Click += new System.EventHandler(this.pbProductionDetails_Click);
+            this.pbProductionDetails.MouseEnter += new System.EventHandler(this.pbProductionDetails_MouseEnter);
+            this.pbProductionDetails.MouseLeave += new System.EventHandler(this.pbProductionDetails_MouseLeave);
+            // 
             // label39
             // 
             this.label39.AutoSize = true;
@@ -1076,6 +1268,20 @@
             this.panel3.Size = new System.Drawing.Size(393, 135);
             this.panel3.TabIndex = 49;
             // 
+            // pbConnectionAlarms
+            // 
+            this.pbConnectionAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionAlarms.Location = new System.Drawing.Point(210, 93);
+            this.pbConnectionAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionAlarms.Name = "pbConnectionAlarms";
+            this.pbConnectionAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbConnectionAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbConnectionAlarms.TabIndex = 49;
+            this.pbConnectionAlarms.TabStop = false;
+            this.pbConnectionAlarms.Click += new System.EventHandler(this.pbConnectionAlarms_Click);
+            this.pbConnectionAlarms.MouseEnter += new System.EventHandler(this.pbConnectionAlarms_MouseEnter);
+            this.pbConnectionAlarms.MouseLeave += new System.EventHandler(this.pbConnectionAlarms_MouseLeave);
+            // 
             // label41
             // 
             this.label41.AutoSize = true;
@@ -1086,6 +1292,33 @@
             this.label41.Size = new System.Drawing.Size(64, 14);
             this.label41.TabIndex = 36;
             this.label41.Text = "Connection:";
+            // 
+            // pbConnectionSettings
+            // 
+            this.pbConnectionSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionSettings.Location = new System.Drawing.Point(86, 93);
+            this.pbConnectionSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionSettings.Name = "pbConnectionSettings";
+            this.pbConnectionSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbConnectionSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbConnectionSettings.TabIndex = 49;
+            this.pbConnectionSettings.TabStop = false;
+            this.pbConnectionSettings.Click += new System.EventHandler(this.pbConnectionSettings_Click);
+            this.pbConnectionSettings.MouseEnter += new System.EventHandler(this.pbConnectionSettings_MouseEnter);
+            this.pbConnectionSettings.MouseLeave += new System.EventHandler(this.pbConnectionSettings_MouseLeave);
+            // 
+            // pbConnectionRemote
+            // 
+            this.pbConnectionRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionRemote.Location = new System.Drawing.Point(268, 93);
+            this.pbConnectionRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionRemote.Name = "pbConnectionRemote";
+            this.pbConnectionRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbConnectionRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbConnectionRemote.TabIndex = 49;
+            this.pbConnectionRemote.TabStop = false;
+            this.pbConnectionRemote.MouseEnter += new System.EventHandler(this.pbConnectionRemote_MouseEnter);
+            this.pbConnectionRemote.MouseLeave += new System.EventHandler(this.pbConnectionRemote_MouseLeave);
             // 
             // label43
             // 
@@ -1098,6 +1331,19 @@
             this.label43.TabIndex = 36;
             this.label43.Text = "Star";
             // 
+            // pbConnectionAuto
+            // 
+            this.pbConnectionAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionAuto.Location = new System.Drawing.Point(239, 93);
+            this.pbConnectionAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionAuto.Name = "pbConnectionAuto";
+            this.pbConnectionAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbConnectionAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbConnectionAuto.TabIndex = 49;
+            this.pbConnectionAuto.TabStop = false;
+            this.pbConnectionAuto.MouseEnter += new System.EventHandler(this.pbConnectionAuto_MouseEnter);
+            this.pbConnectionAuto.MouseLeave += new System.EventHandler(this.pbConnectionAuto_MouseLeave);
+            // 
             // label45
             // 
             this.label45.AutoSize = true;
@@ -1109,6 +1355,20 @@
             this.label45.TabIndex = 36;
             this.label45.Text = "1399/06/25 - 15:34";
             // 
+            // pbConnectionReports
+            // 
+            this.pbConnectionReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionReports.Location = new System.Drawing.Point(144, 93);
+            this.pbConnectionReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionReports.Name = "pbConnectionReports";
+            this.pbConnectionReports.Size = new System.Drawing.Size(25, 25);
+            this.pbConnectionReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbConnectionReports.TabIndex = 49;
+            this.pbConnectionReports.TabStop = false;
+            this.pbConnectionReports.Click += new System.EventHandler(this.pbConnectionReports_Click);
+            this.pbConnectionReports.MouseEnter += new System.EventHandler(this.pbConnectionReports_MouseEnter);
+            this.pbConnectionReports.MouseLeave += new System.EventHandler(this.pbConnectionReports_MouseLeave);
+            // 
             // label49
             // 
             this.label49.AutoSize = true;
@@ -1119,6 +1379,34 @@
             this.label49.Size = new System.Drawing.Size(71, 14);
             this.label49.TabIndex = 36;
             this.label49.Text = "Last Change:";
+            // 
+            // pbConnectionManual
+            // 
+            this.pbConnectionManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionManual.Location = new System.Drawing.Point(115, 93);
+            this.pbConnectionManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionManual.Name = "pbConnectionManual";
+            this.pbConnectionManual.Size = new System.Drawing.Size(25, 25);
+            this.pbConnectionManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbConnectionManual.TabIndex = 49;
+            this.pbConnectionManual.TabStop = false;
+            this.pbConnectionManual.Click += new System.EventHandler(this.pbConnectionManual_Click);
+            this.pbConnectionManual.MouseEnter += new System.EventHandler(this.pbConnectionManual_MouseEnter);
+            this.pbConnectionManual.MouseLeave += new System.EventHandler(this.pbConnectionManual_MouseLeave);
+            // 
+            // pbConnectionMain
+            // 
+            this.pbConnectionMain.BackColor = System.Drawing.Color.Transparent;
+            this.pbConnectionMain.Location = new System.Drawing.Point(17, 28);
+            this.pbConnectionMain.Margin = new System.Windows.Forms.Padding(0);
+            this.pbConnectionMain.Name = "pbConnectionMain";
+            this.pbConnectionMain.Size = new System.Drawing.Size(60, 60);
+            this.pbConnectionMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbConnectionMain.TabIndex = 48;
+            this.pbConnectionMain.TabStop = false;
+            this.pbConnectionMain.Click += new System.EventHandler(this.pbConnectionMain_Click);
+            this.pbConnectionMain.MouseEnter += new System.EventHandler(this.pbConnectionMain_MouseEnter);
+            this.pbConnectionMain.MouseLeave += new System.EventHandler(this.pbConnectionMain_MouseLeave);
             // 
             // label40
             // 
@@ -1153,6 +1441,20 @@
             this.panel4.Size = new System.Drawing.Size(393, 136);
             this.panel4.TabIndex = 51;
             // 
+            // pbCbAlarms
+            // 
+            this.pbCbAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbAlarms.Location = new System.Drawing.Point(210, 95);
+            this.pbCbAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbAlarms.Name = "pbCbAlarms";
+            this.pbCbAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbCbAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbAlarms.TabIndex = 49;
+            this.pbCbAlarms.TabStop = false;
+            this.pbCbAlarms.Click += new System.EventHandler(this.pbCbAlarms_Click);
+            this.pbCbAlarms.MouseEnter += new System.EventHandler(this.pbCbAlarms_MouseEnter);
+            this.pbCbAlarms.MouseLeave += new System.EventHandler(this.pbCbAlarms_MouseLeave);
+            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -1175,6 +1477,20 @@
             this.label44.TabIndex = 36;
             this.label44.Text = "6 MVar";
             // 
+            // pbCbSettings
+            // 
+            this.pbCbSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbSettings.Location = new System.Drawing.Point(86, 95);
+            this.pbCbSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbSettings.Name = "pbCbSettings";
+            this.pbCbSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbCbSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbSettings.TabIndex = 49;
+            this.pbCbSettings.TabStop = false;
+            this.pbCbSettings.Click += new System.EventHandler(this.pbCbSettings_Click);
+            this.pbCbSettings.MouseEnter += new System.EventHandler(this.pbCbSettings_MouseEnter);
+            this.pbCbSettings.MouseLeave += new System.EventHandler(this.pbCbSettings_MouseLeave);
+            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -1186,6 +1502,19 @@
             this.label46.TabIndex = 36;
             this.label46.Text = "1399/06/25 - 15:34";
             // 
+            // pbCbRemote
+            // 
+            this.pbCbRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbRemote.Location = new System.Drawing.Point(268, 95);
+            this.pbCbRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbRemote.Name = "pbCbRemote";
+            this.pbCbRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbCbRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbRemote.TabIndex = 49;
+            this.pbCbRemote.TabStop = false;
+            this.pbCbRemote.MouseEnter += new System.EventHandler(this.pbCbRemote_MouseEnter);
+            this.pbCbRemote.MouseLeave += new System.EventHandler(this.pbCbRemote_MouseLeave);
+            // 
             // label47
             // 
             this.label47.AutoSize = true;
@@ -1196,6 +1525,61 @@
             this.label47.Size = new System.Drawing.Size(71, 14);
             this.label47.TabIndex = 36;
             this.label47.Text = "Last Change:";
+            // 
+            // pbCbAuto
+            // 
+            this.pbCbAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbAuto.Location = new System.Drawing.Point(239, 95);
+            this.pbCbAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbAuto.Name = "pbCbAuto";
+            this.pbCbAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbCbAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbAuto.TabIndex = 49;
+            this.pbCbAuto.TabStop = false;
+            this.pbCbAuto.MouseEnter += new System.EventHandler(this.pbCbAuto_MouseEnter);
+            this.pbCbAuto.MouseLeave += new System.EventHandler(this.pbCbAuto_MouseLeave);
+            // 
+            // pbCbMain
+            // 
+            this.pbCbMain.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbMain.Location = new System.Drawing.Point(17, 27);
+            this.pbCbMain.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbMain.Name = "pbCbMain";
+            this.pbCbMain.Size = new System.Drawing.Size(60, 60);
+            this.pbCbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbMain.TabIndex = 48;
+            this.pbCbMain.TabStop = false;
+            this.pbCbMain.Click += new System.EventHandler(this.pbCbMain_Click);
+            this.pbCbMain.MouseEnter += new System.EventHandler(this.pbCbMain_MouseEnter);
+            this.pbCbMain.MouseLeave += new System.EventHandler(this.pbCbMain_MouseLeave);
+            // 
+            // pbCbManual
+            // 
+            this.pbCbManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbManual.Location = new System.Drawing.Point(115, 95);
+            this.pbCbManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbManual.Name = "pbCbManual";
+            this.pbCbManual.Size = new System.Drawing.Size(25, 25);
+            this.pbCbManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbManual.TabIndex = 49;
+            this.pbCbManual.TabStop = false;
+            this.pbCbManual.Click += new System.EventHandler(this.pbCbManual_Click);
+            this.pbCbManual.MouseEnter += new System.EventHandler(this.pbCbManual_MouseEnter);
+            this.pbCbManual.MouseLeave += new System.EventHandler(this.pbCbManual_MouseLeave);
+            // 
+            // pbCbReports
+            // 
+            this.pbCbReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbCbReports.Location = new System.Drawing.Point(144, 95);
+            this.pbCbReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCbReports.Name = "pbCbReports";
+            this.pbCbReports.Size = new System.Drawing.Size(25, 25);
+            this.pbCbReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCbReports.TabIndex = 49;
+            this.pbCbReports.TabStop = false;
+            this.pbCbReports.Click += new System.EventHandler(this.pbCbReports_Click);
+            this.pbCbReports.MouseEnter += new System.EventHandler(this.pbCbReports_MouseEnter);
+            this.pbCbReports.MouseLeave += new System.EventHandler(this.pbCbReports_MouseLeave);
             // 
             // label48
             // 
@@ -1234,6 +1618,20 @@
             this.panel5.Size = new System.Drawing.Size(393, 155);
             this.panel5.TabIndex = 53;
             // 
+            // pbHydraulicAlarms
+            // 
+            this.pbHydraulicAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicAlarms.Location = new System.Drawing.Point(206, 111);
+            this.pbHydraulicAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicAlarms.Name = "pbHydraulicAlarms";
+            this.pbHydraulicAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbHydraulicAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicAlarms.TabIndex = 49;
+            this.pbHydraulicAlarms.TabStop = false;
+            this.pbHydraulicAlarms.Click += new System.EventHandler(this.pbHydraulicAlarms_Click);
+            this.pbHydraulicAlarms.MouseEnter += new System.EventHandler(this.pbHydraulicAlarms_MouseEnter);
+            this.pbHydraulicAlarms.MouseLeave += new System.EventHandler(this.pbHydraulicAlarms_MouseLeave);
+            // 
             // label54
             // 
             this.label54.AutoSize = true;
@@ -1267,6 +1665,20 @@
             this.label50.TabIndex = 36;
             this.label50.Text = "Pressure:";
             // 
+            // pbHydraulicSettings
+            // 
+            this.pbHydraulicSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicSettings.Location = new System.Drawing.Point(82, 111);
+            this.pbHydraulicSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicSettings.Name = "pbHydraulicSettings";
+            this.pbHydraulicSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbHydraulicSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicSettings.TabIndex = 49;
+            this.pbHydraulicSettings.TabStop = false;
+            this.pbHydraulicSettings.Click += new System.EventHandler(this.pbHydraulicSettings_Click);
+            this.pbHydraulicSettings.MouseEnter += new System.EventHandler(this.pbHydraulicSettings_MouseEnter);
+            this.pbHydraulicSettings.MouseLeave += new System.EventHandler(this.pbHydraulicSettings_MouseLeave);
+            // 
             // label51
             // 
             this.label51.AutoSize = true;
@@ -1288,6 +1700,19 @@
             this.label57.Size = new System.Drawing.Size(46, 14);
             this.label57.TabIndex = 36;
             this.label57.Text = "Running";
+            // 
+            // pbHydraulicRemote
+            // 
+            this.pbHydraulicRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicRemote.Location = new System.Drawing.Point(264, 111);
+            this.pbHydraulicRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicRemote.Name = "pbHydraulicRemote";
+            this.pbHydraulicRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbHydraulicRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicRemote.TabIndex = 49;
+            this.pbHydraulicRemote.TabStop = false;
+            this.pbHydraulicRemote.MouseEnter += new System.EventHandler(this.pbHydraulicRemote_MouseEnter);
+            this.pbHydraulicRemote.MouseLeave += new System.EventHandler(this.pbHydraulicRemote_MouseLeave);
             // 
             // label52
             // 
@@ -1311,6 +1736,19 @@
             this.label56.TabIndex = 36;
             this.label56.Text = "Cooling Pump:";
             // 
+            // pbHydraulicAuto
+            // 
+            this.pbHydraulicAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicAuto.Location = new System.Drawing.Point(235, 111);
+            this.pbHydraulicAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicAuto.Name = "pbHydraulicAuto";
+            this.pbHydraulicAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbHydraulicAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicAuto.TabIndex = 49;
+            this.pbHydraulicAuto.TabStop = false;
+            this.pbHydraulicAuto.MouseEnter += new System.EventHandler(this.pbHydraulicAuto_MouseEnter);
+            this.pbHydraulicAuto.MouseLeave += new System.EventHandler(this.pbHydraulicAuto_MouseLeave);
+            // 
             // label53
             // 
             this.label53.AutoSize = true;
@@ -1321,6 +1759,48 @@
             this.label53.Size = new System.Drawing.Size(70, 14);
             this.label53.TabIndex = 36;
             this.label53.Text = "Temperature:";
+            // 
+            // pbHydraulicDetails
+            // 
+            this.pbHydraulicDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicDetails.Location = new System.Drawing.Point(19, 25);
+            this.pbHydraulicDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicDetails.Name = "pbHydraulicDetails";
+            this.pbHydraulicDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbHydraulicDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicDetails.TabIndex = 48;
+            this.pbHydraulicDetails.TabStop = false;
+            this.pbHydraulicDetails.Click += new System.EventHandler(this.pbHydraulicDetails_Click);
+            this.pbHydraulicDetails.MouseEnter += new System.EventHandler(this.pbHydraulicDetails_MouseEnter);
+            this.pbHydraulicDetails.MouseLeave += new System.EventHandler(this.pbHydraulicDetails_MouseLeave);
+            // 
+            // pbHydraulicManual
+            // 
+            this.pbHydraulicManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicManual.Location = new System.Drawing.Point(111, 111);
+            this.pbHydraulicManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicManual.Name = "pbHydraulicManual";
+            this.pbHydraulicManual.Size = new System.Drawing.Size(25, 25);
+            this.pbHydraulicManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicManual.TabIndex = 49;
+            this.pbHydraulicManual.TabStop = false;
+            this.pbHydraulicManual.Click += new System.EventHandler(this.pbHydraulicManual_Click);
+            this.pbHydraulicManual.MouseEnter += new System.EventHandler(this.pbHydraulicManual_MouseEnter);
+            this.pbHydraulicManual.MouseLeave += new System.EventHandler(this.pbHydraulicManual_MouseLeave);
+            // 
+            // pbHydraulicReports
+            // 
+            this.pbHydraulicReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbHydraulicReports.Location = new System.Drawing.Point(140, 111);
+            this.pbHydraulicReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHydraulicReports.Name = "pbHydraulicReports";
+            this.pbHydraulicReports.Size = new System.Drawing.Size(25, 25);
+            this.pbHydraulicReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHydraulicReports.TabIndex = 49;
+            this.pbHydraulicReports.TabStop = false;
+            this.pbHydraulicReports.Click += new System.EventHandler(this.pbHydraulicReports_Click);
+            this.pbHydraulicReports.MouseEnter += new System.EventHandler(this.pbHydraulicReports_MouseEnter);
+            this.pbHydraulicReports.MouseLeave += new System.EventHandler(this.pbHydraulicReports_MouseLeave);
             // 
             // label36
             // 
@@ -1366,6 +1846,20 @@
             this.panel6.Size = new System.Drawing.Size(393, 157);
             this.panel6.TabIndex = 55;
             // 
+            // pbTransformatorsAlarms
+            // 
+            this.pbTransformatorsAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsAlarms.Location = new System.Drawing.Point(209, 113);
+            this.pbTransformatorsAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsAlarms.Name = "pbTransformatorsAlarms";
+            this.pbTransformatorsAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbTransformatorsAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsAlarms.TabIndex = 49;
+            this.pbTransformatorsAlarms.TabStop = false;
+            this.pbTransformatorsAlarms.Click += new System.EventHandler(this.pbCbAlarms_Click);
+            this.pbTransformatorsAlarms.MouseEnter += new System.EventHandler(this.pbTransformatorsAlarms_MouseEnter);
+            this.pbTransformatorsAlarms.MouseLeave += new System.EventHandler(this.pbTransformatorsAlarms_MouseLeave);
+            // 
             // label82
             // 
             this.label82.AutoSize = true;
@@ -1399,6 +1893,20 @@
             this.label84.TabIndex = 73;
             this.label84.Text = "Tr 3:";
             // 
+            // pbTransformatorsSettings
+            // 
+            this.pbTransformatorsSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsSettings.Location = new System.Drawing.Point(85, 113);
+            this.pbTransformatorsSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsSettings.Name = "pbTransformatorsSettings";
+            this.pbTransformatorsSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbTransformatorsSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsSettings.TabIndex = 49;
+            this.pbTransformatorsSettings.TabStop = false;
+            this.pbTransformatorsSettings.Click += new System.EventHandler(this.pbCbSettings_Click);
+            this.pbTransformatorsSettings.MouseEnter += new System.EventHandler(this.pbTransformatorsSettings_MouseEnter);
+            this.pbTransformatorsSettings.MouseLeave += new System.EventHandler(this.pbTransformatorsSettings_MouseLeave);
+            // 
             // label85
             // 
             this.label85.AutoSize = true;
@@ -1409,6 +1917,19 @@
             this.label85.Size = new System.Drawing.Size(19, 14);
             this.label85.TabIndex = 74;
             this.label85.Text = "00";
+            // 
+            // pbTransformatorsRemote
+            // 
+            this.pbTransformatorsRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsRemote.Location = new System.Drawing.Point(267, 113);
+            this.pbTransformatorsRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsRemote.Name = "pbTransformatorsRemote";
+            this.pbTransformatorsRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbTransformatorsRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsRemote.TabIndex = 49;
+            this.pbTransformatorsRemote.TabStop = false;
+            this.pbTransformatorsRemote.MouseEnter += new System.EventHandler(this.pbTransformatorsRemote_MouseEnter);
+            this.pbTransformatorsRemote.MouseLeave += new System.EventHandler(this.pbTransformatorsRemote_MouseLeave);
             // 
             // label86
             // 
@@ -1432,6 +1953,19 @@
             this.label77.TabIndex = 66;
             this.label77.Text = "Temperature:";
             // 
+            // pbTransformatorsAuto
+            // 
+            this.pbTransformatorsAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsAuto.Location = new System.Drawing.Point(238, 113);
+            this.pbTransformatorsAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsAuto.Name = "pbTransformatorsAuto";
+            this.pbTransformatorsAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbTransformatorsAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsAuto.TabIndex = 49;
+            this.pbTransformatorsAuto.TabStop = false;
+            this.pbTransformatorsAuto.MouseEnter += new System.EventHandler(this.pbTransformatorsAuto_MouseEnter);
+            this.pbTransformatorsAuto.MouseLeave += new System.EventHandler(this.pbTransformatorsAuto_MouseLeave);
+            // 
             // label78
             // 
             this.label78.AutoSize = true;
@@ -1454,6 +1988,20 @@
             this.label79.TabIndex = 68;
             this.label79.Text = "Tr 2:";
             // 
+            // pbTransformatorsManual
+            // 
+            this.pbTransformatorsManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsManual.Location = new System.Drawing.Point(114, 113);
+            this.pbTransformatorsManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsManual.Name = "pbTransformatorsManual";
+            this.pbTransformatorsManual.Size = new System.Drawing.Size(25, 25);
+            this.pbTransformatorsManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsManual.TabIndex = 49;
+            this.pbTransformatorsManual.TabStop = false;
+            this.pbTransformatorsManual.Click += new System.EventHandler(this.pbCbManual_Click);
+            this.pbTransformatorsManual.MouseEnter += new System.EventHandler(this.pbTransformatorsManual_MouseEnter);
+            this.pbTransformatorsManual.MouseLeave += new System.EventHandler(this.pbTransformatorsManual_MouseLeave);
+            // 
             // label80
             // 
             this.label80.AutoSize = true;
@@ -1464,6 +2012,20 @@
             this.label80.Size = new System.Drawing.Size(19, 14);
             this.label80.TabIndex = 69;
             this.label80.Text = "00";
+            // 
+            // pbTransformatorsReports
+            // 
+            this.pbTransformatorsReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsReports.Location = new System.Drawing.Point(143, 113);
+            this.pbTransformatorsReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsReports.Name = "pbTransformatorsReports";
+            this.pbTransformatorsReports.Size = new System.Drawing.Size(25, 25);
+            this.pbTransformatorsReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsReports.TabIndex = 49;
+            this.pbTransformatorsReports.TabStop = false;
+            this.pbTransformatorsReports.Click += new System.EventHandler(this.pbCbReports_Click);
+            this.pbTransformatorsReports.MouseEnter += new System.EventHandler(this.pbTransformatorsReports_MouseEnter);
+            this.pbTransformatorsReports.MouseLeave += new System.EventHandler(this.pbTransformatorsReports_MouseLeave);
             // 
             // label81
             // 
@@ -1531,6 +2093,20 @@
             this.label92.TabIndex = 36;
             this.label92.Text = "00";
             // 
+            // pbTransformatorsDetails
+            // 
+            this.pbTransformatorsDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbTransformatorsDetails.Location = new System.Drawing.Point(17, 31);
+            this.pbTransformatorsDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbTransformatorsDetails.Name = "pbTransformatorsDetails";
+            this.pbTransformatorsDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbTransformatorsDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbTransformatorsDetails.TabIndex = 48;
+            this.pbTransformatorsDetails.TabStop = false;
+            this.pbTransformatorsDetails.Click += new System.EventHandler(this.pbTransformatorsDetails_Click);
+            this.pbTransformatorsDetails.MouseEnter += new System.EventHandler(this.pbTransformatorsDetails_MouseEnter);
+            this.pbTransformatorsDetails.MouseLeave += new System.EventHandler(this.pbTransformatorsDetails_MouseLeave);
+            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -1574,6 +2150,20 @@
             this.panel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel7.Size = new System.Drawing.Size(393, 157);
             this.panel7.TabIndex = 57;
+            // 
+            // pbHoistAlarms
+            // 
+            this.pbHoistAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistAlarms.Location = new System.Drawing.Point(210, 112);
+            this.pbHoistAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistAlarms.Name = "pbHoistAlarms";
+            this.pbHoistAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbHoistAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistAlarms.TabIndex = 49;
+            this.pbHoistAlarms.TabStop = false;
+            this.pbHoistAlarms.Click += new System.EventHandler(this.pbHoistAlarms_Click);
+            this.pbHoistAlarms.MouseEnter += new System.EventHandler(this.pbHoistAlarms_MouseEnter);
+            this.pbHoistAlarms.MouseLeave += new System.EventHandler(this.pbHoistAlarms_MouseLeave);
             // 
             // label68
             // 
@@ -1619,6 +2209,20 @@
             this.labEl3SetPoint.TabIndex = 74;
             this.labEl3SetPoint.Text = "00";
             // 
+            // pbHoistSettings
+            // 
+            this.pbHoistSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistSettings.Location = new System.Drawing.Point(86, 112);
+            this.pbHoistSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistSettings.Name = "pbHoistSettings";
+            this.pbHoistSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbHoistSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistSettings.TabIndex = 49;
+            this.pbHoistSettings.TabStop = false;
+            this.pbHoistSettings.Click += new System.EventHandler(this.pbHoistSettings_Click);
+            this.pbHoistSettings.MouseEnter += new System.EventHandler(this.pbHoistSettings_MouseEnter);
+            this.pbHoistSettings.MouseLeave += new System.EventHandler(this.pbHoistSettings_MouseLeave);
+            // 
             // labEl3Current
             // 
             this.labEl3Current.AutoSize = true;
@@ -1629,6 +2233,19 @@
             this.labEl3Current.Size = new System.Drawing.Size(19, 14);
             this.labEl3Current.TabIndex = 75;
             this.labEl3Current.Text = "00";
+            // 
+            // pbHoistRemote
+            // 
+            this.pbHoistRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistRemote.Location = new System.Drawing.Point(268, 112);
+            this.pbHoistRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistRemote.Name = "pbHoistRemote";
+            this.pbHoistRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbHoistRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistRemote.TabIndex = 49;
+            this.pbHoistRemote.TabStop = false;
+            this.pbHoistRemote.MouseEnter += new System.EventHandler(this.pbHoistRemote_MouseEnter);
+            this.pbHoistRemote.MouseLeave += new System.EventHandler(this.pbHoistRemote_MouseLeave);
             // 
             // label73
             // 
@@ -1663,6 +2280,19 @@
             this.label75.TabIndex = 68;
             this.label75.Text = "El 2:";
             // 
+            // pbHoistAuto
+            // 
+            this.pbHoistAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistAuto.Location = new System.Drawing.Point(239, 112);
+            this.pbHoistAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistAuto.Name = "pbHoistAuto";
+            this.pbHoistAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbHoistAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistAuto.TabIndex = 49;
+            this.pbHoistAuto.TabStop = false;
+            this.pbHoistAuto.MouseEnter += new System.EventHandler(this.pbHoistAuto_MouseEnter);
+            this.pbHoistAuto.MouseLeave += new System.EventHandler(this.pbHoistAuto_MouseLeave);
+            // 
             // labEl2SetPoint
             // 
             this.labEl2SetPoint.AutoSize = true;
@@ -1696,6 +2326,20 @@
             this.label93.TabIndex = 36;
             this.label93.Text = "Setpoint:";
             // 
+            // pbHoistManual
+            // 
+            this.pbHoistManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistManual.Location = new System.Drawing.Point(115, 112);
+            this.pbHoistManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistManual.Name = "pbHoistManual";
+            this.pbHoistManual.Size = new System.Drawing.Size(25, 25);
+            this.pbHoistManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistManual.TabIndex = 49;
+            this.pbHoistManual.TabStop = false;
+            this.pbHoistManual.Click += new System.EventHandler(this.pbHoistManual_Click);
+            this.pbHoistManual.MouseEnter += new System.EventHandler(this.pbHoistManual_MouseEnter);
+            this.pbHoistManual.MouseLeave += new System.EventHandler(this.pbHoistManual_MouseLeave);
+            // 
             // label94
             // 
             this.label94.AutoSize = true;
@@ -1718,6 +2362,20 @@
             this.label95.TabIndex = 36;
             this.label95.Text = "El 1:";
             // 
+            // pbHoistReports
+            // 
+            this.pbHoistReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistReports.Location = new System.Drawing.Point(144, 112);
+            this.pbHoistReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistReports.Name = "pbHoistReports";
+            this.pbHoistReports.Size = new System.Drawing.Size(25, 25);
+            this.pbHoistReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistReports.TabIndex = 49;
+            this.pbHoistReports.TabStop = false;
+            this.pbHoistReports.Click += new System.EventHandler(this.pbHoistReports_Click);
+            this.pbHoistReports.MouseEnter += new System.EventHandler(this.pbHoistReports_MouseEnter);
+            this.pbHoistReports.MouseLeave += new System.EventHandler(this.pbHoistReports_MouseLeave);
+            // 
             // labEl1SetPoint
             // 
             this.labEl1SetPoint.AutoSize = true;
@@ -1739,6 +2397,20 @@
             this.labEl1Current.Size = new System.Drawing.Size(19, 14);
             this.labEl1Current.TabIndex = 36;
             this.labEl1Current.Text = "00";
+            // 
+            // pbHoistDetails
+            // 
+            this.pbHoistDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbHoistDetails.Location = new System.Drawing.Point(17, 19);
+            this.pbHoistDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbHoistDetails.Name = "pbHoistDetails";
+            this.pbHoistDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbHoistDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbHoistDetails.TabIndex = 48;
+            this.pbHoistDetails.TabStop = false;
+            this.pbHoistDetails.Click += new System.EventHandler(this.pbHoistDetails_Click);
+            this.pbHoistDetails.MouseEnter += new System.EventHandler(this.pbHoistDetails_MouseEnter);
+            this.pbHoistDetails.MouseLeave += new System.EventHandler(this.pbHoistDetails_MouseLeave);
             // 
             // label98
             // 
@@ -1784,6 +2456,20 @@
             this.panel8.Size = new System.Drawing.Size(393, 157);
             this.panel8.TabIndex = 59;
             // 
+            // pbSlipAlarms
+            // 
+            this.pbSlipAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipAlarms.Location = new System.Drawing.Point(206, 114);
+            this.pbSlipAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipAlarms.Name = "pbSlipAlarms";
+            this.pbSlipAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbSlipAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipAlarms.TabIndex = 49;
+            this.pbSlipAlarms.TabStop = false;
+            this.pbSlipAlarms.Click += new System.EventHandler(this.pbSlipAlarms_Click);
+            this.pbSlipAlarms.MouseEnter += new System.EventHandler(this.pbSlipAlarms_MouseEnter);
+            this.pbSlipAlarms.MouseLeave += new System.EventHandler(this.pbSlipAlarms_MouseLeave);
+            // 
             // label99
             // 
             this.label99.AutoSize = true;
@@ -1806,6 +2492,20 @@
             this.label100.TabIndex = 72;
             this.label100.Text = "Counter:";
             // 
+            // pbSlipSettings
+            // 
+            this.pbSlipSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipSettings.Location = new System.Drawing.Point(82, 114);
+            this.pbSlipSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipSettings.Name = "pbSlipSettings";
+            this.pbSlipSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbSlipSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipSettings.TabIndex = 49;
+            this.pbSlipSettings.TabStop = false;
+            this.pbSlipSettings.Click += new System.EventHandler(this.pbSlipSettings_Click);
+            this.pbSlipSettings.MouseEnter += new System.EventHandler(this.pbSlipSettings_MouseEnter);
+            this.pbSlipSettings.MouseLeave += new System.EventHandler(this.pbSlipSettings_MouseLeave);
+            // 
             // label101
             // 
             this.label101.AutoSize = true;
@@ -1817,6 +2517,19 @@
             this.label101.TabIndex = 73;
             this.label101.Text = "El 3:";
             // 
+            // pbSlipRemote
+            // 
+            this.pbSlipRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipRemote.Location = new System.Drawing.Point(264, 114);
+            this.pbSlipRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipRemote.Name = "pbSlipRemote";
+            this.pbSlipRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbSlipRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipRemote.TabIndex = 49;
+            this.pbSlipRemote.TabStop = false;
+            this.pbSlipRemote.MouseEnter += new System.EventHandler(this.pbSlipRemote_MouseEnter);
+            this.pbSlipRemote.MouseLeave += new System.EventHandler(this.pbSlipRemote_MouseLeave);
+            // 
             // label102
             // 
             this.label102.AutoSize = true;
@@ -1827,6 +2540,19 @@
             this.label102.Size = new System.Drawing.Size(19, 14);
             this.label102.TabIndex = 74;
             this.label102.Text = "00";
+            // 
+            // pbSlipAuto
+            // 
+            this.pbSlipAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipAuto.Location = new System.Drawing.Point(235, 114);
+            this.pbSlipAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipAuto.Name = "pbSlipAuto";
+            this.pbSlipAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbSlipAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipAuto.TabIndex = 49;
+            this.pbSlipAuto.TabStop = false;
+            this.pbSlipAuto.MouseEnter += new System.EventHandler(this.pbSlipAuto_MouseEnter);
+            this.pbSlipAuto.MouseLeave += new System.EventHandler(this.pbSlipAuto_MouseLeave);
             // 
             // label103
             // 
@@ -1850,6 +2576,20 @@
             this.label104.TabIndex = 66;
             this.label104.Text = "Length:";
             // 
+            // pbSlipReports
+            // 
+            this.pbSlipReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipReports.Location = new System.Drawing.Point(140, 114);
+            this.pbSlipReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipReports.Name = "pbSlipReports";
+            this.pbSlipReports.Size = new System.Drawing.Size(25, 25);
+            this.pbSlipReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipReports.TabIndex = 49;
+            this.pbSlipReports.TabStop = false;
+            this.pbSlipReports.Click += new System.EventHandler(this.pbSlipReports_Click);
+            this.pbSlipReports.MouseEnter += new System.EventHandler(this.pbSlipReports_MouseEnter);
+            this.pbSlipReports.MouseLeave += new System.EventHandler(this.pbSlipReports_MouseLeave);
+            // 
             // label105
             // 
             this.label105.AutoSize = true;
@@ -1871,6 +2611,20 @@
             this.label106.Size = new System.Drawing.Size(27, 14);
             this.label106.TabIndex = 68;
             this.label106.Text = "El 2:";
+            // 
+            // pbSlipManual
+            // 
+            this.pbSlipManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipManual.Location = new System.Drawing.Point(111, 114);
+            this.pbSlipManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipManual.Name = "pbSlipManual";
+            this.pbSlipManual.Size = new System.Drawing.Size(25, 25);
+            this.pbSlipManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipManual.TabIndex = 49;
+            this.pbSlipManual.TabStop = false;
+            this.pbSlipManual.Click += new System.EventHandler(this.pbSlipManual_Click);
+            this.pbSlipManual.MouseEnter += new System.EventHandler(this.pbSlipManual_MouseEnter);
+            this.pbSlipManual.MouseLeave += new System.EventHandler(this.pbSlipManual_MouseLeave);
             // 
             // label107
             // 
@@ -1949,6 +2703,20 @@
             this.label113.TabIndex = 36;
             this.label113.Text = "00";
             // 
+            // pbSlipDetails
+            // 
+            this.pbSlipDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbSlipDetails.Location = new System.Drawing.Point(19, 25);
+            this.pbSlipDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbSlipDetails.Name = "pbSlipDetails";
+            this.pbSlipDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbSlipDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbSlipDetails.TabIndex = 48;
+            this.pbSlipDetails.TabStop = false;
+            this.pbSlipDetails.Click += new System.EventHandler(this.pbSlipDetails_Click);
+            this.pbSlipDetails.MouseEnter += new System.EventHandler(this.pbSlipDetails_MouseEnter);
+            this.pbSlipDetails.MouseLeave += new System.EventHandler(this.pbSlipDetails_MouseLeave);
+            // 
             // panel9
             // 
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1970,52 +2738,6 @@
             this.panel9.Size = new System.Drawing.Size(995, 130);
             this.panel9.TabIndex = 54;
             // 
-            // label115
-            // 
-            this.label115.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label115.Location = new System.Drawing.Point(31, 92);
-            this.label115.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(76, 16);
-            this.label115.TabIndex = 50;
-            this.label115.Text = "Message:";
-            // 
-            // label117
-            // 
-            this.label117.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label117.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label117.Location = new System.Drawing.Point(130, 92);
-            this.label117.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(782, 32);
-            this.label117.TabIndex = 51;
-            this.label117.Text = "Plant Manager: Decrease Electrode Currents.";
-            // 
-            // label125
-            // 
-            this.label125.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label125.AutoSize = true;
-            this.label125.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label125.Location = new System.Drawing.Point(31, 54);
-            this.label125.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(92, 16);
-            this.label125.TabIndex = 39;
-            this.label125.Text = "Notification:";
-            // 
-            // labStatus
-            // 
-            this.labStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labStatus.Location = new System.Drawing.Point(133, 54);
-            this.labStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labStatus.Name = "labStatus";
-            this.labStatus.Size = new System.Drawing.Size(782, 32);
-            this.labStatus.TabIndex = 40;
-            this.labStatus.Text = "System Is Normal.";
-            // 
             // label123
             // 
             this.label123.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2029,6 +2751,18 @@
             this.label123.TabIndex = 37;
             this.label123.Text = "Start Time:";
             // 
+            // label115
+            // 
+            this.label115.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label115.Location = new System.Drawing.Point(31, 92);
+            this.label115.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(76, 16);
+            this.label115.TabIndex = 50;
+            this.label115.Text = "Message:";
+            // 
             // label124
             // 
             this.label124.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2041,6 +2775,17 @@
             this.label124.Size = new System.Drawing.Size(129, 16);
             this.label124.TabIndex = 38;
             this.label124.Text = "1399/06/25 - 15:34";
+            // 
+            // label117
+            // 
+            this.label117.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label117.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label117.Location = new System.Drawing.Point(130, 92);
+            this.label117.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(782, 32);
+            this.label117.TabIndex = 51;
+            this.label117.Text = "Plant Manager: Decrease Electrode Currents.";
             // 
             // label116
             // 
@@ -2067,6 +2812,59 @@
             this.label122.Size = new System.Drawing.Size(129, 16);
             this.label122.TabIndex = 36;
             this.label122.Text = "1399/06/25 - 15:34";
+            // 
+            // label125
+            // 
+            this.label125.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label125.AutoSize = true;
+            this.label125.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label125.Location = new System.Drawing.Point(31, 54);
+            this.label125.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(92, 16);
+            this.label125.TabIndex = 39;
+            this.label125.Text = "Notification:";
+            // 
+            // labStatus
+            // 
+            this.labStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labStatus.Location = new System.Drawing.Point(133, 54);
+            this.labStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labStatus.Name = "labStatus";
+            this.labStatus.Size = new System.Drawing.Size(782, 32);
+            this.labStatus.TabIndex = 40;
+            this.labStatus.Text = "System Is Normal.";
+            // 
+            // pbFurnaceReports
+            // 
+            this.pbFurnaceReports.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbFurnaceReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbFurnaceReports.Location = new System.Drawing.Point(944, 35);
+            this.pbFurnaceReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbFurnaceReports.Name = "pbFurnaceReports";
+            this.pbFurnaceReports.Size = new System.Drawing.Size(25, 25);
+            this.pbFurnaceReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFurnaceReports.TabIndex = 49;
+            this.pbFurnaceReports.TabStop = false;
+            this.pbFurnaceReports.Click += new System.EventHandler(this.pbFurnaceReports_Click);
+            this.pbFurnaceReports.MouseEnter += new System.EventHandler(this.pbFurnaceReports_MouseEnter);
+            this.pbFurnaceReports.MouseLeave += new System.EventHandler(this.pbFurnaceReports_MouseLeave);
+            // 
+            // pbFurnaceManual
+            // 
+            this.pbFurnaceManual.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbFurnaceManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbFurnaceManual.Location = new System.Drawing.Point(944, 72);
+            this.pbFurnaceManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbFurnaceManual.Name = "pbFurnaceManual";
+            this.pbFurnaceManual.Size = new System.Drawing.Size(25, 25);
+            this.pbFurnaceManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFurnaceManual.TabIndex = 48;
+            this.pbFurnaceManual.TabStop = false;
+            this.pbFurnaceManual.Click += new System.EventHandler(this.pbFurnaceManual_Click);
+            this.pbFurnaceManual.MouseEnter += new System.EventHandler(this.pbFurnaceManual_MouseEnter);
+            this.pbFurnaceManual.MouseLeave += new System.EventHandler(this.pbFurnaceManual_MouseLeave);
             // 
             // label114
             // 
@@ -2125,6 +2923,20 @@
             this.panel10.Size = new System.Drawing.Size(393, 155);
             this.panel10.TabIndex = 53;
             // 
+            // pbShellAlarms
+            // 
+            this.pbShellAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellAlarms.Location = new System.Drawing.Point(200, 111);
+            this.pbShellAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellAlarms.Name = "pbShellAlarms";
+            this.pbShellAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbShellAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellAlarms.TabIndex = 49;
+            this.pbShellAlarms.TabStop = false;
+            this.pbShellAlarms.Click += new System.EventHandler(this.pbShellAlarms_Click);
+            this.pbShellAlarms.MouseEnter += new System.EventHandler(this.pbShellAlarms_MouseEnter);
+            this.pbShellAlarms.MouseLeave += new System.EventHandler(this.pbShellAlarms_MouseLeave);
+            // 
             // label71
             // 
             this.label71.AutoSize = true;
@@ -2169,6 +2981,20 @@
             this.label87.TabIndex = 36;
             this.label87.Text = "25 RPM";
             // 
+            // pbShellSettings
+            // 
+            this.pbShellSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellSettings.Location = new System.Drawing.Point(76, 111);
+            this.pbShellSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellSettings.Name = "pbShellSettings";
+            this.pbShellSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbShellSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellSettings.TabIndex = 49;
+            this.pbShellSettings.TabStop = false;
+            this.pbShellSettings.Click += new System.EventHandler(this.pbShellSetings_Click);
+            this.pbShellSettings.MouseEnter += new System.EventHandler(this.pbShellSettings_MouseEnter);
+            this.pbShellSettings.MouseLeave += new System.EventHandler(this.pbShellSetings_MouseLeave);
+            // 
             // label96
             // 
             this.label96.AutoSize = true;
@@ -2191,6 +3017,19 @@
             this.label97.TabIndex = 36;
             this.label97.Text = "15 Min";
             // 
+            // pbShellRemote
+            // 
+            this.pbShellRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellRemote.Location = new System.Drawing.Point(258, 111);
+            this.pbShellRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellRemote.Name = "pbShellRemote";
+            this.pbShellRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbShellRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellRemote.TabIndex = 49;
+            this.pbShellRemote.TabStop = false;
+            this.pbShellRemote.MouseEnter += new System.EventHandler(this.pbShellRemote_MouseEnter);
+            this.pbShellRemote.MouseLeave += new System.EventHandler(this.pbShellRemote_MouseLeave);
+            // 
             // label118
             // 
             this.label118.AutoSize = true;
@@ -2212,6 +3051,61 @@
             this.label119.Size = new System.Drawing.Size(85, 14);
             this.label119.TabIndex = 36;
             this.label119.Text = "Clockwise Time:";
+            // 
+            // pbShellDetails
+            // 
+            this.pbShellDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellDetails.Location = new System.Drawing.Point(19, 26);
+            this.pbShellDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellDetails.Name = "pbShellDetails";
+            this.pbShellDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbShellDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellDetails.TabIndex = 48;
+            this.pbShellDetails.TabStop = false;
+            this.pbShellDetails.Click += new System.EventHandler(this.pbShellDetails_Click);
+            this.pbShellDetails.MouseEnter += new System.EventHandler(this.pbShellDetails_MouseEnter);
+            this.pbShellDetails.MouseLeave += new System.EventHandler(this.pbShellDetails_MouseLeave);
+            // 
+            // pbShellAuto
+            // 
+            this.pbShellAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellAuto.Location = new System.Drawing.Point(229, 111);
+            this.pbShellAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellAuto.Name = "pbShellAuto";
+            this.pbShellAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbShellAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellAuto.TabIndex = 49;
+            this.pbShellAuto.TabStop = false;
+            this.pbShellAuto.MouseEnter += new System.EventHandler(this.pbShellAuto_MouseEnter);
+            this.pbShellAuto.MouseLeave += new System.EventHandler(this.pbShellAuto_MouseLeave);
+            // 
+            // pbShellReports
+            // 
+            this.pbShellReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellReports.Location = new System.Drawing.Point(134, 111);
+            this.pbShellReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellReports.Name = "pbShellReports";
+            this.pbShellReports.Size = new System.Drawing.Size(25, 25);
+            this.pbShellReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellReports.TabIndex = 49;
+            this.pbShellReports.TabStop = false;
+            this.pbShellReports.Click += new System.EventHandler(this.pbShellReports_Click);
+            this.pbShellReports.MouseEnter += new System.EventHandler(this.pbShellReports_MouseEnter);
+            this.pbShellReports.MouseLeave += new System.EventHandler(this.pbShellReports_MouseLeave);
+            // 
+            // pbShellManual
+            // 
+            this.pbShellManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbShellManual.Location = new System.Drawing.Point(105, 111);
+            this.pbShellManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbShellManual.Name = "pbShellManual";
+            this.pbShellManual.Size = new System.Drawing.Size(25, 25);
+            this.pbShellManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbShellManual.TabIndex = 49;
+            this.pbShellManual.TabStop = false;
+            this.pbShellManual.Click += new System.EventHandler(this.pbShellManual_Click);
+            this.pbShellManual.MouseEnter += new System.EventHandler(this.pbShellManual_MouseEnter);
+            this.pbShellManual.MouseLeave += new System.EventHandler(this.pbShellManual_MouseLeave);
             // 
             // label120
             // 
@@ -2249,6 +3143,20 @@
             this.panel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel11.Size = new System.Drawing.Size(393, 155);
             this.panel11.TabIndex = 53;
+            // 
+            // pbStockingAlarms
+            // 
+            this.pbStockingAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingAlarms.Location = new System.Drawing.Point(200, 111);
+            this.pbStockingAlarms.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingAlarms.Name = "pbStockingAlarms";
+            this.pbStockingAlarms.Size = new System.Drawing.Size(25, 25);
+            this.pbStockingAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingAlarms.TabIndex = 49;
+            this.pbStockingAlarms.TabStop = false;
+            this.pbStockingAlarms.Click += new System.EventHandler(this.pbStockingAlarms_Click);
+            this.pbStockingAlarms.MouseEnter += new System.EventHandler(this.pbStockingAlarms_MouseEnter);
+            this.pbStockingAlarms.MouseLeave += new System.EventHandler(this.pbStockingAlarms_MouseLeave);
             // 
             // label121
             // 
@@ -2294,6 +3202,20 @@
             this.label128.TabIndex = 36;
             this.label128.Text = "Running";
             // 
+            // pbStockingSettings
+            // 
+            this.pbStockingSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingSettings.Location = new System.Drawing.Point(76, 111);
+            this.pbStockingSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingSettings.Name = "pbStockingSettings";
+            this.pbStockingSettings.Size = new System.Drawing.Size(25, 25);
+            this.pbStockingSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingSettings.TabIndex = 49;
+            this.pbStockingSettings.TabStop = false;
+            this.pbStockingSettings.Click += new System.EventHandler(this.pbStockingSettings_Click);
+            this.pbStockingSettings.MouseEnter += new System.EventHandler(this.pbStockingSettings_MouseEnter);
+            this.pbStockingSettings.MouseLeave += new System.EventHandler(this.pbStockingSettings_MouseLeave);
+            // 
             // label129
             // 
             this.label129.AutoSize = true;
@@ -2316,6 +3238,19 @@
             this.label130.TabIndex = 36;
             this.label130.Text = "5";
             // 
+            // pbStockingRemote
+            // 
+            this.pbStockingRemote.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingRemote.Location = new System.Drawing.Point(258, 111);
+            this.pbStockingRemote.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingRemote.Name = "pbStockingRemote";
+            this.pbStockingRemote.Size = new System.Drawing.Size(25, 25);
+            this.pbStockingRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingRemote.TabIndex = 49;
+            this.pbStockingRemote.TabStop = false;
+            this.pbStockingRemote.MouseEnter += new System.EventHandler(this.pbStockingRemote_MouseEnter);
+            this.pbStockingRemote.MouseLeave += new System.EventHandler(this.pbStockingRemote_MouseLeave);
+            // 
             // label131
             // 
             this.label131.AutoSize = true;
@@ -2337,6 +3272,61 @@
             this.label132.Size = new System.Drawing.Size(151, 14);
             this.label132.TabIndex = 36;
             this.label132.Text = "Count Stocking Action in Shift:";
+            // 
+            // pbStockingDetails
+            // 
+            this.pbStockingDetails.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingDetails.Location = new System.Drawing.Point(19, 26);
+            this.pbStockingDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingDetails.Name = "pbStockingDetails";
+            this.pbStockingDetails.Size = new System.Drawing.Size(60, 60);
+            this.pbStockingDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingDetails.TabIndex = 48;
+            this.pbStockingDetails.TabStop = false;
+            this.pbStockingDetails.Click += new System.EventHandler(this.pbStockingDetails_Click);
+            this.pbStockingDetails.MouseEnter += new System.EventHandler(this.pbStockingDetails_MouseEnter);
+            this.pbStockingDetails.MouseLeave += new System.EventHandler(this.pbStockingDetails_MouseLeave);
+            // 
+            // pbStockingAuto
+            // 
+            this.pbStockingAuto.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingAuto.Location = new System.Drawing.Point(229, 111);
+            this.pbStockingAuto.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingAuto.Name = "pbStockingAuto";
+            this.pbStockingAuto.Size = new System.Drawing.Size(25, 25);
+            this.pbStockingAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingAuto.TabIndex = 49;
+            this.pbStockingAuto.TabStop = false;
+            this.pbStockingAuto.MouseEnter += new System.EventHandler(this.pbStockingAuto_MouseEnter);
+            this.pbStockingAuto.MouseLeave += new System.EventHandler(this.pbStockingAuto_MouseLeave);
+            // 
+            // pbStockingReports
+            // 
+            this.pbStockingReports.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingReports.Location = new System.Drawing.Point(134, 111);
+            this.pbStockingReports.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingReports.Name = "pbStockingReports";
+            this.pbStockingReports.Size = new System.Drawing.Size(25, 25);
+            this.pbStockingReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingReports.TabIndex = 49;
+            this.pbStockingReports.TabStop = false;
+            this.pbStockingReports.Click += new System.EventHandler(this.pbStockingReports_Click);
+            this.pbStockingReports.MouseEnter += new System.EventHandler(this.pbStockingReports_MouseEnter);
+            this.pbStockingReports.MouseLeave += new System.EventHandler(this.pbStockingReports_MouseLeave);
+            // 
+            // pbStockingManual
+            // 
+            this.pbStockingManual.BackColor = System.Drawing.Color.Transparent;
+            this.pbStockingManual.Location = new System.Drawing.Point(105, 111);
+            this.pbStockingManual.Margin = new System.Windows.Forms.Padding(0);
+            this.pbStockingManual.Name = "pbStockingManual";
+            this.pbStockingManual.Size = new System.Drawing.Size(25, 25);
+            this.pbStockingManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbStockingManual.TabIndex = 49;
+            this.pbStockingManual.TabStop = false;
+            this.pbStockingManual.Click += new System.EventHandler(this.pbStockingManual_Click);
+            this.pbStockingManual.MouseEnter += new System.EventHandler(this.pbStockingManual_MouseEnter);
+            this.pbStockingManual.MouseLeave += new System.EventHandler(this.pbStockingManual_MouseLeave);
             // 
             // label133
             // 
@@ -2407,996 +3397,6 @@
             this.pbFurnaceFullScreen.MouseEnter += new System.EventHandler(this.pbFurnaceFullScreen_MouseEnter);
             this.pbFurnaceFullScreen.MouseLeave += new System.EventHandler(this.pbFurnaceFullScreen_MouseLeave);
             // 
-            // pbFurnaceReports
-            // 
-            this.pbFurnaceReports.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbFurnaceReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbFurnaceReports.Location = new System.Drawing.Point(944, 35);
-            this.pbFurnaceReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbFurnaceReports.Name = "pbFurnaceReports";
-            this.pbFurnaceReports.Size = new System.Drawing.Size(25, 25);
-            this.pbFurnaceReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFurnaceReports.TabIndex = 49;
-            this.pbFurnaceReports.TabStop = false;
-            this.pbFurnaceReports.Click += new System.EventHandler(this.pbFurnaceReports_Click);
-            this.pbFurnaceReports.MouseEnter += new System.EventHandler(this.pbFurnaceReports_MouseEnter);
-            this.pbFurnaceReports.MouseLeave += new System.EventHandler(this.pbFurnaceReports_MouseLeave);
-            // 
-            // pbFurnaceManual
-            // 
-            this.pbFurnaceManual.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbFurnaceManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbFurnaceManual.Location = new System.Drawing.Point(944, 72);
-            this.pbFurnaceManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbFurnaceManual.Name = "pbFurnaceManual";
-            this.pbFurnaceManual.Size = new System.Drawing.Size(25, 25);
-            this.pbFurnaceManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFurnaceManual.TabIndex = 48;
-            this.pbFurnaceManual.TabStop = false;
-            this.pbFurnaceManual.Click += new System.EventHandler(this.pbFurnaceManual_Click);
-            this.pbFurnaceManual.MouseEnter += new System.EventHandler(this.pbFurnaceManual_MouseEnter);
-            this.pbFurnaceManual.MouseLeave += new System.EventHandler(this.pbFurnaceManual_MouseLeave);
-            // 
-            // pbSlipAlarms
-            // 
-            this.pbSlipAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipAlarms.Location = new System.Drawing.Point(206, 114);
-            this.pbSlipAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipAlarms.Name = "pbSlipAlarms";
-            this.pbSlipAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbSlipAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipAlarms.TabIndex = 49;
-            this.pbSlipAlarms.TabStop = false;
-            this.pbSlipAlarms.Click += new System.EventHandler(this.pbSlipAlarms_Click);
-            this.pbSlipAlarms.MouseEnter += new System.EventHandler(this.pbSlipAlarms_MouseEnter);
-            this.pbSlipAlarms.MouseLeave += new System.EventHandler(this.pbSlipAlarms_MouseLeave);
-            // 
-            // pbSlipSettings
-            // 
-            this.pbSlipSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipSettings.Location = new System.Drawing.Point(82, 114);
-            this.pbSlipSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipSettings.Name = "pbSlipSettings";
-            this.pbSlipSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbSlipSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipSettings.TabIndex = 49;
-            this.pbSlipSettings.TabStop = false;
-            this.pbSlipSettings.Click += new System.EventHandler(this.pbSlipSettings_Click);
-            this.pbSlipSettings.MouseEnter += new System.EventHandler(this.pbSlipSettings_MouseEnter);
-            this.pbSlipSettings.MouseLeave += new System.EventHandler(this.pbSlipSettings_MouseLeave);
-            // 
-            // pbSlipRemote
-            // 
-            this.pbSlipRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipRemote.Location = new System.Drawing.Point(264, 114);
-            this.pbSlipRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipRemote.Name = "pbSlipRemote";
-            this.pbSlipRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbSlipRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipRemote.TabIndex = 49;
-            this.pbSlipRemote.TabStop = false;
-            this.pbSlipRemote.MouseEnter += new System.EventHandler(this.pbSlipRemote_MouseEnter);
-            this.pbSlipRemote.MouseLeave += new System.EventHandler(this.pbSlipRemote_MouseLeave);
-            // 
-            // pbSlipAuto
-            // 
-            this.pbSlipAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipAuto.Location = new System.Drawing.Point(235, 114);
-            this.pbSlipAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipAuto.Name = "pbSlipAuto";
-            this.pbSlipAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbSlipAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipAuto.TabIndex = 49;
-            this.pbSlipAuto.TabStop = false;
-            this.pbSlipAuto.MouseEnter += new System.EventHandler(this.pbSlipAuto_MouseEnter);
-            this.pbSlipAuto.MouseLeave += new System.EventHandler(this.pbSlipAuto_MouseLeave);
-            // 
-            // pbSlipReports
-            // 
-            this.pbSlipReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipReports.Location = new System.Drawing.Point(140, 114);
-            this.pbSlipReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipReports.Name = "pbSlipReports";
-            this.pbSlipReports.Size = new System.Drawing.Size(25, 25);
-            this.pbSlipReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipReports.TabIndex = 49;
-            this.pbSlipReports.TabStop = false;
-            this.pbSlipReports.Click += new System.EventHandler(this.pbSlipReports_Click);
-            this.pbSlipReports.MouseEnter += new System.EventHandler(this.pbSlipReports_MouseEnter);
-            this.pbSlipReports.MouseLeave += new System.EventHandler(this.pbSlipReports_MouseLeave);
-            // 
-            // pbSlipManual
-            // 
-            this.pbSlipManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipManual.Location = new System.Drawing.Point(111, 114);
-            this.pbSlipManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipManual.Name = "pbSlipManual";
-            this.pbSlipManual.Size = new System.Drawing.Size(25, 25);
-            this.pbSlipManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipManual.TabIndex = 49;
-            this.pbSlipManual.TabStop = false;
-            this.pbSlipManual.Click += new System.EventHandler(this.pbSlipManual_Click);
-            this.pbSlipManual.MouseEnter += new System.EventHandler(this.pbSlipManual_MouseEnter);
-            this.pbSlipManual.MouseLeave += new System.EventHandler(this.pbSlipManual_MouseLeave);
-            // 
-            // pbSlipDetails
-            // 
-            this.pbSlipDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlipDetails.Location = new System.Drawing.Point(19, 25);
-            this.pbSlipDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbSlipDetails.Name = "pbSlipDetails";
-            this.pbSlipDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbSlipDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSlipDetails.TabIndex = 48;
-            this.pbSlipDetails.TabStop = false;
-            this.pbSlipDetails.Click += new System.EventHandler(this.pbSlipDetails_Click);
-            this.pbSlipDetails.MouseEnter += new System.EventHandler(this.pbSlipDetails_MouseEnter);
-            this.pbSlipDetails.MouseLeave += new System.EventHandler(this.pbSlipDetails_MouseLeave);
-            // 
-            // pbHoistAlarms
-            // 
-            this.pbHoistAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistAlarms.Location = new System.Drawing.Point(210, 112);
-            this.pbHoistAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistAlarms.Name = "pbHoistAlarms";
-            this.pbHoistAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbHoistAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistAlarms.TabIndex = 49;
-            this.pbHoistAlarms.TabStop = false;
-            this.pbHoistAlarms.Click += new System.EventHandler(this.pbHoistAlarms_Click);
-            this.pbHoistAlarms.MouseEnter += new System.EventHandler(this.pbHoistAlarms_MouseEnter);
-            this.pbHoistAlarms.MouseLeave += new System.EventHandler(this.pbHoistAlarms_MouseLeave);
-            // 
-            // pbHoistSettings
-            // 
-            this.pbHoistSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistSettings.Location = new System.Drawing.Point(86, 112);
-            this.pbHoistSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistSettings.Name = "pbHoistSettings";
-            this.pbHoistSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbHoistSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistSettings.TabIndex = 49;
-            this.pbHoistSettings.TabStop = false;
-            this.pbHoistSettings.Click += new System.EventHandler(this.pbHoistSettings_Click);
-            this.pbHoistSettings.MouseEnter += new System.EventHandler(this.pbHoistSettings_MouseEnter);
-            this.pbHoistSettings.MouseLeave += new System.EventHandler(this.pbHoistSettings_MouseLeave);
-            // 
-            // pbHoistRemote
-            // 
-            this.pbHoistRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistRemote.Location = new System.Drawing.Point(268, 112);
-            this.pbHoistRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistRemote.Name = "pbHoistRemote";
-            this.pbHoistRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbHoistRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistRemote.TabIndex = 49;
-            this.pbHoistRemote.TabStop = false;
-            this.pbHoistRemote.MouseEnter += new System.EventHandler(this.pbHoistRemote_MouseEnter);
-            this.pbHoistRemote.MouseLeave += new System.EventHandler(this.pbHoistRemote_MouseLeave);
-            // 
-            // pbHoistAuto
-            // 
-            this.pbHoistAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistAuto.Location = new System.Drawing.Point(239, 112);
-            this.pbHoistAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistAuto.Name = "pbHoistAuto";
-            this.pbHoistAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbHoistAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistAuto.TabIndex = 49;
-            this.pbHoistAuto.TabStop = false;
-            this.pbHoistAuto.MouseEnter += new System.EventHandler(this.pbHoistAuto_MouseEnter);
-            this.pbHoistAuto.MouseLeave += new System.EventHandler(this.pbHoistAuto_MouseLeave);
-            // 
-            // pbHoistManual
-            // 
-            this.pbHoistManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistManual.Location = new System.Drawing.Point(115, 112);
-            this.pbHoistManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistManual.Name = "pbHoistManual";
-            this.pbHoistManual.Size = new System.Drawing.Size(25, 25);
-            this.pbHoistManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistManual.TabIndex = 49;
-            this.pbHoistManual.TabStop = false;
-            this.pbHoistManual.Click += new System.EventHandler(this.pbHoistManual_Click);
-            this.pbHoistManual.MouseEnter += new System.EventHandler(this.pbHoistManual_MouseEnter);
-            this.pbHoistManual.MouseLeave += new System.EventHandler(this.pbHoistManual_MouseLeave);
-            // 
-            // pbHoistReports
-            // 
-            this.pbHoistReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistReports.Location = new System.Drawing.Point(144, 112);
-            this.pbHoistReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistReports.Name = "pbHoistReports";
-            this.pbHoistReports.Size = new System.Drawing.Size(25, 25);
-            this.pbHoistReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistReports.TabIndex = 49;
-            this.pbHoistReports.TabStop = false;
-            this.pbHoistReports.Click += new System.EventHandler(this.pbHoistReports_Click);
-            this.pbHoistReports.MouseEnter += new System.EventHandler(this.pbHoistReports_MouseEnter);
-            this.pbHoistReports.MouseLeave += new System.EventHandler(this.pbHoistReports_MouseLeave);
-            // 
-            // pbHoistDetails
-            // 
-            this.pbHoistDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbHoistDetails.Location = new System.Drawing.Point(17, 19);
-            this.pbHoistDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHoistDetails.Name = "pbHoistDetails";
-            this.pbHoistDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbHoistDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHoistDetails.TabIndex = 48;
-            this.pbHoistDetails.TabStop = false;
-            this.pbHoistDetails.Click += new System.EventHandler(this.pbHoistDetails_Click);
-            this.pbHoistDetails.MouseEnter += new System.EventHandler(this.pbHoistDetails_MouseEnter);
-            this.pbHoistDetails.MouseLeave += new System.EventHandler(this.pbHoistDetails_MouseLeave);
-            // 
-            // pbTransformatorsAlarms
-            // 
-            this.pbTransformatorsAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsAlarms.Location = new System.Drawing.Point(209, 113);
-            this.pbTransformatorsAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsAlarms.Name = "pbTransformatorsAlarms";
-            this.pbTransformatorsAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbTransformatorsAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsAlarms.TabIndex = 49;
-            this.pbTransformatorsAlarms.TabStop = false;
-            this.pbTransformatorsAlarms.Click += new System.EventHandler(this.pbCbAlarms_Click);
-            this.pbTransformatorsAlarms.MouseEnter += new System.EventHandler(this.pbTransformatorsAlarms_MouseEnter);
-            this.pbTransformatorsAlarms.MouseLeave += new System.EventHandler(this.pbTransformatorsAlarms_MouseLeave);
-            // 
-            // pbTransformatorsSettings
-            // 
-            this.pbTransformatorsSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsSettings.Location = new System.Drawing.Point(85, 113);
-            this.pbTransformatorsSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsSettings.Name = "pbTransformatorsSettings";
-            this.pbTransformatorsSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbTransformatorsSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsSettings.TabIndex = 49;
-            this.pbTransformatorsSettings.TabStop = false;
-            this.pbTransformatorsSettings.Click += new System.EventHandler(this.pbCbSettings_Click);
-            this.pbTransformatorsSettings.MouseEnter += new System.EventHandler(this.pbTransformatorsSettings_MouseEnter);
-            this.pbTransformatorsSettings.MouseLeave += new System.EventHandler(this.pbTransformatorsSettings_MouseLeave);
-            // 
-            // pbTransformatorsRemote
-            // 
-            this.pbTransformatorsRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsRemote.Location = new System.Drawing.Point(267, 113);
-            this.pbTransformatorsRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsRemote.Name = "pbTransformatorsRemote";
-            this.pbTransformatorsRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbTransformatorsRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsRemote.TabIndex = 49;
-            this.pbTransformatorsRemote.TabStop = false;
-            this.pbTransformatorsRemote.MouseEnter += new System.EventHandler(this.pbTransformatorsRemote_MouseEnter);
-            this.pbTransformatorsRemote.MouseLeave += new System.EventHandler(this.pbTransformatorsRemote_MouseLeave);
-            // 
-            // pbTransformatorsAuto
-            // 
-            this.pbTransformatorsAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsAuto.Location = new System.Drawing.Point(238, 113);
-            this.pbTransformatorsAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsAuto.Name = "pbTransformatorsAuto";
-            this.pbTransformatorsAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbTransformatorsAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsAuto.TabIndex = 49;
-            this.pbTransformatorsAuto.TabStop = false;
-            this.pbTransformatorsAuto.MouseEnter += new System.EventHandler(this.pbTransformatorsAuto_MouseEnter);
-            this.pbTransformatorsAuto.MouseLeave += new System.EventHandler(this.pbTransformatorsAuto_MouseLeave);
-            // 
-            // pbTransformatorsManual
-            // 
-            this.pbTransformatorsManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsManual.Location = new System.Drawing.Point(114, 113);
-            this.pbTransformatorsManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsManual.Name = "pbTransformatorsManual";
-            this.pbTransformatorsManual.Size = new System.Drawing.Size(25, 25);
-            this.pbTransformatorsManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsManual.TabIndex = 49;
-            this.pbTransformatorsManual.TabStop = false;
-            this.pbTransformatorsManual.Click += new System.EventHandler(this.pbCbManual_Click);
-            this.pbTransformatorsManual.MouseEnter += new System.EventHandler(this.pbTransformatorsManual_MouseEnter);
-            this.pbTransformatorsManual.MouseLeave += new System.EventHandler(this.pbTransformatorsManual_MouseLeave);
-            // 
-            // pbTransformatorsReports
-            // 
-            this.pbTransformatorsReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsReports.Location = new System.Drawing.Point(143, 113);
-            this.pbTransformatorsReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsReports.Name = "pbTransformatorsReports";
-            this.pbTransformatorsReports.Size = new System.Drawing.Size(25, 25);
-            this.pbTransformatorsReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsReports.TabIndex = 49;
-            this.pbTransformatorsReports.TabStop = false;
-            this.pbTransformatorsReports.Click += new System.EventHandler(this.pbCbReports_Click);
-            this.pbTransformatorsReports.MouseEnter += new System.EventHandler(this.pbTransformatorsReports_MouseEnter);
-            this.pbTransformatorsReports.MouseLeave += new System.EventHandler(this.pbTransformatorsReports_MouseLeave);
-            // 
-            // pbTransformatorsDetails
-            // 
-            this.pbTransformatorsDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbTransformatorsDetails.Location = new System.Drawing.Point(17, 31);
-            this.pbTransformatorsDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbTransformatorsDetails.Name = "pbTransformatorsDetails";
-            this.pbTransformatorsDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbTransformatorsDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbTransformatorsDetails.TabIndex = 48;
-            this.pbTransformatorsDetails.TabStop = false;
-            this.pbTransformatorsDetails.Click += new System.EventHandler(this.pbTransformatorsDetails_Click);
-            this.pbTransformatorsDetails.MouseEnter += new System.EventHandler(this.pbTransformatorsDetails_MouseEnter);
-            this.pbTransformatorsDetails.MouseLeave += new System.EventHandler(this.pbTransformatorsDetails_MouseLeave);
-            // 
-            // pbStockingAlarms
-            // 
-            this.pbStockingAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingAlarms.Location = new System.Drawing.Point(200, 111);
-            this.pbStockingAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingAlarms.Name = "pbStockingAlarms";
-            this.pbStockingAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbStockingAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingAlarms.TabIndex = 49;
-            this.pbStockingAlarms.TabStop = false;
-            this.pbStockingAlarms.Click += new System.EventHandler(this.pbStockingAlarms_Click);
-            this.pbStockingAlarms.MouseEnter += new System.EventHandler(this.pbStockingAlarms_MouseEnter);
-            this.pbStockingAlarms.MouseLeave += new System.EventHandler(this.pbStockingAlarms_MouseLeave);
-            // 
-            // pbStockingSettings
-            // 
-            this.pbStockingSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingSettings.Location = new System.Drawing.Point(76, 111);
-            this.pbStockingSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingSettings.Name = "pbStockingSettings";
-            this.pbStockingSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbStockingSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingSettings.TabIndex = 49;
-            this.pbStockingSettings.TabStop = false;
-            this.pbStockingSettings.Click += new System.EventHandler(this.pbStockingSettings_Click);
-            this.pbStockingSettings.MouseEnter += new System.EventHandler(this.pbStockingSettings_MouseEnter);
-            this.pbStockingSettings.MouseLeave += new System.EventHandler(this.pbStockingSettings_MouseLeave);
-            // 
-            // pbStockingRemote
-            // 
-            this.pbStockingRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingRemote.Location = new System.Drawing.Point(258, 111);
-            this.pbStockingRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingRemote.Name = "pbStockingRemote";
-            this.pbStockingRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbStockingRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingRemote.TabIndex = 49;
-            this.pbStockingRemote.TabStop = false;
-            this.pbStockingRemote.MouseEnter += new System.EventHandler(this.pbStockingRemote_MouseEnter);
-            this.pbStockingRemote.MouseLeave += new System.EventHandler(this.pbStockingRemote_MouseLeave);
-            // 
-            // pbStockingDetails
-            // 
-            this.pbStockingDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingDetails.Location = new System.Drawing.Point(19, 26);
-            this.pbStockingDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingDetails.Name = "pbStockingDetails";
-            this.pbStockingDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbStockingDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingDetails.TabIndex = 48;
-            this.pbStockingDetails.TabStop = false;
-            this.pbStockingDetails.Click += new System.EventHandler(this.pbStockingDetails_Click);
-            this.pbStockingDetails.MouseEnter += new System.EventHandler(this.pbStockingDetails_MouseEnter);
-            this.pbStockingDetails.MouseLeave += new System.EventHandler(this.pbStockingDetails_MouseLeave);
-            // 
-            // pbStockingAuto
-            // 
-            this.pbStockingAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingAuto.Location = new System.Drawing.Point(229, 111);
-            this.pbStockingAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingAuto.Name = "pbStockingAuto";
-            this.pbStockingAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbStockingAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingAuto.TabIndex = 49;
-            this.pbStockingAuto.TabStop = false;
-            this.pbStockingAuto.MouseEnter += new System.EventHandler(this.pbStockingAuto_MouseEnter);
-            this.pbStockingAuto.MouseLeave += new System.EventHandler(this.pbStockingAuto_MouseLeave);
-            // 
-            // pbStockingReports
-            // 
-            this.pbStockingReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingReports.Location = new System.Drawing.Point(134, 111);
-            this.pbStockingReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingReports.Name = "pbStockingReports";
-            this.pbStockingReports.Size = new System.Drawing.Size(25, 25);
-            this.pbStockingReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingReports.TabIndex = 49;
-            this.pbStockingReports.TabStop = false;
-            this.pbStockingReports.Click += new System.EventHandler(this.pbStockingReports_Click);
-            this.pbStockingReports.MouseEnter += new System.EventHandler(this.pbStockingReports_MouseEnter);
-            this.pbStockingReports.MouseLeave += new System.EventHandler(this.pbStockingReports_MouseLeave);
-            // 
-            // pbStockingManual
-            // 
-            this.pbStockingManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbStockingManual.Location = new System.Drawing.Point(105, 111);
-            this.pbStockingManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbStockingManual.Name = "pbStockingManual";
-            this.pbStockingManual.Size = new System.Drawing.Size(25, 25);
-            this.pbStockingManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStockingManual.TabIndex = 49;
-            this.pbStockingManual.TabStop = false;
-            this.pbStockingManual.Click += new System.EventHandler(this.pbStockingManual_Click);
-            this.pbStockingManual.MouseEnter += new System.EventHandler(this.pbStockingManual_MouseEnter);
-            this.pbStockingManual.MouseLeave += new System.EventHandler(this.pbStockingManual_MouseLeave);
-            // 
-            // pbShellAlarms
-            // 
-            this.pbShellAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellAlarms.Location = new System.Drawing.Point(200, 111);
-            this.pbShellAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellAlarms.Name = "pbShellAlarms";
-            this.pbShellAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbShellAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellAlarms.TabIndex = 49;
-            this.pbShellAlarms.TabStop = false;
-            this.pbShellAlarms.Click += new System.EventHandler(this.pbShellAlarms_Click);
-            this.pbShellAlarms.MouseEnter += new System.EventHandler(this.pbShellAlarms_MouseEnter);
-            this.pbShellAlarms.MouseLeave += new System.EventHandler(this.pbShellAlarms_MouseLeave);
-            // 
-            // pbShellSettings
-            // 
-            this.pbShellSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellSettings.Location = new System.Drawing.Point(76, 111);
-            this.pbShellSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellSettings.Name = "pbShellSettings";
-            this.pbShellSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbShellSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellSettings.TabIndex = 49;
-            this.pbShellSettings.TabStop = false;
-            this.pbShellSettings.Click += new System.EventHandler(this.pbShellSetings_Click);
-            this.pbShellSettings.MouseEnter += new System.EventHandler(this.pbShellSettings_MouseEnter);
-            this.pbShellSettings.MouseLeave += new System.EventHandler(this.pbShellSetings_MouseLeave);
-            // 
-            // pbShellRemote
-            // 
-            this.pbShellRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellRemote.Location = new System.Drawing.Point(258, 111);
-            this.pbShellRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellRemote.Name = "pbShellRemote";
-            this.pbShellRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbShellRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellRemote.TabIndex = 49;
-            this.pbShellRemote.TabStop = false;
-            this.pbShellRemote.MouseEnter += new System.EventHandler(this.pbShellRemote_MouseEnter);
-            this.pbShellRemote.MouseLeave += new System.EventHandler(this.pbShellRemote_MouseLeave);
-            // 
-            // pbShellDetails
-            // 
-            this.pbShellDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellDetails.Location = new System.Drawing.Point(19, 26);
-            this.pbShellDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellDetails.Name = "pbShellDetails";
-            this.pbShellDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbShellDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellDetails.TabIndex = 48;
-            this.pbShellDetails.TabStop = false;
-            this.pbShellDetails.Click += new System.EventHandler(this.pbShellDetails_Click);
-            this.pbShellDetails.MouseEnter += new System.EventHandler(this.pbShellDetails_MouseEnter);
-            this.pbShellDetails.MouseLeave += new System.EventHandler(this.pbShellDetails_MouseLeave);
-            // 
-            // pbShellAuto
-            // 
-            this.pbShellAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellAuto.Location = new System.Drawing.Point(229, 111);
-            this.pbShellAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellAuto.Name = "pbShellAuto";
-            this.pbShellAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbShellAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellAuto.TabIndex = 49;
-            this.pbShellAuto.TabStop = false;
-            this.pbShellAuto.MouseEnter += new System.EventHandler(this.pbShellAuto_MouseEnter);
-            this.pbShellAuto.MouseLeave += new System.EventHandler(this.pbShellAuto_MouseLeave);
-            // 
-            // pbShellReports
-            // 
-            this.pbShellReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellReports.Location = new System.Drawing.Point(134, 111);
-            this.pbShellReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellReports.Name = "pbShellReports";
-            this.pbShellReports.Size = new System.Drawing.Size(25, 25);
-            this.pbShellReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellReports.TabIndex = 49;
-            this.pbShellReports.TabStop = false;
-            this.pbShellReports.Click += new System.EventHandler(this.pbShellReports_Click);
-            this.pbShellReports.MouseEnter += new System.EventHandler(this.pbShellReports_MouseEnter);
-            this.pbShellReports.MouseLeave += new System.EventHandler(this.pbShellReports_MouseLeave);
-            // 
-            // pbShellManual
-            // 
-            this.pbShellManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbShellManual.Location = new System.Drawing.Point(105, 111);
-            this.pbShellManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbShellManual.Name = "pbShellManual";
-            this.pbShellManual.Size = new System.Drawing.Size(25, 25);
-            this.pbShellManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbShellManual.TabIndex = 49;
-            this.pbShellManual.TabStop = false;
-            this.pbShellManual.Click += new System.EventHandler(this.pbShellManual_Click);
-            this.pbShellManual.MouseEnter += new System.EventHandler(this.pbShellManual_MouseEnter);
-            this.pbShellManual.MouseLeave += new System.EventHandler(this.pbShellManual_MouseLeave);
-            // 
-            // pbHydraulicAlarms
-            // 
-            this.pbHydraulicAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicAlarms.Location = new System.Drawing.Point(206, 111);
-            this.pbHydraulicAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicAlarms.Name = "pbHydraulicAlarms";
-            this.pbHydraulicAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbHydraulicAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicAlarms.TabIndex = 49;
-            this.pbHydraulicAlarms.TabStop = false;
-            this.pbHydraulicAlarms.Click += new System.EventHandler(this.pbHydraulicAlarms_Click);
-            this.pbHydraulicAlarms.MouseEnter += new System.EventHandler(this.pbHydraulicAlarms_MouseEnter);
-            this.pbHydraulicAlarms.MouseLeave += new System.EventHandler(this.pbHydraulicAlarms_MouseLeave);
-            // 
-            // pbHydraulicSettings
-            // 
-            this.pbHydraulicSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicSettings.Location = new System.Drawing.Point(82, 111);
-            this.pbHydraulicSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicSettings.Name = "pbHydraulicSettings";
-            this.pbHydraulicSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbHydraulicSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicSettings.TabIndex = 49;
-            this.pbHydraulicSettings.TabStop = false;
-            this.pbHydraulicSettings.Click += new System.EventHandler(this.pbHydraulicSettings_Click);
-            this.pbHydraulicSettings.MouseEnter += new System.EventHandler(this.pbHydraulicSettings_MouseEnter);
-            this.pbHydraulicSettings.MouseLeave += new System.EventHandler(this.pbHydraulicSettings_MouseLeave);
-            // 
-            // pbHydraulicRemote
-            // 
-            this.pbHydraulicRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicRemote.Location = new System.Drawing.Point(264, 111);
-            this.pbHydraulicRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicRemote.Name = "pbHydraulicRemote";
-            this.pbHydraulicRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbHydraulicRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicRemote.TabIndex = 49;
-            this.pbHydraulicRemote.TabStop = false;
-            this.pbHydraulicRemote.MouseEnter += new System.EventHandler(this.pbHydraulicRemote_MouseEnter);
-            this.pbHydraulicRemote.MouseLeave += new System.EventHandler(this.pbHydraulicRemote_MouseLeave);
-            // 
-            // pbHydraulicAuto
-            // 
-            this.pbHydraulicAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicAuto.Location = new System.Drawing.Point(235, 111);
-            this.pbHydraulicAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicAuto.Name = "pbHydraulicAuto";
-            this.pbHydraulicAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbHydraulicAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicAuto.TabIndex = 49;
-            this.pbHydraulicAuto.TabStop = false;
-            this.pbHydraulicAuto.MouseEnter += new System.EventHandler(this.pbHydraulicAuto_MouseEnter);
-            this.pbHydraulicAuto.MouseLeave += new System.EventHandler(this.pbHydraulicAuto_MouseLeave);
-            // 
-            // pbHydraulicDetails
-            // 
-            this.pbHydraulicDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicDetails.Location = new System.Drawing.Point(19, 25);
-            this.pbHydraulicDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicDetails.Name = "pbHydraulicDetails";
-            this.pbHydraulicDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbHydraulicDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicDetails.TabIndex = 48;
-            this.pbHydraulicDetails.TabStop = false;
-            this.pbHydraulicDetails.Click += new System.EventHandler(this.pbHydraulicDetails_Click);
-            this.pbHydraulicDetails.MouseEnter += new System.EventHandler(this.pbHydraulicDetails_MouseEnter);
-            this.pbHydraulicDetails.MouseLeave += new System.EventHandler(this.pbHydraulicDetails_MouseLeave);
-            // 
-            // pbHydraulicManual
-            // 
-            this.pbHydraulicManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicManual.Location = new System.Drawing.Point(111, 111);
-            this.pbHydraulicManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicManual.Name = "pbHydraulicManual";
-            this.pbHydraulicManual.Size = new System.Drawing.Size(25, 25);
-            this.pbHydraulicManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicManual.TabIndex = 49;
-            this.pbHydraulicManual.TabStop = false;
-            this.pbHydraulicManual.Click += new System.EventHandler(this.pbHydraulicManual_Click);
-            this.pbHydraulicManual.MouseEnter += new System.EventHandler(this.pbHydraulicManual_MouseEnter);
-            this.pbHydraulicManual.MouseLeave += new System.EventHandler(this.pbHydraulicManual_MouseLeave);
-            // 
-            // pbHydraulicReports
-            // 
-            this.pbHydraulicReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbHydraulicReports.Location = new System.Drawing.Point(140, 111);
-            this.pbHydraulicReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbHydraulicReports.Name = "pbHydraulicReports";
-            this.pbHydraulicReports.Size = new System.Drawing.Size(25, 25);
-            this.pbHydraulicReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbHydraulicReports.TabIndex = 49;
-            this.pbHydraulicReports.TabStop = false;
-            this.pbHydraulicReports.Click += new System.EventHandler(this.pbHydraulicReports_Click);
-            this.pbHydraulicReports.MouseEnter += new System.EventHandler(this.pbHydraulicReports_MouseEnter);
-            this.pbHydraulicReports.MouseLeave += new System.EventHandler(this.pbHydraulicReports_MouseLeave);
-            // 
-            // pbCbAlarms
-            // 
-            this.pbCbAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbAlarms.Location = new System.Drawing.Point(210, 95);
-            this.pbCbAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbAlarms.Name = "pbCbAlarms";
-            this.pbCbAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbCbAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbAlarms.TabIndex = 49;
-            this.pbCbAlarms.TabStop = false;
-            this.pbCbAlarms.Click += new System.EventHandler(this.pbCbAlarms_Click);
-            this.pbCbAlarms.MouseEnter += new System.EventHandler(this.pbCbAlarms_MouseEnter);
-            this.pbCbAlarms.MouseLeave += new System.EventHandler(this.pbCbAlarms_MouseLeave);
-            // 
-            // pbCbSettings
-            // 
-            this.pbCbSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbSettings.Location = new System.Drawing.Point(86, 95);
-            this.pbCbSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbSettings.Name = "pbCbSettings";
-            this.pbCbSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbCbSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbSettings.TabIndex = 49;
-            this.pbCbSettings.TabStop = false;
-            this.pbCbSettings.Click += new System.EventHandler(this.pbCbSettings_Click);
-            this.pbCbSettings.MouseEnter += new System.EventHandler(this.pbCbSettings_MouseEnter);
-            this.pbCbSettings.MouseLeave += new System.EventHandler(this.pbCbSettings_MouseLeave);
-            // 
-            // pbCbRemote
-            // 
-            this.pbCbRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbRemote.Location = new System.Drawing.Point(268, 95);
-            this.pbCbRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbRemote.Name = "pbCbRemote";
-            this.pbCbRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbCbRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbRemote.TabIndex = 49;
-            this.pbCbRemote.TabStop = false;
-            this.pbCbRemote.MouseEnter += new System.EventHandler(this.pbCbRemote_MouseEnter);
-            this.pbCbRemote.MouseLeave += new System.EventHandler(this.pbCbRemote_MouseLeave);
-            // 
-            // pbCbAuto
-            // 
-            this.pbCbAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbAuto.Location = new System.Drawing.Point(239, 95);
-            this.pbCbAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbAuto.Name = "pbCbAuto";
-            this.pbCbAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbCbAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbAuto.TabIndex = 49;
-            this.pbCbAuto.TabStop = false;
-            this.pbCbAuto.MouseEnter += new System.EventHandler(this.pbCbAuto_MouseEnter);
-            this.pbCbAuto.MouseLeave += new System.EventHandler(this.pbCbAuto_MouseLeave);
-            // 
-            // pbCbMain
-            // 
-            this.pbCbMain.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbMain.Location = new System.Drawing.Point(17, 27);
-            this.pbCbMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbMain.Name = "pbCbMain";
-            this.pbCbMain.Size = new System.Drawing.Size(60, 60);
-            this.pbCbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbMain.TabIndex = 48;
-            this.pbCbMain.TabStop = false;
-            this.pbCbMain.Click += new System.EventHandler(this.pbCbMain_Click);
-            this.pbCbMain.MouseEnter += new System.EventHandler(this.pbCbMain_MouseEnter);
-            this.pbCbMain.MouseLeave += new System.EventHandler(this.pbCbMain_MouseLeave);
-            // 
-            // pbCbManual
-            // 
-            this.pbCbManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbManual.Location = new System.Drawing.Point(115, 95);
-            this.pbCbManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbManual.Name = "pbCbManual";
-            this.pbCbManual.Size = new System.Drawing.Size(25, 25);
-            this.pbCbManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbManual.TabIndex = 49;
-            this.pbCbManual.TabStop = false;
-            this.pbCbManual.Click += new System.EventHandler(this.pbCbManual_Click);
-            this.pbCbManual.MouseEnter += new System.EventHandler(this.pbCbManual_MouseEnter);
-            this.pbCbManual.MouseLeave += new System.EventHandler(this.pbCbManual_MouseLeave);
-            // 
-            // pbCbReports
-            // 
-            this.pbCbReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbCbReports.Location = new System.Drawing.Point(144, 95);
-            this.pbCbReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbCbReports.Name = "pbCbReports";
-            this.pbCbReports.Size = new System.Drawing.Size(25, 25);
-            this.pbCbReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCbReports.TabIndex = 49;
-            this.pbCbReports.TabStop = false;
-            this.pbCbReports.Click += new System.EventHandler(this.pbCbReports_Click);
-            this.pbCbReports.MouseEnter += new System.EventHandler(this.pbCbReports_MouseEnter);
-            this.pbCbReports.MouseLeave += new System.EventHandler(this.pbCbReports_MouseLeave);
-            // 
-            // pbConnectionAlarms
-            // 
-            this.pbConnectionAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionAlarms.Location = new System.Drawing.Point(210, 93);
-            this.pbConnectionAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionAlarms.Name = "pbConnectionAlarms";
-            this.pbConnectionAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbConnectionAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbConnectionAlarms.TabIndex = 49;
-            this.pbConnectionAlarms.TabStop = false;
-            this.pbConnectionAlarms.Click += new System.EventHandler(this.pbConnectionAlarms_Click);
-            this.pbConnectionAlarms.MouseEnter += new System.EventHandler(this.pbConnectionAlarms_MouseEnter);
-            this.pbConnectionAlarms.MouseLeave += new System.EventHandler(this.pbConnectionAlarms_MouseLeave);
-            // 
-            // pbConnectionSettings
-            // 
-            this.pbConnectionSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionSettings.Location = new System.Drawing.Point(86, 93);
-            this.pbConnectionSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionSettings.Name = "pbConnectionSettings";
-            this.pbConnectionSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbConnectionSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbConnectionSettings.TabIndex = 49;
-            this.pbConnectionSettings.TabStop = false;
-            this.pbConnectionSettings.Click += new System.EventHandler(this.pbConnectionSettings_Click);
-            this.pbConnectionSettings.MouseEnter += new System.EventHandler(this.pbConnectionSettings_MouseEnter);
-            this.pbConnectionSettings.MouseLeave += new System.EventHandler(this.pbConnectionSettings_MouseLeave);
-            // 
-            // pbConnectionRemote
-            // 
-            this.pbConnectionRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionRemote.Location = new System.Drawing.Point(268, 93);
-            this.pbConnectionRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionRemote.Name = "pbConnectionRemote";
-            this.pbConnectionRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbConnectionRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbConnectionRemote.TabIndex = 49;
-            this.pbConnectionRemote.TabStop = false;
-            this.pbConnectionRemote.MouseEnter += new System.EventHandler(this.pbConnectionRemote_MouseEnter);
-            this.pbConnectionRemote.MouseLeave += new System.EventHandler(this.pbConnectionRemote_MouseLeave);
-            // 
-            // pbConnectionAuto
-            // 
-            this.pbConnectionAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionAuto.Location = new System.Drawing.Point(239, 93);
-            this.pbConnectionAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionAuto.Name = "pbConnectionAuto";
-            this.pbConnectionAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbConnectionAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbConnectionAuto.TabIndex = 49;
-            this.pbConnectionAuto.TabStop = false;
-            this.pbConnectionAuto.MouseEnter += new System.EventHandler(this.pbConnectionAuto_MouseEnter);
-            this.pbConnectionAuto.MouseLeave += new System.EventHandler(this.pbConnectionAuto_MouseLeave);
-            // 
-            // pbConnectionReports
-            // 
-            this.pbConnectionReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionReports.Location = new System.Drawing.Point(144, 93);
-            this.pbConnectionReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionReports.Name = "pbConnectionReports";
-            this.pbConnectionReports.Size = new System.Drawing.Size(25, 25);
-            this.pbConnectionReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbConnectionReports.TabIndex = 49;
-            this.pbConnectionReports.TabStop = false;
-            this.pbConnectionReports.Click += new System.EventHandler(this.pbConnectionReports_Click);
-            this.pbConnectionReports.MouseEnter += new System.EventHandler(this.pbConnectionReports_MouseEnter);
-            this.pbConnectionReports.MouseLeave += new System.EventHandler(this.pbConnectionReports_MouseLeave);
-            // 
-            // pbConnectionManual
-            // 
-            this.pbConnectionManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionManual.Location = new System.Drawing.Point(115, 93);
-            this.pbConnectionManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionManual.Name = "pbConnectionManual";
-            this.pbConnectionManual.Size = new System.Drawing.Size(25, 25);
-            this.pbConnectionManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbConnectionManual.TabIndex = 49;
-            this.pbConnectionManual.TabStop = false;
-            this.pbConnectionManual.Click += new System.EventHandler(this.pbConnectionManual_Click);
-            this.pbConnectionManual.MouseEnter += new System.EventHandler(this.pbConnectionManual_MouseEnter);
-            this.pbConnectionManual.MouseLeave += new System.EventHandler(this.pbConnectionManual_MouseLeave);
-            // 
-            // pbConnectionMain
-            // 
-            this.pbConnectionMain.BackColor = System.Drawing.Color.Transparent;
-            this.pbConnectionMain.Location = new System.Drawing.Point(17, 28);
-            this.pbConnectionMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pbConnectionMain.Name = "pbConnectionMain";
-            this.pbConnectionMain.Size = new System.Drawing.Size(60, 60);
-            this.pbConnectionMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbConnectionMain.TabIndex = 48;
-            this.pbConnectionMain.TabStop = false;
-            this.pbConnectionMain.Click += new System.EventHandler(this.pbConnectionMain_Click);
-            this.pbConnectionMain.MouseEnter += new System.EventHandler(this.pbConnectionMain_MouseEnter);
-            this.pbConnectionMain.MouseLeave += new System.EventHandler(this.pbConnectionMain_MouseLeave);
-            // 
-            // pbProductionAlarms
-            // 
-            this.pbProductionAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionAlarms.Location = new System.Drawing.Point(189, 185);
-            this.pbProductionAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionAlarms.Name = "pbProductionAlarms";
-            this.pbProductionAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbProductionAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionAlarms.TabIndex = 49;
-            this.pbProductionAlarms.TabStop = false;
-            this.pbProductionAlarms.Click += new System.EventHandler(this.pbProductionAlarms_Click);
-            this.pbProductionAlarms.MouseEnter += new System.EventHandler(this.pbProductionAlarms_MouseEnter);
-            this.pbProductionAlarms.MouseLeave += new System.EventHandler(this.pbProductionAlarms_MouseLeave);
-            // 
-            // pbProductionSettings
-            // 
-            this.pbProductionSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionSettings.Location = new System.Drawing.Point(65, 185);
-            this.pbProductionSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionSettings.Name = "pbProductionSettings";
-            this.pbProductionSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbProductionSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionSettings.TabIndex = 49;
-            this.pbProductionSettings.TabStop = false;
-            this.pbProductionSettings.Click += new System.EventHandler(this.pbProductionSettings_Click);
-            this.pbProductionSettings.MouseEnter += new System.EventHandler(this.pbProductionSettings_MouseEnter);
-            this.pbProductionSettings.MouseLeave += new System.EventHandler(this.pbProductionSettings_MouseLeave);
-            // 
-            // pbProductionRemote
-            // 
-            this.pbProductionRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionRemote.Location = new System.Drawing.Point(247, 185);
-            this.pbProductionRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionRemote.Name = "pbProductionRemote";
-            this.pbProductionRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbProductionRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionRemote.TabIndex = 49;
-            this.pbProductionRemote.TabStop = false;
-            this.pbProductionRemote.MouseEnter += new System.EventHandler(this.pbProductionRemote_MouseEnter);
-            this.pbProductionRemote.MouseLeave += new System.EventHandler(this.pbProductionRemote_MouseLeave);
-            // 
-            // pbProductionAuto
-            // 
-            this.pbProductionAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionAuto.Location = new System.Drawing.Point(218, 185);
-            this.pbProductionAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionAuto.Name = "pbProductionAuto";
-            this.pbProductionAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbProductionAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionAuto.TabIndex = 49;
-            this.pbProductionAuto.TabStop = false;
-            this.pbProductionAuto.MouseEnter += new System.EventHandler(this.pbProductionAuto_MouseEnter);
-            this.pbProductionAuto.MouseLeave += new System.EventHandler(this.pbProductionAuto_MouseLeave);
-            // 
-            // pbProductionReports
-            // 
-            this.pbProductionReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionReports.Location = new System.Drawing.Point(123, 185);
-            this.pbProductionReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionReports.Name = "pbProductionReports";
-            this.pbProductionReports.Size = new System.Drawing.Size(25, 25);
-            this.pbProductionReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionReports.TabIndex = 49;
-            this.pbProductionReports.TabStop = false;
-            this.pbProductionReports.Click += new System.EventHandler(this.pbProductionReports_Click);
-            this.pbProductionReports.MouseEnter += new System.EventHandler(this.pbProductionReports_MouseEnter);
-            this.pbProductionReports.MouseLeave += new System.EventHandler(this.pbProductionReports_MouseLeave);
-            // 
-            // pbProductionManual
-            // 
-            this.pbProductionManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionManual.Location = new System.Drawing.Point(94, 185);
-            this.pbProductionManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionManual.Name = "pbProductionManual";
-            this.pbProductionManual.Size = new System.Drawing.Size(25, 25);
-            this.pbProductionManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionManual.TabIndex = 49;
-            this.pbProductionManual.TabStop = false;
-            this.pbProductionManual.Click += new System.EventHandler(this.pbProductionManual_Click);
-            this.pbProductionManual.MouseEnter += new System.EventHandler(this.pbProductionManual_MouseEnter);
-            this.pbProductionManual.MouseLeave += new System.EventHandler(this.pbProductionManual_MouseLeave);
-            // 
-            // pbProductionDetails
-            // 
-            this.pbProductionDetails.BackColor = System.Drawing.Color.Transparent;
-            this.pbProductionDetails.Location = new System.Drawing.Point(19, 26);
-            this.pbProductionDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.pbProductionDetails.Name = "pbProductionDetails";
-            this.pbProductionDetails.Size = new System.Drawing.Size(60, 60);
-            this.pbProductionDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbProductionDetails.TabIndex = 48;
-            this.pbProductionDetails.TabStop = false;
-            this.pbProductionDetails.Click += new System.EventHandler(this.pbProductionDetails_Click);
-            this.pbProductionDetails.MouseEnter += new System.EventHandler(this.pbProductionDetails_MouseEnter);
-            this.pbProductionDetails.MouseLeave += new System.EventHandler(this.pbProductionDetails_MouseLeave);
-            // 
-            // pbPowerAlarms
-            // 
-            this.pbPowerAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerAlarms.Location = new System.Drawing.Point(210, 224);
-            this.pbPowerAlarms.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerAlarms.Name = "pbPowerAlarms";
-            this.pbPowerAlarms.Size = new System.Drawing.Size(25, 25);
-            this.pbPowerAlarms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPowerAlarms.TabIndex = 49;
-            this.pbPowerAlarms.TabStop = false;
-            this.pbPowerAlarms.Click += new System.EventHandler(this.pbPowerAlarms_Click);
-            this.pbPowerAlarms.MouseEnter += new System.EventHandler(this.pbPowerAlarms_MouseEnter);
-            this.pbPowerAlarms.MouseLeave += new System.EventHandler(this.pbPowerAlarms_MouseLeave);
-            // 
-            // pbPowerSettings
-            // 
-            this.pbPowerSettings.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerSettings.Location = new System.Drawing.Point(86, 224);
-            this.pbPowerSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerSettings.Name = "pbPowerSettings";
-            this.pbPowerSettings.Size = new System.Drawing.Size(25, 25);
-            this.pbPowerSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPowerSettings.TabIndex = 49;
-            this.pbPowerSettings.TabStop = false;
-            this.pbPowerSettings.Click += new System.EventHandler(this.pbPowerSettings_Click);
-            this.pbPowerSettings.MouseEnter += new System.EventHandler(this.pbPowerSettings_MouseEnter);
-            this.pbPowerSettings.MouseLeave += new System.EventHandler(this.pbPowerSettings_MouseLeave);
-            // 
-            // pbPowerRemote
-            // 
-            this.pbPowerRemote.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerRemote.Location = new System.Drawing.Point(268, 224);
-            this.pbPowerRemote.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerRemote.Name = "pbPowerRemote";
-            this.pbPowerRemote.Size = new System.Drawing.Size(25, 25);
-            this.pbPowerRemote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPowerRemote.TabIndex = 49;
-            this.pbPowerRemote.TabStop = false;
-            this.pbPowerRemote.MouseEnter += new System.EventHandler(this.pbPowerRemote_MouseEnter);
-            this.pbPowerRemote.MouseLeave += new System.EventHandler(this.pbPowerRemote_MouseLeave);
-            // 
-            // pbPowerAuto
-            // 
-            this.pbPowerAuto.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerAuto.Location = new System.Drawing.Point(239, 224);
-            this.pbPowerAuto.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerAuto.Name = "pbPowerAuto";
-            this.pbPowerAuto.Size = new System.Drawing.Size(25, 25);
-            this.pbPowerAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPowerAuto.TabIndex = 49;
-            this.pbPowerAuto.TabStop = false;
-            this.pbPowerAuto.MouseEnter += new System.EventHandler(this.pbPowerAuto_MouseEnter);
-            this.pbPowerAuto.MouseLeave += new System.EventHandler(this.pbPowerAuto_MouseLeave);
-            // 
-            // pbPowerReports
-            // 
-            this.pbPowerReports.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerReports.Location = new System.Drawing.Point(144, 224);
-            this.pbPowerReports.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerReports.Name = "pbPowerReports";
-            this.pbPowerReports.Size = new System.Drawing.Size(25, 25);
-            this.pbPowerReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPowerReports.TabIndex = 49;
-            this.pbPowerReports.TabStop = false;
-            this.pbPowerReports.Click += new System.EventHandler(this.pbPowerReports_Click);
-            this.pbPowerReports.MouseEnter += new System.EventHandler(this.pbPowerReports_MouseEnter);
-            this.pbPowerReports.MouseLeave += new System.EventHandler(this.pbPowerReports_MouseLeave);
-            // 
-            // pbPowerManual
-            // 
-            this.pbPowerManual.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerManual.Location = new System.Drawing.Point(115, 224);
-            this.pbPowerManual.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerManual.Name = "pbPowerManual";
-            this.pbPowerManual.Size = new System.Drawing.Size(25, 25);
-            this.pbPowerManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPowerManual.TabIndex = 49;
-            this.pbPowerManual.TabStop = false;
-            this.pbPowerManual.Click += new System.EventHandler(this.pbPowerManual_Click);
-            this.pbPowerManual.MouseEnter += new System.EventHandler(this.pbPowerManual_MouseEnter);
-            this.pbPowerManual.MouseLeave += new System.EventHandler(this.pbPowerManual_MouseLeave);
-            // 
-            // pbPowerMain
-            // 
-            this.pbPowerMain.BackColor = System.Drawing.Color.Transparent;
-            this.pbPowerMain.Location = new System.Drawing.Point(17, 25);
-            this.pbPowerMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPowerMain.Name = "pbPowerMain";
-            this.pbPowerMain.Size = new System.Drawing.Size(60, 60);
-            this.pbPowerMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPowerMain.TabIndex = 48;
-            this.pbPowerMain.TabStop = false;
-            this.pbPowerMain.Click += new System.EventHandler(this.pbPowerMain_Click);
-            this.pbPowerMain.MouseEnter += new System.EventHandler(this.pbPowerMain_MouseEnter);
-            this.pbPowerMain.MouseLeave += new System.EventHandler(this.pbPowerMain_MouseLeave);
-            // 
             // frmFurnaceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3447,95 +3447,6 @@
             this.Load += new System.EventHandler(this.frmFurnaceControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceMute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceFullScreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlipDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHoistDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStockingManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShellManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCbReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionRemote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAuto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProductionDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerAlarms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerRemote)).EndInit();
@@ -3543,6 +3454,95 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerManual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPowerMain)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductionDetails)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionMain)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCbReports)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHydraulicReports)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTransformatorsDetails)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHoistDetails)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlipDetails)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceManual)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShellManual)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingRemote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStockingManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceMute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFurnaceFullScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
