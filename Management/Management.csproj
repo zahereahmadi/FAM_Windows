@@ -39,27 +39,29 @@
     <ApplicationIcon>ICON3.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\FAM_Project\Automation\bin\Debug\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>.\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\FAM_Project\Automation\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>.\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net">
+      <HintPath>..\..\..\..\s7netplus\S7.Net\bin\Debug\net452\S7.Net.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Base">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_22\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Controls">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_22\Accounting\Accounting.App\bin\Debug\Stimulsoft.Controls.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Controls.Win">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Controls.Win.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Controls.Win.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_22\Accounting\Accounting.App\bin\Debug\Stimulsoft.Report.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Report.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report.Win">
-      <HintPath>..\..\..\Learning\Windows Form\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Report.Win.dll</HintPath>
+      <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Stimulsoft.Report.Win.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -314,6 +316,336 @@
     </Compile>
     <Compile Include="Office\OfficePrefrences.Designer.cs">
       <DependentUpon>OfficePrefrences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmCoolingControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmCoolingControl.Designer.cs">
+      <DependentUpon>frmCoolingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControl.Designer.cs">
+      <DependentUpon>frmFurnaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlFurnaceAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlFurnaceAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlFurnaceAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlProductionAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlFurnaceManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlFurnaceManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlFurnaceManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlFurnaceReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlFurnaceReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlFurnaceReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlStockingAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlShellAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlHydraulicAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlProductionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlProductionManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlProductionReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlStockingReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlStockingManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlProductionSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlProductionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlStockingSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlStockingDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlStockingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlShellReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlShellManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlShellSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlShellDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlShellDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlSlipAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlHydraulicDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlHydraulicManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlHydraulicReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlSlipReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlSlipManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHydraulicSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlHydraulicSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlSlipSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlSlipDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlSlipDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlHoistDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlHoistAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlTransformatorsAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlCbAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlHoistManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlHoistReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlTransformatorsReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlTransformatorsManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlHoistSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlHoistSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorsSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlTransformatorsSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlTransformatorDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlTransformatorDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlCbDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlConnectionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlCbManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlConnectionManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlConnectionAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlCbSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlCbReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlCbReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerManual.Designer.cs">
+      <DependentUpon>frmFurnaceControlPowerManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlConnectionReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerReports.Designer.cs">
+      <DependentUpon>frmFurnaceControlPowerReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerAlarms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerAlarms.Designer.cs">
+      <DependentUpon>frmFurnaceControlPowerAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlConnectionSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlConnectionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerSettings.Designer.cs">
+      <DependentUpon>frmFurnaceControlPowerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmFurnaceControlPowerDetails.Designer.cs">
+      <DependentUpon>frmFurnaceControlPowerDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\ProductionPrefrences.cs">
       <SubType>Form</SubType>
@@ -672,6 +1004,171 @@
     <EmbeddedResource Include="Office\OfficePrefrences.resx">
       <DependentUpon>OfficePrefrences.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmCoolingControl.resx">
+      <DependentUpon>frmCoolingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControl.resx">
+      <DependentUpon>frmFurnaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlFurnaceAlarms.resx">
+      <DependentUpon>frmFurnaceControlFurnaceAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlProductionAlarms.resx">
+      <DependentUpon>frmFurnaceControlProductionAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlFurnaceManual.resx">
+      <DependentUpon>frmFurnaceControlFurnaceManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlFurnaceReports.resx">
+      <DependentUpon>frmFurnaceControlFurnaceReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlStockingAlarms.resx">
+      <DependentUpon>frmFurnaceControlStockingAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlShellAlarms.resx">
+      <DependentUpon>frmFurnaceControlShellAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHydraulicAlarms.resx">
+      <DependentUpon>frmFurnaceControlHydraulicAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlProductionDetails.resx">
+      <DependentUpon>frmFurnaceControlProductionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlProductionManual.resx">
+      <DependentUpon>frmFurnaceControlProductionManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlProductionReports.resx">
+      <DependentUpon>frmFurnaceControlProductionReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlStockingReports.resx">
+      <DependentUpon>frmFurnaceControlStockingReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlStockingManual.resx">
+      <DependentUpon>frmFurnaceControlStockingManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlProductionSettings.resx">
+      <DependentUpon>frmFurnaceControlProductionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlStockingSettings.resx">
+      <DependentUpon>frmFurnaceControlStockingSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlStockingDetails.resx">
+      <DependentUpon>frmFurnaceControlStockingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlShellReports.resx">
+      <DependentUpon>frmFurnaceControlShellReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlShellManual.resx">
+      <DependentUpon>frmFurnaceControlShellManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlShellSettings.resx">
+      <DependentUpon>frmFurnaceControlShellSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlShellDetails.resx">
+      <DependentUpon>frmFurnaceControlShellDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlSlipAlarms.resx">
+      <DependentUpon>frmFurnaceControlSlipAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHydraulicDetails.resx">
+      <DependentUpon>frmFurnaceControlHydraulicDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHydraulicManual.resx">
+      <DependentUpon>frmFurnaceControlHydraulicManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHydraulicReports.resx">
+      <DependentUpon>frmFurnaceControlHydraulicReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlSlipReports.resx">
+      <DependentUpon>frmFurnaceControlSlipReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlSlipManual.resx">
+      <DependentUpon>frmFurnaceControlSlipManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHydraulicSettings.resx">
+      <DependentUpon>frmFurnaceControlHydraulicSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlSlipSettings.resx">
+      <DependentUpon>frmFurnaceControlSlipSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlSlipDetails.resx">
+      <DependentUpon>frmFurnaceControlSlipDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHoistDetails.resx">
+      <DependentUpon>frmFurnaceControlHoistDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHoistAlarms.resx">
+      <DependentUpon>frmFurnaceControlHoistAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlTransformatorsAlarms.resx">
+      <DependentUpon>frmFurnaceControlTransformatorsAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlCbAlarms.resx">
+      <DependentUpon>frmFurnaceControlCbAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHoistManual.resx">
+      <DependentUpon>frmFurnaceControlHoistManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHoistReports.resx">
+      <DependentUpon>frmFurnaceControlHoistReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlTransformatorsReports.resx">
+      <DependentUpon>frmFurnaceControlTransformatorsReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlTransformatorsManual.resx">
+      <DependentUpon>frmFurnaceControlTransformatorsManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlHoistSettings.resx">
+      <DependentUpon>frmFurnaceControlHoistSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlTransformatorsSettings.resx">
+      <DependentUpon>frmFurnaceControlTransformatorsSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlTransformatorDetails.resx">
+      <DependentUpon>frmFurnaceControlTransformatorDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlCbDetails.resx">
+      <DependentUpon>frmFurnaceControlCbDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlConnectionDetails.resx">
+      <DependentUpon>frmFurnaceControlConnectionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlCbManual.resx">
+      <DependentUpon>frmFurnaceControlCbManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlConnectionManual.resx">
+      <DependentUpon>frmFurnaceControlConnectionManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlConnectionAlarms.resx">
+      <DependentUpon>frmFurnaceControlConnectionAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlCbSettings.resx">
+      <DependentUpon>frmFurnaceControlCbSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlCbReports.resx">
+      <DependentUpon>frmFurnaceControlCbReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlPowerManual.resx">
+      <DependentUpon>frmFurnaceControlPowerManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlConnectionReports.resx">
+      <DependentUpon>frmFurnaceControlConnectionReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlPowerReports.resx">
+      <DependentUpon>frmFurnaceControlPowerReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlPowerAlarms.resx">
+      <DependentUpon>frmFurnaceControlPowerAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlConnectionSettings.resx">
+      <DependentUpon>frmFurnaceControlConnectionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlPowerSettings.resx">
+      <DependentUpon>frmFurnaceControlPowerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmFurnaceControlPowerDetails.resx">
+      <DependentUpon>frmFurnaceControlPowerDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production\ProductionPrefrences.resx">
       <DependentUpon>ProductionPrefrences.cs</DependentUpon>
     </EmbeddedResource>
@@ -842,6 +1339,9 @@
     <Content Include="ICON3.ico" />
     <Content Include="Resources\7_1.png" />
     <Content Include="Resources\7_2.png" />
+    <None Include="Resources\a2.fw1.png" />
+    <Content Include="Resources\a2.fw.png" />
+    <None Include="Resources\image3.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Automation\Automation.csproj">

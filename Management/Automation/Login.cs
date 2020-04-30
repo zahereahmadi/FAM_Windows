@@ -36,55 +36,255 @@ namespace Baran.Ferroalloy.Management
             if (FamSetting.GetSaveUserName(this.setSettings.strXmlPath))
             {
                 this.CbSaveUserName.Checked = true;
-                this.tbUsername.Text = FamSetting.GetLastUserName(this.setSettings.strXmlPath);
+                this.tbCoId.Text = FamSetting.GetLastUserName(this.setSettings.strXmlPath);
             }
         }
 
         private void btmOk_Click(object sender, EventArgs e)
         {
-            User.AccountStatus usUserStatus = User.GetAccountStatus(this.cnConnection, this.tbUsername.Text, this.tbPassword.Text);
-
-            switch (usUserStatus)
+            if (tbCoId.Text == "" || tbPassword.Text == "")
             {
-                case User.AccountStatus.AccountIsReady:
-                    User.Login(this.cnConnection, ref this.usLogined, this.tbUsername.Text, this.tbPassword.Text);
-                    Employee.GetByCoID(this.cnConnection, this.usLogined.strCoID, this.emLogined);
-                    this.frmManagement.staUser.Text = this.emLogined.strName;
-                    SetApplicationFacilities();
+                this.labMessage.ForeColor = Color.Red;
+                this.labMessage.Text = "لطفا نام کاربری و رمز ورود را وارد کنید. ";
+            }
+            else
+            {
+                using (UnitOfWork db = new UnitOfWork())
+                {
                     if (this.CbSaveUserName.Checked)
                     {
-                        FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbUsername.Text);
+                        FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbCoId.Text);
                     }
-                    this.frmManagement.menLogIn.Enabled = false;
-                    this.frmManagement.menLogOut.Enabled = true;
-                    this.Close();
-                    break;
-
-                case User.AccountStatus.AccountAlreadyLogined:
-                    this.labMessage.ForeColor = Color.Red;
-                    this.labMessage.Text = "این کاربر پیش از این به سامانه وارد شده است. ";
-                    DialogResult drResult = MessageBox.Show("آیا کاربری که پیش از این وارد شده است خارج و شما وارد شوید؟", "پرسش", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                        MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
-                    if (drResult == DialogResult.Yes)
+                    var employees = db.Employees.GetEntity(t => t.nvcCoID == tbCoId.Text && t.nvcPassword == tbPassword.Text);
+                    if (employees != null)
                     {
-                        User.Login(this.cnConnection, ref this.usLogined, this.tbUsername.Text, this.tbPassword.Text);
-                        Employee.GetByCoID(this.cnConnection, this.usLogined.strCoID, this.emLogined);
-                        this.frmManagement.staUser.Text = this.emLogined.strName;
-                        SetApplicationFacilities();
-                        if (this.CbSaveUserName.Checked)
-                        {
-                            FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbUsername.Text);
-                        }
+                        employees.bitLogined = true;
+                        db.Save();
+                        frmManagement.staUser.Text = employees.nvcFirstname + " " + employees.nvcLastname;
+                        SetApplicationFacilities(employees.intPost, employees.intDepartment,
+                            employees.intSubDepartment);
                         this.frmManagement.menLogIn.Enabled = false;
                         this.frmManagement.menLogOut.Enabled = true;
                         this.Close();
                     }
-                    break;
+                    else
+                    {
+                        this.labMessage.ForeColor = Color.Red;
+                        this.labMessage.Text = "کارمندی با این مشخصات یافت نشد. ";
+                    }
 
-                case User.AccountStatus.UserOrPassNotCorrect:
-                    this.labMessage.ForeColor = Color.Red;
-                    this.labMessage.Text = "نام کاربری یا گذرواژه اشتباه است.";
-                    break;
+                }
+            }
+            //User.AccountStatus usUserStatus = User.GetAccountStatus(this.cnConnection, this.tbCoId.Text, this.tbPassword.Text);
+
+            //switch (usUserStatus)
+            //{
+            //    case User.AccountStatus.AccountIsReady:
+            //        User.Login(this.cnConnection, ref this.usLogined, this.tbCoId.Text, this.tbPassword.Text);
+            //        Employee.GetByCoID(this.cnConnection, this.usLogined.strCoID, this.emLogined);
+            //        this.frmManagement.staUser.Text = this.emLogined.strName;
+            //        SetApplicationFacilities();
+            //        if (this.CbSaveUserName.Checked)
+            //        {
+            //            FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbCoId.Text);
+            //        }
+            //        this.frmManagement.menLogIn.Enabled = false;
+            //        this.frmManagement.menLogOut.Enabled = true;
+            //        this.Close();
+            //        break;
+
+            //    case User.AccountStatus.AccountAlreadyLogined:
+            //        this.labMessage.ForeColor = Color.Red;
+            //        this.labMessage.Text = "این کاربر پیش از این به سامانه وارد شده است. ";
+            //        DialogResult drResult = MessageBox.Show("آیا کاربری که پیش از این وارد شده است خارج و شما وارد شوید؟", "پرسش", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+            //            MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
+            //        if (drResult == DialogResult.Yes)
+            //        {
+            //            User.Login(this.cnConnection, ref this.usLogined, this.tbCoId.Text, this.tbPassword.Text);
+            //            Employee.GetByCoID(this.cnConnection, this.usLogined.strCoID, this.emLogined);
+            //            this.frmManagement.staUser.Text = this.emLogined.strName;
+            //            SetApplicationFacilities();
+            //            if (this.CbSaveUserName.Checked)
+            //            {
+            //                FamSetting.SetLastUserName(this.setSettings.strXmlPath, this.tbCoId.Text);
+            //            }
+            //            this.frmManagement.menLogIn.Enabled = false;
+            //            this.frmManagement.menLogOut.Enabled = true;
+            //            this.Close();
+            //        }
+            //        break;
+
+            //    case User.AccountStatus.UserOrPassNotCorrect:
+            //        this.labMessage.ForeColor = Color.Red;
+            //        this.labMessage.Text = "نام کاربری یا گذرواژه اشتباه است.";
+            //        break;
+            //}
+        }
+
+        private void SetApplicationFacilities(int? postId, int? departmentId, int? subDepartmentId)
+        {
+           if(postId == 1 && departmentId == 1/* && subDepartmentId == 0*/)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.menOfficeStore.Enabled = true;
+                frmManagement.MensOfficeDepartmentStorePurchaseRequests.Enabled = true;
+                frmManagement.MensOfficeDepartmentStoreGetOuts.Enabled = true;
+                frmManagement.menOfficeDepartmentPrefrences.Enabled = true;
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menNormalAccounting.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.menCommerce.Enabled = true;
+                frmManagement.menProduction.Enabled = true;
+                frmManagement.menLoadingRegister.Enabled = true;
+                frmManagement.menProductionDepartmentPrefrences.Enabled = true;
+                frmManagement.MensProductionDepartmentStorePurchaseRequests.Enabled = true;
+                frmManagement.mensProductionDepartmentStoreGetOuts.Enabled = true;
+                frmManagement.menTechnical.Enabled = true;
+                frmManagement.menTechnicalDepartmentElectricalFurnace.Enabled = true;
+                frmManagement.menTechnicalDepartmentProjects.Enabled = true;
+                frmManagement.menuParts.Enabled = true;
+                frmManagement.menuEquips.Enabled = true;
+                frmManagement.menTechnicalDocuments.Enabled = true;
+                frmManagement.menTechnicalDepartmentPrefrences.Enabled = true;
+                frmManagement.menStore.Enabled = true;
+                frmManagement.menStoreDepartmentVendors.Enabled = true;
+                frmManagement.menStoreDepartmentInvoices.Enabled = true;
+                frmManagement.MensStoreDepartmentStorePurchaseRequests.Enabled = true;
+                frmManagement.mensStoreDepartmentStoreGetOuts.Enabled = true;
+                frmManagement.menStoreDepartmentPrefrences.Enabled = true;
+                frmManagement.menLab.Enabled = true;
+                frmManagement.menLabDepartmentPrefrences.Enabled = true;
+
+
+            }
+            else if ((postId == 3 || postId == 4) && departmentId == 1 && subDepartmentId == 0)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = false;
+                // سطح دسترسی = کل کارخانه  و نوع دسترسی = خواندن
+            }
+            else if ((postId == 5 || postId == 8) && departmentId == 1 && subDepartmentId == 1)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = true;
+                // سطح دسترسی = کل کارخانه  و نوع دسترسی = نوشتن
+            }
+
+            else if (postId == 4 && departmentId == 1 && subDepartmentId == 2)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = false;
+                // سطح دسترسی = کارمندان زیرواحد  و نوع دسترسی = خواندن
+            }
+            else if ((postId == 5 || postId == 8) && departmentId == 1 && subDepartmentId == 2)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = false;
+                // سطح دسترسی = خود شخص  و نوع دسترسی = خواندن
+            }
+            else if (postId == 3 && (departmentId == 2 || departmentId == 3 || departmentId == 4 || departmentId == 5 || departmentId == 6) && subDepartmentId == 0)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = false;
+                // سطح دسترسی = واحد مربوطه  و نوع دسترسی = خواندن
+            }
+            else if (postId == 4 && (departmentId == 2 || departmentId == 3 || departmentId == 4 || departmentId == 5 || departmentId == 6) && subDepartmentId == 0)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = false;
+                // سطح دسترسی = کارمندان زیر واحد  و نوع دسترسی = خواندن
+            }
+            else if ((postId == 5 || postId == 6 || postId == 7 || postId == 8) && (departmentId == 2 ||
+                     departmentId == 3 || departmentId == 4 || departmentId == 5 || departmentId == 6) && subDepartmentId == 0)
+            {
+                frmManagement.menOffice.Enabled = true;
+                frmManagement.menEmployees.Enabled = true;
+                frmManagement.menAttendance.Enabled = true;
+                frmManagement.type = false;
+                // سطح دسترسی = خودشخص  و نوع دسترسی = خواندن
+            }
+
+            //   مالی
+            // حسابداری عادی
+
+            else if ((postId == 3 || postId == 4) && departmentId == 2 && subDepartmentId == 0)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menNormalAccounting.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+            else if ((postId == 5 || postId == 8) && departmentId == 2 && subDepartmentId == 1)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menNormalAccounting.Enabled = true;
+                frmManagement.type = true;
+            }
+
+            else if (postId == 4 && departmentId == 2 && subDepartmentId == 2)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menNormalAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+            else if ((postId == 5 || postId == 8) && departmentId == 2 && subDepartmentId == 2)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menNormalAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+
+            //حسابداری صنعتی
+            else if ((postId == 5 || postId == 8) && departmentId == 2 && subDepartmentId == 2)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = true;
+            }
+
+            else if (postId == 4 && departmentId == 2 && subDepartmentId == 1)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+            else if ((postId == 5 || postId == 8) && departmentId == 2 && subDepartmentId == 1)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+            else if (postId == 3 && (departmentId == 2 || departmentId == 3 || departmentId == 4 || departmentId == 5 || departmentId == 6) && subDepartmentId == 0)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+            else if (postId == 4 && (departmentId == 2 || departmentId == 3 || departmentId == 4 || departmentId == 5 || departmentId == 6) && subDepartmentId == 0)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = false;
+            }
+            else if (postId == 5 && (departmentId == 2 || departmentId == 3 || departmentId == 4 || departmentId == 5 || departmentId == 6) && subDepartmentId == 0)
+            {
+                frmManagement.menFinance.Enabled = true;
+                frmManagement.menIndustrialAccounting.Enabled = true;
+                frmManagement.type = true;
             }
         }
 
