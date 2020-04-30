@@ -14,10 +14,19 @@ namespace Baran.Ferroalloy.Automation.Models
     
     public partial class tabPosts
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tabPosts()
+        {
+            this.tabMenusEmployees = new HashSet<tabMenusEmployees>();
+        }
+    
         public int intID { get; set; }
         public bool bitSelect { get; set; }
         public bool bitIsActual { get; set; }
         public string nvcName { get; set; }
         public int intNumber { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabMenusEmployees> tabMenusEmployees { get; set; }
     }
 }

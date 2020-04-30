@@ -14,6 +14,7 @@ using Baran.Ferroalloy.Management.Automation;
 using System.IO;
 using System.Globalization;
 using Baran.Ferroalloy.Management.Maintenance;
+using Baran.Ferroalloy.Management.Store;
 using Baran.Ferroalloy.Office;
 using Baran.Ferroalloy.Management.Production;
 
@@ -268,7 +269,7 @@ namespace Baran.Ferroalloy.Management
                 menWindowsVendors.Click += new System.EventHandler(this.menWindowsVendors_Click);
                 this.menWindows.DropDownItems.Add(menWindowsVendors);
 
-                Vendors frmVendors = new Vendors();
+                FrmVendors frmVendors = new FrmVendors();
                 frmVendors.MdiParent = this;
                 frmVendors.setSettings = this.setSettings;
                 frmVendors.cnConnection = this.cnConnection;
@@ -308,7 +309,7 @@ namespace Baran.Ferroalloy.Management
                 menWindowsInvoices.Click += new System.EventHandler(this.menWindowsInvoices_Click);
                 this.menWindows.DropDownItems.Add(menWindowsInvoices);
 
-                Invoices frmInvoices = new Invoices();
+                FrmInvoices frmInvoices = new FrmInvoices();
                 frmInvoices.setSettings = this.setSettings;
                 frmInvoices.MdiParent = this;
                 frmInvoices.usUser = this.usLogined;

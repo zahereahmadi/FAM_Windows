@@ -12,24 +12,30 @@ namespace Baran.Ferroalloy.Automation.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tabInvoices
+    public partial class tabBuyRequests
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tabInvoices()
+        public tabBuyRequests()
         {
+            this.tabBuyRequestItems = new HashSet<tabBuyRequestItems>();
             this.tabInvoiceItems = new HashSet<tabInvoiceItems>();
         }
     
         public int intID { get; set; }
         public Nullable<bool> bitSelect { get; set; }
-        public int intInvoiceNumbrOfOwner { get; set; }
-        public int intInvoiceNumberOfVendor { get; set; }
+        public int intNumber { get; set; }
+        public int intDepartment { get; set; }
+        public Nullable<int> intRowBudget { get; set; }
         public System.DateTime datDate { get; set; }
-        public int intVendorNumber { get; set; }
-        public string nvcBuyerCoID { get; set; }
+        public string nvcRequesterCoID { get; set; }
+        public string nvcSupervisorCoID { get; set; }
+        public string nvcPlantmanagerCoID { get; set; }
+        public string nvcCeoCoID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tabBuyRequestItems> tabBuyRequestItems { get; set; }
+        public virtual tabDepartments tabDepartments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tabInvoiceItems> tabInvoiceItems { get; set; }
-        public virtual tabVendors tabVendors { get; set; }
     }
 }
