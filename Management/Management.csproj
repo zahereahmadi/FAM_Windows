@@ -46,7 +46,7 @@
       <HintPath>.\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="S7.Net">
-      <HintPath>..\..\..\..\s7netplus\S7.Net\bin\Debug\net452\S7.Net.dll</HintPath>
+      <HintPath>..\S7.Net.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Base">
       <HintPath>..\..\c#\TopLearn.Com_CsharpAdvanced_20\Accounting\Accounting.App\bin\Debug\Stimulsoft.Base.dll</HintPath>

@@ -134,9 +134,6 @@ namespace Baran.Ferroalloy.Management.Maintenance
             txtLeaderWorkGroup.Text = frmSelectEmployee.fullName;
         }
 
-        private void BtmOK_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

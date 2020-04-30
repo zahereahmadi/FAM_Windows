@@ -188,7 +188,7 @@
             this.menIndustrialAccounting.Name = "menIndustrialAccounting";
             this.menIndustrialAccounting.Size = new System.Drawing.Size(163, 22);
             this.menIndustrialAccounting.Text = "حسابداری صنعتی";
-            // 
+
             // menCommerce
             // 
             this.menCommerce.Enabled = false;
