@@ -72,11 +72,11 @@ namespace Baran.Ferroalloy.Automation
                 var leader = db.tabEmployees.FirstOrDefault(t => t.nvcCoID == item.nvcCoIdLeader);
                 leaderWorker = leader.nvcFirstname + " " + leader.nvcLastname;
                 var coIds = item.nvcCoIdsWorkGroup.Split('-');
-                var workersName = coIds.GetNameByCoId();
+                var workersName = MyExtentions.GetNameByCoId(coIds);
                 models.Add(new dgvMaintenanceViewModel()
                 {
                     intID = item.intID,
-                    datWorkGroup = item.datWorkGroup.Date,
+                    datWorkGroup = Convert.ToString(item.datWorkGroup.Date),
                     nameShift = item.tabShifts.nvcName,
                     nameSubDepartment = item.tabSubDepartments.nvcName,
                     workers = workersName,

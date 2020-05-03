@@ -51,7 +51,7 @@ namespace Baran.Ferroalloy.Management
             {
                 using (UnitOfWork db = new UnitOfWork())
                 {
-                    
+
                     var employees = db.Employees.GetEntity(t => t.nvcCoID == tbCoId.Text && t.nvcPassword == tbPassword.Text);
                     if (employees != null)
                     {
@@ -124,7 +124,7 @@ namespace Baran.Ferroalloy.Management
 
         private void SetApplicationFacilities(int? postId, int? departmentId, int? subDepartmentId)
         {
-           if(postId == 1 && departmentId == 1/* && subDepartmentId == 0*/)
+            if (postId == 1 && departmentId == 1/* && subDepartmentId == 0*/)
             {
                 frmManagement.menOffice.Enabled = true;
                 frmManagement.menEmployees.Enabled = true;

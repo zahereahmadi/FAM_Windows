@@ -56,7 +56,7 @@ namespace Baran.Ferroalloy.Management.Store
                         bitSelect = false,
                         datDate = dtpDate.Value,
                         intInvoiceNumberOfVendor = (int)numInvoiceNumberOfVendor.Value,
-                        intInvoiceNumbrOfOwner = max+1,
+                        intInvoiceNumbrOfOwner = max + 1,
                         intVendorNumber = vendorId,
                         nvcBuyerCoID = coId
                     };

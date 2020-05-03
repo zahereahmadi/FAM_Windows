@@ -41,9 +41,9 @@ namespace Baran.Ferroalloy.Management.Store
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-               var invoices = db.Invoices.FilterInvoices(txtBrand.Text.Trim(), (int) numInvoiceNumbrOfOwner.Value,
-                    (int) numInvoiceNumberOfVendor.Value, cbBuyerNames.SelectedItem, dtpFromDate.Value, dtpToDate.Value);
-               dgvInvoice.DataSource=db.Invoices.FillDgvInvoices(invoices);
+                var invoices = db.Invoices.FilterInvoices(txtBrand.Text.Trim(), (int)numInvoiceNumbrOfOwner.Value,
+                     (int)numInvoiceNumberOfVendor.Value, cbBuyerNames.SelectedItem, dtpFromDate.Value, dtpToDate.Value);
+                dgvInvoice.DataSource = db.Invoices.FillDgvInvoices(invoices);
             }
 
         }

@@ -26,7 +26,7 @@ namespace Baran.Ferroalloy.Management.Production
 
         private void frmCoolingControl_Load(object sender, EventArgs e)
         {
-            this.pbCooling.ImageLocation = Application.StartupPath + @"\Pics\A32_a.png";
+            //this.pbCooling.ImageLocation = Application.StartupPath + @"\Pics\A32_a.png";
         }
     }
 }
