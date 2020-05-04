@@ -192,6 +192,7 @@
             this.menFinance.Size = new System.Drawing.Size(52, 30);
             this.menFinance.Text = "مالی";
             // 
+
             // menNormalAccounting
             // 
             this.menNormalAccounting.Enabled = false;
@@ -757,14 +758,17 @@
         public System.Windows.Forms.ToolStripMenuItem menuEquips;
         public System.Windows.Forms.ToolStripMenuItem menTechnicalDocuments;
         public System.Windows.Forms.ToolStripMenuItem menTechnicalDepartmentElectricalFurnace;
-        private System.Windows.Forms.ToolStripMenuItem کنترلکورهToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menFurnaceControl;
-        private System.Windows.Forms.ToolStripMenuItem menCoolingControl;
-        private System.Windows.Forms.ToolStripMenuItem menMaterialHandelingControl;
-        public System.Windows.Forms.ToolStripMenuItem menAttendance;
-        public System.Windows.Forms.ToolStripMenuItem menNormalAccounting;
-        public System.Windows.Forms.ToolStripMenuItem menIndustrialAccounting;
+
         public System.Windows.Forms.ToolStripMenuItem menLoading;
+
+        public System.Windows.Forms.ToolStripMenuItem کنترلکورهToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem menFurnaceControl;
+        public System.Windows.Forms.ToolStripMenuItem menCoolingControl;
+        public System.Windows.Forms.ToolStripMenuItem menMaterialHandelingControl; 
+        public System.Windows.Forms.ToolStripMenuItem menNormalAccounting; 
+        public System.Windows.Forms.ToolStripMenuItem menIndustrialAccounting;
+        public System.Windows.Forms.ToolStripMenuItem menAttendance;
+
     }
 }
 
