@@ -40,7 +40,7 @@ namespace Baran.Ferroalloy.Management.Store
             using (UnitOfWork db=new UnitOfWork())
             {
                 var vendorsList = db.Vendors.FilterVendors(cbCategories.SelectedItem, txtBrand.Text, txtFirstName.Text,
-                    txtLastName.Text,"");
+                    txtLastName.Text, "");
                 dgvVendors.DataSource = db.Vendors.FillDgvVendors(vendorsList);
             }
         }

@@ -48,6 +48,14 @@ namespace Baran.Ferroalloy.Automation.Models
         public virtual DbSet<tabMaintenanceParts> tabMaintenanceParts { get; set; }
         public virtual DbSet<tabMaintenances> tabMaintenances { get; set; }
         public virtual DbSet<tabMeasurementUnits> tabMeasurementUnits { get; set; }
+        public virtual DbSet<tabMenus> tabMenus { get; set; }
+        public virtual DbSet<tabMenusEmployees> tabMenusEmployees { get; set; }
+        public virtual DbSet<tabPartBranch> tabPartBranch { get; set; }
+        public virtual DbSet<tabPartName> tabPartName { get; set; }
+        public virtual DbSet<tabPartSamples> tabPartSamples { get; set; }
+        public virtual DbSet<tabPartSubBranch> tabPartSubBranch { get; set; }
+        public virtual DbSet<tabPartTypes> tabPartTypes { get; set; }
+        public virtual DbSet<tabPosts> tabPosts { get; set; }
         public virtual DbSet<tabProductionMeltLoadings> tabProductionMeltLoadings { get; set; }
         public virtual DbSet<tabProjects> tabProjects { get; set; }
         public virtual DbSet<tabProperties> tabProperties { get; set; }

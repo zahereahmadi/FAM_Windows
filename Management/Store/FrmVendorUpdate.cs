@@ -24,7 +24,7 @@ namespace Baran.Ferroalloy.Management.Store
             using (UnitOfWork db=new UnitOfWork())
             {
                 var vendors = db.Vendors.GetEntity(t => t.intID == vendorId);
-                var categories= db.Categories.GetAll();
+                var categories = db.Categories.GetAll();
                 foreach (var item in categories)
                 {
                     cbCategories.Items.Add(item.nvcName);

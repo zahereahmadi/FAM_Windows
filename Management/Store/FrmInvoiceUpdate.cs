@@ -26,7 +26,7 @@ namespace Baran.Ferroalloy.Management.Store
         {
             using (UnitOfWork db=new UnitOfWork())
             {
-                
+
                 var invoices = db.Invoices.GetEntity(t => t.intID == invoiceId);
                 coId = invoices.nvcBuyerCoID;
                 vendorId = invoices.intVendorNumber;

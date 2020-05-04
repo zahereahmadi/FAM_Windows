@@ -1193,37 +1193,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Association Name="FK_tabVendors_tabCategories">
+          <End Role="tabCategories" Type="Self.tabCategories" Multiplicity="1" />
+          <End Role="tabVendors" Type="Self.tabVendors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCategories">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabVendors">
+              <PropertyRef Name="intCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="dbAfrzModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tabBanks" EntityType="Self.tabBanks" Schema="Sadegh" store:Type="Tables" />
@@ -1529,10 +1510,9 @@
           <NavigationProperty Name="tabPartTypes" Relationship="Self.FK_tabParts_tabCategories" FromRole="tabCategories" ToRole="tabPartTypes" />
           <NavigationProperty Name="tabProjects" Relationship="Self.FK_tabProjects_tabCategories" FromRole="tabCategories" ToRole="tabProjects" />
           <NavigationProperty Name="tabProperties" Relationship="Self.FK_tabProperties_tabCategories" FromRole="tabCategories" ToRole="tabProperties" />
-          <NavigationProperty Name="tabPartTypes" Relationship="dbAfrzModel.FK_tabParts_tabCategories1" FromRole="tabCategories" ToRole="tabPartTypes" />
-          <NavigationProperty Name="tabEquipSamples" Relationship="dbAfrzModel.FK_tabEquips_tabCategories1" FromRole="tabCategories" ToRole="tabEquipSamples" />
-          <NavigationProperty Name="tabPartName" Relationship="dbAfrzModel.FK_tabName_tabCategories1" FromRole="tabCategories" ToRole="tabPartName" />
-          <NavigationProperty Name="tabTechnicalDocuments" Relationship="dbAfrzModel.FK_tabTechnicalDocuments_tabCategories" FromRole="tabCategories" ToRole="tabTechnicalDocuments" />
+          <NavigationProperty Name="tabSubProjects" Relationship="Self.FK_tabSubprojects_tabCategories" FromRole="tabCategories" ToRole="tabSubProjects" />
+          <NavigationProperty Name="tabTechnicalDocuments" Relationship="Self.FK_tabTechnicalDocuments_tabCategories" FromRole="tabCategories" ToRole="tabTechnicalDocuments" />
+          <NavigationProperty Name="tabVendors" Relationship="Self.FK_tabVendors_tabCategories" FromRole="tabCategories" ToRole="tabVendors" />
         </EntityType>
         <EntityType Name="tabCoInformation">
           <Key>
@@ -1617,6 +1597,9 @@
           <Property Name="nvcLocationCityVillage" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="nvcLocationAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="nvcPostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nvcPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bitLogined" Type="Boolean" />
+          <Property Name="bitAppAccess" Type="Boolean" />
           <NavigationProperty Name="tabDepartments" Relationship="Self.FK_tabEmployees_tabDepartments" FromRole="tabEmployees" ToRole="tabDepartments" />
           <NavigationProperty Name="tabSubDepartments" Relationship="Self.FK_tabEmployees_tabSubDepartments" FromRole="tabEmployees" ToRole="tabSubDepartments" />
           <NavigationProperty Name="tabSubdepartmentSubsets" Relationship="Self.FK_tabEmployees_tabSubdepartmentSubsets" FromRole="tabEmployees" ToRole="tabSubdepartmentSubsets" />
@@ -1799,7 +1782,31 @@
           <NavigationProperty Name="tabCategories" Relationship="Self.FK_tabMeasurementUnits_tabCategories" FromRole="tabMeasurementUnits" ToRole="tabCategories" />
           <NavigationProperty Name="tabPartTypes" Relationship="Self.FK_tabParts_tabMeasurementUnits" FromRole="tabMeasurementUnits" ToRole="tabPartTypes" />
           <NavigationProperty Name="tabProperties" Relationship="Self.FK_tabProperties_tabMeasurementUnits" FromRole="tabMeasurementUnits" ToRole="tabProperties" />
-          <NavigationProperty Name="tabPartTypes" Relationship="dbAfrzModel.FK_tabParts_tabMeasurementUnits1" FromRole="tabMeasurementUnits" ToRole="tabPartTypes" />
+        </EntityType>
+        <EntityType Name="tabMenus">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="intMenu" Type="Int32" />
+          <Property Name="nvcSubMenu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tabMenusEmployees">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcMenus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="intPost" Type="Int32" />
+          <Property Name="intDepartment" Type="Int32" />
+          <Property Name="intSubDepartment" Type="Int32" />
+          <Property Name="bitReadWrite" Type="Boolean" />
+          <NavigationProperty Name="tabDepartments" Relationship="Self.FK_tabMenusEmployees_tabDepartments" FromRole="tabMenusEmployees" ToRole="tabDepartments" />
+          <NavigationProperty Name="tabPosts" Relationship="Self.FK_tabMenusEmployees_tabPosts" FromRole="tabMenusEmployees" ToRole="tabPosts" />
+          <NavigationProperty Name="tabSubDepartments" Relationship="Self.FK_tabMenusEmployees_tabSubDepartments" FromRole="tabMenusEmployees" ToRole="tabSubDepartments" />
         </EntityType>
         <EntityType Name="tabPartBranch">
           <Key>
@@ -1880,6 +1887,7 @@
           <Property Name="bitIsActual" Type="Boolean" Nullable="false" />
           <Property Name="nvcName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="intNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tabMenusEmployees" Relationship="Self.FK_tabMenusEmployees_tabPosts" FromRole="tabPosts" ToRole="tabMenusEmployees" />
         </EntityType>
         <EntityType Name="tabProductionMeltLoadings">
           <Key>
@@ -1904,7 +1912,7 @@
           <Key>
             <PropertyRef Name="intNumber" />
           </Key>
-          <Property Name="intID" Type="Int32" Nullable="false" />
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="bitSelect" Type="Boolean" />
           <Property Name="intNumber" Type="Int32" Nullable="false" />
           <Property Name="intCategory" Type="Int32" Nullable="false" />
@@ -2099,7 +2107,18 @@
           <Property Name="nvcPartStorecode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="nvcTip" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tabVendors">
+        <EntityType Name="tabTechnicalDocumentItems">
+          <Key>
+            <PropertyRef Name="intID" />
+          </Key>
+          <Property Name="intID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bitSelect" Type="Boolean" />
+          <Property Name="nvcDocumentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nvcEquipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nvcPartCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bitIsMain" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tabTechnicalDocuments">
           <Key>
             <PropertyRef Name="intID" />
           </Key>
@@ -2177,43 +2196,43 @@
           <Property Name="nvcTip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tabEquipSamples" Relationship="Self.FK_tabEquips_tabZones" FromRole="tabZones" ToRole="tabEquipSamples" />
           <NavigationProperty Name="tabSubZones" Relationship="Self.FK_tabSubZones_tabZones" FromRole="tabZones" ToRole="tabSubZones" />
-          <NavigationProperty Name="tabEquipSamples" Relationship="dbAfrzModel.FK_tabEquips_tabZones1" FromRole="tabZones" ToRole="tabEquipSamples" />
         </EntityType>
-        <EntityType Name="VieEmployeesInfo">
-          <Key>
-            <PropertyRef Name="intID" />
-            <PropertyRef Name="nvcCoID" />
-          </Key>
-          <Property Name="nvcName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="nvcAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="nvcShaba" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
-          <Property Name="nvcAtmCard" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="intID" Type="Int32" Nullable="false" />
-          <Property Name="bitSelect" Type="Boolean" />
-          <Property Name="nvcCoID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="nvcFirstname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="nvcLastname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="nvcNationalID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="intDepartment" Type="Int32" />
-          <Property Name="intSubDepartment" Type="Int32" />
-          <Property Name="intPost" Type="Int32" />
-          <Property Name="intEmploymentType" Type="Int32" />
-          <Property Name="bitIsShiftMode" Type="Boolean" />
-          <Property Name="intShiftType" Type="Int32" />
-          <Property Name="nvcMobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="datBirth" Type="DateTime" Precision="0" />
-          <Property Name="nvcFatherName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="intEducationLevel" Type="Int32" />
-          <Property Name="nvcLocationProvince" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="nvcLocationCounty" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="nvcLocationCityVillage" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="nvcLocationAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="nvcPostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="nvcInsuranceNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="intWorkGroup" Type="Int32" />
-          <Property Name="bitIsLeader" Type="Boolean" />
-          <Property Name="intSubDepartmentSubset" Type="Int32" />
-        </EntityType>
+        <Association Name="FK_tabBuyRequestItems_tabBuyRequests">
+          <End Role="tabBuyRequests" Type="Self.tabBuyRequests" Multiplicity="1" />
+          <End Role="tabBuyRequestItems" Type="Self.tabBuyRequestItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabBuyRequests">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabBuyRequestItems">
+              <PropertyRef Name="intRequestNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabBuyRequests_tabDepartments">
+          <End Role="tabDepartments" Type="Self.tabDepartments" Multiplicity="1" />
+          <End Role="tabBuyRequests" Type="Self.tabBuyRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabDepartments">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabBuyRequests">
+              <PropertyRef Name="intDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabInvoiceItems_tabRequests">
+          <End Role="tabBuyRequests" Type="Self.tabBuyRequests" Multiplicity="0..1" />
+          <End Role="tabInvoiceItems" Type="Self.tabInvoiceItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabBuyRequests">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabInvoiceItems">
+              <PropertyRef Name="intRequestNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tabEquipName_tabCategories">
           <End Role="tabCategories" Type="Self.tabCategories" Multiplicity="1" />
           <End Role="tabEquipName" Type="Self.tabEquipName" Multiplicity="*" />
@@ -2334,6 +2353,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tabEquipSamples_tabCompanies">
+          <End Role="tabCompanies" Type="Self.tabCompanies" Multiplicity="0..1" />
+          <End Role="tabEquipSamples" Type="Self.tabEquipSamples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCompanies">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabEquipSamples">
+              <PropertyRef Name="intCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabCompanies">
+          <End Role="tabCompanies" Type="Self.tabCompanies" Multiplicity="0..1" />
+          <End Role="tabTechnicalDocuments" Type="Self.tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCompanies">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tabEmployees_tabDepartments">
           <End Role="tabDepartments" Type="Self.tabDepartments" Multiplicity="0..1" />
           <End Role="tabEmployees" Type="Self.tabEmployees" Multiplicity="*" />
@@ -2403,6 +2446,90 @@
             </Principal>
             <Dependent Role="tabEmployees">
               <PropertyRef Name="intSubDepartmentSubset" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabEquips_tabEquipName">
+          <End Role="tabEquipName" Type="Self.tabEquipName" Multiplicity="1" />
+          <End Role="tabEquipSamples" Type="Self.tabEquipSamples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabEquipName">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabEquipSamples">
+              <PropertyRef Name="intEquipName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabEquips_tabSubZones">
+          <End Role="tabSubZones" Type="Self.tabSubZones" Multiplicity="1" />
+          <End Role="tabEquipSamples" Type="Self.tabEquipSamples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabSubZones">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabEquipSamples">
+              <PropertyRef Name="intSubZone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabEquips_tabZones">
+          <End Role="tabZones" Type="Self.tabZones" Multiplicity="1" />
+          <End Role="tabEquipSamples" Type="Self.tabEquipSamples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabZones">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabEquipSamples">
+              <PropertyRef Name="intZone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabEquipSamples_tabLocationes">
+          <End Role="tabLocationes" Type="Self.tabLocationes" Multiplicity="0..1" />
+          <End Role="tabEquipSamples" Type="Self.tabEquipSamples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabLocationes">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabEquipSamples">
+              <PropertyRef Name="intLocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabInvoiceItems_tabInvoices">
+          <End Role="tabInvoices" Type="Self.tabInvoices" Multiplicity="0..1" />
+          <End Role="tabInvoiceItems" Type="Self.tabInvoiceItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabInvoices">
+              <PropertyRef Name="intInvoiceNumbrOfOwner" />
+            </Principal>
+            <Dependent Role="tabInvoiceItems">
+              <PropertyRef Name="intInvoiceNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabInvoices_tabVendors">
+          <End Role="tabVendors" Type="Self.tabVendors" Multiplicity="1" />
+          <End Role="tabInvoices" Type="Self.tabInvoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabVendors">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabInvoices">
+              <PropertyRef Name="intVendorNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTechnicalDocuments_tabLocationes">
+          <End Role="tabLocationes" Type="Self.tabLocationes" Multiplicity="0..1" />
+          <End Role="tabTechnicalDocuments" Type="Self.tabTechnicalDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabLocationes">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabTechnicalDocuments">
+              <PropertyRef Name="intLocation" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2478,6 +2605,114 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tabMenusEmployees_tabPosts">
+          <End Role="tabPosts" Type="Self.tabPosts" Multiplicity="0..1" />
+          <End Role="tabMenusEmployees" Type="Self.tabMenusEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabPosts">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabMenusEmployees">
+              <PropertyRef Name="intPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabMenusEmployees_tabSubDepartments">
+          <End Role="tabSubDepartments" Type="Self.tabSubDepartments" Multiplicity="0..1" />
+          <End Role="tabMenusEmployees" Type="Self.tabMenusEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabSubDepartments">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabMenusEmployees">
+              <PropertyRef Name="intSubDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabBranch_tabName">
+          <End Role="tabPartName" Type="Self.tabPartName" Multiplicity="1" />
+          <End Role="tabPartBranch" Type="Self.tabPartBranch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabPartName">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartBranch">
+              <PropertyRef Name="intName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabParts_tabBranch">
+          <End Role="tabPartBranch" Type="Self.tabPartBranch" Multiplicity="1" />
+          <End Role="tabPartTypes" Type="Self.tabPartTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabPartBranch">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartTypes">
+              <PropertyRef Name="intBranch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabSubBranch_tabBranch">
+          <End Role="tabPartBranch" Type="Self.tabPartBranch" Multiplicity="1" />
+          <End Role="tabPartSubBranch" Type="Self.tabPartSubBranch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabPartBranch">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartSubBranch">
+              <PropertyRef Name="intBranch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabParts_tabName">
+          <End Role="tabPartName" Type="Self.tabPartName" Multiplicity="1" />
+          <End Role="tabPartTypes" Type="Self.tabPartTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabPartName">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartTypes">
+              <PropertyRef Name="intName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabParts_tabSubBranch">
+          <End Role="tabPartSubBranch" Type="Self.tabPartSubBranch" Multiplicity="1" />
+          <End Role="tabPartTypes" Type="Self.tabPartTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabPartSubBranch">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartTypes">
+              <PropertyRef Name="intSubBranch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabParts_tabStores">
+          <End Role="tabStores" Type="Self.tabStores" Multiplicity="1" />
+          <End Role="tabPartTypes" Type="Self.tabPartTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabStores">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabPartTypes">
+              <PropertyRef Name="intStore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabSubProjects_tabProjects1">
+          <End Role="tabProjects" Type="Self.tabProjects" Multiplicity="1" />
+          <End Role="tabSubProjects" Type="Self.tabSubProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabProjects">
+              <PropertyRef Name="intNumber" />
+            </Principal>
+            <Dependent Role="tabSubProjects">
+              <PropertyRef Name="intProject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tabSubZones_tabZones">
           <End Role="tabZones" Type="Self.tabZones" Multiplicity="1" />
           <End Role="tabSubZones" Type="Self.tabSubZones" Multiplicity="*" />
@@ -2526,6 +2761,14 @@
           <EntitySet Name="tabMaintenanceParts" EntityType="Self.tabMaintenanceParts" />
           <EntitySet Name="tabMaintenances" EntityType="Self.tabMaintenances" />
           <EntitySet Name="tabMeasurementUnits" EntityType="Self.tabMeasurementUnits" />
+          <EntitySet Name="tabMenus" EntityType="Self.tabMenus" />
+          <EntitySet Name="tabMenusEmployees" EntityType="Self.tabMenusEmployees" />
+          <EntitySet Name="tabPartBranch" EntityType="Self.tabPartBranch" />
+          <EntitySet Name="tabPartName" EntityType="Self.tabPartName" />
+          <EntitySet Name="tabPartSamples" EntityType="Self.tabPartSamples" />
+          <EntitySet Name="tabPartSubBranch" EntityType="Self.tabPartSubBranch" />
+          <EntitySet Name="tabPartTypes" EntityType="Self.tabPartTypes" />
+          <EntitySet Name="tabPosts" EntityType="Self.tabPosts" />
           <EntitySet Name="tabProductionMeltLoadings" EntityType="Self.tabProductionMeltLoadings" />
           <EntitySet Name="tabProjects" EntityType="Self.tabProjects" />
           <EntitySet Name="tabProperties" EntityType="Self.tabProperties" />
@@ -2550,7 +2793,18 @@
           <EntitySet Name="tabUsers" EntityType="Self.tabUsers" />
           <EntitySet Name="tabVendors" EntityType="Self.tabVendors" />
           <EntitySet Name="tabZones" EntityType="Self.tabZones" />
-          <EntitySet Name="VieEmployeesInfo" EntityType="Self.VieEmployeesInfo" />
+          <AssociationSet Name="FK_tabBuyRequestItems_tabBuyRequests" Association="Self.FK_tabBuyRequestItems_tabBuyRequests">
+            <End Role="tabBuyRequests" EntitySet="tabBuyRequests" />
+            <End Role="tabBuyRequestItems" EntitySet="tabBuyRequestItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabBuyRequests_tabDepartments" Association="Self.FK_tabBuyRequests_tabDepartments">
+            <End Role="tabDepartments" EntitySet="tabDepartments" />
+            <End Role="tabBuyRequests" EntitySet="tabBuyRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabInvoiceItems_tabRequests" Association="Self.FK_tabInvoiceItems_tabRequests">
+            <End Role="tabBuyRequests" EntitySet="tabBuyRequests" />
+            <End Role="tabInvoiceItems" EntitySet="tabInvoiceItems" />
+          </AssociationSet>
           <AssociationSet Name="FK_tabEquipName_tabCategories" Association="Self.FK_tabEquipName_tabCategories">
             <End Role="tabCategories" EntitySet="tabCategories" />
             <End Role="tabEquipName" EntitySet="tabEquipName" />
@@ -2579,6 +2833,26 @@
             <End Role="tabCategories" EntitySet="tabCategories" />
             <End Role="tabProperties" EntitySet="tabProperties" />
           </AssociationSet>
+          <AssociationSet Name="FK_tabSubprojects_tabCategories" Association="Self.FK_tabSubprojects_tabCategories">
+            <End Role="tabCategories" EntitySet="tabCategories" />
+            <End Role="tabSubProjects" EntitySet="tabSubProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabCategories" Association="Self.FK_tabTechnicalDocuments_tabCategories">
+            <End Role="tabCategories" EntitySet="tabCategories" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabVendors_tabCategories" Association="Self.FK_tabVendors_tabCategories">
+            <End Role="tabCategories" EntitySet="tabCategories" />
+            <End Role="tabVendors" EntitySet="tabVendors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabEquipSamples_tabCompanies" Association="Self.FK_tabEquipSamples_tabCompanies">
+            <End Role="tabCompanies" EntitySet="tabCompanies" />
+            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabCompanies" Association="Self.FK_tabTechnicalDocuments_tabCompanies">
+            <End Role="tabCompanies" EntitySet="tabCompanies" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
+          </AssociationSet>
           <AssociationSet Name="FK_tabEmployees_tabDepartments" Association="Self.FK_tabEmployees_tabDepartments">
             <End Role="tabDepartments" EntitySet="tabDepartments" />
             <End Role="tabEmployees" EntitySet="tabEmployees" />
@@ -2602,6 +2876,34 @@
           <AssociationSet Name="FK_tabEmployees_tabSubdepartmentSubsets" Association="Self.FK_tabEmployees_tabSubdepartmentSubsets">
             <End Role="tabSubdepartmentSubsets" EntitySet="tabSubdepartmentSubsets" />
             <End Role="tabEmployees" EntitySet="tabEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabEquips_tabEquipName" Association="Self.FK_tabEquips_tabEquipName">
+            <End Role="tabEquipName" EntitySet="tabEquipName" />
+            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabEquips_tabSubZones" Association="Self.FK_tabEquips_tabSubZones">
+            <End Role="tabSubZones" EntitySet="tabSubZones" />
+            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabEquips_tabZones" Association="Self.FK_tabEquips_tabZones">
+            <End Role="tabZones" EntitySet="tabZones" />
+            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabEquipSamples_tabLocationes" Association="Self.FK_tabEquipSamples_tabLocationes">
+            <End Role="tabLocationes" EntitySet="tabLocationes" />
+            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabInvoiceItems_tabInvoices" Association="Self.FK_tabInvoiceItems_tabInvoices">
+            <End Role="tabInvoices" EntitySet="tabInvoices" />
+            <End Role="tabInvoiceItems" EntitySet="tabInvoiceItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabInvoices_tabVendors" Association="Self.FK_tabInvoices_tabVendors">
+            <End Role="tabVendors" EntitySet="tabVendors" />
+            <End Role="tabInvoices" EntitySet="tabInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabLocationes" Association="Self.FK_tabTechnicalDocuments_tabLocationes">
+            <End Role="tabLocationes" EntitySet="tabLocationes" />
+            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
           </AssociationSet>
           <AssociationSet Name="FK_tabMaintenanceItems_tabMaintenance" Association="Self.FK_tabMaintenanceItems_tabMaintenance">
             <End Role="tabMaintenances" EntitySet="tabMaintenances" />
@@ -2627,28 +2929,15 @@
             <End Role="tabMeasurementUnits" EntitySet="tabMeasurementUnits" />
             <End Role="tabProperties" EntitySet="tabProperties" />
           </AssociationSet>
-          <EntitySet Name="tabUsers" EntityType="dbAfrzModel.tabUsers" />
-          <EntitySet Name="tabPosts" EntityType="dbAfrzModel.tabPosts" />
-          <EntitySet Name="tabEquipSamples" EntityType="dbAfrzModel.tabEquipSamples" />
-          <AssociationSet Name="FK_tabEquips_tabCategories1" Association="dbAfrzModel.FK_tabEquips_tabCategories1">
-            <End Role="tabCategories" EntitySet="tabCategories" />
-            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          <AssociationSet Name="FK_tabMenusEmployees_tabPosts" Association="Self.FK_tabMenusEmployees_tabPosts">
+            <End Role="tabPosts" EntitySet="tabPosts" />
+            <End Role="tabMenusEmployees" EntitySet="tabMenusEmployees" />
           </AssociationSet>
-          <AssociationSet Name="FK_tabEquips_tabEquipName1" Association="dbAfrzModel.FK_tabEquips_tabEquipName1">
-            <End Role="tabEquipName" EntitySet="tabEquipName" />
-            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
+          <AssociationSet Name="FK_tabMenusEmployees_tabSubDepartments" Association="Self.FK_tabMenusEmployees_tabSubDepartments">
+            <End Role="tabSubDepartments" EntitySet="tabSubDepartments" />
+            <End Role="tabMenusEmployees" EntitySet="tabMenusEmployees" />
           </AssociationSet>
-          <AssociationSet Name="FK_tabEquips_tabSubZones1" Association="dbAfrzModel.FK_tabEquips_tabSubZones1">
-            <End Role="tabSubZones" EntitySet="tabSubZones" />
-            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tabEquips_tabZones1" Association="dbAfrzModel.FK_tabEquips_tabZones1">
-            <End Role="tabZones" EntitySet="tabZones" />
-            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
-          </AssociationSet>
-          <EntitySet Name="tabPartName" EntityType="dbAfrzModel.tabPartName" />
-          <AssociationSet Name="FK_tabName_tabCategories1" Association="dbAfrzModel.FK_tabName_tabCategories1">
-            <End Role="tabCategories" EntitySet="tabCategories" />
+          <AssociationSet Name="FK_tabBranch_tabName" Association="Self.FK_tabBranch_tabName">
             <End Role="tabPartName" EntitySet="tabPartName" />
             <End Role="tabPartBranch" EntitySet="tabPartBranch" />
           </AssociationSet>
@@ -2668,38 +2957,19 @@
             <End Role="tabPartSubBranch" EntitySet="tabPartSubBranch" />
             <End Role="tabPartTypes" EntitySet="tabPartTypes" />
           </AssociationSet>
-          <EntitySet Name="tabCompanies" EntityType="dbAfrzModel.tabCompanies" />
-          <EntitySet Name="tabLocationes" EntityType="dbAfrzModel.tabLocationes" />
-          <AssociationSet Name="FK_tabEquipSamples_tabCompanies" Association="dbAfrzModel.FK_tabEquipSamples_tabCompanies">
-            <End Role="tabCompanies" EntitySet="tabCompanies" />
-            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tabEquipSamples_tabLocationes" Association="dbAfrzModel.FK_tabEquipSamples_tabLocationes">
-            <End Role="tabLocationes" EntitySet="tabLocationes" />
-            <End Role="tabEquipSamples" EntitySet="tabEquipSamples" />
-          </AssociationSet>
-          <EntitySet Name="tabTechnicalDocuments" EntityType="dbAfrzModel.tabTechnicalDocuments" />
-          <AssociationSet Name="FK_tabTechnicalDocuments_tabCategories" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabCategories">
-            <End Role="tabCategories" EntitySet="tabCategories" />
-            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tabTechnicalDocuments_tabCompanies" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabCompanies">
-            <End Role="tabCompanies" EntitySet="tabCompanies" />
-            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tabTechnicalDocuments_tabLocationes" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabLocationes">
-            <End Role="tabLocationes" EntitySet="tabLocationes" />
-            <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
-          </AssociationSet>
-          <EntitySet Name="tabStores" EntityType="dbAfrzModel.tabStores" />
-          <AssociationSet Name="FK_tabParts_tabStores" Association="dbAfrzModel.FK_tabParts_tabStores">
+          <AssociationSet Name="FK_tabParts_tabStores" Association="Self.FK_tabParts_tabStores">
             <End Role="tabStores" EntitySet="tabStores" />
             <End Role="tabPartTypes" EntitySet="tabPartTypes" />
           </AssociationSet>
-          <EntitySet Name="tabTechnicalDocumentItems" EntityType="dbAfrzModel.tabTechnicalDocumentItems" />
-          <EntitySet Name="tabPartSamples" EntityType="dbAfrzModel.tabPartSamples" />
-          <EntitySet Name="tabTechnicalDocumentTypes" EntityType="dbAfrzModel.tabTechnicalDocumentTypes" />
-          <AssociationSet Name="FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" Association="dbAfrzModel.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes">
+          <AssociationSet Name="FK_tabSubProjects_tabProjects1" Association="Self.FK_tabSubProjects_tabProjects1">
+            <End Role="tabProjects" EntitySet="tabProjects" />
+            <End Role="tabSubProjects" EntitySet="tabSubProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabSubZones_tabZones" Association="Self.FK_tabSubZones_tabZones">
+            <End Role="tabZones" EntitySet="tabZones" />
+            <End Role="tabSubZones" EntitySet="tabSubZones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTechnicalDocuments_tabTechnicalDocumentTypes" Association="Self.FK_tabTechnicalDocuments_tabTechnicalDocumentTypes">
             <End Role="tabTechnicalDocumentTypes" EntitySet="tabTechnicalDocumentTypes" />
             <End Role="tabTechnicalDocuments" EntitySet="tabTechnicalDocuments" />
           </AssociationSet>
@@ -2847,6 +3117,9 @@
                 <ScalarProperty Name="nvcLocationCityVillage" ColumnName="nvcLocationCityVillage" />
                 <ScalarProperty Name="nvcLocationAddress" ColumnName="nvcLocationAddress" />
                 <ScalarProperty Name="nvcPostalCode" ColumnName="nvcPostalCode" />
+                <ScalarProperty Name="nvcPassword" ColumnName="nvcPassword" />
+                <ScalarProperty Name="bitLogined" ColumnName="bitLogined" />
+                <ScalarProperty Name="bitAppAccess" ColumnName="bitAppAccess" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3012,6 +3285,86 @@
               <MappingFragment StoreEntitySet="tabMeasurementUnits">
                 <ScalarProperty Name="intID" ColumnName="intID" />
                 <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabMenus">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabMenus">
+              <MappingFragment StoreEntitySet="tabMenus">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="intMenu" ColumnName="intMenu" />
+                <ScalarProperty Name="nvcSubMenu" ColumnName="nvcSubMenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabMenusEmployees">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabMenusEmployees">
+              <MappingFragment StoreEntitySet="tabMenusEmployees">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="nvcMenus" ColumnName="nvcMenus" />
+                <ScalarProperty Name="intPost" ColumnName="intPost" />
+                <ScalarProperty Name="intDepartment" ColumnName="intDepartment" />
+                <ScalarProperty Name="intSubDepartment" ColumnName="intSubDepartment" />
+                <ScalarProperty Name="bitReadWrite" ColumnName="bitReadWrite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabPartBranch">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabPartBranch">
+              <MappingFragment StoreEntitySet="tabPartBranch">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
+                <ScalarProperty Name="intName" ColumnName="intName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabPartName">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabPartName">
+              <MappingFragment StoreEntitySet="tabPartName">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
+                <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabPartSamples">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabPartSamples">
+              <MappingFragment StoreEntitySet="tabPartSamples">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="nvcPartTypeCode" ColumnName="nvcPartTypeCode" />
+                <ScalarProperty Name="intOrder" ColumnName="intOrder" />
+                <ScalarProperty Name="nvcEquipSampleCode" ColumnName="nvcEquipSampleCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabPartSubBranch">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabPartSubBranch">
+              <MappingFragment StoreEntitySet="tabPartSubBranch">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
+                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
+                <ScalarProperty Name="intBranch" ColumnName="intBranch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabPartTypes">
+            <EntityTypeMapping TypeName="dbAfrzModel.tabPartTypes">
+              <MappingFragment StoreEntitySet="tabPartTypes">
+                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
+                <ScalarProperty Name="intStore" ColumnName="intStore" />
                 <ScalarProperty Name="intCategory" ColumnName="intCategory" />
                 <ScalarProperty Name="intName" ColumnName="intName" />
                 <ScalarProperty Name="intBranch" ColumnName="intBranch" />
@@ -3319,20 +3672,15 @@
                 <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
                 <ScalarProperty Name="intNumber" ColumnName="intNumber" />
                 <ScalarProperty Name="intCategory" ColumnName="intCategory" />
-                <ScalarProperty Name="intLocation" ColumnName="intLocation" />
-                <ScalarProperty Name="intCompany" ColumnName="intCompany" />
-                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
-                <ScalarProperty Name="intID" ColumnName="intID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tabStores">
-            <EntityTypeMapping TypeName="dbAfrzModel.tabStores">
-              <MappingFragment StoreEntitySet="tabStores">
-                <ScalarProperty Name="intNumber" ColumnName="intNumber" />
-                <ScalarProperty Name="nvcName" ColumnName="nvcName" />
-                <ScalarProperty Name="bitSelect" ColumnName="bitSelect" />
-                <ScalarProperty Name="intID" ColumnName="intID" />
+                <ScalarProperty Name="nvcBrand" ColumnName="nvcBrand" />
+                <ScalarProperty Name="nvcActivityType" ColumnName="nvcActivityType" />
+                <ScalarProperty Name="nvcTip" ColumnName="nvcTip" />
+                <ScalarProperty Name="nvcTell" ColumnName="nvcTell" />
+                <ScalarProperty Name="nvcFirstName" ColumnName="nvcFirstName" />
+                <ScalarProperty Name="nvcLastName" ColumnName="nvcLastName" />
+                <ScalarProperty Name="nvcCity" ColumnName="nvcCity" />
+                <ScalarProperty Name="nvcAddress" ColumnName="nvcAddress" />
+                <ScalarProperty Name="bitIsActive" ColumnName="bitIsActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Baran.Ferroalloy.Automation">
+      <HintPath>C:\Users\rayana\Desktop\FAM_Windows\Automation\bin\Debug\Baran.Ferroalloy.Automation.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -61,6 +64,7 @@
     <Compile Include="Cryption.cs" />
     <Compile Include="ExceptionConnection.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="Models\Context\UnitOfWork.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,17 +80,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tabBanks.cs" />
-    <Compile Include="Models\tabBuyRequestItems.cs" />
+    <Compile Include="Models\tabBanks.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabBuyRequestItems.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tabBuyRequests.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -147,13 +149,27 @@
     <Compile Include="Models\tabMeasurementUnits.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tabMenus.cs" />
-    <Compile Include="Models\tabMenusEmployees.cs" />
-    <Compile Include="Models\tabPartBranch.cs" />
-    <Compile Include="Models\tabPartName.cs" />
-    <Compile Include="Models\tabPartSamples.cs" />
-    <Compile Include="Models\tabPartSubBranch.cs" />
-    <Compile Include="Models\tabPartTypes.cs" />
+    <Compile Include="Models\tabMenus.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabMenusEmployees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabPartBranch.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabPartName.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabPartSamples.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabPartSubBranch.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tabPartTypes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tabPosts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -229,7 +245,6 @@
     <Compile Include="Models\tabZones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Context\UnitOfWork.cs" />
     <Compile Include="Repositories\ICategories.cs" />
     <Compile Include="Repositories\ICompanies.cs" />
     <Compile Include="Repositories\IDepartment.cs" />
